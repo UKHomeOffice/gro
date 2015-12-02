@@ -1,0 +1,47 @@
+{
+  "example-dob": {
+    "label": "Date",
+    "legend": "Date on the letter",
+    "hint": "For example, 11  6  2015"
+  },
+  "example-dob-day": {
+    "label": "Day"
+  },
+  "example-dob-month": {
+    "label": "Month"
+  },
+  "example-dob-year": {
+    "label": "Year"
+  },
+  "example-radio": {
+    "options": {
+      "superman": {
+        "label": "Superman"
+      },
+      "batman": {
+        "label": "Batman"
+      },
+      "spiderman": {
+        "label": "Spiderman"
+      }
+    }
+  },
+  "example-text": {
+    "label": "What is your favourite colour?"
+  },
+  "example-email": {
+    "label": "What is your email address?"
+  },
+  "example-checkbox": {
+    "label": "Please tick if you like cheese"
+  },
+  "example-toggled-text": {
+    "label": "You showed me!!"
+  },
+  "example-depends-on-text": {
+    "label": "What is the name of your pet dog?"
+  },
+  "multiples-input": {
+    "label": "What is your favourite multiple of 3?"
+  }
+}
