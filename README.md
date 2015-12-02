@@ -1,12 +1,6 @@
-[![Build Status](https://travis-ci.org/UKHomeOffice/hof-example-form.svg?branch=master)](https://travis-ci.org/UKHomeOffice/hof-example-form)
-
-# Home Office Forms Example Form
-
-In order to provide a starting point for people using the [home office forms toolkit](https://github.com/UKHomeOffice/hof) this app aims to give a simple example of how to use the module. We encourage users to clone this repository in order to provide a starting point for their own forms.
+# GRO 
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisities
 
@@ -18,12 +12,18 @@ What things you need to install the software and how to install them
 ### Installing
 
 ```bash
-$ cd hof-example-form
+$ cd gro
 $ npm install
 $ npm run dev
 ```
 
-Go to http://localhost:8080/my-awesome-form
+If there is an error it might be necessary to install nodemon globally.
+
+```bash
+$ npm install -g nodemon
+```
+
+Go to http://localhost:8080/gro
 
 ## Running the tests
 You will need the server running to run the cucumber tests against.
