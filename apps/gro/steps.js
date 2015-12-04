@@ -9,40 +9,32 @@ module.exports = {
     controller: require('./controllers/about'),
     template: 'about',
     fields: [
-      'example-radio',
-      'example-dob',
-      'example-dob-day',
-      'example-dob-month',
-      'example-dob-year',
-      'example-text',
-      'example-email'
+      'about-radio'
     ],
-    backLink: true,
+    backLink: 'start',
     next: '/type'
   },
   '/type': {
     controller: require('./controllers/type'),
     template: 'type',
     fields: [
-      'yes-no-radio-toggler',
-      'example-toggled-text'
+      'type-radio'
     ],
-    backLink: true,
+    backLink: 'about',
     next: '/person'
   },
   "/person": {
     controller: require('./controllers/type'),
-    template: 'third-page',
+    template: 'person',
     fields: [
-      'yes-no-radio',
-      'example-depends-on-text'
+      'person-text'
     ],
-    backLink: true,
+    backLink: 'type',
     next: '/how'
   },
   '/how': {
     controller: require('./controllers/how'),
-    template: 'fourth-page',
+    template: 'how',
     fields: ['multiples-input'],
     next: '/confirm'
   },

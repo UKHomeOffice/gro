@@ -27,7 +27,7 @@ Then(/^I am presented with validation errors for the first page$/) do
 end
 
 When(/^I complete the first page of the form correctly$/) do
-  find_by_id('example-radio-superman').click
+  find_by_id('about-radio-superman').click
   fill_in "example-dob-day", :with => '10'
   fill_in "example-dob-month", :with => '10'
   fill_in "example-dob-year", :with => '1980'
@@ -99,7 +99,7 @@ Then(/^I am taken to the summary page$/) do
 end
 
 When(/^I click the first "Change" button$/) do
-  find_by_id('example-radio-change').click
+  find_by_id('about-radio-change').click
 end
 
 Then(/^I am taken to the confirmation page$/) do
