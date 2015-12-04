@@ -1,19 +1,28 @@
 'use strict';
 
 module.exports = {
-  'yes-no-radio-toggler': {
+    "type-radio": {
     validate: ['required'],
-    className: ['inline', 'form-group'],
+    className: ['block', 'form-group'],
+    legend: {
+      className: 'visuallyhidden',
+      value: ''
+    },
     options: [{
-      value: 'Yes',
-      label: 'Yes',
-      toggle: 'example-toggled-text-div'
+      value: 'birth',
+      label: 'fields.type-radio.options.birth.label'
     }, {
-      value: 'No',
-      label: 'No'
+      value: 'marriage',
+      label: 'fields.type-radio.options.marriage.label'
+    }, {
+      value: 'death',
+      label: 'fields.type-radio.options.death.label'
+    }, {
+      value: 'adoption',
+      label: 'fields.type-radio.options.adoption.label'
+    }, {
+      value: 'partnership',
+      label: 'fields.type-radio.options.partnership.label'
     }]
-  },
-  'example-toggled-text': {
-    legend: 'fields.toggled-text.legend'
   }
 };

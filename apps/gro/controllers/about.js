@@ -2,17 +2,16 @@
 
 var util = require('util');
 var controllers = require('hof').controllers;
-var DateController = controllers.date;
+var BaseController = controllers.date;
 
 var AboutController = function AboutController() {
-  this.dateKey = 'example-dob';
-  DateController.apply(this, arguments);
+  BaseController.apply(this, arguments);
 };
 
-util.inherits(AboutController, DateController);
+util.inherits(AboutController, BaseController);
 
 AboutController.prototype.validateField = function validateField(keyToValidate, req) {
-  return DateController.prototype.validateField.call(this, keyToValidate, req, false);
+  return BaseController.prototype.validateField.call(this, keyToValidate, req, false);
 };
 
 module.exports = AboutController;
