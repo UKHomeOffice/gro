@@ -1,4 +1,48 @@
 {
+  "about-radio": {
+    "options": {
+      "not-received": {
+        "label": "Certificate not received"
+      },
+      "wrong-certificate": {
+        "label": "Wrong certificate received"
+      },
+      "damaged": {
+        "label": "Damaged or badly printed certificate"
+      },
+      "refund": {
+        "label": "Refund query"
+      },
+      "complaint": {
+        "label": "Service complaint"
+      },
+      "other": {
+        "label": "Other"
+      }
+    }
+  },
+  "type-radio": {
+    "options": {
+      "birth": {
+        "label": "Birth"
+      },
+      "marriage": {
+        "label": "Marriage"
+      },
+      "death": {
+        "label": "Death"
+      },
+      "adoption": {
+        "label": "Adoption"
+      },
+      "partnership": {
+        "label": "Civil partnership"
+      }
+    }
+  },
+  "person-text": {
+    "label": "Full name"
+  },
   "example-dob": {
     "label": "Date",
     "legend": "Date on the letter",
@@ -12,19 +56,6 @@
   },
   "example-dob-year": {
     "label": "Year"
-  },
-  "example-radio": {
-    "options": {
-      "superman": {
-        "label": "Superman"
-      },
-      "batman": {
-        "label": "Batman"
-      },
-      "spiderman": {
-        "label": "Spiderman"
-      }
-    }
   },
   "example-text": {
     "label": "What is your favourite colour?"

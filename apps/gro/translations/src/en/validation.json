@@ -1,15 +1,12 @@
 {
-  "example-radio": {
-    "required": "Tell us which is your favourite superhero"
+  "about-radio": {
+    "required": "Tell us what you are contacting us about"
   },
-  "example-dob": {
-    "required": "Enter the superhero's date of birth",
-    "numeric": "Date must only contain numbers",
-    "future": "The date is in the future",
-    "format": "Enter the collection date in the correct format"
+  "type-radio": {
+    "required": "Tell us the type of certificate that was ordered"
   },
-  "example-text": {
-    "required": "Enter your favourite colour"
+  "person-text": {
+    "required": "Enter a full name"
   },
   "example-email": {
     "required": "Enter an email address",

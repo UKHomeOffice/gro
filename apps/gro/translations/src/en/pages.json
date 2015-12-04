@@ -1,22 +1,22 @@
 {
-  "first-page": {
-    "header": "This page shows you how to use simple question types",
+  "about": {
+    "header": "What would you like to contact us about?"
+  },
+  "type": {
+    "header": "What type of certificate did you order?"
+  },
+  "person": {
+    "header": "What is the name on the certificate you ordered?"
+  },
+  "how": {
+    "header": "This page demonstrates custom validation",
     "description": "The next pages will demonstrate more complex features"
-  },
-  "second-page": {
-    "header": "This page demonstrates a field that toggles depending on the value of another field"
-  },
-  "third-page": {
-    "header": "This page shows how to make a field mandatory depending on the answer to a previous question"
-  },
-  "fourth-page": {
-    "header": "This page demonstrates custom validation"
   },
   "confirm": {
     "table": {
       "headers": {
         "example-dob": "Superhero date of birth",
-        "example-radio": "Example radio button",
+        "about-radio": "Example radio button",
         "example-text": "Favourite colour",
         "example-email": "Email",
         "example-checkbox": "Example check box",
