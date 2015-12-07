@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  "how-radio": {
+  "which-radio": {
     validate: ['required'],
     className: ['block', 'form-group'],
     legend: {
@@ -10,13 +10,14 @@ module.exports = {
     },
     options: [{
       value: 'online',
-      label: 'fields.how-radio.options.online.label'
+      label: 'fields.which-radio.options.standard.label'
     }, {
       value: 'telephone',
-      label: 'fields.how-radio.options.telephone.label'
-    }, {
-      value: 'post',
-      label: 'fields.how-radio.options.post.label'
+      label: 'fields.which-radio.options.priority.label'
     }]
+  },
+  "order-number-text": {
+    validate: ['required'],
+    label: 'fields.order-number-text.label'
   }
 };

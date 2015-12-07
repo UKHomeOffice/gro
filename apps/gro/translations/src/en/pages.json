@@ -15,8 +15,14 @@
     "header": "Tell us the full names of the people on the certificate you requested"
   },
   "how": {
-    "header": "This page demonstrates custom validation",
+    "header": "How did you place your order?",
     "description": "The next pages will demonstrate more complex features"
+  },
+  "which": {
+    "header": "Which service did you pay for?"
+  },
+  "when": {
+    "header": "When did you place your order?"
   },
   "confirm": {
     "table": {

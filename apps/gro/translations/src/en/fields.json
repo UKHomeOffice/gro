@@ -49,18 +49,44 @@
   "person-two-text": {
     "label": "Party two (optional)"
   },
-  "example-dob": {
+  "how-radio": {
+    "options": {
+      "online": {
+        "label": "Online"
+      },
+      "telephone": {
+        "label": "Telephone"
+      },
+      "post": {
+        "label": "Post"
+      }
+    }
+  },
+  "which-radio": {
+    "options": {
+      "standard": {
+        "label": "Standard"
+      },
+      "priority": {
+        "label": "Priority"
+      }
+    }
+  },
+  "order-number-text": {
+    "label": "What is the order number?"
+  },
+  "when-date": {
     "label": "Date",
-    "legend": "Date on the letter",
+    "legend": "Date of order",
     "hint": "For example, 11  6  2015"
   },
-  "example-dob-day": {
+  "when-day": {
     "label": "Day"
   },
-  "example-dob-month": {
+  "when-month": {
     "label": "Month"
   },
-  "example-dob-year": {
+  "when-year": {
     "label": "Year"
   },
   "example-text": {
