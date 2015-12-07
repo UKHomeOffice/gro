@@ -43,6 +43,12 @@
   "person-text": {
     "label": "Full name"
   },
+  "person-one-text": {
+    "label": "Party one"
+  },
+  "person-two-text": {
+    "label": "Party two (optional)"
+  },
   "example-dob": {
     "label": "Date",
     "legend": "Date on the letter",

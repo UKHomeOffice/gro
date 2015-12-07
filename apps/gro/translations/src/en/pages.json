@@ -5,8 +5,14 @@
   "type": {
     "header": "What type of certificate did you order?"
   },
+  "details": {
+    "header": "Provide details of your complaint"
+  },
   "person": {
     "header": "What is the name on the certificate you ordered?"
+  },
+  "people": {
+    "header": "Tell us the full names of the people on the certificate you requested"
   },
   "how": {
     "header": "This page demonstrates custom validation",

@@ -23,11 +23,32 @@ module.exports = {
     backLink: 'about',
     next: '/person'
   },
+  '/details': {
+    controller: require('./controllers/details'),
+    template: 'details',
+    fields: [
+      'details-text',
+      'existing-radio',
+      'previous-radio'
+    ],
+    backLink: 'about',
+    next: '/type'
+  },
   "/person": {
-    controller: require('./controllers/type'),
+    controller: require('./controllers/person'),
     template: 'person',
     fields: [
       'person-text'
+    ],
+    backLink: 'type',
+    next: '/how'
+  },
+  "/people": {
+    controller: require('./controllers/people'),
+    template: 'people',
+    fields: [
+      'person-one-text',
+      'person-two-text'
     ],
     backLink: 'type',
     next: '/how'

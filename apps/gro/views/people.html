@@ -1,0 +1,35 @@
+{{<layout}}
+{{$step}}Step 3{{/step}}
+
+{{$journeyHeader}}
+{{#t}}journey.header{{/t}}
+{{/journeyHeader}}
+
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$header}}{{#t}}pages.people.header{{/t}}{{/header}}
+
+{{$content}}
+
+{{<partials-form}}
+
+{{$form}}
+
+{{#input-text}}person-one-text{{/input-text}}
+
+{{#input-text}}person-two-text{{/input-text}}
+
+{{#input-submit}}continue{{/input-submit}}
+{{/form}}
+
+{{/partials-form}}
+
+{{/content}}
+
+{{/layout}}
