@@ -76,6 +76,34 @@ module.exports = {
     backLink: 'which',
     next: '/name'
   },
+    '/name': {
+    controller: require('./controllers/name'),
+    template: 'name',
+    fields: ['name-text'],
+    backLink: 'when',
+    next: '/email'
+  },
+  '/email': {
+    controller: require('./controllers/email'),
+    template: 'email',
+    fields: ['email-text'],
+    backLink: 'name',
+    next: '/post'
+  },
+  '/post': {
+    controller: require('./controllers/post'),
+    template: 'post',
+    fields: [
+      'country-text',
+      'address-text-one',
+      'address-text-two',
+      'address-text-three',
+      'address-text-four',
+      'address-text-five',
+    ],
+    backLink: 'email',
+    next: '/confirm'
+  },
   '/confirm': {
     controller: require('./controllers/confirm'),
     template: 'confirm.html',

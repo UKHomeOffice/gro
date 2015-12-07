@@ -80,31 +80,25 @@
     "legend": "Date of order",
     "hint": "For example, 11  6  2015"
   },
-  "when-day": {
+  "when-date-day": {
     "label": "Day"
   },
-  "when-month": {
+  "when-date-month": {
     "label": "Month"
   },
-  "when-year": {
+  "when-date-year": {
     "label": "Year"
   },
-  "example-text": {
-    "label": "What is your favourite colour?"
+  "name-text": {
+    "label": "Full name"
   },
-  "example-email": {
-    "label": "What is your email address?"
+  "email-text": {
+    "label": "Email address"
   },
-  "example-checkbox": {
-    "label": "Please tick if you like cheese"
+  "country-text": {
+    "label": "Country"
   },
-  "example-toggled-text": {
-    "label": "You showed me!!"
-  },
-  "example-depends-on-text": {
-    "label": "What is the name of your pet dog?"
-  },
-  "multiples-input": {
-    "label": "What is your favourite multiple of 3?"
+  "address-text-one": {
+    "label": "Address"
   }
 }

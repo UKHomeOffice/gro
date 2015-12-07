@@ -24,19 +24,32 @@
   "when": {
     "header": "When did you place your order?"
   },
+  "name": {
+    "header": "What is your full name?"
+  },
+  "email": {
+    "header": "What is your email address?"
+  },
+  "post": {
+    "header": "What is your address?"
+  },
   "confirm": {
     "table": {
       "headers": {
-        "example-dob": "Superhero date of birth",
-        "about-radio": "Example radio button",
-        "example-text": "Favourite colour",
-        "example-email": "Email",
-        "example-checkbox": "Example check box",
-        "yes-no-radio-toggler": "Radio toggler",
-        "example-toggled-text": "Example toggled text",
-        "yes-no-radio": "Yes no radio",
-        "example-depends-on-text": "Example depends on text",
-        "multiples-input": "Favourite multiple"
+        "about-radio": "Reason for contact",
+        "type-radio": "Type of certificate",
+        "details-text": "Details",
+        "person-text": "Full name",
+        "person-one-text": "Full name",
+        "person-two-text": "Full name",
+        "how-radio": "",
+        "which-radio": "",
+        "order-number-text": "Order number",
+        "when-date": "Date of application",
+        "name-text": "Full name",
+        "email-text": "Email address",
+        "country-text": "Country",
+        "address-text-one": "Postal address"
       }
     }
   }

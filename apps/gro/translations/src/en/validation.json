@@ -23,14 +23,17 @@
   "when-date": {
     "required": "Tell us when you placed your order"
   },
-  "example-email": {
+  "name-text": {
+    "required": "Tell us your full name"
+  },
+  "email-text": {
     "required": "Enter an email address",
     "email": "The email address isn't valid, enter a valid email address"
   },
-  "example-depends-on-text": {
-    "required": "Input the name of your pet dog"
+  "country-text": {
+    "required": "Enter your country"
   },
-  "multiples-input": {
-    "multipleError": "That isn't a multiple of 3, try again!"
+  "address-text-one": {
+    "required": "Enter your address"
   }
 }

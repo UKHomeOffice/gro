@@ -9,5 +9,8 @@ module.exports = _.extend(
   require('./person'),
   require('./how'),
   require('./which'),
-  require('./when')
+  require('./when'),
+  require('./name'),
+  require('./email'),
+  require('./post')
 );
