@@ -8,6 +8,8 @@ require 'capybara/poltergeist'
 
 require 'yaml'
 
+CONTENT = YAML.load_file("#{File.dirname(__FILE__)}/content.yml")
+
 if ENV['IN_BROWSER']
   # On demand: non-headless tests via Selenium/WebDriver
   # To run the scenarios in browser (default: Firefox), use the following command line:

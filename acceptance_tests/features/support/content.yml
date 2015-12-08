@@ -1,0 +1,27 @@
+#Headers
+about: 'What would you like to contact us about?'
+type: 'What type of certificate did you order?'
+person: 'What is the name on the certificate you ordered?'
+people: 'Tell us the full names of the people on the certificate you requested'
+how: 'How did you place your order?'
+which: 'Which service did you pay for?'
+when: 'When did you place your order?'
+name: 'What is your full name?'
+email: 'What is your email address?'
+post: 'What is your address?'
+
+#Fields
+not_received: 'about-radio-not-received'
+complaint: 'about-radio-complaint'
+other: 'about-radio-other'
+birth: 'type-radio-birth'
+marriage: 'type-radio-marriage'
+online: 'how-radio-online'
+standard: 'which-radio-standard'
+
+#Content
+free_text: 'Something, something, something dark side'
+full_name: 'Jack Bauer'
+first_alt_name: 'Jason Bourne'
+second_alt_name: 'James Bond'
+email_address: 'james.bond@007.com'
