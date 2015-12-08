@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  "which-radio": {
+  'which-radio': {
     validate: ['required'],
     className: ['block', 'form-group'],
     legend: {
@@ -16,7 +16,7 @@ module.exports = {
       label: 'fields.which-radio.options.priority.label'
     }]
   },
-  "order-number-text": {
+  'order-number-text': {
     validate: ['required'],
     label: 'fields.order-number-text.label'
   }

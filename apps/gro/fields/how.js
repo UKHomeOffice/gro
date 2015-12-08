@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  "how-radio": {
+  'how-radio': {
     validate: ['required'],
     className: ['block', 'form-group'],
     legend: {

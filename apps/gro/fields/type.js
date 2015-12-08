@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    "type-radio": {
+  'type-radio': {
     validate: ['required'],
     className: ['block', 'form-group'],
     legend: {
