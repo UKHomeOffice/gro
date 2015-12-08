@@ -15,7 +15,7 @@ DetailsController.prototype.validateField = function validateField(keyToValidate
 };
 
 DetailsController.prototype.successHandler = function successHandler(req) {
-  if (req.form.values['existing-radio'] = "yes") {
+  if (req.form.values['existing-radio'] === "yes") {
     this.options.next = '/type';
   } else {
     this.options.next = '/name'
