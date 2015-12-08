@@ -9,10 +9,10 @@ module.exports = {
       value: ''
     },
     options: [{
-      value: 'online',
+      value: 'standard',
       label: 'fields.which-radio.options.standard.label'
     }, {
-      value: 'telephone',
+      value: 'priority',
       label: 'fields.which-radio.options.priority.label'
     }]
   },
