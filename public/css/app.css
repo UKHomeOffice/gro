@@ -1028,8 +1028,7 @@ body {
   padding-bottom: 90px; }
 
 .lte-ie8 .grid-row {
-  width: 990px;
-  margin: -15px; }
+  width: 990px; }
 
 .lte-ie8 .column-two-thirds {
   float: left;
