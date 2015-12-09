@@ -1,5 +1,7 @@
 'use strict';
 
+var _ = require('underscore');
+
 module.exports = {
   '/': {
     controller: require('../common/controllers/start'),
@@ -10,14 +12,26 @@ module.exports = {
     template: 'about',
     fields: ['about-radio'],
     backLink: 'start',
-    next: '/type'
+    next: '/type',
+    forks: [{
+      target: '/details',
+      condition: function (req) {
+        return _.contains(['complaint', 'other'], req.form.values['about-radio']);
+      }
+    }]
   },
   '/type': {
     controller: require('./controllers/type'),
     template: 'type',
     fields: ['type-radio'],
     backLink: 'about',
-    next: '/person'
+    next: '/person',
+    forks: [{
+      target: '/people',
+      condition: function (req) {
+        return _.contains(['marriage', 'partnership'], req.form.values['type-radio']);
+      }
+    }]
   },
   '/details': {
     controller: require('./controllers/details'),
@@ -28,7 +42,14 @@ module.exports = {
       'previous-radio'
     ],
     backLink: 'about',
-    next: '/type'
+    next: '/type',
+    forks: [{
+      target: '/name',
+      condition: {
+        field: 'existing-radio',
+        value: 'no'
+      }
+    }]
   },
   '/person': {
     controller: require('./controllers/person'),
@@ -76,7 +97,7 @@ module.exports = {
     backLink: 'which',
     next: '/name'
   },
-    '/name': {
+  '/name': {
     controller: require('./controllers/name'),
     template: 'name',
     fields: ['name-text'],
@@ -99,7 +120,7 @@ module.exports = {
       'address-text-two',
       'address-text-three',
       'address-text-four',
-      'address-text-five',
+      'address-text-five'
     ],
     backLink: 'email',
     next: '/confirm'

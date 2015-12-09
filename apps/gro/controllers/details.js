@@ -14,14 +14,4 @@ DetailsController.prototype.validateField = function validateField(keyToValidate
   return BaseController.prototype.validateField.call(this, keyToValidate, req);
 };
 
-DetailsController.prototype.successHandler = function successHandler(req) {
-  if (req.form.values['existing-radio'] === 'yes') {
-    this.options.next = '/type';
-  } else {
-    this.options.next = '/name';
-  }
-
-  BaseController.prototype.successHandler.apply(this, arguments);
-};
-
 module.exports = DetailsController;
