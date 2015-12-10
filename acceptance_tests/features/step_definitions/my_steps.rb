@@ -80,8 +80,8 @@ When(/^I select (.*) on the (.*) button$/) do | choice, button |
   find_by_id("#{button}-#{choice}").click
 end
 
-When(/^I fill in the names of the people on the certificate$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I click the back link$/) do
+  click_link("Back")
 end
 
 Then(/^I am presented with validation errors for the first page$/) do
