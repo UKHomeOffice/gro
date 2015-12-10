@@ -40,6 +40,12 @@
       }
     }
   },
+  "existing-radio": {
+    "legend": "Is your complaint about an existing order?"
+  },
+  "previous-radio": {
+    "legend": "Have you already complained about this issue?"
+  },
   "person-text": {
     "label": "Full name"
   },
@@ -94,6 +100,9 @@
   },
   "email-text": {
     "label": "Email address"
+  },
+  "email-hint": {
+    "label": "If you placed your order online, you should use the same email address"
   },
   "country-text": {
     "label": "Country"

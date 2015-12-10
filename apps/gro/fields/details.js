@@ -3,13 +3,13 @@
 module.exports = {
   'details-text': {
     validate: ['required'],
-    label: 'fields.details-text.label'
+    label: ' '
   },
   'existing-radio': {
     validate: ['required'],
     className: ['inline', 'form-group'],
     legend: {
-      value: 'Is your complaint about an order you have made?'
+      value: 'fields.existing-radio.legend'
     },
     options: [{
       value: 'yes',
@@ -23,7 +23,7 @@ module.exports = {
     validate: ['required'],
     className: ['inline', 'form-group'],
     legend: {
-      value: 'Have you previously complained about this?'
+      value: 'fields.previous-radio.legend'
     },
     options: [{
       value: 'yes',
