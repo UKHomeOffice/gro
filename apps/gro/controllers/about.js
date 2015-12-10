@@ -1,7 +1,6 @@
 'use strict';
 
 var util = require('util');
-var _ = require('underscore');
 var controllers = require('hof').controllers;
 var BaseController = controllers.base;
 
