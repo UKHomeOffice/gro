@@ -71,7 +71,12 @@ module.exports = {
   '/how': {
     controller: require('./controllers/how'),
     template: 'how',
-    fields: ['how-radio'],
+    fields: [
+      'how-radio',
+      'online-toggle-text',
+      'telephone-toggle-text',
+      'post-toggle-text'
+    ],
     backLink: 'person',
     next: '/which'
   },

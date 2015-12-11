@@ -7,9 +7,11 @@ Then(/^I can see the questions for the (.*) page of the form$/) do | header |
   expect(page).to have_content CONTENT[header]
 end
 
-When(/^I click on (.*)$/) do | field |
+When(/^I click on (.*)(?: and (.*))?$/) do | field, continue |
   find_by_id(CONTENT[field]).click
-  step "I click continue"
+  unless continue.nil?
+    step 'I click continue'
+  end
 end
 
 Then(/^I am taken to the (.*) page of the form$/) do | header |
@@ -17,55 +19,58 @@ Then(/^I am taken to the (.*) page of the form$/) do | header |
 end
 
 When(/^I fill in the name on the certificate$/) do
-  step "I enter #{CONTENT['full_name']} into the person-text field"
-  step "I click continue"
+  step 'I enter full_name into the person-text field'
+  step 'I click continue'
 end
 
 When(/^I enter both names on the certificate$/) do
-  step "I enter #{CONTENT['full_name']} into the person-one-text field"
-  step "I enter #{CONTENT['first_alt_name']} into the person-two-text field"
-  step "I click continue"
+  step 'I enter full_name into the person-one-text field'
+  step 'I enter first_alt_name into the person-two-text field'
+  step 'I click continue'
 end
 
 When(/^I enter my full name$/) do
   step "I enter #{CONTENT['full_name']} into the name-text field"
-  step "I click continue"
+  step 'I click continue'
 end
 
 When(/^I choose (.*) and enter my order number$/) do | field |
   find_by_id(CONTENT[field]).click
-  step "I enter 123456 into the order-number-text field"
-  step "I click continue"
+  step 'I enter 123456 into the order-number-text field'
+  step 'I click continue'
 end
 
 When(/^I enter a date$/) do
-  step "I enter 10 into the when-date-day field"
-  step "I enter 10 into the when-date-month field"
-  step "I enter 2015 into the when-date-year field"
-  step "I click continue"
+  step 'I enter 10 into the when-date-day field'
+  step 'I enter 10 into the when-date-month field'
+  step 'I enter 2015 into the when-date-year field'
+  step 'I click continue'
 end
 
 When(/^I choose (.*) for existing and (.*) for previous complaint$/) do | existing, previous |
-  step "I enter #{CONTENT['free_text']} into the details-text field"
+  step 'I enter free_text into the details-text field'
   step "I select #{existing} on the existing-radio button"
   step "I select #{previous} on the previous-radio button"
-  step "I click continue"
+  step 'I click continue'
 end
 
-When(/^I enter (.*) into the (.*) field$/) do | text, field |
-  fill_in field, :with => text
+When(/^I enter (.*) into the (.*) field(?: and (.*))?$/) do | text, field, continue |
+  fill_in field, :with => CONTENT[text]
+  if continue
+    step 'I click continue'
+  end
 end
 
 When(/^I enter my email address$/) do
-  step "I enter #{CONTENT['email_address']} into the email-text field"
-  step "I click continue"
+  step 'I enter email_address into the email-text field'
+  step 'I click continue'
 end
 
 When(/^I fill in my address$/) do
-  step "I enter Oz into the country-text field"
-  step "I enter Yellow_Brick_Road into the address-text-one field"
-  step "I enter Emerald_City into the address-text-two field"
-  step "I click continue"
+  step 'I enter Oz into the country-text field'
+  step 'I enter Yellow_Brick_Road into the address-text-one field'
+  step 'I enter Emerald_City into the address-text-two field'
+  step 'I click continue'
 end
 
 When(/^I click continue$/) do
@@ -81,7 +86,12 @@ When(/^I select (.*) on the (.*) button$/) do | choice, button |
 end
 
 When(/^I click the back link$/) do
-  click_link("Back")
+  click_link('Back')
+end
+
+Then(/^I should see the (.*) error?/) do | type |
+  expect(page).to have_content CONTENT['general_error']
+  expect(page).to have_content CONTENT["#{type}_error"]
 end
 
 Then(/^I am presented with validation errors for the first page$/) do
@@ -101,7 +111,7 @@ Then(/^the hidden field disappears again$/) do
 end
 
 When(/^I click Confirm submission$/) do
-  click_button("Confirm submission")
+  click_button('Confirm submission')
 end
 
 Then(/^I am taken to the third page of the form$/) do

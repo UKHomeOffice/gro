@@ -14,6 +14,15 @@
   "how-radio": {
     "required": "Tell us how you placed your order"
   },
+  "online-text": {
+    "required": "Tell us your COL number"
+  },
+  "telephone-text": {
+    "required": "Tell us your account number"
+  },
+  "post-text": {
+    "required": "Tell us your account number"
+  },
   "which-radio": {
     "required": "Tell us which service you paid for"
   },
