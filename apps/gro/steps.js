@@ -26,6 +26,7 @@ module.exports = {
     fields: ['type-radio'],
     backLink: 'about',
     next: '/person',
+    prereqs: ['/about', '/details'],
     forks: [{
       target: '/people',
       condition: function (req) {
@@ -78,7 +79,8 @@ module.exports = {
       'post-toggle-text'
     ],
     backLink: 'person',
-    next: '/which'
+    next: '/which',
+    prereqs: ['/person', '/people']
   },
   '/which': {
     controller: require('./controllers/which'),
@@ -107,7 +109,8 @@ module.exports = {
     template: 'name',
     fields: ['name-text'],
     backLink: 'when',
-    next: '/email'
+    next: '/email',
+    prereqs: ['/when', '/details']
   },
   '/email': {
     controller: require('./controllers/email'),

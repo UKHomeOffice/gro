@@ -18,8 +18,8 @@ birth: 'type-radio-birth'
 marriage: 'type-radio-marriage'
 online: 'how-radio-online'
 online_text: 'online-toggle-text'
-telephone: 'how-radio-telephone'
-post: 'how-radio-post'
+telephone_text: 'how-radio-telephone'
+post_text: 'how-radio-post'
 standard: 'which-radio-standard'
 
 #Content
