@@ -49,7 +49,7 @@ Feature: I am able to navigate through the GRO form correctly
     Then I am taken to the details page of the form
     When I choose yes for existing and yes for previous complaint
     Then I am taken to the type page of the form
-    When I click on marriage and continue
+    When I click marriage and then continue
     Then I am taken to the people page of the form
     When I enter both names on the certificate
     Then I am taken to the how page of the form
