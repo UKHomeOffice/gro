@@ -18,6 +18,7 @@ module.exports = {
   },
   'order-number-text': {
     validate: ['required'],
-    label: 'fields.order-number-text.label'
+    label: 'fields.order-number-text.label',
+    hint: 'fields.order-number-text.hint'
   }
 };

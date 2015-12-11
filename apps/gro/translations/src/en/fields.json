@@ -99,7 +99,8 @@
     }
   },
   "order-number-text": {
-    "label": "What is the order number?"
+    "label": "What is the order number?",
+    "hint": "Your order number would have been given to you when you ordered by telephone. Order numbers typically look like this 12345-1"
   },
   "when-date": {
     "label": "Date",
