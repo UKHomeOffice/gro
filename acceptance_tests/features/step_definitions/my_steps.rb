@@ -7,11 +7,13 @@ Then(/^I can see the questions for the (.*) page of the form$/) do | header |
   expect(page).to have_content CONTENT[header]
 end
 
-When(/^I click on (.*)(?: and (.*))?$/) do | field, continue |
+When(/^I click (.*) and then continue?$/) do | field |
+  step "I click on #{field}"
+  step 'I click continue'
+end
+
+When(/^I click on (.*)$/) do | field |
   find_by_id(CONTENT[field]).click
-  unless continue.nil?
-    step 'I click continue'
-  end
 end
 
 Then(/^I am taken to the (.*) page of the form$/) do | header |
@@ -30,7 +32,7 @@ When(/^I enter both names on the certificate$/) do
 end
 
 When(/^I enter my full name$/) do
-  step "I enter #{CONTENT['full_name']} into the name-text field"
+  step 'I enter full_name into the name-text field'
   step 'I click continue'
 end
 
@@ -54,11 +56,8 @@ When(/^I choose (.*) for existing and (.*) for previous complaint$/) do | existi
   step 'I click continue'
 end
 
-When(/^I enter (.*) into the (.*) field(?: and (.*))?$/) do | text, field, continue |
-  fill_in field, :with => CONTENT[text]
-  if continue
-    step 'I click continue'
-  end
+When(/^I enter (.*) into the (.*) field$/) do | text, field |
+  fill_in CONTENT[field], :with => CONTENT[text]
 end
 
 When(/^I enter my email address$/) do
