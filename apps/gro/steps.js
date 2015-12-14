@@ -97,9 +97,9 @@ module.exports = {
     template: 'when',
     fields: [
       'when-date',
-      'when-day',
-      'when-month',
-      'when-year'
+      'when-date-day',
+      'when-date-month',
+      'when-date-year'
     ],
     backLink: 'which',
     next: '/name'

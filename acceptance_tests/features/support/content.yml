@@ -13,6 +13,8 @@ post: 'What is your address?'
 #Fields
 not_received: 'about-radio-not-received'
 complaint: 'about-radio-complaint'
+existing_radio_yes: 'existing-radio-yes'
+existing_radio_no: 'existing-radio-no'
 other: 'about-radio-other'
 birth: 'type-radio-birth'
 marriage: 'type-radio-marriage'
@@ -42,6 +44,12 @@ acc_number: 'HMPO45678ERF0'
 full_name: 'Jack Bauer'
 first_alt_name: 'Jason Bourne'
 second_alt_name: 'James Bond'
+day: 10
+month: 10
+year: 2015
+invalid_day: "az"
+invalid_month: "az"
+invalid_year: "abcd"
 order_no: '123456789'
 email_address: 'james.bond@007.com'
 country: 'Oz'
@@ -53,8 +61,18 @@ post_code: 'OZ1'
 general_error: 'Please fix the following error'
 about_error: 'Tell us what you are contacting us about'
 type_error: 'Tell us the type of certificate that was ordered'
+details_error: 'Tell us about your complaint'
+existing_error: 'Tell us if there is an existing order'
+previous_error: 'Tell us you have already complained about this issue'
 person_error: 'Enter a full name'
 how_error: 'Tell us how you placed your order'
 online_error: 'Tell us your COL number'
 telephone_error: 'Tell us your account number'
 post_error: 'Tell us your account number'
+which_error: 'Tell us which service you paid for'
+order_error: 'Tell us your order number'
+name_error: 'Tell us your full name'
+date_error: 'Date must only contain numbers'
+email_error: 'Enter an email address'
+invalid_email_error: "The email address isn't valid, enter a valid email address"
+country_error: 'Enter your country'

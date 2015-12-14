@@ -43,9 +43,16 @@ When(/^I choose (.*) and enter my order number$/) do | field |
 end
 
 When(/^I enter a date$/) do
-  step 'I enter 10 into the when_day field'
-  step 'I enter 10 into the when_month field'
-  step 'I enter 2015 into the when_year field'
+  step 'I enter day into the when_day field'
+  step 'I enter month into the when_month field'
+  step 'I enter year into the when_year field'
+  step 'I click continue'
+end
+
+When(/^I enter an invalid date$/) do
+  step 'I enter invalid_day into the when_day field'
+  step 'I enter invalid_month into the when_month field'
+  step 'I enter invalid_year into the when_year field'
   step 'I click continue'
 end
 
@@ -57,6 +64,8 @@ When(/^I choose (.*) for existing and (.*) for previous complaint$/) do | existi
 end
 
 When(/^I enter (.*) into the (.*) field$/) do | text, field |
+  puts CONTENT[field]
+  puts CONTENT[text]
   fill_in CONTENT[field], :with => CONTENT[text]
 end
 
@@ -90,7 +99,7 @@ When(/^I click the back link$/) do
 end
 
 Then(/^I should see the (.*) error?/) do | type |
-  expect(page).to have_content CONTENT['general_error']
+  puts CONTENT["#{type}_error"]
   expect(page).to have_content CONTENT["#{type}_error"]
 end
 

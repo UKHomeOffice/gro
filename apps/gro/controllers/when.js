@@ -11,8 +11,4 @@ var WhenController = function WhenController() {
 
 util.inherits(WhenController, DateController);
 
-WhenController.prototype.validateField = function validateField(keyToValidate, req) {
-  return DateController.prototype.validateField.call(this, keyToValidate, req, false);
-};
-
 module.exports = WhenController;

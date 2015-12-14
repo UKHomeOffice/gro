@@ -5,6 +5,15 @@
   "type-radio": {
     "required": "Tell us the type of certificate that was ordered"
   },
+  "details-text": {
+    "required": "Tell us about your complaint"
+  },
+  "existing-radio": {
+    "required": "Tell us if there is an existing order"
+  },
+  "previous-radio": {
+    "required": "Tell us you have already complained about this issue"
+  },
   "person-text": {
     "required": "Enter a full name"
   },
@@ -30,7 +39,9 @@
     "required": "Tell us your order number"
   },
   "when-date": {
-    "required": "Tell us when you placed your order"
+    "required": "Tell us when you placed your order",
+    "numeric": "Date must only contain numbers",
+    "format": "Enter the date in the correct format"
   },
   "name-text": {
     "required": "Tell us your full name"

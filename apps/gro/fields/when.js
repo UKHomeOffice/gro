@@ -2,17 +2,19 @@
 
 module.exports = {
   'when-date': {
-    validate: ['required', 'numeric'],
     legend: 'fields.when-date.legend',
     hint: 'fields.when-date.hint'
   },
-  'when-day': {
+  'when-date-day': {
+    validate: ['required', 'numeric'],
     label: 'fields.when-date-day.label'
   },
-  'when-month': {
+  'when-date-month': {
+    validate: ['required', 'numeric'],
     label: 'fields.when-date-month.label'
   },
-  'when-year': {
+  'when-date-year': {
+    validate: ['required', 'numeric'],
     label: 'fields.when-date-year.label'
   }
 };
