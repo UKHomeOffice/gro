@@ -5,7 +5,7 @@ var controllers = require('hof').controllers;
 var DateController = controllers.date;
 
 var WhenController = function WhenController() {
-  this.dateKey = 'example-dob';
+  this.dateKey = 'when-date';
   DateController.apply(this, arguments);
 };
 

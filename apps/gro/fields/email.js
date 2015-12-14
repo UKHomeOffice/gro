@@ -2,7 +2,7 @@
 
 module.exports = {
   'email-text': {
-    validate: ['required'],
+    validate: ['required', 'email'],
     label: ' '
   }
 };

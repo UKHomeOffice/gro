@@ -14,13 +14,13 @@
   "how-radio": {
     "required": "Tell us how you placed your order"
   },
-  "online-text": {
+  "online-toggle-text": {
     "required": "Tell us your COL number"
   },
-  "telephone-text": {
+  "telephone-toggle-text": {
     "required": "Tell us your account number"
   },
-  "post-text": {
+  "post-toggle-text": {
     "required": "Tell us your account number"
   },
   "which-radio": {

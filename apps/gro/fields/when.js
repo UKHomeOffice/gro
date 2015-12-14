@@ -2,7 +2,7 @@
 
 module.exports = {
   'when-date': {
-    // validate: ['required', 'numeric'],
+    validate: ['required', 'numeric'],
     legend: 'fields.when-date.legend',
     hint: 'fields.when-date.hint'
   },
