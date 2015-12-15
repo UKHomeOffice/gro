@@ -10,6 +10,7 @@ when: 'When did you place your order?'
 name: 'What is your full name?'
 email: 'What is your email address?'
 post: 'What is your address?'
+confirm: 'Is the information you have given us correct?'
 
 #Fields
 not_received: 'about-radio-not-received'

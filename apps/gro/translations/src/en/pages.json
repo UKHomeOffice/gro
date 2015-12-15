@@ -37,6 +37,8 @@
     "header": "What is your address?"
   },
   "confirm": {
+    "header": "Is the information you have given us correct?",
+    "subheader": "If any information is incorrect, you can change it here.",
     "table": {
       "headers": {
         "about-radio": "Reason for contact",

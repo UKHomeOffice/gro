@@ -1,4 +1,4 @@
-@back_link
+@back_links
 Feature: The back link is correct as I move through the form
 
   @additional @people
@@ -150,7 +150,7 @@ Feature: The back link is correct as I move through the form
     When I enter my email address
     Then I am taken to the post page of the form
     When I fill in my address
-    Then I am taken to the summary page
+    Then I am taken to the confirm page of the form
     When I click the back link
     Then I am taken to the post page of the form
     When I click the back link

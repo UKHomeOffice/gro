@@ -27,7 +27,7 @@ Feature: I am able to navigate through the GRO form correctly
     When I enter my email address
     Then I am taken to the post page of the form
     When I fill in my address
-    Then I am taken to the summary page
+    Then I am taken to the confirm page of the form
 
   @complaint
   Scenario: Happy path, complaint, details, not about order, then name
@@ -42,7 +42,7 @@ Feature: I am able to navigate through the GRO form correctly
     When I enter my email address
     Then I am taken to the post page of the form
     When I fill in my address
-    Then I am taken to the summary page
+    Then I am taken to the confirm page of the form
 
   @other @marriage
   Scenario: Happy path, other, details, yes about order, type, people
@@ -69,4 +69,4 @@ Feature: I am able to navigate through the GRO form correctly
     When I enter my email address
     Then I am taken to the post page of the form
     When I fill in my address
-    Then I am taken to the summary page
+    Then I am taken to the confirm page of the form

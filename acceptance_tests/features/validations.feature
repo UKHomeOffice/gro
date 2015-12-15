@@ -1,4 +1,4 @@
-@validation
+@validations
 Feature: I see the correct error messages in the form
 
   @about @type @person @additional @how

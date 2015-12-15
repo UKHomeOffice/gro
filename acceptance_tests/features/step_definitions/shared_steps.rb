@@ -84,10 +84,6 @@ When(/^I click continue$/) do
   click_button("Continue")
 end
 
-Then(/^I am taken to the summary page$/) do
-  expect(page).to have_content 'This is an example of a confirmation page'
-end
-
 When(/^I select (.*) on the (.*) button$/) do | choice, button |
   find_by_id("#{button}-#{choice}").click
 end
