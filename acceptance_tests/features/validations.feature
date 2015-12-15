@@ -54,7 +54,7 @@ Feature: I see the correct error messages in the form
     When I click marriage and then continue
     Then I am taken to the people page of the form
     When I click continue
-    # Then I should see the person error
+    Then I should see the person error
 
   @which @standard @order_number
   Scenario: Which page validation
