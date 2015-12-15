@@ -57,7 +57,13 @@ module.exports = {
     template: 'person',
     fields: ['person-text'],
     backLink: 'type',
-    next: '/additional'
+    next: '/additional',
+    forks: [{
+      target: '/how',
+      condition: function (req) {
+        return _.contains(req.sessionModel.get('steps'), '/details');
+      }
+    }]
   },
   '/people': {
     controller: require('./controllers/people'),
@@ -67,7 +73,13 @@ module.exports = {
       'person-two'
     ],
     backLink: 'type',
-    next: '/additional'
+    next: '/additional',
+    forks: [{
+      target: '/how',
+      condition: function (req) {
+        return _.contains(req.sessionModel.get('steps'), '/details');
+      }
+    }]
   },
   '/additional': {
     controller: require('./controllers/additional'),
@@ -87,10 +99,11 @@ module.exports = {
       'how-radio',
       'online-toggle-text',
       'telephone-toggle-text',
-      'post-toggle-text'
+      'post-toggle-text',
     ],
-    backLink: 'person',
-    next: '/which'
+    backLink: 'additional',
+    next: '/which',
+    prereqs: ['/person', '/people', 'additional']
   },
   '/which': {
     controller: require('./controllers/which'),

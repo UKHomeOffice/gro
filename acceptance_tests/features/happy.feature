@@ -55,9 +55,6 @@ Feature: I am able to navigate through the GRO form correctly
     When I click marriage and then continue
     Then I am taken to the people page of the form
     When I enter both names on the certificate
-    Then I am taken to the additional page of the form
-    And I enter free_text into the additional_text field
-    When I click previous_yes and then continue
     Then I am taken to the how page of the form
     When I click on online
     And I enter col_number into the online_text field

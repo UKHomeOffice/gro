@@ -97,7 +97,6 @@ When(/^I click the back link$/) do
 end
 
 Then(/^I should see the (.*) error?/) do | type |
-  puts CONTENT["#{type}_error"]
   expect(page).to have_content CONTENT["#{type}_error"]
 end
 

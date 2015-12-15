@@ -45,7 +45,7 @@ Feature: I see the correct error messages in the form
     When I click continue
     Then I should see the previous error
 
-  @people @this
+  @people
   Scenario: People page validation
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
