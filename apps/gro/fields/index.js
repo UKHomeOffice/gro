@@ -7,6 +7,7 @@ module.exports = _.extend(
   require('./type'),
   require('./details'),
   require('./person'),
+  require('./additional'),
   require('./how'),
   require('./which'),
   require('./when'),

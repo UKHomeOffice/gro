@@ -64,8 +64,6 @@ When(/^I choose (.*) for existing and (.*) for previous complaint$/) do | existi
 end
 
 When(/^I enter (.*) into the (.*) field$/) do | text, field |
-  puts CONTENT[field]
-  puts CONTENT[text]
   fill_in CONTENT[field], :with => CONTENT[text]
 end
 

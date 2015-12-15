@@ -1,7 +1,7 @@
 @validation
 Feature: I see the correct error messages in the form
 
-  @about @type @person @how
+  @about @type @person @additional @how
   Scenario: About page radio button validation
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
@@ -16,6 +16,10 @@ Feature: I see the correct error messages in the form
     When I click continue
     Then I should see the person error
     When I fill in the name on the certificate
+    Then I am taken to the additional page of the form
+    When I click continue
+    Then I should see the additional error
+    When I click previous_yes and then continue
     Then I am taken to the how page of the form
     # When I click continue
     # Then I should see the how error
@@ -50,7 +54,7 @@ Feature: I see the correct error messages in the form
     When I click marriage and then continue
     Then I am taken to the people page of the form
     When I click continue
-    Then I should see the person error
+    # Then I should see the person error
 
   @which @standard @order_number
   Scenario: Which page validation
@@ -61,6 +65,8 @@ Feature: I see the correct error messages in the form
     When I click marriage and then continue
     Then I am taken to the people page of the form
     When I enter both names on the certificate
+    Then I am taken to the additional page of the form
+    When I click previous_yes and then continue
     Then I am taken to the how page of the form
     When I click on online
     And I enter col_number into the online_text field
@@ -80,6 +86,8 @@ Feature: I see the correct error messages in the form
     When I click birth and then continue
     Then I am taken to the person page of the form
     When I fill in the name on the certificate
+    Then I am taken to the additional page of the form
+    When I click previous_yes and then continue
     Then I am taken to the how page of the form
     When I click online and then continue
     Then I am taken to the which page of the form
@@ -97,6 +105,8 @@ Feature: I see the correct error messages in the form
     When I click birth and then continue
     Then I am taken to the person page of the form
     When I fill in the name on the certificate
+    Then I am taken to the additional page of the form
+    When I click previous_yes and then continue
     Then I am taken to the how page of the form
     When I click online and then continue
     Then I am taken to the which page of the form
@@ -114,6 +124,8 @@ Feature: I see the correct error messages in the form
     When I click birth and then continue
     Then I am taken to the person page of the form
     When I fill in the name on the certificate
+    Then I am taken to the additional page of the form
+    When I click previous_yes and then continue
     Then I am taken to the how page of the form
     When I click online and then continue
     Then I am taken to the which page of the form

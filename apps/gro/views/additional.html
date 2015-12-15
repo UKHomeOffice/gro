@@ -1,5 +1,5 @@
 {{<layout}}
-{{$step}}Step 3{{/step}}
+{{$step}}{{/step}}
 
 {{$journeyHeader}}
 {{#t}}journey.header{{/t}}
@@ -13,7 +13,7 @@
 {{> partials-navigation}}
 {{/propositionHeader}}
 
-{{$header}}{{#t}}pages.people.header{{/t}}{{/header}}
+{{$header}}{{#t}}pages.additional.header{{/t}}{{/header}}
 
 {{$content}}
 
@@ -21,9 +21,9 @@
 
 {{$form}}
 
-{{#input-text}}person-one{{/input-text}}
+{{#input-text}}additional-text{{/input-text}}
 
-{{#input-text}}person-two{{/input-text}}
+{{#radio-group}}additional-radio{{/radio-group}}
 
 {{#input-submit}}continue{{/input-submit}}
 {{/form}}

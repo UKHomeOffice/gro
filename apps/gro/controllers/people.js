@@ -10,8 +10,8 @@ var PeopleController = function PeopleController() {
 
 util.inherits(PeopleController, BaseController);
 
-// PeopleController.prototype.validateField = function validateField(keyToValidate, req) {
-//   return BaseController.prototype.validateField.call(this, keyToValidate, req);
-// };
+ PeopleController.prototype.validateField = function validateField(keyToValidate, req) {
+   return BaseController.prototype.validateField.call(this, keyToValidate, req);
+ };
 
 module.exports = PeopleController;

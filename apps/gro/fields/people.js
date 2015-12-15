@@ -1,11 +1,11 @@
 'use strict';
 
 module.exports = {
-  'person-one-text': {
+  'person-one': {
     validate: ['required'],
-    label: 'fields.person-one-text.label'
+    label: 'fields.person-one.label'
   },
-  'person-two-text': {
-    label: 'fields.person-two-text.label'
+  'person-two': {
+    label: 'fields.person-two.label'
   }
 };

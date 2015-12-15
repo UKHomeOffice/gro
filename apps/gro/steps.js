@@ -57,17 +57,28 @@ module.exports = {
     template: 'person',
     fields: ['person-text'],
     backLink: 'type',
-    next: '/how'
+    next: '/additional'
   },
   '/people': {
     controller: require('./controllers/people'),
     template: 'people',
     fields: [
-      'person-one-text',
-      'person-two-text'
+      'person-one',
+      'person-two'
     ],
     backLink: 'type',
-    next: '/how'
+    next: '/additional'
+  },
+  '/additional': {
+    controller: require('./controllers/additional'),
+    template: 'additional',
+    fields: [
+      'additional-text',
+      'additional-radio'
+    ],
+    backLink: 'person',
+    next: '/how',
+    prereqs: ['/person', '/people']
   },
   '/how': {
     controller: require('./controllers/how'),
@@ -79,8 +90,7 @@ module.exports = {
       'post-toggle-text'
     ],
     backLink: 'person',
-    next: '/which',
-    prereqs: ['/person', '/people']
+    next: '/which'
   },
   '/which': {
     controller: require('./controllers/which'),

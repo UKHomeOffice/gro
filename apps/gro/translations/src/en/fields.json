@@ -49,11 +49,14 @@
   "person-text": {
     "label": "Full name"
   },
-  "person-one-text": {
+  "person-one": {
     "label": "Party one"
   },
-  "person-two-text": {
+  "person-two": {
     "label": "Party two (optional)"
+  },
+  "additional-radio": {
+    "legend": "Have you previously been in contact about this enquiry?"
   },
   "how-radio": {
     "options": {

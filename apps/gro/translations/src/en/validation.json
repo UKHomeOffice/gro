@@ -17,8 +17,11 @@
   "person-text": {
     "required": "Enter a full name"
   },
-  "person-one-text": {
+  "person-one": {
     "required": "Enter a full name"
+  },
+  "additional-radio": {
+    "required": "Tell us if you have previously been in contact about this enquiry"
   },
   "how-radio": {
     "required": "Tell us how you placed your order"
