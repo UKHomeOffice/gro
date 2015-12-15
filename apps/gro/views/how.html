@@ -1,5 +1,5 @@
 {{<layout}}
-{{$step}}Step 3 of 3{{/step}}
+{{$step}}{{/step}}
 
 {{$journeyHeader}}
 {{#t}}journey.header{{/t}}
@@ -42,8 +42,9 @@
     </label>
 
     <div id="online-toggle-text-desc" class="js-hidden {{#errors.online-toggle-text}}validation-error{{/errors.online-toggle-text}}">
-
-      {{#input-text}}online-toggle-text{{/input-text}}
+      <div class="panel-indent">
+        {{#input-text}}online-toggle-text{{/input-text}}
+      </div>
 
       <p class="form-hint block-label">{{#t}}fields.online-hint.label{{/t}}</p>
     </div>
@@ -71,7 +72,9 @@
     </label>
 
     <div id="telephone-toggle-text-desc" class="js-hidden {{#errors.telephone-toggle-text}}validation-error{{/errors.telephone-toggle-text}}">
+        <div class="panel-indent">
           {{#input-text}}telephone-toggle-text{{/input-text}}
+        </div>
 
         <div class="form-hint block-label">
           <p>{{#t}}fields.telephone-hint.a{{/t}}</p>
@@ -102,8 +105,9 @@
     </label>
 
     <div id="post-toggle-text-desc" class="js-hidden {{#errors.post-toggle-text}}validation-error{{/errors.post-toggle-text}}">
-
-      {{#input-text}}post-toggle-text{{/input-text}}
+      <div class="panel-indent">
+        {{#input-text}}post-toggle-text{{/input-text}}
+      </div>
 
       <div class="form-hint block-label">
         <p>{{#t}}fields.post-hint.a{{/t}}</p>

@@ -15,10 +15,4 @@ TypeController.prototype.validateField = function validateField(keyToValidate, r
   return BaseController.prototype.validateField.call(this, keyToValidate, req);
 };
 
-TypeController.prototype.getValues = function getValues(req, res) {
-  res.locals.backLink = _.last(req.sessionModel.get('steps')).replace(/^\//, '');
-
-  BaseController.prototype.getValues.apply(this, arguments);
-};
-
 module.exports = TypeController;

@@ -16,9 +16,20 @@ AdditionalController.prototype.validateField = function validateField(keyToValid
 };
 
 AdditionalController.prototype.getValues = function getValues(req, res) {
-  res.locals.backLink = _.last(req.sessionModel.get('steps')).replace(/^\//, '');
+
+  // TO DO. Figure out why this is needed
+  res.locals.backLink = setBackLink(req, res.locals.backLink);
 
   BaseController.prototype.getValues.apply(this, arguments);
 };
+
+function setBackLink(req, backStep) {
+  _.each(req.sessionModel.get('steps'), function (step) {
+    if (step === '/person' || step === '/people') {
+      backStep = step.replace(/^\//, '');
+    }
+  });
+  return backStep;
+}
 
 module.exports = AdditionalController;

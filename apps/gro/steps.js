@@ -159,6 +159,7 @@ module.exports = {
   '/confirm': {
     controller: require('./controllers/confirm'),
     template: 'confirm.html',
+    backLink: 'post',
     next: '/confirmation'
   },
   '/confirmation': {
