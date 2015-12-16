@@ -9,7 +9,7 @@
     "header": "Provide details of your complaint"
   },
   "person": {
-    "header": "What is the name on the certificate you ordered?"
+    "header": "Whose name, including any initials, is on the certificate you received?"
   },
   "people": {
     "header": "Tell us the full names of the people on the certificate you requested"
@@ -41,20 +41,27 @@
     "subheader": "If any information is incorrect, you can change it here.",
     "table": {
       "headers": {
+        "enquiry-details": "Your enquiry details",
+        "order-details": "Your order details",
+        "contact-details": "Your personal and contact details",
         "about-radio": "Reason for contact",
         "type-radio": "Type of certificate",
-        "details-text": "Details",
-        "person-text": "Full name",
-        "person-one-text": "Full name",
-        "person-two-text": "Full name",
-        "how-radio": "",
-        "which-radio": "",
+        "details-text": "Further description",
+        "previous-radio": "Have you already enquired about this issue?",
+        "existing-radio": "About an existing order?",
+        "person-text": "Name on certificate",
+        "person-one": "Party one on certificate",
+        "person-two": "Party two on certificate",
+        "additional-text": "Further description",
+        "additional-radio": "Have you already enquired about this issue?",
+        "how-radio": "How was the order placed?",
+        "online-toggle-text": "COL Number",
+        "which-radio": "Service",
         "order-number-text": "Order number",
         "when-date": "Date of application",
         "name-text": "Full name",
         "email-text": "Email address",
-        "country-text": "Country",
-        "address-text-one": "Postal address"
+        "post-text": "Address"
       }
     }
   }

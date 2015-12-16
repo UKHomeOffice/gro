@@ -1388,7 +1388,8 @@ h1 {
   width: 100%; }
 
 .table-details {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 3em; }
   .table-details tbody td:nth-child(1) {
     width: 20%; }
   .table-details tbody td:nth-child(2) {

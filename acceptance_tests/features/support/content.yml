@@ -1,7 +1,7 @@
 #Headers
 about: 'What would you like to contact us about?'
 type: 'What type of certificate did you order?'
-person: 'What is the name on the certificate you ordered?'
+person: 'Whose name, including any initials, is on the certificate you received?'
 people: 'Tell us the full names of the people on the certificate you requested'
 additional: 'What else would you like to tell us about your enquiry?'
 how: 'How did you place your order?'
