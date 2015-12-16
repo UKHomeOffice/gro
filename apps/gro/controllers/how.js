@@ -13,7 +13,6 @@ util.inherits(HowController, BaseController);
 
 HowController.prototype.getValues = function getValues(req, res) {
 
-  // TO DO. Figure out why this is needed
   res.locals.backLink = setBackLink(req);
 
   BaseController.prototype.getValues.apply(this, arguments);

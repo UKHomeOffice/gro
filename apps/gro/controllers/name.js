@@ -11,8 +11,20 @@ var NameController = function NameController() {
 
 util.inherits(NameController, BaseController);
 
-NameController.prototype.validateField = function validateField(keyToValidate, req) {
-  return BaseController.prototype.validateField.call(this, keyToValidate, req);
+NameController.prototype.getValues = function getValues(req, res) {
+
+  res.locals.backLink = setBackLink(req, res.locals.backLink);
+
+  BaseController.prototype.getValues.apply(this, arguments);
 };
+
+function setBackLink(req, backStep) {
+  _.each(req.sessionModel.get('steps'), function (step) {
+    if (step === '/when' || step === '/details') {
+      backStep = step.replace(/^\//, '');
+    }
+  });
+  return backStep;
+}
 
 module.exports = NameController;

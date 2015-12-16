@@ -17,7 +17,6 @@ AdditionalController.prototype.validateField = function validateField(keyToValid
 
 AdditionalController.prototype.getValues = function getValues(req, res) {
 
-  // TO DO. Figure out why this is needed
   res.locals.backLink = setBackLink(req, res.locals.backLink);
 
   BaseController.prototype.getValues.apply(this, arguments);

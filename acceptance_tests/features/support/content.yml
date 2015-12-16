@@ -1,6 +1,7 @@
 #Headers
 about_header: 'What would you like to contact us about?'
 type_header: 'What type of certificate did you order?'
+details_header: 'Provide details of your complaint'
 person_header: 'Whose name, including any initials, is on the certificate you received?'
 people_header: 'Tell us the full names of the people on the certificate you requested'
 additional_header: 'What else would you like to tell us about your enquiry?'
@@ -64,8 +65,29 @@ address_one: 'Yellow Brick Road'
 address_two: 'Emerald City'
 post_code: 'OZ1'
 
-#Summary page table headers
-table_not_received: 'Reason for contact'
+# #Summary page table headers
+# table_not_received: 'Reason for contact'
+# "enquiry-details": "Your enquiry details",
+#         "order-details": "Your order details",
+#         "contact-details": "Your personal and contact details",
+#         "about-radio": "Reason for contact",
+#         "type-radio": "Type of certificate",
+#         "details-text": "Further description",
+#         "previous-radio": "Have you already enquired about this issue?",
+#         "existing-radio": "About an existing order?",
+#         "person-text": "Name on certificate",
+#         "person-one": "Party one on certificate",
+#         "person-two": "Party two on certificate",
+#         "additional-text": "Further description",
+#         "additional-radio": "Have you already enquired about this issue?",
+#         "how-radio": "How was the order placed?",
+#         "online-toggle-text": "COL Number",
+#         "which-radio": "Service",
+#         "order-number-text": "Order number",
+#         "when-date": "Date of application",
+#         "name-text": "Full name",
+#         "email-text": "Email address",
+#         "post-text": "Address"
 
 #Errors
 general_error: 'Please fix the following error'
