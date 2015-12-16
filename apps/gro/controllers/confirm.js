@@ -3,6 +3,7 @@
 var util = require('util');
 var controllers = require('hof').controllers;
 var BaseController = controllers.base;
+var _ = require('underscore');
 
 var ConfirmController = function ConfirmController() {
   BaseController.apply(this, arguments);

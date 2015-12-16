@@ -1,16 +1,16 @@
 #Headers
-about: 'What would you like to contact us about?'
-type: 'What type of certificate did you order?'
-person: 'Whose name, including any initials, is on the certificate you received?'
-people: 'Tell us the full names of the people on the certificate you requested'
-additional: 'What else would you like to tell us about your enquiry?'
-how: 'How did you place your order?'
-which: 'Which service did you pay for?'
-when: 'When did you place your order?'
-name: 'What is your full name?'
-email: 'What is your email address?'
-post: 'What is your address?'
-confirm: 'Is the information you have given us correct?'
+about_header: 'What would you like to contact us about?'
+type_header: 'What type of certificate did you order?'
+person_header: 'Whose name, including any initials, is on the certificate you received?'
+people_header: 'Tell us the full names of the people on the certificate you requested'
+additional_header: 'What else would you like to tell us about your enquiry?'
+how_header: 'How did you place your order?'
+which_header: 'Which service did you pay for?'
+when_header: 'When did you place your order?'
+name_header: 'What is your full name?'
+email_header: 'What is your email address?'
+post_header: 'What is your address?'
+confirm_header: 'Is the information you have given us correct?'
 
 #Fields
 not_received: 'about-radio-not-received'
@@ -22,8 +22,10 @@ birth: 'type-radio-birth'
 marriage: 'type-radio-marriage'
 online: 'how-radio-online'
 online_text: 'online-toggle-text'
-telephone_text: 'how-radio-telephone'
-post_text: 'how-radio-post'
+telephone: 'how-radio-telephone'
+telephone_toggle_text: 'telephone-toggle-text'
+post: 'how-radio-post'
+post_toggle_text: 'post-toggle-text'
 order_number: 'order-number-text'
 standard: 'which-radio-standard'
 when_day: 'when-date-day'
@@ -52,15 +54,18 @@ second_alt_name: 'James Bond'
 day: 10
 month: 10
 year: 2015
-invalid_day: "az"
-invalid_month: "az"
-invalid_year: "abcd"
+invalid_day: 'az'
+invalid_month: 'az'
+invalid_year: 'abcd'
 order_no: '123456789'
 email_address: 'james.bond@007.com'
 country: 'Oz'
 address_one: 'Yellow Brick Road'
 address_two: 'Emerald City'
 post_code: 'OZ1'
+
+#Summary page table headers
+table_not_received: 'Reason for contact'
 
 #Errors
 general_error: 'Please fix the following error'

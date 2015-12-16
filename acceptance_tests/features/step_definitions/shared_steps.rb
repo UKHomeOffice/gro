@@ -17,7 +17,7 @@ When(/^I click on (.*)$/) do | field |
 end
 
 Then(/^I am taken to the (.*) page of the form$/) do | header |
-  expect(page).to have_content CONTENT[header]
+  expect(page).to have_content CONTENT["#{header}_header"]
 end
 
 When(/^I fill in the name on the certificate$/) do
@@ -92,8 +92,12 @@ When(/^I click the back link$/) do
   click_link('Back')
 end
 
-Then(/^I should see the (.*) error?/) do | type |
+Then(/^I should see the (.*) error$/) do | type |
   expect(page).to have_content CONTENT["#{type}_error"]
+end
+
+Then(/^I should see the headers and my information in the summary:$/) do | table |
+  summary = table.rows_hash
 end
 
 Then(/^the hidden field disappears again$/) do

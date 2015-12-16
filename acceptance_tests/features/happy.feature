@@ -28,6 +28,13 @@ Feature: I am able to navigate through the GRO form correctly
     Then I am taken to the post page of the form
     When I fill in my address
     Then I am taken to the confirm page of the form
+    Then I should see the headers and my information in the summary:
+      |  not_received  |  not_received  |
+      |  birth         |  birth         |
+      |  name          |  name          |
+      |  free_text     |  free_text     |
+      |  previous_yes  |  yes           |
+
 
   @complaint
   Scenario: Happy path, complaint, details, not about order, then name

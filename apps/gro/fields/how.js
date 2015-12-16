@@ -2,7 +2,7 @@
 
 module.exports = {
   'how-radio': {
-    // validate: ['required'],
+    validate: ['required'],
     className: ['block', 'form-group'],
     legend: {
       className: 'visuallyhidden',
@@ -23,6 +23,7 @@ module.exports = {
     }]
   },
   'online-toggle-text': {
+    validate: ['required'],
     legend: 'fields.online-toggle-text.legend',
     dependent: {
       field: 'how-radio',
@@ -30,6 +31,7 @@ module.exports = {
     }
   },
   'telephone-toggle-text': {
+    validate: ['required'],
     legend: 'fields.telephone-toggle-text.legend',
     dependent: {
       field: 'how-radio',
@@ -37,6 +39,7 @@ module.exports = {
     }
   },
   'post-toggle-text': {
+    validate: ['required'],
     legend: 'fields.post-toggle-text-legend',
     dependent: {
       field: 'how-radio',

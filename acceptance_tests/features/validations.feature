@@ -21,14 +21,14 @@ Feature: I see the correct error messages in the form
     Then I should see the additional error
     When I click previous_yes and then continue
     Then I am taken to the how page of the form
-    # When I click continue
-    # Then I should see the how error
-    # When I click online then continue
-    # Then I should see the online error
-    # When I click telephone then continue
-    # Then I should see the telephone error
-    # When I click post then continue
-    # Then I should see the post error
+    When I click continue
+    Then I should see the how error
+    When I click online and then continue
+    Then I should see the online error
+    When I click telephone and then continue
+    Then I should see the telephone error
+    When I click post and then continue
+    Then I should see the post error
 
   @details
   Scenario: Details page validation
@@ -89,7 +89,9 @@ Feature: I see the correct error messages in the form
     Then I am taken to the additional page of the form
     When I click previous_yes and then continue
     Then I am taken to the how page of the form
-    When I click online and then continue
+    When I click on online
+    And I enter col_number into the online_text field
+    When I click continue
     Then I am taken to the which page of the form
     When I choose standard and enter my order number
     Then I am taken to the when page of the form
@@ -108,7 +110,9 @@ Feature: I see the correct error messages in the form
     Then I am taken to the additional page of the form
     When I click previous_yes and then continue
     Then I am taken to the how page of the form
-    When I click online and then continue
+    When I click on online
+    And I enter col_number into the online_text field
+    When I click continue
     Then I am taken to the which page of the form
     When I choose standard and enter my order number
     Then I am taken to the when page of the form
@@ -127,7 +131,9 @@ Feature: I see the correct error messages in the form
     Then I am taken to the additional page of the form
     When I click previous_yes and then continue
     Then I am taken to the how page of the form
-    When I click online and then continue
+    When I click on online
+    And I enter col_number into the online_text field
+    When I click continue
     Then I am taken to the which page of the form
     When I choose standard and enter my order number
     Then I am taken to the when page of the form

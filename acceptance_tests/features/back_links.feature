@@ -84,7 +84,9 @@ Feature: The back link is correct as I move through the form
     Then I am taken to the additional page of the form
     When I click previous_yes and then continue
     Then I am taken to the how page of the form
-    When I click online and then continue
+    When I click on online
+    And I enter col_number into the online_text field
+    When I click continue
     Then I am taken to the which page of the form
     When I choose standard and enter my order number
     Then I am taken to the when page of the form
