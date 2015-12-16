@@ -65,29 +65,29 @@ address_one: 'Yellow Brick Road'
 address_two: 'Emerald City'
 post_code: 'OZ1'
 
-# #Summary page table headers
-# table_not_received: 'Reason for contact'
-# "enquiry-details": "Your enquiry details",
-#         "order-details": "Your order details",
-#         "contact-details": "Your personal and contact details",
-#         "about-radio": "Reason for contact",
-#         "type-radio": "Type of certificate",
-#         "details-text": "Further description",
-#         "previous-radio": "Have you already enquired about this issue?",
-#         "existing-radio": "About an existing order?",
-#         "person-text": "Name on certificate",
-#         "person-one": "Party one on certificate",
-#         "person-two": "Party two on certificate",
-#         "additional-text": "Further description",
-#         "additional-radio": "Have you already enquired about this issue?",
-#         "how-radio": "How was the order placed?",
-#         "online-toggle-text": "COL Number",
-#         "which-radio": "Service",
-#         "order-number-text": "Order number",
-#         "when-date": "Date of application",
-#         "name-text": "Full name",
-#         "email-text": "Email address",
-#         "post-text": "Address"
+#Summary page table headers
+table_not_received: 'Reason for contact'
+table_enquiry_details: "Your enquiry details"
+table_order_details: "Your order details"
+table_contact_details": "Your personal and contact details"
+table_about_radio: "Reason for contact"
+table_type_radio: "Type of certificate"
+table_details_text: "Further description"
+table_previous_radio: "Have you already enquired about this issue?"
+table_existing_radio: "About an existing order?"
+table_person_text: "Name on certificate"
+table_person_one: "Party one on certificate"
+table_person_two: "Party two on certificate"
+table_additional_text: "Further description"
+table_additional_radio: "Have you already enquired about this issue?"
+table_how_radio: "How was the order placed?"
+table_online_toggle_text: "COL Number"
+table_which_radio: "Service"
+table_order_number_text: "Order number"
+table_when_date: "Date of application"
+table_name_text: "Full name"
+table_email_text: "Email address"
+table_post_text: "Address"
 
 #Errors
 general_error: 'Please fix the following error'
