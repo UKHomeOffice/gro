@@ -98,9 +98,21 @@ end
 
 Then(/^I should see the headers and my information in the summary:$/) do | table |
   table.rows_hash.each do | header, information |
-      expect(page).to have_content CONTENT[header]
-      expect(page).to have_content CONTENT[information]
+    expect(page).to have_content CONTENT[header]
+    expect(page).to have_content CONTENT[information]
   end
+end
+
+When(/^I click change (.*) from the (.*) page$/) do | change, step |
+  find(:xpath, "//a[@href='#{step}/edit##{CONTENT[change]}']").click
+end
+
+Then(/^I should see (.*) on the page$/) do | field |
+  expect(page).to have_content CONTENT[field]
+end
+
+When(/^I change (.*) to (.*)$/) do | field, text |
+  step "I enter #{text} into the #{field} field"
 end
 
 Then(/^the hidden field disappears again$/) do
