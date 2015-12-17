@@ -4,7 +4,7 @@ end
 
 Then(/^I can see the questions for the (.*) page of the form$/) do | header |
   expect(page).to have_content 'Step 1'
-  expect(page).to have_content CONTENT[header]
+  expect(page).to have_content CONTENT["#{header}_header"]
 end
 
 When(/^I click (.*) and then continue?$/) do | field |

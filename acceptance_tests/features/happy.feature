@@ -40,6 +40,8 @@ Feature: I am able to navigate through the GRO form correctly
       |  table_name                 |  full_name             |
       |  table_email                |  email_address         |
       |  table_post                 |  address_summary       |
+    When I click Confirm submission
+    Then I am taken to the confirmation page
 
   @complaint
   Scenario: Happy path, complaint, details, not about order, then name
@@ -63,6 +65,8 @@ Feature: I am able to navigate through the GRO form correctly
       |  table_name                 |  full_name          |
       |  table_email                |  email_address      |
       |  table_post                 |  address_summary    |
+    When I click Confirm submission
+    Then I am taken to the confirmation page
 
   @other @type @marriage
   Scenario: Happy path, other, details, yes about order, type, people
@@ -106,3 +110,5 @@ Feature: I am able to navigate through the GRO form correctly
       |  table_name                 |  full_name         |
       |  table_email                |  email_address     |
       |  table_post                 |  address_summary   |
+    When I click Confirm submission
+    Then I am taken to the confirmation page

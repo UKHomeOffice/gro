@@ -1,7 +1,7 @@
 @change_answers
 Feature: I am able to change my answers and correctly navigate through the form
 
-  @about @this
+  @about
   Scenario: Change details text but not the path through the form
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
@@ -42,11 +42,13 @@ Feature: I am able to change my answers and correctly navigate through the form
     Then I am taken to the when page of the form
     When I enter a date
     Then I am taken to the name page of the form
-    When I enter my full name
+    Then I should see full_name on the page
+    When I click continue
     Then I am taken to the email page of the form
-    When I enter my email address
-    Then I am taken to the post page of the form
-    When I fill in my address
+    Then I should see email_address on the page
+    When I click continue
+    Then I should see address_summary on the page
+    When I click continue
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
       |  table_not_received         |  not_received_summary  |
