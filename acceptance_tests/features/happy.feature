@@ -38,6 +38,7 @@ Feature: I am able to navigate through the GRO form correctly
       |  table_order_number         |  order_no              |
       |  table_when                 |  date_summary          |
       |  table_name                 |  full_name             |
+      |  table_email                |  email_address         |
       |  table_post                 |  address_summary       |
 
   @complaint
@@ -60,6 +61,7 @@ Feature: I am able to navigate through the GRO form correctly
       |  table_existing             |  no_summary         |
       |  table_previous             |  no_summary         |
       |  table_name                 |  full_name          |
+      |  table_email                |  email_address      |
       |  table_post                 |  address_summary    |
 
   @other @type @marriage
@@ -102,4 +104,5 @@ Feature: I am able to navigate through the GRO form correctly
       |  table_order_number         |  order_no          |
       |  table_when                 |  date_summary      |
       |  table_name                 |  full_name         |
+      |  table_email                |  email_address     |
       |  table_post                 |  address_summary   |
