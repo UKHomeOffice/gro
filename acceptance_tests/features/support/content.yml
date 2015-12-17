@@ -44,6 +44,7 @@ email_text: 'email-text'
 country_text: 'country-text'
 address_text_one: 'address-text-one'
 address_text_two: 'address-text-two'
+address_text_three: 'address-text-three'
 
 #Content
 free_text: 'Something, something, something dark side'
@@ -64,30 +65,41 @@ country: 'Oz'
 address_one: 'Yellow Brick Road'
 address_two: 'Emerald City'
 post_code: 'OZ1'
+yes_summary: 'yes'
+no_summary: 'no'
+not_received_summary: 'not-received'
+complaint_summary: 'complaint'
+other_summary: 'other'
+birth_summary: 'birth'
+marriage_summary: 'marriage'
+standard_summary: 'standard'
+online_summary: 'online'
+date_summary: '10-10-2015'
+address_summary: 'Oz Yellow Brick Road Emerald City OZ1'
 
 #Summary page table headers
 table_not_received: 'Reason for contact'
 table_enquiry_details: "Your enquiry details"
 table_order_details: "Your order details"
 table_contact_details": "Your personal and contact details"
-table_about_radio: "Reason for contact"
-table_type_radio: "Type of certificate"
-table_details_text: "Further description"
-table_previous_radio: "Have you already enquired about this issue?"
-table_existing_radio: "About an existing order?"
+table_about: "Reason for contact"
+table_type: "Type of certificate"
+table_details: "Further description"
+table_previous: "Have you already enquired about this issue?"
+table_existing: "About an existing order?"
 table_person_text: "Name on certificate"
 table_person_one: "Party one on certificate"
 table_person_two: "Party two on certificate"
 table_additional_text: "Further description"
 table_additional_radio: "Have you already enquired about this issue?"
-table_how_radio: "How was the order placed?"
+table_how: "How was the order placed?"
 table_online_toggle_text: "COL Number"
-table_which_radio: "Service"
-table_order_number_text: "Order number"
-table_when_date: "Date of application"
-table_name_text: "Full name"
-table_email_text: "Email address"
-table_post_text: "Address"
+table_which: "Service"
+table_order_number: "Order number"
+table_when: "Date of application"
+table_name: "Full name"
+table_email: "Email address"
+table_post: "Address"
 
 #Errors
 general_error: 'Please fix the following error'

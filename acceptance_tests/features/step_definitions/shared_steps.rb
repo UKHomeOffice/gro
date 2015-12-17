@@ -76,7 +76,7 @@ When(/^I fill in my address$/) do
   step 'I enter country into the country_text field'
   step 'I enter address_one into the address_text_one field'
   step 'I enter address_two into the address_text_two field'
-  step 'I enter post_code into the address_text_two field'
+  step 'I enter post_code into the address_text_three field'
   step 'I click continue'
 end
 
@@ -97,7 +97,10 @@ Then(/^I should see the (.*) error$/) do | type |
 end
 
 Then(/^I should see the headers and my information in the summary:$/) do | table |
-  summary = table.rows_hash
+  table.rows_hash.each do | header, information |
+      expect(page).to have_content CONTENT[header]
+      expect(page).to have_content CONTENT[information]
+  end
 end
 
 Then(/^the hidden field disappears again$/) do

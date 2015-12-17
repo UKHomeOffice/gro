@@ -106,7 +106,7 @@ Feature: The back link is correct as I move through the form
     When I click the back link
     Then I am taken to the details page of the form
 
-  @type @details @this
+  @type @details
   Scenario: Back link on the type page is details
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
