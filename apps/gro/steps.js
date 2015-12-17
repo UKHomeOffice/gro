@@ -82,13 +82,11 @@ module.exports = {
     }]
   },
   '/additional': {
-    controller: require('./controllers/additional'),
     template: 'additional',
     fields: [
       'additional-text',
       'additional-radio'
     ],
-    backLink: 'person',
     next: '/how',
     prereqs: ['/person', '/people']
   },
