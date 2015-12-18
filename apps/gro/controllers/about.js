@@ -3,7 +3,7 @@
 var util = require('util');
 var controllers = require('hof').controllers;
 var BaseController = controllers.base;
-var _ = require('underscore');
+var _ = require('lodash');
 
 var AboutController = function AboutController() {
   BaseController.apply(this, arguments);
@@ -15,13 +15,30 @@ AboutController.prototype.validateField = function validateField(keyToValidate, 
   return BaseController.prototype.validateField.call(this, keyToValidate, req, false);
 };
 
-AboutController.prototype.getNextStep = function getNextStep(req) {
+AboutController.prototype.getNextStep = function getNextStep(req, res) {
   var next = BaseController.prototype.getNextStep.apply(this, arguments);
 
-  if (_.contains(['complaint', 'other'], req.form.values['about-radio'])) {
-    next = req.baseUrl + '/details';
-  } else {
-    next = req.baseUrl + '/type';
+  var forks = (this.options || {}).forks || [];
+
+  _.each(forks, function eachFork(fork) {
+    if (_.isFunction(fork.condition)) {
+      if (fork.condition(req, res)) {
+        next = req.baseUrl + fork.target;
+      }
+    }
+    if (_.isPlainObject(fork.condition)) {
+      if (fork.condition.value === req.form.values[fork.condition.field]) {
+        next = req.baseUrl + fork.target;
+      }
+    }
+  });
+
+  if (req.params.action === 'edit' && !this.options.continueOnEdit) {
+    if (!_.contains(req.sessionModel.get('steps'), next)) {
+      next = req.baseUrl === '/' ? this.confirmStep : req.baseUrl + this.confirmStep;
+    }
+  } else if (req.params.action === 'edit') {
+    next += '/edit';
   }
 
   return next;
