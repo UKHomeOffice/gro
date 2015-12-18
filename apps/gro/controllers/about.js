@@ -46,13 +46,39 @@ AboutController.prototype.getNextStep = function getNextStep(req, res) {
 
 AboutController.prototype.saveValues = function saveValues(req) {
   if (req.params.action === 'edit' && req.sessionModel.get('about-radio') !== req.form.values['about-radio']) {
-    var unsetFields = ['details-text', 'existing-radio', 'previous-radio'];
+    var unsetFields = [];
+
+    console.log(req.sessionModel);
+
+    if (_.contains(req.sessionModel.get('steps'), '/details')) {
+      unsetFields = ['details-text', 'existing-radio', 'previous-radio'];
+    } else {
+      unsetFields = [
+        'type-radio',
+        'person-text',
+        'person-one',
+        'person-two',
+        'additional-radio',
+        'how-radio',
+        'online-toggle-text',
+        'telephone-toggle-text',
+        'post-toggle-text',
+        'which-radio',
+        'order-number-text',
+        'when-date',
+        'when-date-day',
+        'when-date-month',
+        'when-date-year',
+        'when-date-summary'
+      ];
+    }
 
     req.sessionModel.set('steps', ['/', '/about']);
 
     _.each(unsetFields, function (field) {
       req.sessionModel.unset(field);
     });
+    console.log(req.sessionModel);
   }
 
   BaseController.prototype.saveValues.apply(this, arguments);
