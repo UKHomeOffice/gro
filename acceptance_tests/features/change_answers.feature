@@ -42,12 +42,10 @@ Feature: I am able to change my answers and correctly navigate through the form
     Then I am taken to the when page of the form
     When I enter a date
     Then I am taken to the name page of the form
-    Then I should see full_name on the page
     When I click continue
     Then I am taken to the email page of the form
-    Then I should see email_address on the page
     When I click continue
-    Then I should see address_summary on the page
+    Then I am taken to the post page of the form
     When I click continue
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
@@ -138,12 +136,10 @@ Feature: I am able to change my answers and correctly navigate through the form
     Then I am taken to the when page of the form
     When I enter a date
     Then I am taken to the name page of the form
-    Then I should see full_name on the page
     When I click continue
     Then I am taken to the email page of the form
-    Then I should see email_address on the page
     When I click continue
-    Then I should see address_summary on the page
+    Then I am taken to the post page of the form
     When I click continue
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
