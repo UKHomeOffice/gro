@@ -56,6 +56,8 @@
         "additional-radio": "Have you already enquired about this issue?",
         "how-radio": "How was the order placed?",
         "online-toggle-text": "COL Number",
+        "telephone-toggle-text": "Account Number",
+        "post-toggle-text": "Account Number",
         "which-radio": "Service",
         "order-number-text": "Order number",
         "when-date": "Date of application",
