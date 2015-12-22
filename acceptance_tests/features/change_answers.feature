@@ -159,7 +159,7 @@ Feature: I am able to change my answers and correctly navigate through the form
       |  table_email                |  email_address      |
       |  table_post                 |  address_summary    |
 
-  @about @type
+  @about @type @debug
   Scenario: Change
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
