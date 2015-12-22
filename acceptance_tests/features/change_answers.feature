@@ -61,7 +61,7 @@ Feature: I am able to change my answers and correctly navigate through the form
       |  table_email                |  email_address         |
       |  table_post                 |  address_summary       |
 
-  @type
+  @type @debug
   Scenario: Change details text but not the path through the form
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
@@ -86,6 +86,12 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I click change details_text from the details page
     Then I am taken to the details page of the form
     When I change details_text to alt_text
+    When I click continue
+    Then I am taken to the name page of the form
+    When I click continue
+    Then I am taken to the email page of the form
+    When I click continue
+    Then I am taken to the post page of the form
     When I click continue
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
@@ -127,6 +133,9 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I click marriage and then continue
     Then I am taken to the people page of the form
     When I enter both names on the certificate
+    Then I am taken to the additional page of the form
+    And I enter free_text into the additional_text field
+    When I click previous_no and then continue
     Then I am taken to the how page of the form
     When I click on online
     And I enter col_number into the online_text field
@@ -159,7 +168,7 @@ Feature: I am able to change my answers and correctly navigate through the form
       |  table_email                |  email_address      |
       |  table_post                 |  address_summary    |
 
-  @about @type @debug
+  @about @type
   Scenario: Change
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
