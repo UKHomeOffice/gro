@@ -48,8 +48,6 @@ AboutController.prototype.saveValues = function saveValues(req) {
   if (req.params.action === 'edit' && req.sessionModel.get('about-radio') !== req.form.values['about-radio']) {
     var unsetFields = [];
 
-    console.log(req.sessionModel);
-
     if (_.contains(req.sessionModel.get('steps'), '/details')) {
       unsetFields = ['details-text', 'existing-radio', 'previous-radio'];
     } else {
@@ -75,10 +73,9 @@ AboutController.prototype.saveValues = function saveValues(req) {
 
     req.sessionModel.set('steps', ['/', '/about']);
 
-    _.each(unsetFields, function (field) {
+    _.each(unsetFields, function unsetField(field) {
       req.sessionModel.unset(field);
     });
-    console.log(req.sessionModel);
   }
 
   BaseController.prototype.saveValues.apply(this, arguments);

@@ -15,7 +15,7 @@ module.exports = {
     next: '/type',
     forks: [{
       target: '/details',
-      condition: function (req) {
+      condition: function checkComplaintOther(req) {
         return _.contains(['complaint', 'other'], req.form.values['about-radio']);
       }
     }]
@@ -29,7 +29,7 @@ module.exports = {
     prereqs: ['/about', '/details'],
     forks: [{
       target: '/people',
-      condition: function (req) {
+      condition: function checkMarriagePartnership(req) {
         return _.contains(['marriage', 'partnership'], req.form.values['type-radio']);
       }
     }]
@@ -60,7 +60,7 @@ module.exports = {
     next: '/additional',
     forks: [{
       target: '/how',
-      condition: function (req) {
+      condition: function checkSteps(req) {
         return _.contains(req.sessionModel.get('steps'), '/details');
       }
     }]
@@ -76,7 +76,7 @@ module.exports = {
     next: '/additional',
     forks: [{
       target: '/how',
-      condition: function (req) {
+      condition: function checkSteps(req) {
         return _.contains(req.sessionModel.get('steps'), '/details');
       }
     }]
