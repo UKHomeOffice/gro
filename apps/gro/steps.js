@@ -8,11 +8,11 @@ module.exports = {
     next: '/about'
   },
   '/about': {
-    controller: require('./controllers/about'),
     template: 'about',
     fields: ['about-radio'],
     backLink: 'start',
     next: '/type',
+    continueOnEdit: true,
     forks: [{
       target: '/details',
       condition: function checkComplaintOther(req) {
@@ -27,6 +27,7 @@ module.exports = {
     backLink: 'about',
     next: '/person',
     prereqs: ['/about', '/details'],
+    continueOnEdit: true,
     forks: [{
       target: '/people',
       condition: function checkMarriagePartnership(req) {
@@ -35,7 +36,6 @@ module.exports = {
     }]
   },
   '/details': {
-    controller: require('./controllers/details'),
     template: 'details',
     fields: [
       'details-text',
@@ -44,6 +44,7 @@ module.exports = {
     ],
     backLink: 'about',
     next: '/type',
+    continueOnEdit: true,
     forks: [{
       target: '/name',
       condition: {
@@ -53,20 +54,19 @@ module.exports = {
     }]
   },
   '/person': {
-    controller: require('./controllers/person'),
     template: 'person',
     fields: ['person-text'],
     backLink: 'type',
     next: '/additional',
+    continueOnEdit: true,
     forks: [{
       target: '/how',
       condition: function checkSteps(req) {
-        return _.contains(req.sessionModel.get('steps'), '/details');
+        return _.contains(req.sessionModel.get('steps'), '/details') && req.params.action !== 'edit';
       }
     }]
   },
   '/people': {
-    controller: require('./controllers/people'),
     template: 'people',
     fields: [
       'person-one',
@@ -74,10 +74,11 @@ module.exports = {
     ],
     backLink: 'type',
     next: '/additional',
+    continueOnEdit: true,
     forks: [{
       target: '/how',
       condition: function checkSteps(req) {
-        return _.contains(req.sessionModel.get('steps'), '/details');
+        return _.contains(req.sessionModel.get('steps'), '/details') && req.params.action !== 'edit';
       }
     }]
   },
@@ -88,6 +89,7 @@ module.exports = {
       'additional-radio'
     ],
     next: '/how',
+    continueOnEdit: true,
     prereqs: ['/person', '/people']
   },
   '/how': {
@@ -99,17 +101,18 @@ module.exports = {
       'telephone-toggle-text',
       'post-toggle-text',
     ],
+    continueOnEdit: true,
     backLink: 'additional',
     next: '/which',
     prereqs: ['/person', '/people', 'additional']
   },
   '/which': {
-    controller: require('./controllers/which'),
     template: 'which',
     fields: [
       'which-radio',
       'order-number-text'
     ],
+    continueOnEdit: true,
     backLink: 'how',
     next: '/when'
   },
@@ -122,6 +125,7 @@ module.exports = {
       'when-date-month',
       'when-date-year'
     ],
+    continueOnEdit: true,
     backLink: 'which',
     next: '/name'
   },
@@ -129,19 +133,19 @@ module.exports = {
     controller: require('./controllers/name'),
     template: 'name',
     fields: ['name-text'],
+    continueOnEdit: true,
     backLink: 'when',
     next: '/email',
     prereqs: ['/when', '/details']
   },
   '/email': {
-    controller: require('./controllers/email'),
     template: 'email',
     fields: ['email-text'],
+    continueOnEdit: true,
     backLink: 'name',
     next: '/post'
   },
   '/post': {
-    controller: require('./controllers/post'),
     template: 'post',
     fields: [
       'country-text',
@@ -151,6 +155,7 @@ module.exports = {
       'address-text-four',
       'address-text-five'
     ],
+    continueOnEdit: true,
     backLink: 'email',
     next: '/confirm'
   },
