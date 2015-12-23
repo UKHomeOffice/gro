@@ -1,10 +1,36 @@
-app:
-  build: .
-  ports:
-  - "8080:8080"
-  # environment:
 
-  links:
-  - redis
+nginx:
+    build: "./docker/nginx/"
+    volumes:
+        - "./public:/public:z"
+    links:
+        - app:app
+        - maildev:maildev
+    ports:
+        - "80:80"
+        - "1080:1080"
+
+app:
+    build: .
+    ports:
+        - "8080"
+    volumes:
+        - ".:/app:z"
+    links:
+        - redis
+        - maildev
+    environment:
+        - NODE_ENV=docker
+        - EMAIL_IGNORE_TLS=true
+        - CASEWORKER_EMAIL=a@user.com
+
 redis:
-  image: redis
+    image: redis
+    ports:
+        - "6379"
+
+maildev:
+    image: djfarrelly/maildev
+    ports:
+        - "80"
+        - "25"
