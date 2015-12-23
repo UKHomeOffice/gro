@@ -15,12 +15,14 @@ if (config.env !== 'ci') {
   app.use(churchill(logger));
 }
 
-if (config.env === 'development') {
+if (config.env === 'development' || config.env === 'so-ci' || config.env === 'nginx-dev') {
   app.use('/public', express.static(path.resolve(__dirname, './public')));
 }
 
-app.use(function setAssetPath(req, res, next) {
-  res.locals.assetPath = '/public';
+app.use(function injectLocals(req, res, next) {
+  req.baseUrl = config.siteroot + req.baseUrl;
+  res.locals.assetPath = config.siteroot + '/public';
+  res.locals.gaTagId = config.ga.tagId;
   next();
 });
 
