@@ -66,5 +66,11 @@
         "post-text": "Address"
       }
     }
+    
+  },
+  "email-table": {
+    "information": {
+      "subject": "Email Subject!"
+    }
   }
 }
