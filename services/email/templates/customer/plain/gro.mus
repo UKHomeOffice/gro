@@ -1,0 +1,27 @@
+{{#data}}
+
+  {{#t}}pages.rtm-email-table.information.subject{{/t}}
+  
+  {{#t}}pages.rtm-email-table.information.customer-intro{{/t}}
+   
+  {{#t}}pages.rtm-email-table.headers.url{{/t}}: {{url}}  
+  
+  {{#t}}pages.rtm-email-table.headers.location{{/t}}: {{#location}}{{location}}{{/location}}{{^location}}{{#t}}page.rtm-email-table.information.no-data{{/t}}{{/location}}
+
+  {{#t}}pages.rtm-email-table.headers.description{{/t}}: {{#description}}{{description}}{{/description}}{{^description}}{{#t}}page.rtm-email-table.information.no-data{{/t}}{{/description}}
+  
+  {{#contact-details}}
+  {{#t}}pages.rtm-email-table.information.customer-contact-details{{/t}}
+
+  {{#t}}pages.rtm-email-table.headers.name{{/t}}: {{#name}}{{name}}{{/name}}{{^name}}{{#t}}page.rtm-email-table.information.no-data{{/t}}{{/name}}
+  {{#t}}pages.rtm-email-table.headers.email{{/t}}: {{#email}}{{email}}{{/email}}{{^email}}{{#t}}page.rtm-email-table.information.no-data{{/t}}{{/email}}
+  {{#t}}pages.rtm-email-table.headers.phone{{/t}}: {{#phone}}{{phone}}{{/phone}}{{^phone}}{{#t}}page.rtm-email-table.information.no-data{{/t}}{{/phone}}
+
+  {{#t}}page.rtm-confirmation.about-privacy-blurb{{/t}}
+  {{/contact-details}}
+
+{{/data}}
+
+If you're unsure an email is from UKVI:
+ * do not reply to it or click any links
+ * forward it to phishing@homeoffice.gsi.gov.uk

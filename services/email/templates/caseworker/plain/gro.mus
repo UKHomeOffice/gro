@@ -1,0 +1,27 @@
+{{#data}}
+
+  {{#t}}pages.rtm-email-table.information.subject{{/t}}
+
+  {{#t}}pages.rtm-email-table.headers.date{{/t}}: {{reportDate}}
+
+  {{#t}}pages.rtm-email-table.headers.id{{/t}}: {{reportId}}
+
+  {{#t}}pages.rtm-email-table.headers.url{{/t}}: {{url}}  
+  
+  {{#t}}pages.rtm-email-table.headers.location{{/t}}: {{#location}}{{location}}{{/location}}{{^location}}{{#t}}page.rtm-email-table-information.no-data{{/t}}{{/location}}
+
+  {{#t}}pages.rtm-email-table.headers.description{{/t}}: {{#description}}{{description}}{{/description}}{{^description}}{{#t}}page.rtm-email-table-information.no-data{{/t}}{{/description}}
+
+  {{#contact-details}}
+  {{#t}}pages.rtm-email-table.information.contact-details{{/t}}
+
+  {{#t}}pages.rtm-email-table.headers.name{{/t}}: {{#name}}{{name}}{{/name}}{{^name}}{{#t}}page.rtm-email-table-information.no-data{{/t}}{{/name}}
+  {{#t}}pages.rtm-email-table.headers.email{{/t}}: {{#email}}{{email}}{{/email}}{{^email}}{{#t}}page.rtm-email-table-information.no-data{{/t}}{{/email}}
+  {{#t}}pages.rtm-email-table.headers.phone{{/t}}: {{#phone}}{{phone}}{{/phone}}{{^phone}}{{#t}}page.rtm-phone-table-information.no-data{{/t}}{{/phone}}
+  {{/contact-details}}
+
+  {{^contact-details}}
+  {{#t}}pages.rtm-email-table.information.no-contact-details{{/t}}
+  {{/contact-details}}
+    
+{{/data}}
