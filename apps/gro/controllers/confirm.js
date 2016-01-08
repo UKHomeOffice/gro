@@ -5,6 +5,7 @@ var controllers = require('hof').controllers;
 var BaseController = controllers.base;
 var path = require('path');
 var i18n = require('hof').i18n;
+var _ = require('underscore');
 
 var Model = require('../../common/models/email');
 
@@ -26,7 +27,13 @@ ConfirmController.prototype.saveValues = function saveValues(req, res, callback)
   locali18n.on('ready', function prepareEmail() {
 
     var subject = locali18n.translate('pages.email-table.information.subject');
-    var model = new Model(req.sessionModel);
+
+    var d = _.extend({}, req.sessionModel);
+
+    var dateTime = new Date();
+    d.reportDate = dateTime.toISOString();
+
+    var model = new Model(d);
     var service = {
       template: 'gro',
       subject: subject
