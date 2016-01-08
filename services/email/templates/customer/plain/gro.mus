@@ -1,27 +1,73 @@
 {{#data}}
 
-  {{#t}}pages.rtm-email-table.information.subject{{/t}}
+  {{#t}}pages.email.information.subject{{/t}}
+
+
+  {{#t}}pages.email.information.enquiry{{/t}}
+
   
-  {{#t}}pages.rtm-email-table.information.customer-intro{{/t}}
-   
-  {{#t}}pages.rtm-email-table.headers.url{{/t}}: {{url}}  
+  {{#t}}pages.email.headers.enquiry-submission-date{{/t}}: {{values.reportDate}}
+
+  {{#t}}pages.email.headers.enquiry-reason{{/t}}: {{values.about-radio}}
   
-  {{#t}}pages.rtm-email-table.headers.location{{/t}}: {{#location}}{{location}}{{/location}}{{^location}}{{#t}}page.rtm-email-table.information.no-data{{/t}}{{/location}}
+  {{#t}}pages.email.headers.enquiry-certificate-type{{/t}}: {{values.type-radio}}
 
-  {{#t}}pages.rtm-email-table.headers.description{{/t}}: {{#description}}{{description}}{{/description}}{{^description}}{{#t}}page.rtm-email-table.information.no-data{{/t}}{{/description}}
+  {{#values.person-text}}
+  {{#t}}pages.email.headers.enquiry-certificate-name{{/t}}: {{values.person-text}}
+  {{/values.person-text}}
   
-  {{#contact-details}}
-  {{#t}}pages.rtm-email-table.information.customer-contact-details{{/t}}
+  {{#values.person-one}}
+  {{#t}}pages.email.headers.enquiry-certificate-name-one{{/t}}: {{values.person-one}}
+  {{/values.person-one}}
 
-  {{#t}}pages.rtm-email-table.headers.name{{/t}}: {{#name}}{{name}}{{/name}}{{^name}}{{#t}}page.rtm-email-table.information.no-data{{/t}}{{/name}}
-  {{#t}}pages.rtm-email-table.headers.email{{/t}}: {{#email}}{{email}}{{/email}}{{^email}}{{#t}}page.rtm-email-table.information.no-data{{/t}}{{/email}}
-  {{#t}}pages.rtm-email-table.headers.phone{{/t}}: {{#phone}}{{phone}}{{/phone}}{{^phone}}{{#t}}page.rtm-email-table.information.no-data{{/t}}{{/phone}}
+  {{#values.person-two}}
+  {{#t}}pages.email.headers.enquiry-certificate-name-two{{/t}}: {{values.person-two}}
+  {{/values.person-two}}
 
-  {{#t}}page.rtm-confirmation.about-privacy-blurb{{/t}}
-  {{/contact-details}}
+  {{#t}}pages.email.headers.enquiry-further-information{{/t}}: {{values.additional-text}}
 
+  {{#t}}pages.email.headers.enquiry-previous-contact{{/t}}: {{values.additional-radio}}
+
+
+
+
+
+  {{#t}}pages.email.information.order{{/t}}
+  
+  {{#t}}pages.email.headers.order-how-placed{{/t}}: {{values.how-radio}}
+
+  {{#values.online-toggle-text}}
+  {{#t}}pages.email.headers.order-col-number{{/t}}: {{values.online-toggle-text}}
+  {{/values.online-toggle-text}}
+
+  {{#values.telephone-toggle-text}}
+  {{#t}}pages.email.headers.order-account-number{{/t}}: {{values.telephone-toggle-text}}
+  {{/values.telephone-toggle-text}}
+
+  {{#values.post-toggle-text}}
+  {{#t}}pages.email.headers.order-account-number{{/t}}: {{values.post-toggle-text}}
+  {{/values.post-toggle-text}}
+
+  
+  {{#t}}pages.email.headers.order-service{{/t}}: {{values.which-radio}}
+  
+  {{#t}}pages.email.headers.order-number{{/t}}: {{values.order-number-text}}
+  
+  {{#t}}pages.email.headers.order-application-date{{/t}}: {{values.when-date}}
+
+
+
+  
+
+
+  {{#t}}pages.email.information.contact-details{{/t}}
+
+  
+  {{#t}}pages.email.headers.contact-details-name{{/t}}: {{values.name}}
+  
+  {{#t}}pages.email.headers.contact-details-email{{/t}}: {{values.email}}
+
+  {{#t}}pages.email.headers.contact-details-address{{/t}}: {{values.address}}
+
+    
 {{/data}}
-
-If you're unsure an email is from UKVI:
- * do not reply to it or click any links
- * forward it to phishing@homeoffice.gsi.gov.uk
