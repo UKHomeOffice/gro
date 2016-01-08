@@ -63,12 +63,19 @@
         "when-date": "Date of application",
         "name-text": "Full name",
         "email-text": "Email address",
-        "post-text": "Address"
+        "post-text": "Address",
+        "country-text": "Country"
       }
     }
     
   },
   "email": {
+    "content": {
+      "caseworker-intro": "GRO enquiry form has been submitted, with details as follows:",
+      "customer-intro": "Thankyou for submitting your enquiry to the General Register Office. You submitted the following details:",
+      "caseworker-outro": "Rock on!",
+      "customer-outro": "We will respond to your enquiry within 5 days"
+    },
     "information": {
       "subject": "GRO enquiry",
       "enquiry": "Enquiry details",
@@ -93,7 +100,8 @@
       "order-application-date": "Application date",
       "contact-details-name": "Name",
       "contact-details-email": "Email",
-      "contact-details-address": "Address"
+      "contact-details-address": "Address",
+      "contact-details-country": "Country"
     }
   }
 }
