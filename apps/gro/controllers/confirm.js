@@ -5,7 +5,6 @@ var controllers = require('hof').controllers;
 var BaseController = controllers.base;
 var path = require('path');
 var i18n = require('hof').i18n;
-var _ = require('underscore');
 
 var Model = require('../../common/models/email');
 
@@ -28,10 +27,18 @@ ConfirmController.prototype.saveValues = function saveValues(req, res, callback)
 
     var subject = locali18n.translate('pages.email-table.information.subject');
 
-    var d = _.extend({}, req.sessionModel);
+    var d = {
+      values: (function getSessionValues(data) {
+        var r = {};
+        for (var prop in data) {
+          r[prop] = data[prop];
+        }
+        return r;
+      }(req.sessionModel.attributes))
+    };
 
     var dateTime = new Date();
-    d.reportDate = dateTime.toISOString();
+    d.values.reportDate = dateTime.toISOString();
 
     var model = new Model(d);
     var service = {
