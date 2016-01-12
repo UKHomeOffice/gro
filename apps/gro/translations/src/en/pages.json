@@ -30,7 +30,7 @@
   "name": {
     "header": "What is your full name?"
   },
-  "email": {
+  "email-address": {
     "header": "What is your email address?"
   },
   "post": {
