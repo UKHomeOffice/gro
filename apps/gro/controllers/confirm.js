@@ -25,7 +25,7 @@ ConfirmController.prototype.saveValues = function saveValues(req, res, callback)
 
   locali18n.on('ready', function prepareEmail() {
 
-    var subject = locali18n.translate('pages.email-table.information.subject');
+    var subject = locali18n.translate('pages.email.information.subject');
 
     var d = {
       values: (function getSessionValues(data) {
@@ -39,6 +39,7 @@ ConfirmController.prototype.saveValues = function saveValues(req, res, callback)
 
     var dateTime = new Date();
     d.values.reportDate = dateTime.toISOString();
+    d.email = d.values['email-text'];
 
     var model = new Model(d);
     var service = {
