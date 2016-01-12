@@ -19,7 +19,7 @@ router.use(mixins(fields, {
   translate: i18n.translate.bind(i18n)
 }));
 
-router.use('/gro/', wizard(require('./steps'), fields, {
+router.use('/', wizard(require('./steps'), fields, {
   controller: BaseController,
   templatePath: path.resolve(__dirname, 'views'),
   translate: i18n.translate.bind(i18n),
