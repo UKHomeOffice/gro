@@ -30,7 +30,7 @@
   "name": {
     "header": "What is your full name?"
   },
-  "email": {
+  "email-address": {
     "header": "What is your email address?"
   },
   "post": {
@@ -63,14 +63,45 @@
         "when-date": "Date of application",
         "name-text": "Full name",
         "email-text": "Email address",
-        "post-text": "Address"
+        "post-text": "Address",
+        "country-text": "Country"
       }
     }
     
   },
-  "email-table": {
+  "email": {
+    "content": {
+      "caseworker-intro": "GRO enquiry form has been submitted, with details as follows:",
+      "customer-intro": "Thankyou for submitting your enquiry to the General Register Office. You submitted the following details:",
+      "caseworker-outro": "Rock on!",
+      "customer-outro": "We will respond to your enquiry within 5 days"
+    },
     "information": {
-      "subject": "Email Subject!"
+      "subject": "GRO enquiry",
+      "enquiry": "Enquiry details",
+      "order": "Order details",
+      "contact-details": "Contact details",
+      "no-data": "No data provided"
+    },
+    "headers": {
+      "enquiry-submission-date": "Form submission date",
+      "enquiry-reason": "Reason for enquiry",
+      "enquiry-certificate-type": "Type of Certificate",
+      "enquiry-certificate-name": "Name on Certificate",
+      "enquiry-certificate-name-one": "Name of party one on Certificate",
+      "enquiry-certificate-name-two": "Name of party two on Certificate",
+      "enquiry-further-information": "Further description",
+      "enquiry-previous-contact": "Previously enquired",
+      "order-how-placed": "How the order was placed",
+      "order-col-number": "COL number",
+      "order-account-number": "Account number",
+      "order-service": "Service",
+      "order-number": "Order number",
+      "order-application-date": "Application date",
+      "contact-details-name": "Name",
+      "contact-details-email": "Email",
+      "contact-details-address": "Address",
+      "contact-details-country": "Country"
     }
   }
 }

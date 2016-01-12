@@ -74,6 +74,11 @@ Emailer.prototype.send = function send(email, callback) {
       }
     };
 
+    var customerPlainText = Hogan.compile(customerPlainTextTemplates[email.template]).render(templateData);
+    var customerHTML = Hogan.compile(customerHtmlTemplates[email.template]).render(templateData);
+    var caseworkerPlainText = Hogan.compile(caseworkerPlainTextTemplates[email.template]).render(templateData);
+    var caseworkerHTML = Hogan.compile(caseworkerHtmlTemplates[email.template]).render(templateData);
+
     function sendCustomerEmail() {
       if (email.to) {
         logger.info('Emailing customer: ', email.subject);
@@ -81,8 +86,8 @@ Emailer.prototype.send = function send(email, callback) {
           from: config.email.from,
           to: email.to,
           subject: email.subject,
-          text: Hogan.compile(customerPlainTextTemplates[email.template]).render(templateData),
-          html: Hogan.compile(customerHtmlTemplates[email.template]).render(templateData),
+          text: customerPlainText,
+          html: customerHTML,
           attachments: [
             {
               filename: 'govuk_logotype_email.png',
@@ -111,8 +116,8 @@ Emailer.prototype.send = function send(email, callback) {
       from: config.email.from,
       to: config.email.caseworker[email.template],
       subject: email.subject,
-      text: Hogan.compile(caseworkerPlainTextTemplates[email.template]).render(templateData),
-      html: Hogan.compile(caseworkerHtmlTemplates[email.template]).render(templateData),
+      text: caseworkerPlainText,
+      html: caseworkerHTML,
       attachments: [
         {
           filename: 'govuk_logotype_email.png',

@@ -146,6 +146,7 @@ module.exports = {
     next: '/post'
   },
   '/post': {
+    controller: require('./controllers/post'),
     template: 'post',
     fields: [
       'country-text',
