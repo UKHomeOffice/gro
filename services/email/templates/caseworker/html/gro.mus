@@ -154,13 +154,40 @@
                     <td width="75%"><p style="font-size: 16px; color: #000; margin: 10px 0;">{{values.when-date}}</p></td>
                   </tr>
 
+
+                  
+                  <tr style="border-top: 1px solid #009390;">
+                    <td width="100%" colspan="2"><p style="font-size: 16px; color: #000; margin: 10px 0;">{{#t}}pages.email.information.contact-details{{/t}}</p></td>
+                  </tr>
+
+                  <tr style="border-top: 1px solid #009390;">
+                    <td width="25%"><p style="font-size: 16px; color: #6f777b; margin: 10px 0;">{{#t}}pages.email.headers.contact-details-name{{/t}}</p></td>
+                    <td width="75%"><p style="font-size: 16px; color: #000; margin: 10px 0;">{{values.name-text}}</p></td>
+                  </tr>
+
+                  <tr style="border-top: 1px solid #009390;">
+                    <td width="25%"><p style="font-size: 16px; color: #6f777b; margin: 10px 0;">{{#t}}pages.email.headers.contact-details-email{{/t}}</p></td>
+                    <td width="75%"><p style="font-size: 16px; color: #000; margin: 10px 0;">{{values.email-text}}</p></td>
+                  </tr>
+
+                  <tr style="border-top: 1px solid #009390;">
+                    <td width="25%"><p style="font-size: 16px; color: #6f777b; margin: 10px 0;">{{#t}}pages.email.headers.contact-details-address{{/t}}</p></td>
+                    <td width="75%"><p style="font-size: 16px; color: #000; margin: 10px 0;">{{values.address}}</p></td>
+                  </tr>
+
+                  <tr style="border-top: 1px solid #009390;">
+                    <td width="25%"><p style="font-size: 16px; color: #6f777b; margin: 10px 0;">{{#t}}pages.email.headers.contact-details-country{{/t}}</p></td>
+                    <td width="75%"><p style="font-size: 16px; color: #000; margin: 10px 0;">{{values.country}}</p></td>
+                  </tr>
+
                 </table>
+
+                <p style="font-size: 16px; font-weight: normal; color: #000; line-height: 1.32; margin: 0 0 10px 0;">{{#t}}pages.email.content.caseworker-outro{{/t}}</p>
+                
+                {{/data}}
 
           </table>
 
-          <p style="font-size: 16px; font-weight: normal; color: #000; line-height: 1.32; margin: 0 0 10px 0;">{{#t}}pages.email.content.caseworker-outro{{/t}}</p>
-          
-          {{/data}}
         </td>
         <td width="25%">&nbsp;</td>
       </tr>
