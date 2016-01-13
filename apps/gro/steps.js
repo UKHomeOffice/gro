@@ -10,7 +10,6 @@ module.exports = {
   '/about': {
     template: 'about',
     fields: ['about-radio'],
-    backLink: '/start',
     next: '/type',
     continueOnEdit: true,
     forks: [{
@@ -24,7 +23,6 @@ module.exports = {
     controller: require('./controllers/type'),
     template: 'type',
     fields: ['type-radio'],
-    backLink: '/about',
     next: '/person',
     prereqs: ['/about', '/details'],
     continueOnEdit: true,
@@ -42,9 +40,9 @@ module.exports = {
       'existing-radio',
       'previous-radio'
     ],
-    backLink: '/about',
     next: '/type',
     continueOnEdit: true,
+    backLinks: ['about'],
     forks: [{
       target: '/name',
       condition: {
@@ -56,7 +54,6 @@ module.exports = {
   '/person': {
     template: 'person',
     fields: ['person-text'],
-    backLink: '/type',
     next: '/additional',
     continueOnEdit: true,
     forks: [{
@@ -72,7 +69,6 @@ module.exports = {
       'person-one',
       'person-two'
     ],
-    backLink: '/type',
     next: '/additional',
     continueOnEdit: true,
     forks: [{
@@ -102,8 +98,8 @@ module.exports = {
       'post-toggle-text',
     ],
     continueOnEdit: true,
-    backLink: '/additional',
     next: '/which',
+    backLinks: ['person', 'people'],
     prereqs: ['/person', '/people', 'additional']
   },
   '/which': {
@@ -113,7 +109,6 @@ module.exports = {
       'order-number-text'
     ],
     continueOnEdit: true,
-    backLink: '/how',
     next: '/when'
   },
   '/when': {
@@ -126,7 +121,6 @@ module.exports = {
       'when-date-year'
     ],
     continueOnEdit: true,
-    backLink: '/which',
     next: '/name'
   },
   '/name': {
@@ -134,15 +128,14 @@ module.exports = {
     template: 'name',
     fields: ['name-text'],
     continueOnEdit: true,
-    backLink: '/when',
     next: '/email',
+    backLinks: ['details'],
     prereqs: ['/when', '/details']
   },
   '/email': {
     template: 'email',
     fields: ['email-text'],
     continueOnEdit: true,
-    backLink: '/name',
     next: '/post'
   },
   '/post': {
@@ -157,13 +150,11 @@ module.exports = {
       'address-text-five'
     ],
     continueOnEdit: true,
-    backLink: '/email',
     next: '/confirm'
   },
   '/confirm': {
     controller: require('./controllers/confirm'),
     template: 'confirm.html',
-    backLink: '/post',
     next: '/confirmation'
   },
   '/confirmation': {
