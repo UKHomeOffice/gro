@@ -2,6 +2,7 @@
 
 var util = require('util');
 var controllers = require('hof').controllers;
+/* eslint no-unused-vars: 0 */
 var _ = require('underscore');
 var BaseController = controllers.base;
 
