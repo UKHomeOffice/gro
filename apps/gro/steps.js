@@ -20,7 +20,6 @@ module.exports = {
     }]
   },
   '/type': {
-    controller: require('./controllers/type'),
     template: 'type',
     fields: ['type-radio'],
     next: '/person',
@@ -89,7 +88,6 @@ module.exports = {
     prereqs: ['/person', '/people']
   },
   '/how': {
-    controller: require('./controllers/how'),
     template: 'how',
     fields: [
       'how-radio',
@@ -124,7 +122,6 @@ module.exports = {
     next: '/name'
   },
   '/name': {
-    controller: require('./controllers/name'),
     template: 'name',
     fields: ['name-text'],
     continueOnEdit: true,
