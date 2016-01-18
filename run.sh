@@ -24,7 +24,7 @@ then echo "starting the service"
 
 elif [ "$NODE_ENV" = "so-ci" ] #use this on ci.so
 then echo "starting service"
-     SITEROOT=/gro GA_TAG_ID=UA-70918942-1 node /var/www/gro/app.js
+     SITEROOT=/gro GA_TAG_ID=UA-72527484-1 node /var/www/gro/app.js
 fi
 
 
