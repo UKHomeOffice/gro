@@ -80,7 +80,8 @@ standard_summary: 'standard'
 online_summary: 'online'
 date_summary: '10-10-2015'
 address_summary: 'Yellow Brick Road Emerald City OZ1'
-
+confirmation_content: 'Thank you for contacting the General Register Office'
+  
 #Summary page table headers
 table_not_received: 'Reason for contact'
 table_enquiry_details: "Your enquiry details"

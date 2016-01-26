@@ -129,5 +129,5 @@ When(/^I click the first "Change" button$/) do
 end
 
 Then(/^I am taken to the confirmation page$/) do
-  expect(page).to have_content 'You\'re all done, well done!'
+  expect(page).to have_content CONTENT['confirmation_content']
 end
