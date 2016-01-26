@@ -14,17 +14,28 @@
 
 {{$content}}
 
-{{<partials-form}}
+  <div class="alert-complete" role="alert">
+    <span class="icon icon-complete" role="presentation"></span>
+    <div class="alert-message">
+      <h1>{{#t}}pages.confirmation.header{{/t}}</h1>
+    </div>
+  </div>
 
-{{$form}}
+  <p>{{#t}}pages.confirmation.content-copy-sent{{/t}} <strong>{{values.email-text}}</strong></p>
+  
+  <hr>
+
+  <div>
 
 
-<h1>You're all done, well done!</h1>
+    <h2>{{#t}}pages.confirmation.content-whats-next{{/t}}</h2>
+    
+    <p>{{#t}}pages.confirmation.content-respond{{/t}}</p>
+    
+    <p><a href="https://eforms.homeoffice.gov.uk/outreach/Feedback.ofml?FormName=certificate_service/">{{#t}}pages.confirmation.content-feedback-link{{/t}}</a> {{#t}}pages.confirmation.content-feedback-time{{/t}} </p>
 
-{{/form}}
-
-{{/partials-form}}
-
+  </div>
+  
 {{/content}}
 
 {{/layout}}

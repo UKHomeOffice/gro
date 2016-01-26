@@ -67,7 +67,14 @@
         "country-text": "Country"
       }
     }
-    
+  },
+  "confirmation": {
+    "header": "Thank you for contacting the General Register Office.",
+    "content-copy-sent": "We have sent you an email containing the information you have provided to ",
+    "content-whats-next": "What happens next",
+    "content-respond": "We will respond to your enquiry as soon as possible.",
+    "content-feedback-link": "Tell us what you think of this form",
+    "content-feedback-time": "(takes 30 seconds)"    
   },
   "email": {
     "content": {
