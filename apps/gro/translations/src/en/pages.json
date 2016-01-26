@@ -79,9 +79,9 @@
   "email": {
     "content": {
       "caseworker-intro": "GRO enquiry form has been submitted, with details as follows:",
-      "customer-intro": "Thankyou for submitting your enquiry to the General Register Office. You submitted the following details:",
-      "caseworker-outro": "Rock on!",
-      "customer-outro": "We will respond to your enquiry within 5 days"
+      "customer-intro": "Thank you for contacting the General Register Office. We will respond to your enquiry as soon as possible:",
+      "caseworker-outro": "",
+      "customer-outro": ""
     },
     "information": {
       "subject": "GRO enquiry",
