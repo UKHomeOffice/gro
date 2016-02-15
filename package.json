@@ -11,7 +11,7 @@
   "scripts": {
     "start": "node .",
     "stop": "pkill --signal SIGINT gro",
-    "dev": "NODE_ENV=development nodemon -e html,js,json",
+    "dev": "NODE_ENV=development nodemon -e html,js,json .",
     "watch": "parallelshell 'npm run watch:scss' 'npm run watch:js' 'npm run watch:translations'",
     "watch:scss": "nodemon -e scss -x 'npm run sass'",
     "watch:js": "nodemon --watch assets/js -e js -x 'npm run browserify'",
