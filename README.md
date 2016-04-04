@@ -1,15 +1,14 @@
-# GRO 
+# GRO (General Registrars Office)
 
 ## Getting Started
 
 ### Prerequisities
 
-What things you need to install the software and how to install them
-- NodeJS
-- npm (version 3 is not yet supported, please use version 2)
-- Redis server running on the default port
+- [Node.js](https://nodejs.org/en/) - Tested against LTS
+- NPM (installed with Node.js) - Works with versions 2 and 3.
+- [Redis server](http://redis.io/download) running on the default port
 
-### Installing
+### Up & Running
 
 ```bash
 $ cd gro
@@ -17,24 +16,22 @@ $ npm install
 $ npm run dev
 ```
 
-If there is an error it might be necessary to install nodemon globally.
+Then visit: [http://localhost:8080/certificate-enquiries](http://localhost:8080/certificate-enquiries)
+
+## Testing
+
+### Acceptance Tests
+With the server running in development mode (`npm run dev`), start the acceptance tests:
 
 ```bash
-$ npm install -g nodemon
+$ npm run test:acceptance
 ```
+Phantomjs is required to run the acceptance tests (`npm install phantomjs`), or alternatively, export `IN_BROWSER=true` to run the tests in Firefox.
 
-Go to http://localhost:8080/gro
-
-## Running the tests
-You will need the server running to run the cucumber tests against.
-
+### Unit Tests
 ```bash
-$ cd acceptance_tests
-$ cucumber -r features
+$ npm t
 ```
-
-You will need phantomjs installed to run tests. Alternatively you can export IN_BROWSER=true to run the tests in firefox.
-
 
 ## Contributing
 
@@ -42,7 +39,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## License
 
