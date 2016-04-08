@@ -8,7 +8,7 @@ function parseFullTCPAddress(addr) {
 
 /* parse out some ENV vars */
 /* docker-compose / kubernetes dev or local */
-var redis_details = parseFullTCPAddress(process.env.REDIS_PORT || 'tcp://127.0.0.1:6379');
+var redis_details = parseFullTCPAddress('tcp://' + process.env.REDIS_HOST +':'+ process.env.REDIS_PORT || 'tcp://127.0.0.1:6379');
 var redis_addr;
 var redis_port;
 
