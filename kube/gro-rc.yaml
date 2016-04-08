@@ -16,6 +16,8 @@ spec:
         image: quay.io/ukhomeofficedigital/gro-form:v0.0.1
         imagePullPolicy: Always
         env:
+        - name: NODE_ENV
+          value: docker
         - name: REDIS_HOST
           value: redis.gro-form-dev.svc.cluster.local
         - name: REDIS_PORT
