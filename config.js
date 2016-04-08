@@ -8,14 +8,9 @@ function parseFullTCPAddress(addr) {
 
 /* parse out some ENV vars */
 /* docker-compose / kubernetes dev or local */
-var redis_details = parseFullTCPAddress('tcp://' + process.env.REDIS_HOST +':'+ process.env.REDIS_PORT || 'tcp://127.0.0.1:6379');
-var redis_addr;
-var redis_port;
+var redis_addr = process.env.REDIS_HOST || '127.0.0.1';
+var redis_port = process.env.REDIS_PORT || '6379';
 
-if (redis_details.length > 1) {
-  redis_addr = redis_details[1];
-  redis_port = redis_details[2];
-}
 
 var maildev_details = parseFullTCPAddress(process.env.MAILDEV_PORT || '');
 var maildev_addr = '';
