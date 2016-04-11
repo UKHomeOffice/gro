@@ -1,18 +1,7 @@
-FROM vaijab/nodejs:0.12.7
-
-RUN dnf install -y -q git
+FROM quay.io/ukhomeofficedigital/nodejs:v1.0.1
 
 RUN npm install -g nodemon
-RUN useradd -d /app app
-USER app
 
-WORKDIR /app
-COPY package.json /app/package.json
-COPY assets /app/assets
-RUN npm install
-COPY . /app
-
-USER root
+USER nobody
 EXPOSE 8080
 CMD /app/run.sh
-
