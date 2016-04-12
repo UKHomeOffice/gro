@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/UKHomeOffice/gro/"
   },
+  "readme": "./README.md",
   "scripts": {
     "start": "node .",
     "stop": "pkill --signal SIGINT gro",
