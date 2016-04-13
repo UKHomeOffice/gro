@@ -1,0 +1,7 @@
+---
+Deploys:
+  - path: ./k8resources/secrets
+    NoControllerOk: true
+  - path: ./k8resources/redis
+    NoRollingUpdate: true
+  - path: ./k8resources/gro

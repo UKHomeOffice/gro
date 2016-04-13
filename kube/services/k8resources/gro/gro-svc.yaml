@@ -8,12 +8,12 @@ spec:
  type: NodePort
  ports:
    - name: http
-     port: 8080
-     targetPort: 8080
-     nodePort: 30241 
+     port: 80
+     targetPort: 80
+     nodePort: ${GRO_HTTP_PORT}
    - name: https
-     port: 8080
-     targetPort: 8080
-     nodePort: 30242
+     port: 443
+     targetPort: 443
+     nodePort: ${GRO_HTTPS_PORT}
  selector:
    name: gro
