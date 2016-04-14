@@ -7,7 +7,6 @@ var logger = require('./lib/logger');
 var churchill = require('churchill');
 var session = require('express-session');
 var redis = require('redis');
-var RedisStore = require('connect-redis-crypto')(session);
 var config = require('./config');
 require('moment-business');
 
@@ -44,6 +43,7 @@ app.use(function setBaseUrl(req, res, next) {
 /*************************************/
 /******* Redis session storage *******/
 /*************************************/
+var RedisStore = require('connect-redis-crypto')(session);
 var client = redis.createClient(config.redis.port, config.redis.host);
 
 client.on('error', function clientErrorHandler(e) {
