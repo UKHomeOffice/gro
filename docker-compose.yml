@@ -1,21 +1,9 @@
-
-nginx:
-  build: "./docker/nginx/"
-  volumes:
-    - "./public:/public:z"
-  net: "host"
-  ports:
-    - "80:80"
-    - "1080:1080"
-
 app:
   build: .
   environment:
-    - NODE_ENV=development
+    - NODE_ENV=docker
     - EMAIL_IGNORE_TLS=true
     - CASEWORKER_EMAIL=a@user.com
-  volumes:
-    - ".:/app:z"
   net: "host"
   ports:
     - "8080:8080"

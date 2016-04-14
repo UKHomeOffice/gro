@@ -8,7 +8,7 @@ var config = require('../config');
 var logger = require('../lib/logger');
 
 /*eslint no-unused-vars: 0*/
-module.exports = function errorHandler(err, req, res, next) {
+module.exports = function errorHandler(err, req, res) {
   /*eslint no-unused-vars: 1*/
   var content = {};
 

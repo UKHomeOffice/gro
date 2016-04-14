@@ -4,3 +4,4 @@ node_modules
 .idea/
 Gemfile.lock
 apps/**/translations/en
+public/
