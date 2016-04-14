@@ -1,5 +1,5 @@
 {
   "preset": "google",
   "maximumLineLength": 120,
-  "excludeFiles": ["node_modules/**", "reports/**", "dist/js/bundle.js"]
+  "excludeFiles": ["node_modules/**", "reports/**", "public/**/*"]
 }
