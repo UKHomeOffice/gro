@@ -11,20 +11,23 @@ module.exports = {
     options: [{
       value: 'online',
       label: 'fields.how-radio.options.online.label',
-      toggle: 'online-toggle-text'
+      toggle: 'online-toggle-text',
+      child: 'input-text'
     }, {
       value: 'telephone',
       label: 'fields.how-radio.options.telephone.label',
-      toggle: 'telephone-toggle-text'
+      toggle: 'telephone-toggle-text',
+      child: 'input-text'
     }, {
       value: 'post',
       label: 'fields.how-radio.options.post.label',
-      toggle: 'post-toggle-text'
+      toggle: 'post-toggle-text',
+      child: 'input-text'
     }]
   },
   'online-toggle-text': {
     validate: ['required'],
-    legend: 'fields.online-toggle-text.legend',
+    hint: 'fields.online-toggle-text.hint',
     dependent: {
       field: 'how-radio',
       value: 'online'
@@ -32,7 +35,7 @@ module.exports = {
   },
   'telephone-toggle-text': {
     validate: ['required'],
-    legend: 'fields.telephone-toggle-text.legend',
+    hint: 'fields.telephone-toggle-text.hint',
     dependent: {
       field: 'how-radio',
       value: 'telephone'
@@ -40,7 +43,7 @@ module.exports = {
   },
   'post-toggle-text': {
     validate: ['required'],
-    legend: 'fields.post-toggle-text-legend',
+    hint: 'fields.post-toggle-text.hint',
     dependent: {
       field: 'how-radio',
       value: 'post'
