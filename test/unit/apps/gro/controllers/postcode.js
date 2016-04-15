@@ -4,7 +4,7 @@ const proxyquire = require('proxyquire');
 const BaseController = sinon.stub();
 class PostcodesModel {}
 
-describe('apps/gro/controllers/no-postcode', () => {
+describe('apps/gro/controllers/postcode', () => {
   let PostcodeController;
   let controller;
   const req = {};
@@ -32,7 +32,7 @@ describe('apps/gro/controllers/no-postcode', () => {
     };
     req.form = {
       values: {
-        postcode: 'BN1 1AA'
+        'postcode-code': 'BN1 1AA'
       }
     };
     controller = new PostcodeController();
@@ -55,7 +55,7 @@ describe('apps/gro/controllers/no-postcode', () => {
 
     describe('Northern Irish Postcodes', () => {
       beforeEach(() => {
-        req.form.values.postcode = 'BT1 1AA';
+        req.form.values['postcode-code'] = 'BT1 1AA';
         req.sessionModel.unset = sinon.stub();
         controller.process(req, res, callback);
       });

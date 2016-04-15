@@ -8,8 +8,8 @@ const _ = require('lodash');
 
 module.exports = class PostcodeController extends BaseController {
   process(req, res, callback) {
-    const postcode = req.form.values.postcode;
-    const previousPostcode = req.sessionModel.get('postcode');
+    const postcode = req.form.values['postcode-code'];
+    const previousPostcode = req.sessionModel.get('postcode-code');
     if (!postcode
       || previousPostcode && previousPostcode === postcode) {
       return callback();

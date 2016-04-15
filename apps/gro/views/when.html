@@ -1,49 +1,21 @@
-{{<layout}}
-{{$step}}Step 1 of 3{{/step}}
-
-{{$journeyHeader}}
-{{#t}}journey.header{{/t}}
-{{/journeyHeader}}
-
-{{$validationSummary}}
-{{> partials-validation-summary}}
-{{/validationSummary}}
-
-{{$propositionHeader}}
-{{> partials-navigation}}
-{{/propositionHeader}}
-
-{{$header}}{{#t}}pages.order-details.header{{/t}}{{/header}}
-
-{{$content}}
-
-{{<partials-form}}
-
-{{$form}}
-
-<fieldset id="when-date-group" class="{{#errors.when-date}}validation-error{{/errors.when-date}}">
-    <legend>
+{{<partials-page}}
+  {{$page-content}}
+    <fieldset id="when-date-group" class="{{#errors.when-date}}validation-error{{/errors.when-date}}">
+      <legend>
         <span class="form-label-bold">{{#t}}fields.when-date.legend{{/t}}</span>
-    </legend>
+      </legend>
 
-    {{#errors.when-date}}
-            <span id="when-date-error" class="error-message">
-              {{errors.when-date.message}}
-            </span>
-    {{/errors.when-date}}
+      {{#errors.when-date}}
+        <span id="when-date-error" class="error-message">
+          {{errors.when-date.message}}
+        </span>
+      {{/errors.when-date}}
 
-    <p class="form-hint">{{#t}}fields.when-date.hint{{/t}}</p>
-    <div class="form-group form-date">
+      <p class="form-hint">{{#t}}fields.when-date.hint{{/t}}</p>
+      <div class="form-group form-date">
         {{#input-date}}when-date{{/input-date}}
-    </div>
-
-</fieldset>
-
-{{#input-submit}}continue{{/input-submit}}
-{{/form}}
-
-{{/partials-form}}
-
-{{/content}}
-
-{{/layout}}
+      </div>
+    </fieldset>
+    {{#input-submit}}continue{{/input-submit}}
+  {{/page-content}}
+{{/partials-page}}

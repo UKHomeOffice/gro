@@ -2,7 +2,10 @@
 
 module.exports = {
   'person-one': {
+    mixin: 'input-text',
     validate: ['required'],
   },
-  'person-two': {}
+  'person-two': {
+    mixin: 'input-text',
+  }
 };

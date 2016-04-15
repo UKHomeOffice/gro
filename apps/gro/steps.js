@@ -8,6 +8,7 @@ module.exports = {
     next: '/about'
   },
   '/about': {
+    template: 'step',
     fields: ['about-radio'],
     next: '/type',
     forks: [{
@@ -15,9 +16,13 @@ module.exports = {
       condition(req) {
         return _.contains(['complaint', 'other'], req.form.values['about-radio']);
       }
-    }]
+    }],
+    locals: {
+      section: 'enquiry-details'
+    }
   },
   '/type': {
+    template: 'step',
     fields: ['type-radio'],
     next: '/person',
     forks: [{
@@ -25,9 +30,13 @@ module.exports = {
       condition(req) {
         return _.contains(['marriage', 'partnership'], req.form.values['type-radio']);
       }
-    }]
+    }],
+    locals: {
+      section: 'enquiry-details'
+    }
   },
   '/details': {
+    template: 'step',
     fields: [
       'details-text',
       'existing-radio',
@@ -40,9 +49,13 @@ module.exports = {
         field: 'existing-radio',
         value: 'no'
       }
-    }]
+    }],
+    locals: {
+      section: 'enquiry-details'
+    }
   },
   '/person': {
+    template: 'step',
     fields: ['person-text'],
     next: '/additional',
     forks: [{
@@ -50,9 +63,13 @@ module.exports = {
       condition(req) {
         return _.contains(req.sessionModel.get('steps'), '/details');
       }
-    }]
+    }],
+    locals: {
+      section: 'enquiry-details'
+    }
   },
   '/people': {
+    template: 'step',
     fields: [
       'person-one',
       'person-two'
@@ -63,29 +80,43 @@ module.exports = {
       condition(req) {
         return _.contains(req.sessionModel.get('steps'), '/details');
       }
-    }]
+    }],
+    locals: {
+      section: 'enquiry-details'
+    }
   },
   '/additional': {
+    template: 'step',
     fields: [
       'additional-text',
       'additional-radio'
     ],
-    next: '/how'
+    next: '/how',
+    locals: {
+      section: 'enquiry-details'
+    }
   },
   '/how': {
     fields: [
       'how-radio',
       'online-toggle-text',
       'telephone-toggle-text',
-      'post-toggle-text',
+      'post-toggle-text'
     ],
-    next: '/which'
+    next: '/which',
+    locals: {
+      section: 'order-details'
+    }
   },
   '/which': {
+    template: 'step',
     fields: [
       'which-radio'
     ],
-    next: '/when'
+    next: '/when',
+    locals: {
+      section: 'order-details'
+    }
   },
   '/when': {
     controller: require('./controllers/when'),
@@ -95,34 +126,51 @@ module.exports = {
       'when-date-month',
       'when-date-year'
     ],
-    next: '/name'
+    next: '/name',
+    locals: {
+      section: 'order-details'
+    }
   },
   '/name': {
+    template: 'step',
     fields: ['name-text'],
-    next: '/email'
+    next: '/email-address',
+    locals: {
+      section: 'contact-details'
+    }
   },
-  '/email': {
+  '/email-address': {
+    template: 'step',
     fields: ['email-text'],
-    next: '/country'
+    next: '/country',
+    locals: {
+      section: 'contact-details'
+    }
   },
   '/country': {
+    template: 'step',
     fields: [
-      'country'
+      'country-select'
     ],
     forks: [{
       target: '/postcode',
       condition: {
-        field: 'country',
+        field: 'country-select',
         value: 'United Kingdom'
       }
     }],
     continueOnEdit: true,
-    next: '/address'
+    next: '/address',
+    locals: {
+      section: 'contact-details',
+      subsection: 'address'
+    }
   },
   '/postcode': {
+    template: 'step',
     controller: require('./controllers/postcode'),
     fields: [
-      'postcode'
+      'postcode-code'
     ],
     forks: [{
       target: '/address-lookup',
@@ -132,7 +180,11 @@ module.exports = {
       }
     }],
     continueOnEdit: true,
-    next: '/address'
+    next: '/address',
+    locals: {
+      section: 'contact-details',
+      subsection: 'address'
+    }
   },
   '/address-lookup': {
     controller: require('./controllers/address-lookup'),
@@ -140,22 +192,36 @@ module.exports = {
       'address-lookup'
     ],
     continueOnEdit: true,
-    next: '/confirm'
+    next: '/confirm',
+    locals: {
+      section: 'contact-details',
+      subsection: 'address'
+    }
   },
   '/address': {
     controller: require('./controllers/address'),
     fields: [
       'address-textarea'
     ],
-    next: '/confirm'
+    next: '/confirm',
+    locals: {
+      section: 'contact-details',
+      subsection: 'address'
+    }
   },
   '/confirm': {
     controller: require('./controllers/confirm'),
     next: '/confirmation',
-    config: require('./confirm-step-config')
+    config: require('./confirm-step-config'),
+    locals: {
+      section: 'confirm'
+    }
   },
   '/confirmation': {
     backLink: false,
-    clearSession: true
+    clearSession: true,
+    locals: {
+      section: 'confirmation'
+    }
   }
 };

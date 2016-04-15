@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = {
-  country: {
+  'country-select': {
+    mixin: 'select',
     className: ['typeahead', 'js-hidden'],
     options: [''].concat(require('../../../assets/countries').allCountries),
     legend: {

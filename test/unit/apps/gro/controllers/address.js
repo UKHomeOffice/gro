@@ -38,13 +38,13 @@ describe('apps/gro/controllers/address', () => {
     });
 
     it('adds isDomestic: true to locals if country is United Kingdom', () => {
-      req.form.values.country = 'United Kingdom';
+      req.form.values['country-select'] = 'United Kingdom';
       controller.locals(req, res, cb).should.have.property('isDomestic')
         .and.be.true;
     });
 
     it('adds isDomestic: false to locals if country isn\'t United Kingdom', () => {
-      req.form.values.country = 'Another country';
+      req.form.values['country-select'] = 'Another country';
       controller.locals(req, res, cb).should.have.property('isDomestic')
         .and.be.false;
     });

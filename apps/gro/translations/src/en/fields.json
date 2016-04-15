@@ -122,14 +122,14 @@
   "email-text": {
     "label": "What is your email address?"
   },
-  "country": {
+  "country-select": {
     "label": "Country"
   },
-  "postcode": {
+  "postcode-code": {
     "label": "Postcode"
   },
   "address-lookup": {
-    "label": "Address"
+    "label": "Select your address"
   },
   "address-textarea": {
     "label": "Address"

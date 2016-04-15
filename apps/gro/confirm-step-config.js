@@ -1,7 +1,5 @@
 'use strict';
 
-var _ = require('lodash');
-
 module.exports = {
   tableSections: [{
     name: 'enquiry-details',
@@ -33,24 +31,9 @@ module.exports = {
     fields: [
       'name-text',
       'email-text',
-      'country-text',
-      'postcode'
+      'country-select',
+      'postcode-code',
+      'address-textarea'
     ]
-  }],
-  modifiers: {
-    'postcode': function combineLinesOfAddress(values) {
-      var fields = [
-        'address-text-one',
-        'address-text-two',
-        'address-text-three',
-        'address-text-four',
-        'address-text-five'
-      ];
-      return _.chain(values)
-        .pick(fields)
-        .values()
-        .value()
-        .join('<br />');
-    }
-  }
+  }]
 };

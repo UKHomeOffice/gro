@@ -1,6 +1,8 @@
 {{<partials-page}}
   {{$page-content}}
-    {{#radio-group}}how-radio{{/radio-group}}
+    {{#fields}}
+      {{#renderField}}{{/renderField}}
+    {{/fields}}
     {{#input-submit}}continue{{/input-submit}}
   {{/page-content}}
 {{/partials-page}}

@@ -8,10 +8,8 @@
   "contact-details": {
     "header": "Your personal and contact details"
   },
-  "postcode": {
-    "header": "What is your address?"
-  },
   "address": {
+    "header": "What is your address?",
     "edit": "Change",
     "cantfind": "I can't find my address in list"
   },
@@ -20,9 +18,6 @@
       "not-found": "Sorry – we couldn’t find any addresses for that postcode, enter your address manually",
       "cant-connect": "Sorry – we couldn’t connect to the postcode lookup service at this time, enter your address manually"
     }
-  },
-  "country": {
-    "header": "What country do you live in?"
   },
   "confirm": {
     "header": "Is the information you have given us correct?",
@@ -51,8 +46,9 @@
         "when-date": "Date of application",
         "name-text": "Full name",
         "email-text": "Email address",
-        "address-text": "Address",
-        "country-text": "Country"
+        "country-select": "Country",
+        "postcode-code": "Postcode",
+        "address-textarea": "Address"
       }
     }
   },

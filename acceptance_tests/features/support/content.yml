@@ -43,9 +43,9 @@ previous_yes: 'additional-radio-yes'
 previous_no: 'additional-radio-no'
 name_text: 'name-text'
 email_text: 'email-text'
-country_text: 'country'
-postcode_text: 'postcode'
-address_text: 'address-textarea'
+country_select: 'country-select'
+postcode_code: 'postcode-code'
+address_textarea: 'address-textarea'
 
 
 #Content

@@ -1,36 +1,11 @@
-{{<layout}}
-  {{$step}}Step 2{{/step}}
+{{<partials-page}}
+  {{$page-content}}
+    {{> partials-amend-postcode}}
 
-  {{$journeyHeader}}
-    {{#t}}journey.header{{/t}}
-  {{/journeyHeader}}
+    {{#select}}address-lookup{{/select}}
 
-  {{$validationSummary}}
-    {{> partials-validation-summary}}
-  {{/validationSummary}}
+    <p><span class="link"><a href="{{baseUrl}}/address">{{#t}}pages.address.cantfind{{/t}}</a></span></p>
 
-  {{$propositionHeader}}
-    {{> partials-navigation}}
-  {{/propositionHeader}}
-
-  {{$header}}{{#t}}pages.postcode.header{{/t}}{{/header}}
-
-  {{$content}}
-
-    {{<partials-form}}
-
-      {{$form}}
-        {{> partials-amend-postcode}}
-
-        {{#select}}address-lookup{{/select}}
-
-        <p><span class="link"><a href="{{baseUrl}}/address">{{#t}}pages.address.cantfind{{/t}}</a></span></p>
-
-        {{#input-submit}}continue{{/input-submit}}
-      {{/form}}
-
-    {{/partials-form}}
-
-  {{/content}}
-
-{{/layout}}
+    {{#input-submit}}continue{{/input-submit}}
+  {{/page-content}}
+{{/partials-page}}
