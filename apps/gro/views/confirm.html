@@ -1,39 +1,30 @@
 {{<layout}}
-{{$step}}{{/step}}
+  {{$step}}{{/step}}
 
-{{$journeyHeader}}
-{{#t}}journey.header{{/t}}
-{{/journeyHeader}}
+  {{$journeyHeader}}
+    {{#t}}journey.header{{/t}}
+  {{/journeyHeader}}
 
-{{$validationSummary}}
-{{> partials-validation-summary}}
-{{/validationSummary}}
+  {{$validationSummary}}
+    {{> partials-validation-summary}}
+  {{/validationSummary}}
 
-{{$propositionHeader}}
-{{> partials-navigation}}
-{{/propositionHeader}}
+  {{$propositionHeader}}
+    {{> partials-navigation}}
+  {{/propositionHeader}}
 
-{{$header}}{{#t}}pages.confirm.header{{/t}}{{/header}}
+  {{$header}}{{#t}}pages.confirm.header{{/t}}{{/header}}
 
-{{$content}}
-
-<p style="margin-bottom: 3em;">{{#t}}pages.confirm.subheader{{/t}}</p>
-
-{{<partials-form}}
-
-{{$form}}
-
-{{> partials-enquiry-details}}
-
-{{> partials-order-details}}
-
-{{> partials-contact-details}}
-
-{{#input-submit}}Confirm submission{{/input-submit}}
-{{/form}}
-
-{{/partials-form}}
-
-{{/content}}
+  {{$content}}
+    <p style="margin-bottom: 3em;">{{#t}}pages.confirm.subheader{{/t}}</p>
+    {{<partials-form}}
+      {{$form}}
+        {{#tableSections}}
+          {{> partials-summary-table}}
+        {{/tableSections}}
+        {{#input-submit}}confirm{{/input-submit}}
+      {{/form}}
+    {{/partials-form}}
+  {{/content}}
 
 {{/layout}}

@@ -151,7 +151,8 @@ module.exports = {
   },
   '/confirm': {
     controller: require('./controllers/confirm'),
-    next: '/confirmation'
+    next: '/confirmation',
+    config: require('./confirm-step-config')
   },
   '/confirmation': {
     backLink: false,
