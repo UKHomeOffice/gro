@@ -44,7 +44,8 @@
   "when-date": {
     "required": "Tell us when you placed your order",
     "numeric": "Date must only contain numbers",
-    "format": "Enter the date in the correct format"
+    "format": "Enter the date in the correct format",
+    "future": "The date is in the future"
   },
   "name-text": {
     "required": "Tell us your full name"
