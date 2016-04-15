@@ -3,19 +3,19 @@
   "version": "0.0.1",
   "main": "app.js",
   "description": "The General Register Office DSP form",
-  "license": "GPLv2",
+  "license": "GPL-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/UKHomeOffice/gro/"
   },
+  "readme": "./README.md",
   "scripts": {
     "start": "node .",
-    "stop": "pkill --signal SIGINT gro",
     "dev": "NODE_ENV=development nodemon -e html,js,json .",
     "watch": "parallelshell 'npm run watch:scss' 'npm run watch:js' 'npm run watch:translations'",
     "watch:scss": "nodemon -e scss -x 'npm run sass'",
     "watch:js": "nodemon --watch assets/js -e js -x 'npm run browserify'",
-    "watch:translations": "nodemon --watch apps/my_awesome_form/translations/src -x 'npm run hof-transpile'",
+    "watch:translations": "nodemon --watch apps/**/translations/src -x 'npm run hof-transpile'",
     "test": "NODE_ENV=test mocha",
     "browserify": "browserify ./assets/js/index.js > ./public/js/bundle.js",
     "test:acceptance": "cd acceptance_tests/; bundle install && cucumber",
