@@ -2,7 +2,7 @@
 
 var util = require('util');
 var controllers = require('hof').controllers;
-var BaseController = controllers.base;
+var BaseController = controllers.confirm;
 var path = require('path');
 var i18n = require('hof').i18n;
 

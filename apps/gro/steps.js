@@ -152,12 +152,12 @@ module.exports = {
   '/confirm': {
     controller: require('./controllers/confirm'),
     template: 'confirm.html',
-    next: '/confirmation'
+    next: '/confirmation',
+    config: require('./confirm-step-config')
   },
   '/confirmation': {
     template: 'confirmation.html',
     backLink: false,
     clearSession: true
   }
-}
-;
+};
