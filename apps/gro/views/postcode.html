@@ -1,0 +1,33 @@
+{{<layout}}
+{{$step}}{{/step}}
+
+{{$journeyHeader}}
+{{#t}}journey.header{{/t}}
+{{/journeyHeader}}
+
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$header}}{{#t}}pages.post.header{{/t}}{{/header}}
+
+{{$content}}
+
+{{<partials-form}}
+
+{{$form}}
+
+{{#input-text-code}}postcode{{/input-text-code}}
+
+{{#input-submit}}find{{/input-submit}}
+{{/form}}
+
+{{/partials-form}}
+
+{{/content}}
+
+{{/layout}}

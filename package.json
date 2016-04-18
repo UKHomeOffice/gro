@@ -1,6 +1,6 @@
 {
   "name": "GRO",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "app.js",
   "description": "The General Register Office DSP form",
   "license": "GPL-2.0",
@@ -18,6 +18,7 @@
     "watch:js": "nodemon --watch assets/js -e js -x 'npm run browserify'",
     "watch:translations": "nodemon --watch apps/**/translations/src -x 'npm run hof-transpile'",
     "test": "NODE_ENV=test mocha",
+    "uglify": "browserify -g uglifyify ./assets/js/index.js > ./public/js/bundle.js",
     "browserify": "browserify ./assets/js/index.js > ./public/js/bundle.js",
     "test:acceptance": "cd acceptance_tests/; bundle install && cucumber",
     "test:ci": "npm run lint && npm run style && npm run test",
@@ -28,7 +29,7 @@
     "sass": "./node_modules/node-sass/bin/node-sass ./assets/scss/app.scss ./public/css/app.css --include-path ./node_modules",
     "create:public": "mkdir -p ./public/js ./public/css ./public/images",
     "hof-transpile": "hof-transpiler ./apps/**/translations/src -w --shared ./apps/common/translations/src",
-    "postinstall": "npm run create:public; npm run sass; npm run browserify; npm run copy:images; npm run hof-transpile"
+    "postinstall": "npm run create:public; npm run sass; npm run uglify; npm run copy:images; npm run hof-transpile"
   },
   "author": "HomeOffice",
   "dependencies": {
@@ -40,14 +41,19 @@
     "express": "^4.12.4",
     "express-partial-templates": "^0.1.0",
     "express-session": "^1.11.3",
-    "hof": "^1.2.0",
+    "hof": "^6.0.0",
     "hogan-express-strict": "^0.5.4",
     "hogan.js": "^3.0.2",
     "jquery": "^2.1.4",
     "lodash": "3.0.1",
     "moment": "^2.10.3",
     "moment-business": "^2.0.0",
+<<<<<<< 0403dfab803dc538d1bee1d7f3c7b144706cdc9a
     "node-sass": "3.5.0-beta.1",
+=======
+    "node-rest-client": "^1.8.0",
+    "node-sass": "^3.2.0",
+>>>>>>> implemented address form journey
     "nodemailer": "^1.4.0",
     "nodemailer-smtp-transport": "^1.0.3",
     "nodemailer-stub-transport": "^1.0.0",

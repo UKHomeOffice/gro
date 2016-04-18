@@ -1,0 +1,38 @@
+{{<layout}}
+{{$step}}{{/step}}
+
+{{$journeyHeader}}
+{{#t}}journey.header{{/t}}
+{{/journeyHeader}}
+
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$header}}{{#t}}pages.post.header{{/t}}{{/header}}
+
+{{$content}}
+
+{{<partials-form}}
+
+{{$form}}
+
+<legend class="visuallyhidden">
+  <span class="form-label-bold">{{#t}}fields.country.label{{/t}}</span>
+</legend>
+
+{{#select}}country{{/select}}
+
+
+{{#input-submit}}continue{{/input-submit}}
+{{/form}}
+
+{{/partials-form}}
+
+{{/content}}
+
+{{/layout}}
