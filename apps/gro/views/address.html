@@ -1,0 +1,44 @@
+{{<layout}}
+{{$step}}{{/step}}
+
+{{$journeyHeader}}
+{{#t}}journey.header{{/t}}
+{{/journeyHeader}}
+
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$header}}{{#t}}pages.post.header{{/t}}{{/header}}
+
+{{$content}}
+
+{{<partials-form}}
+
+{{$form}}
+<p>
+  <span class="postcode">{{values.postcode}}</span>
+  <span class="link"><a href="{{baseUrl}}/postcode">{{#t}}pages.address.edit{{/t}}</a></span>
+</p>
+
+<legend class="visuallyhidden">
+  <span class="form-label-bold">{{#t}}fields.address.label{{/t}}</span>
+</legend>
+
+<p class="address">{{#select}}address{{/select}}</p>
+
+<p><span class="link"><a href="{{baseUrl}}/post-inside">{{#t}}pages.address.cantfind{{/t}}</a></span></p></p>
+
+
+{{#input-submit}}continue{{/input-submit}}
+{{/form}}
+
+{{/partials-form}}
+
+{{/content}}
+
+{{/layout}}
