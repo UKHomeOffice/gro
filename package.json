@@ -18,7 +18,7 @@
     "watch:js": "nodemon --watch assets/js -e js -x 'npm run browserify'",
     "watch:translations": "nodemon --watch apps/**/translations/src -x 'npm run hof-transpile'",
     "test": "NODE_ENV=test mocha",
-    "browserify": "browserify ./assets/js/index.js > ./public/js/bundle.js",
+    "browserify": "mkdir ./public/js && browserify ./assets/js/index.js > ./public/js/bundle.js",
     "test:acceptance": "cd acceptance_tests/; bundle install && cucumber",
     "test:ci": "npm run lint && npm run style && npm run test",
     "lint": "eslint .",
