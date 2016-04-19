@@ -128,10 +128,19 @@
   "email-hint": {
     "label": "If you placed your order online, you should use the same email address"
   },
-  "country-text": {
+  "country": {
     "label": "Country"
   },
   "address-text-one": {
     "label": "Address"
+  },
+  "postcode": {
+    "label": "Postcode"
+  },
+  "address": {
+    "label": "Address"
+  },
+  "town": {
+    "label": "Town or city"
   }
 }

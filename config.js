@@ -29,7 +29,7 @@ process.title = 'gro';
 module.exports = {
   env: process.env.NODE_ENV || 'local',
   siteroot: process.env.SITEROOT || '',
-  port: process.env.PORT || 8080,
+  port: process.env.PORT || 3020,
   listen_host: process.env.LISTEN_HOST || '0.0.0.0',
   session: {
     secret: process.env.SESSION_SECRET || 'howdoesyourgardengrow',

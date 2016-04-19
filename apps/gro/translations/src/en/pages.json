@@ -1,4 +1,8 @@
 {
+  "address": {
+    "edit": "Change",
+    "cantfind": "I can't find my address in list"
+  },
   "about": {
     "header": "What would you like to contact us about?"
   },
@@ -64,7 +68,7 @@
         "name-text": "Full name",
         "email-text": "Email address",
         "post-text": "Address",
-        "country-text": "Country"
+        "country": "Country"
       }
     }
   },

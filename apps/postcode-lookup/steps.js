@@ -5,57 +5,8 @@ var _ = require('underscore');
 module.exports = {
   '/': {
     controller: require('../common/controllers/start'),
-    next: '/country'
-  },
-  '/country': {
-    fields: [
-      'country'
-    ],
-    forks: [{
-      target: '/post-outside',
-      condition: function checkIfUK(req) {
-        return req.form.values.country !== 'United Kingdom';
-      }
-    }],
-    next: '/postcode',
-  },
-  '/postcode': {
-    template: 'postcode',
-    fields: [
-      'postcode'
-    ],
-    next: '/address'
-  },
-  '/address': {
-    template: 'address',
-    fields: [
-      'address'
-    ],
     next: '/about'
   },
-  '/post-outside': {
-    fields: [
-      'address-text-one',
-      'address-text-two',
-      'address-text-three',
-      'address-text-four',
-      'address-text-five'
-    ],
-    next: '/about',
-    backLinks: ['/country']
-  },
-  '/post-inside': {
-    fields: [
-      'address-text-one',
-      'address-text-two',
-      'address-text-three',
-      'address-text-four',
-      'town'
-    ],
-    next: '/about',
-    backLinks: ['address']
-  },
-
   '/about': {
     template: 'about',
     fields: ['about-radio'],
@@ -118,7 +69,6 @@ module.exports = {
       'person-two'
     ],
     next: '/additional',
-    backLinks: ['type'],
     continueOnEdit: true,
     forks: [{
       target: '/how',
@@ -182,6 +132,20 @@ module.exports = {
   '/email': {
     template: 'email',
     fields: ['email-text'],
+    continueOnEdit: true,
+    next: '/post'
+  },
+  '/post': {
+    controller: require('./controllers/post'),
+    template: 'post',
+    fields: [
+      'country-text',
+      'address-text-one',
+      'address-text-two',
+      'address-text-three',
+      'address-text-four',
+      'address-text-five'
+    ],
     continueOnEdit: true,
     next: '/confirm'
   },
