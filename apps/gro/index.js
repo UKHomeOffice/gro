@@ -1,17 +1,17 @@
 'use strict';
 
-var hof = require('hof');
-var wizard = hof.wizard;
-var mixins = hof.mixins;
-var i18nFuture = hof.i18n;
-var router = require('express').Router();
-var path = require('path');
-var _ = require('underscore');
-var controllers = require('hof').controllers;
-var BaseController = controllers.base;
+const hof = require('hof');
+const wizard = hof.wizard;
+const mixins = hof.mixins;
+const i18nFuture = hof.i18n;
+const router = require('express').Router();
+const path = require('path');
+const _ = require('underscore');
+const controllers = require('hof').controllers;
+const BaseController = controllers.base;
 
-var fields = _.extend({}, require('../common/fields/'), require('./fields/'));
-var i18n = i18nFuture({
+const fields = _.extend({}, require('../common/fields/'), require('./fields/'));
+const i18n = i18nFuture({
   path: path.resolve(__dirname, './translations/__lng__/__ns__.json')
 });
 

@@ -1,16 +1,17 @@
 'use strict';
-var path = require('path');
-var hof = require('hof');
-var i18n = hof.i18n({
+
+const path = require('path');
+const hof = require('hof');
+const i18n = hof.i18n({
   path: path.resolve(__dirname, '../apps/common/translations/__lng__/__ns__.json')
 });
-var config = require('../config');
-var logger = require('../lib/logger');
+const config = require('../config');
+const logger = require('../lib/logger');
 
 /*eslint no-unused-vars: 0*/
 module.exports = function errorHandler(err, req, res) {
   /*eslint no-unused-vars: 1*/
-  var content = {};
+  const content = {};
 
   if (err.code === 'SESSION_TIMEOUT') {
     content.title = i18n.translate('errors.session.title');
@@ -26,8 +27,8 @@ module.exports = function errorHandler(err, req, res) {
   logger.error(err.message || err.error, err);
 
   res.render(err.template, {
+    content,
     error: err,
-    content: content,
     showStack: config.env === 'development',
     startLink: req.path.replace(/^\/([^\/]*).*$/, '$1')
   });

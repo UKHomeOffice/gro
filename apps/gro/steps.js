@@ -14,7 +14,7 @@ module.exports = {
     continueOnEdit: true,
     forks: [{
       target: '/details',
-      condition: function checkComplaintOther(req) {
+      condition(req) {
         return _.contains(['complaint', 'other'], req.form.values['about-radio']);
       }
     }]
@@ -27,7 +27,7 @@ module.exports = {
     continueOnEdit: true,
     forks: [{
       target: '/people',
-      condition: function checkMarriagePartnership(req) {
+      condition(req) {
         return _.contains(['marriage', 'partnership'], req.form.values['type-radio']);
       }
     }]
@@ -57,7 +57,7 @@ module.exports = {
     continueOnEdit: true,
     forks: [{
       target: '/how',
-      condition: function checkSteps(req) {
+      condition(req) {
         return _.contains(req.sessionModel.get('steps'), '/details') && req.params.action !== 'edit';
       }
     }]
@@ -72,7 +72,7 @@ module.exports = {
     continueOnEdit: true,
     forks: [{
       target: '/how',
-      condition: function checkSteps(req) {
+      condition(req) {
         return _.contains(req.sessionModel.get('steps'), '/details') && req.params.action !== 'edit';
       }
     }]
@@ -159,5 +159,4 @@ module.exports = {
     backLink: false,
     clearSession: true
   }
-}
-;
+};

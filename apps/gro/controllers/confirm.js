@@ -1,63 +1,51 @@
 'use strict';
 
-var util = require('util');
-var controllers = require('hof').controllers;
-var BaseController = controllers.base;
-var path = require('path');
-var i18n = require('hof').i18n;
+const controllers = require('hof').controllers;
+const BaseController = controllers.base;
+const path = require('path');
+const i18n = require('hof').i18n;
 
-var Model = require('../../common/models/email');
+const Model = require('../../common/models/email');
 
-var ConfirmController = function ConfirmController() {
-  BaseController.apply(this, arguments);
-};
+class ConfirmController extends BaseController {
+  saveValues(req, res, callback) {
 
-util.inherits(ConfirmController, BaseController);
+    const locali18n = i18n({
+      path: path.resolve(
+        __dirname, '../translations/__lng__/__ns__.json'
+      )
+    });
 
+    locali18n.on('ready', () => {
 
-ConfirmController.prototype.saveValues = function saveValues(req, res, callback) {
+      const subject = locali18n.translate('pages.email.information.subject');
 
-  var locali18n = i18n({
-    path: path.resolve(
-      __dirname, '../translations/__lng__/__ns__.json'
-    )
-  });
+      const d = {
+        values: (data => {
+          const r = {};
+          let prop;
+          for (prop in data) {
+            r[prop] = data[prop];
+          }
+          return r;
+        })(req.sessionModel.attributes)
+      };
 
-  locali18n.on('ready', function prepareEmail() {
+      const dateTime = new Date();
+      d.values.reportDate = dateTime.toISOString();
+      d.email = d.values['email-text'];
 
-    var subject = locali18n.translate('pages.email.information.subject');
+      const model = new Model(d);
 
-    var d = {
-      values: (function getSessionValues(data) {
-        var r = {};
-        for (var prop in data) {
-          r[prop] = data[prop];
-        }
-        return r;
-      }(req.sessionModel.attributes))
-    };
+      model.set({
+        template: 'gro',
+        subject
+      });
 
-    var dateTime = new Date();
-    d.values.reportDate = dateTime.toISOString();
-    d.email = d.values['email-text'];
+      model.save(callback);
+    });
 
-    var model = new Model(d);
-    var service = {
-      template: 'gro',
-      subject: subject
-    };
-
-    if (service) {
-      model.set('template', service.template);
-      model.set('subject', service.subject);
-    } else {
-      throw new Error('no service found');
-    }
-
-    model.save(callback);
-
-  });
-
-};
+  }
+}
 
 module.exports = ConfirmController;

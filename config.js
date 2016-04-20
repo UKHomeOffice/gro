@@ -1,20 +1,20 @@
 'use strict';
 
-function parseFullTCPAddress(addr) {
-  var regexp = /tcp:\/\/(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}):(\d+)/g;
-  var details = regexp.exec(addr);
+const parseFullTCPAddress = addr => {
+  const regexp = /tcp:\/\/(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}):(\d+)/g;
+  const details = regexp.exec(addr);
   return details || [];
-}
+};
 
 /* parse out some ENV vars */
 /* docker-compose / kubernetes dev or local */
-var redis_addr = process.env.REDIS_HOST || '127.0.0.1';
-var redis_port = process.env.REDIS_PORT || '6379';
+const redis_addr = process.env.REDIS_HOST || '127.0.0.1';
+const redis_port = process.env.REDIS_PORT || '6379';
 
 
-var maildev_details = parseFullTCPAddress(process.env.MAILDEV_PORT || '');
-var maildev_addr = '';
-var maildev_port = '';
+const maildev_details = parseFullTCPAddress(process.env.MAILDEV_PORT || '');
+const maildev_addr = '';
+const maildev_port = '';
 
 if (maildev_details.length > 1) {
   maildev_addr = maildev_details[1];

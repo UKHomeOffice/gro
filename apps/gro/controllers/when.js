@@ -1,14 +1,13 @@
 'use strict';
 
-var util = require('util');
-var controllers = require('hof').controllers;
-var DateController = controllers.date;
+const controllers = require('hof').controllers;
+const DateController = controllers.date;
 
-var WhenController = function WhenController() {
-  this.dateKey = 'when-date';
-  DateController.apply(this, arguments);
-};
-
-util.inherits(WhenController, DateController);
+class WhenController extends DateController {
+  constructor(options) {
+    super(options);
+    this.dateKey = 'when-date';
+  }
+}
 
 module.exports = WhenController;

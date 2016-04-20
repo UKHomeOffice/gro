@@ -1,7 +1,5 @@
 'use strict';
 
-var _ = require('underscore');
+const _ = require('underscore');
 
-module.exports = _.extend(
-);
-
+module.exports = _.extend();
