@@ -48,12 +48,8 @@
     "lodash": "3.0.1",
     "moment": "^2.10.3",
     "moment-business": "^2.0.0",
-<<<<<<< 0403dfab803dc538d1bee1d7f3c7b144706cdc9a
-    "node-sass": "3.5.0-beta.1",
-=======
+    "node-sass": "3.4.0",
     "node-rest-client": "^1.8.0",
-    "node-sass": "^3.2.0",
->>>>>>> implemented address form journey
     "nodemailer": "^1.4.0",
     "nodemailer-smtp-transport": "^1.0.3",
     "nodemailer-stub-transport": "^1.0.0",
