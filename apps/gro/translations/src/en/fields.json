@@ -142,5 +142,8 @@
   },
   "town": {
     "label": "Town or city"
+  },
+  "address-found-message": {
+    "label": "test"
   }
 }

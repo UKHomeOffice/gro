@@ -1,6 +1,6 @@
 'use strict';
 
-var _ = require('underscore');
+var _ = require('lodash');
 
 module.exports = {
   '/': {
@@ -17,19 +17,27 @@ module.exports = {
         return req.form.values.country !== 'United Kingdom';
       }
     }],
-    next: '/postcode',
+    next: '/postcode'
   },
   '/postcode': {
     template: 'postcode',
     fields: [
       'postcode'
     ],
+    forks: [{
+      target: '/post-inside',
+      condition: function checkNI(req) {
+        return _.startsWith(req.form.values.postcode, 'BT');
+      }
+    }],
     next: '/address'
   },
   '/address': {
+    controller: require('./controllers/address'),
     template: 'address',
     fields: [
-      'address'
+      'address',
+      'address-found-message'
     ],
     next: '/about'
   },
@@ -143,7 +151,7 @@ module.exports = {
       'how-radio',
       'online-toggle-text',
       'telephone-toggle-text',
-      'post-toggle-text',
+      'post-toggle-text'
     ],
     continueOnEdit: true,
     next: '/which',
