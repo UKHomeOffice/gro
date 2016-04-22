@@ -5,7 +5,6 @@ var controllers = require('hof').controllers;
 var _ = require('lodash');
 var Client = require('node-rest-client').Client;
 var config = require('../../../config');
-
 var BaseController = controllers.base;
 
 var AddressController = function AddressController() {
@@ -16,7 +15,6 @@ util.inherits(AddressController, BaseController);
 
 /* eslint no-unused-vars: 0 */
 AddressController.prototype.getValues = function getValues(req, res, callback) {
-
   var argsi = arguments;
   var postcode = req.sessionModel.attributes.postcode;
   var previouspostcode = req.sessionModel.attributes.previouspostcode;
@@ -55,7 +53,9 @@ AddressController.prototype.saveValues = function saveValues(req, res, callback)
   var formattedAddress = req.form.values.address.split(', ').join('\n');
   var addresses = req.sessionModel.attributes.addresses;
   var address = _.find(addresses, 'formatted_address', formattedAddress);
-  var road = address.building_number + ' ' + _.capitalize(address.thoroughfare_name);
+  if (address) {
+    var road = address.building_number + ' ' + _.capitalize(address.thoroughfare_name);
+  }
   BaseController.prototype.saveValues.apply(this, arguments);
 
 };
