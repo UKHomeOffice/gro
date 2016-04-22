@@ -18,7 +18,6 @@
     "watch:js": "nodemon --watch assets/js -e js -x 'npm run browserify'",
     "watch:translations": "nodemon --watch apps/**/translations/src -x 'npm run hof-transpile'",
     "test": "NODE_ENV=test mocha",
-    "uglify": "browserify -g uglifyify ./assets/js/index.js > ./public/js/bundle.js",
     "browserify": "browserify ./assets/js/index.js > ./public/js/bundle.js",
     "test:acceptance": "cd acceptance_tests/; bundle install && cucumber",
     "test:ci": "npm run lint && npm run style && npm run test",
@@ -29,7 +28,7 @@
     "sass": "./node_modules/node-sass/bin/node-sass ./assets/scss/app.scss ./public/css/app.css --include-path ./node_modules",
     "create:public": "mkdir -p ./public/js ./public/css ./public/images",
     "hof-transpile": "hof-transpiler ./apps/**/translations/src -w --shared ./apps/common/translations/src",
-    "postinstall": "npm run create:public; npm run sass; npm run uglify; npm run copy:images; npm run hof-transpile"
+    "postinstall": "npm run create:public; npm run sass; npm run browserify; npm run copy:images; npm run hof-transpile"
   },
   "author": "HomeOffice",
   "dependencies": {
