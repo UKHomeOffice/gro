@@ -1312,6 +1312,8 @@ fieldset + .reveal {
     @media (max-width: 640px) {
       #step a {
         background-position: 0 1px; } }
+  #step a:visited {
+    color: #2e8aca; }
   #step span {
     display: inline-block;
     margin-top: 15px;

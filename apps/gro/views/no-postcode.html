@@ -30,11 +30,14 @@
   <span class="form-label-bold">{{#t}}fields.address.label{{/t}}</span>
 </legend>
 
-<p class="address">{{#select}}address{{/select}}</p>
 
-<p><span class="link"><a href="{{baseUrl}}/post-inside">{{#t}}pages.address.cantfind{{/t}}</a></span></p></p>
 
-{{#input-submit}}continue{{/input-submit}}
+<div class="validation-error">
+  <span id="when-date-error" class="error-message">
+    {{#t}}pages.no-postcode.message{{/t}}
+</span>
+</div>
+
 {{/form}}
 
 {{/partials-form}}

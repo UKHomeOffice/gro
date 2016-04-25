@@ -30,11 +30,34 @@ module.exports = {
         return _.startsWith(req.form.values.postcode, 'BT');
       }
     }],
-    next: '/address'
+    next: '/address-start'
+  },
+  '/address-start': {
+    controller: require('./controllers/address-start'),
+    fields: [
+      'address',
+      'address-found'
+    ],
+    forks: [{
+      target: '/no-postcode',
+      condition: function hasPostcode(req) {
+        return !(req.sessionModel.get('postcode-found'));
+      }
+    }],
+    next: '/address',
   },
   '/address': {
     controller: require('./controllers/address'),
     template: 'address',
+    fields: [
+      'address',
+      'address-found-message'
+    ],
+    next: '/about',
+
+  },
+  '/no-postcode': {
+    template: 'no-postcode',
     fields: [
       'address',
       'address-found-message'
