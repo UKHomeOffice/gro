@@ -4,6 +4,7 @@ app:
     - NODE_ENV=docker
     - EMAIL_IGNORE_TLS=true
     - CASEWORKER_EMAIL=a@user.com
+
   net: "host"
   ports:
     - "8080:8080"

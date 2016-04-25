@@ -5,7 +5,6 @@ var controllers = require('hof').controllers;
 var _ = require('lodash');
 var Client = require('node-rest-client').Client;
 var config = require('../../../config');
-
 var BaseController = controllers.base;
 
 var AddressController = function AddressController() {
