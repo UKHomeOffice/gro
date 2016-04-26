@@ -3,5 +3,6 @@ logs
 node_modules
 .idea/
 Gemfile.lock
-apps/**/translations/en
-public/
+apps/**/translations/**/default.json
+public
+.DS_Store
