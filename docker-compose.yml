@@ -1,5 +1,6 @@
 app:
   build: .
+  env_file: secrets.env
   environment:
     - NODE_ENV=docker
     - EMAIL_IGNORE_TLS=true
