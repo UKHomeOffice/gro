@@ -7,3 +7,4 @@ apps/**/translations/**/default.json
 public
 .DS_Store
 secrets.env
+coverage
