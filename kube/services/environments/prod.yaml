@@ -1,0 +1,28 @@
+---
+Kb8Context:
+  cluster: dsp-prod
+  user: formsso.ci
+  namespace: gro-form
+
+Fn::FileData:
+- name: tls_tag
+  files:
+  - ../../artefacts/tls_tag
+- name: app_tag
+  files:
+  - ../../artefacts/app_tag
+- name: redis_tag
+  files:
+  - ../../artefacts/redis_tag
+- name: tls_key
+  encode: base64
+  files:
+  - ../secrets/prod/gro-form-key
+- name: tls_crt
+  encode: base64
+  files:
+  - ../secrets/prod/gro-form-crt
+
+
+GRO_HTTP_PORT: 30241
+GRO_HTTPS_PORT: 30242

@@ -13,13 +13,11 @@ spec:
     spec:
       containers:
       - name: redis
-        image: quay.io/ukhomeofficedigital/redis:v0.0.1
+        image: quay.io/ukhomeofficedigital/redis:${ redis_tag }
         ports:
         - containerPort: 6379
         command:
-        - "/usr/bin/bash"
-        - "-c"
-        - "/run.sh ${REDIS_SENTINEL_SERVICE_HOST} ${REDIS_SENTINEL_SERVICE_PORT}"
+        - "/run.sh"
         resources:
           limits:
             cpu: "0.2"
