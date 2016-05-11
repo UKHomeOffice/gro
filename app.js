@@ -91,6 +91,8 @@ app.get('/terms-and-conditions', function renderTerms(req, res) {
   res.render('terms');
 });
 
+app.get('/healthz/ping', (req, res) => res.send(200));
+
 // errors
 app.use(require('./errors/'));
 
