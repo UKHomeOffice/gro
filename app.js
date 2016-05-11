@@ -94,7 +94,11 @@ app.get('/terms-and-conditions', function renderTerms(req, res) {
 app.get('/healthz/ping', (req, res) => res.send(200));
 
 // errors
-app.use(require('./errors/'));
+app.use(require('hof').middleware.errors({
+  logger: require('./lib/logger'),
+  translate: require('hof').i18n.translate,
+  debug: config.env === 'development'
+}));
 
 
 /*eslint camelcase: 0*/
