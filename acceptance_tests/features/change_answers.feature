@@ -133,9 +133,6 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I click marriage and then continue
     Then I am taken to the people page of the form
     When I enter both names on the certificate
-    Then I am taken to the additional page of the form
-    And I enter free_text into the additional_text field
-    When I click previous_no and then continue
     Then I am taken to the how page of the form
     When I click on online
     And I enter col_number into the online_text field
