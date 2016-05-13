@@ -35,7 +35,6 @@ module.exports = {
   '/address-start': {
     controller: require('./controllers/address-start'),
     fields: [
-      'address',
       'address-found'
     ],
     forks: [{
@@ -44,16 +43,16 @@ module.exports = {
         return !(req.sessionModel.get('postcode-found'));
       }
     }],
-    next: '/address',
+    next: '/address'
+
   },
   '/address': {
     controller: require('./controllers/address'),
     template: 'address',
     fields: [
-      'address',
-      'address-found-message'
+      'address'
     ],
-    next: '/about',
+    next: '/about'
 
   },
   '/no-postcode': {

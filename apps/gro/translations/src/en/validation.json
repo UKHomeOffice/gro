@@ -64,6 +64,6 @@
     "required": "Enter your address"
   },
   "address": {
-    "required": "Enter your address"
+    "required": "Select an address"
   }
 }

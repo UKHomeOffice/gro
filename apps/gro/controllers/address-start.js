@@ -16,7 +16,8 @@ module.exports = class AddressStartController extends BaseController {
   }
 
   getValues(req, res, callback) {
-    const postcode = req.sessionModel.attributes.postcode;
+    const postcode = req.sessionModel.attributes.postcode.toUpperCase();
+    req.sessionModel.set('postcode', postcode);
     const previouspostcode = req.sessionModel.attributes.previouspostcode;
     req.sessionModel.set('previous-step', res.locals.backLink);
     if (postcode !== previouspostcode) {
@@ -37,6 +38,7 @@ module.exports = class AddressStartController extends BaseController {
           }
           req.sessionModel.set('previouspostcode', req.sessionModel.attributes.postcode);
           this.supercall(req, res, callback);
+
 
         }, this));
     } else {
