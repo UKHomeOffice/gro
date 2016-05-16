@@ -36,11 +36,11 @@ describe('apps/gro/controllers/confirm', () => {
 
     let controller;
     const emailText = 'email@email.com';
+    const emailJson = {'email-text': 'email@email.com'};
     const req = {
       sessionModel: {
-        attributes: {
-          'email-text': 'email@email.com'
-        }
+        toJSON: sinon.stub().returns(emailJson),
+        get: sinon.stub().returns(emailText)
       },
     };
     const res = {};
