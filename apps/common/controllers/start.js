@@ -1,18 +1,17 @@
 'use strict';
 
-var util = require('util');
-var controllers = require('hof').controllers;
-var BaseController = controllers.base;
+const BaseController = require('hof').controllers.base;
 
-var StartController = function StartController() {
-  BaseController.apply(this, arguments);
+module.exports = class StartController extends BaseController {
+
+  constructor(options) {
+    super(options);
+  }
+
+  /*eslint no-unused-vars: 0*/
+  getValues(req, res, callback) {
+    req.sessionModel.reset();
+    super.successHandler.apply(this, arguments);
+  }
+
 };
-
-util.inherits(StartController, BaseController);
-
-StartController.prototype.getValues = function getValues(req) {
-  req.sessionModel.reset();
-  BaseController.prototype.successHandler.apply(this, arguments);
-};
-
-module.exports = StartController;
