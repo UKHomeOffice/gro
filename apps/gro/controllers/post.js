@@ -1,33 +1,25 @@
 'use strict';
 
-var util = require('util');
-var controllers = require('hof').controllers;
-var BaseController = controllers.base;
+const BaseController = require('hof').controllers.base;
 
-var PostController = function PostController() {
-  BaseController.apply(this, arguments);
+module.exports = class PostController extends BaseController {
+  constructor(options) {
+    super(options);
+  }
+
+  saveValues(req, res, callback) {
+    const address = (data =>
+
+        data['address-text-one'] + ' ' +
+        data['address-text-two'] + ' ' +
+        data['address-text-three'] + ' ' +
+        data['address-text-four'] + ' ' +
+        data['address-text-five']
+
+    )(req.form.values);
+
+    req.sessionModel.set('address', address);
+
+    super.saveValues(req, res, callback);
+  }
 };
-
-util.inherits(PostController, BaseController);
-
-/* eslint no-unused-vars: 0 */
-PostController.prototype.saveValues = function saveValues(req, res, callback) {
-
-  var address = (function createAddressString(data) {
-
-    return data['address-text-one'] + ' ' +
-      data['address-text-two'] + ' ' +
-      data['address-text-three'] + ' ' +
-      data['address-text-four'] + ' ' +
-      data['address-text-five'];
-
-
-  }(req.form.values));
-
-  req.sessionModel.set('address', address);
-
-  BaseController.prototype.saveValues.apply(this, arguments);
-
-};
-
-module.exports = PostController;
