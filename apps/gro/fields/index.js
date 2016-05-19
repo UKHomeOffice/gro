@@ -14,5 +14,11 @@ module.exports = _.extend(
   require('./when'),
   require('./name'),
   require('./email'),
-  require('./post')
+  require('./post'),
+  require('./address-outside'),
+  require('./address-inside'),
+  require('./country'),
+  require('./postcode'),
+  require('./no-postcode'),
+  require('./address')
 );

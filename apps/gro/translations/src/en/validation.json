@@ -59,5 +59,19 @@
   },
   "address-text-one": {
     "required": "Enter your address"
+  },
+  "country": {
+    "required": "Enter your country",
+    "equal": "Please pick a country from the list"
+  },
+  "postcode": {
+    "postcode": "This postcode isn't valid, enter a valid postcode",
+    "required": "Enter your postcode"
+  },
+  "address-text-one": {
+    "required": "Enter your address"
+  },
+  "address": {
+    "required": "Select an address"
   }
 }
