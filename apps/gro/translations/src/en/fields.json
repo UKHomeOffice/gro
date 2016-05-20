@@ -119,9 +119,6 @@
   "email-text": {
     "label": "Email address"
   },
-  "email-hint": {
-    "label": "If you placed your order online, you should use the same email address"
-  },
   "country-text": {
     "label": "Country"
   },
