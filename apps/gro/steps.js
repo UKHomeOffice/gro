@@ -138,6 +138,7 @@ module.exports = {
         return req.form.values.country !== 'United Kingdom';
       }
     }],
+    continueOnEdit: true,
     next: '/postcode'
   },
   '/postcode': {
@@ -151,6 +152,7 @@ module.exports = {
         return _.startsWith(req.form.values.postcode, 'BT');
       }
     }],
+    continueOnEdit: true,
     next: '/address-start'
   },
   '/address-start': {
@@ -164,6 +166,7 @@ module.exports = {
         return !(req.sessionModel.get('postcode-found'));
       }
     }],
+    continueOnEdit: true,
     next: '/address'
 
   },
@@ -173,6 +176,7 @@ module.exports = {
     fields: [
       'address'
     ],
+    continueOnEdit: true,
     next: '/confirm'
 
   },
@@ -182,6 +186,7 @@ module.exports = {
       'address',
       'postcode-error'
     ],
+    continueOnEdit: true,
     next: '/confirm'
   },
   '/address-outside': {
@@ -192,6 +197,7 @@ module.exports = {
       'address-text-four',
       'address-text-five'
     ],
+    continueOnEdit: true,
     next: '/confirm',
     backLinks: ['/country']
   },
@@ -203,6 +209,7 @@ module.exports = {
       'address-text-four',
       'town'
     ],
+    continueOnEdit: true,
     next: '/confirm',
     backLinks: ['address']
   },
