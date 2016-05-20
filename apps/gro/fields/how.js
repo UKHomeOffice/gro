@@ -23,7 +23,6 @@ module.exports = {
     }]
   },
   'online-toggle-text': {
-    validate: ['required'],
     legend: 'fields.online-toggle-text.legend',
     dependent: {
       field: 'how-radio',
