@@ -87,8 +87,7 @@
     "a": "Your order number would have been given to you when you ordered by telephone. Order numbers typically look like this: 12345-1"
   },
   "post-hint": {
-    "a": "The account number will have been given to you when you placed your order by post. Account numbers aways start with HMPO and typically look like this HMPO45678ERF0.",
-    "b": "If you can't find your account number, you may have to send us a copy of the certificate."
+    "a": "The account number will have been given to you when you placed your order by post. Account numbers aways start with HMPO and typically look like this HMPO45678ERF0."
   },
   "which-radio": {
     "options": {
