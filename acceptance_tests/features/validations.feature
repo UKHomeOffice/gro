@@ -23,12 +23,6 @@ Feature: I see the correct error messages in the form
     Then I am taken to the how page of the form
     When I click continue
     Then I should see the how error
-    When I click online and then continue
-    Then I should see the online error
-    When I click telephone and then continue
-    Then I should see the telephone error
-    When I click post and then continue
-    Then I should see the post error
 
   @details
   Scenario: Details page validation

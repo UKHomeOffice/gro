@@ -30,7 +30,6 @@ module.exports = {
     }
   },
   'telephone-toggle-text': {
-    validate: ['required'],
     legend: 'fields.telephone-toggle-text.legend',
     dependent: {
       field: 'how-radio',
