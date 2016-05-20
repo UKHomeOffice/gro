@@ -37,7 +37,6 @@ module.exports = {
     }
   },
   'post-toggle-text': {
-    validate: ['required'],
     legend: 'fields.post-toggle-text-legend',
     dependent: {
       field: 'how-radio',
