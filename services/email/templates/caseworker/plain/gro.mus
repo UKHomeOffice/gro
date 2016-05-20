@@ -45,9 +45,7 @@
   {{/values.post-toggle-text}}
 
   {{#t}}pages.email.headers.order-service{{/t}}: {{values.which-radio}}
-  
-  {{#t}}pages.email.headers.order-number{{/t}}: {{values.order-number-text}}
-  
+
   {{#t}}pages.email.headers.order-application-date{{/t}}: {{values.when-date}}
 
 

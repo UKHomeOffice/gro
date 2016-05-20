@@ -50,27 +50,6 @@ Feature: I see the correct error messages in the form
     When I click continue
     Then I should see the person error
 
-  @which @standard @order_number
-  Scenario: Which page validation
-    Given I am on the start page for the form
-    Then I can see the questions for the about page of the form
-    When I click not_received and then continue
-    Then I am taken to the type page of the form
-    When I click marriage and then continue
-    Then I am taken to the people page of the form
-    When I enter both names on the certificate
-    Then I am taken to the additional page of the form
-    When I click previous_yes and then continue
-    Then I am taken to the how page of the form
-    When I click on online
-    And I enter col_number into the online_text field
-    When I click continue
-    Then I am taken to the which page of the form
-    When I click continue
-    Then I should see the which error
-    When I click standard and then continue
-    Then I should see the order_number error
-
   @when
   Scenario: When page validation
     Given I am on the start page for the form
@@ -87,7 +66,7 @@ Feature: I see the correct error messages in the form
     And I enter col_number into the online_text field
     When I click continue
     Then I am taken to the which page of the form
-    When I choose standard and enter my order number
+    When I choose standard service
     Then I am taken to the when page of the form
     When I click continue
     Then I should see the when error
@@ -108,7 +87,7 @@ Feature: I see the correct error messages in the form
     And I enter col_number into the online_text field
     When I click continue
     Then I am taken to the which page of the form
-    When I choose standard and enter my order number
+    When I choose standard service
     Then I am taken to the when page of the form
     When I enter an invalid date
     Then I should see the date error
@@ -129,7 +108,7 @@ Feature: I see the correct error messages in the form
     And I enter col_number into the online_text field
     When I click continue
     Then I am taken to the which page of the form
-    When I choose standard and enter my order number
+    When I choose standard service
     Then I am taken to the when page of the form
     When I enter a date
     Then I am taken to the name page of the form

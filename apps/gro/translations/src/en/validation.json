@@ -38,9 +38,6 @@
   "which-radio": {
     "required": "Tell us which service you paid for"
   },
-  "order-number-text": {
-    "required": "Tell us your order number"
-  },
   "when-date": {
     "required": "Tell us when you placed your order",
     "numeric": "Date must only contain numbers",

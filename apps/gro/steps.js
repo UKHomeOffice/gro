@@ -103,8 +103,7 @@ module.exports = {
   '/which': {
     template: 'which',
     fields: [
-      'which-radio',
-      'order-number-text'
+      'which-radio'
     ],
     continueOnEdit: true,
     next: '/when'
