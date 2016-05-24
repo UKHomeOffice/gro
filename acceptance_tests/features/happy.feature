@@ -25,8 +25,12 @@ Feature: I am able to navigate through the GRO form correctly
     When I enter my full name
     Then I am taken to the email page of the form
     When I enter my email address
-    Then I am taken to the post page of the form
-    When I fill in my address
+    Then I am taken to the country page of the form
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I enter my postcode
+    Then I am taken to the address page of the form
+    When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
       |  table_not_received         |  not_received_summary  |
@@ -39,6 +43,7 @@ Feature: I am able to navigate through the GRO form correctly
       |  table_when                 |  date_summary          |
       |  table_name                 |  full_name             |
       |  table_email                |  email_address         |
+      |  table_country              |  country_summary       |
       |  table_post                 |  address_summary       |
     When I click Confirm submission
     Then I am taken to the confirmation page
@@ -54,8 +59,12 @@ Feature: I am able to navigate through the GRO form correctly
     When I enter my full name
     Then I am taken to the email page of the form
     When I enter my email address
-    Then I am taken to the post page of the form
-    When I fill in my address
+    Then I am taken to the country page of the form
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I enter my postcode
+    Then I am taken to the address page of the form
+    When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
       |  table_not_received         |  complaint_summary  |
@@ -64,6 +73,7 @@ Feature: I am able to navigate through the GRO form correctly
       |  table_previous             |  no_summary         |
       |  table_name                 |  full_name          |
       |  table_email                |  email_address      |
+      |  table_country              |  country_summary    |
       |  table_post                 |  address_summary    |
     When I click Confirm submission
     Then I am taken to the confirmation page
@@ -91,8 +101,12 @@ Feature: I am able to navigate through the GRO form correctly
     When I enter my full name
     Then I am taken to the email page of the form
     When I enter my email address
-    Then I am taken to the post page of the form
-    When I fill in my address
+    Then I am taken to the country page of the form
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I enter my postcode
+    Then I am taken to the address page of the form
+    When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
       |  table_not_received         |  other_summary     |
@@ -109,6 +123,7 @@ Feature: I am able to navigate through the GRO form correctly
       |  table_when                 |  date_summary      |
       |  table_name                 |  full_name         |
       |  table_email                |  email_address     |
+      |  table_country              |  country_summary   |
       |  table_post                 |  address_summary   |
     When I click Confirm submission
     Then I am taken to the confirmation page

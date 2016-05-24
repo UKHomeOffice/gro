@@ -36,6 +36,17 @@
   "post": {
     "header": "What is your address?"
   },
+  "address": {
+    "edit": "Change",
+    "cantfind": "I can't find my address in list"
+  },
+  "no-postcode": {
+    "message": "Sorry – we couldn’t find any addresses for that postcode.",
+    "cantfind": "I can't find my address in list"
+  },
+  "country": {
+    "header": "What country do you live in?"
+  },
   "confirm": {
     "header": "Is the information you have given us correct?",
     "subheader": "If any information is incorrect, you can change it here.",

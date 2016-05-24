@@ -149,6 +149,10 @@ Feature: I see the correct error messages in the form
     When I click continue
     Then I should see the invalid_email error
     When I enter my email address
-    Then I am taken to the post page of the form
-    When I click continue
-    Then I should see the country error
+    Then I am taken to the country page of the form
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I enter my postcode
+    Then I am taken to the address page of the form
+    When I select my address
+
