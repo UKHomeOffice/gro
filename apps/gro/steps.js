@@ -183,7 +183,11 @@ module.exports = {
   '/no-postcode': {
     template: 'no-postcode',
     fields: [
-      'address',
+      'address-text-one',
+      'address-text-two',
+      'address-text-three',
+      'address-text-four',
+      'address-text-five',
       'postcode-error'
     ],
     continueOnEdit: true,
