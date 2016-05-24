@@ -47,6 +47,11 @@ spec:
           value: redis
         - name: REDIS_PORT
           value: "6379"
+        - name: POSTCODE_AUTH
+          valueFrom:
+            secretKeyRef:
+              name: postcode_auth
+              key: token
         ports:
         - containerPort: 8080
 
