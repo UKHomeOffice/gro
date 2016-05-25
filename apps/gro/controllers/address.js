@@ -8,36 +8,30 @@ module.exports = class Address extends BaseController {
     super(options);
   }
 
-  getValues(req, res) {
+  getValues(req, res, callback) {
     res.locals.backLink = req.sessionModel.get('previous-step');
     const addresses = req.sessionModel.get('addresses');
     const formattedlist = _.map(_.map(addresses, 'formatted_address'), arg => arg.split('\n').join(', '));
 
-    const count = formattedlist.length + ' addresses';
+    const count = `${formattedlist.length} addresses`;
     this.options.fields.address.options = [count].concat(formattedlist);
-    super.getValues.apply(this, arguments);
+    super.getValues(req, res, callback);
   }
 
-  saveValues(req) {
+  saveValues(req, res, callback) {
     const addressLines = req.form.values.address.split(', ');
-    const addressFields = ['address-text-one',
+    const addressFields = [
+      'address-text-one',
       'address-text-two',
       'address-text-three',
       'address-text-four',
       'address-text-five'];
-    for (let i = 0; i < addressLines.length - 1; i++) {
-      req.sessionModel.set(addressFields[i], addressLines[i]);
-    }
+    addressLines.forEach((obj, index) => req.sessionModel.set(addressFields[index], obj));
 
-    // const formattedAddress = req.form.values.address.split(', ').join('\n');
-    // const addresses = req.sessionModel.attributes.addresses;
-    // const address = _.find(addresses, 'formatted_address', formattedAddress);
-    super.saveValues.apply(this, arguments);
-
+    super.saveValues(req, res, callback);
   }
 
   validateField(key, req) {
-    // custom validation for address
     if (req.form.values[key] === this.options.fields.address.options[0]) {
       return new ErrorController('address', {
         key: 'address',

@@ -3,32 +3,33 @@
 
 
 {{$journeyHeader}}
-{{#t}}journey.header{{/t}}
+  {{#t}}journey.header{{/t}}
 {{/journeyHeader}}
 
 {{$validationSummary}}
-{{> partials-validation-summary}}
+  {{> partials-validation-summary}}
 {{/validationSummary}}
 
 {{$propositionHeader}}
-{{> partials-navigation}}
+  {{> partials-navigation}}
 {{/propositionHeader}}
 
 {{$header}}{{#t}}pages.post.header{{/t}}{{/header}}
 
-{{$content}}
+  {{$content}}
 
-{{<partials-form}}
+    {{<partials-form}}
 
-{{$form}}
+      {{$form}}
 
-{{#input-text-code}}postcode{{/input-text-code}}
+        {{#input-text-code}}postcode{{/input-text-code}}
 
-{{#input-submit}}find{{/input-submit}}
-{{/form}}
+        {{#input-submit}}find{{/input-submit}}
 
-{{/partials-form}}
+      {{/form}}
 
-{{/content}}
+    {{/partials-form}}
+
+  {{/content}}
 
 {{/layout}}

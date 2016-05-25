@@ -134,7 +134,7 @@ module.exports = {
     ],
     forks: [{
       target: '/address-outside',
-      condition: function checkIfUK(req) {
+      condition: function checkIfNotUK(req) {
         return req.form.values.country !== 'United Kingdom';
       }
     }],
@@ -168,7 +168,6 @@ module.exports = {
     }],
     continueOnEdit: true,
     next: '/address'
-
   },
   '/address': {
     controller: require('./controllers/address'),
@@ -178,7 +177,6 @@ module.exports = {
     ],
     continueOnEdit: true,
     next: '/confirm'
-
   },
   '/no-postcode': {
     template: 'no-postcode',

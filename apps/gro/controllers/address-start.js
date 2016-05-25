@@ -3,17 +3,14 @@
 const BaseController = require('hof').controllers.base;
 const Client = require('node-rest-client').Client;
 const config = require('../../../config');
+var logger = require('../../../lib/logger');
 
 module.exports = class AddressStartController extends BaseController {
   constructor(options) {
     super(options);
   }
 
-  supercall() {
-    super.successHandler.apply(this, arguments);
-  }
-
-  getValues(req, res, callback) {
+  getValues(req, res) {
     const postcode = req.sessionModel.attributes.postcode.toUpperCase();
     req.sessionModel.set('postcode', postcode);
     const previouspostcode = req.sessionModel.attributes.previouspostcode;
@@ -26,25 +23,31 @@ module.exports = class AddressStartController extends BaseController {
         headers: {'Authorization': config.postcode.authorization || ''}
       };
       args.parameters[config.postcode.addresses.param] = postcode;
-      client.get(url, args,
-        data => {
+      client.get(url, args, data => {
           if (data.length > 0) {
             req.sessionModel.set('addresses', data);
             req.sessionModel.set('postcode-found', true);
           } else {
             req.sessionModel.set('postcode-found', false);
-            req.sessionModel.set('postcode-error', 'Sorry – we couldn’t find any addresses for that postcode.');
+            if (data.detail === 'You do not have permission to perform this action.') {
+              req.sessionModel.set('postcode-error', 'Sorry – we couldn’t connect to the server at this time.');
+            } else {
+              req.sessionModel.set('postcode-error', 'Sorry – we couldn’t find any addresses for that postcode.');
+              logger.error('Postcode lookup error: ', 'Authorisation error');
+            }
           }
           req.sessionModel.set('previouspostcode', req.sessionModel.attributes.postcode);
-          this.supercall(req, res, callback);
-
-        }).on('error', () => {
-        req.sessionModel.set('postcode-found', false);
-        req.sessionModel.set('postcode-error', 'Could not connect to server.');
-
-      });
+          super.successHandler(req, res);
+        })
+        .on('error', (err) => {
+          req.sessionModel.set('postcode-found', false);
+          req.sessionModel.set('postcode-error', 'Sorry - we couldn’t connect to the server at this time.');
+          logger.error('Postcode lookup error: ',
+            `Code: ${err.code} Host: ${err.request.options.host} Path: ${err.request.options.path}`);
+          super.successHandler(req, res);
+        });
     } else {
-      super.successHandler.apply(this, arguments);
+      super.successHandler(req, res);
     }
   }
 };

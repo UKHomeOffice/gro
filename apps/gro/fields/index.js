@@ -19,6 +19,5 @@ module.exports = _.extend(
   require('./address-inside'),
   require('./country'),
   require('./postcode'),
-  require('./no-postcode'),
   require('./address')
 );

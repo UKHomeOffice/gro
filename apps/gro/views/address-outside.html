@@ -1,54 +1,54 @@
 {{<layout}}
-{{$step}}Step 2{{/step}}
+  {{$step}}Step 2{{/step}}
 
-{{$journeyHeader}}
-{{#t}}journey.header{{/t}}
-{{/journeyHeader}}
+  {{$journeyHeader}}
+    {{#t}}journey.header{{/t}}
+  {{/journeyHeader}}
 
-{{$validationSummary}}
-{{> partials-validation-summary}}
-{{/validationSummary}}
+  {{$validationSummary}}
+    {{> partials-validation-summary}}
+  {{/validationSummary}}
 
-{{$propositionHeader}}
-{{> partials-navigation}}
-{{/propositionHeader}}
+  {{$propositionHeader}}
+    {{> partials-navigation}}
+  {{/propositionHeader}}
 
-{{$header}}{{#t}}pages.post.header{{/t}}{{/header}}
+  {{$header}}{{#t}}pages.post.header{{/t}}{{/header}}
 
-{{$content}}
+  {{$content}}
 
-{{<partials-form}}
+    {{<partials-form}}
 
-{{$form}}
+      {{$form}}
 
-{{#input-text}}address-text-one{{/input-text}}
+        {{#input-text}}address-text-one{{/input-text}}
 
 
-<legend class=visuallyhidden>
-  <span class="form-label-bold">{{#t}}fields.address-text-two.label{{/t}}</span>
-</legend>
-{{#input-text}}address-text-two{{/input-text}}
+        <legend class=visuallyhidden>
+          <span class="form-label-bold">{{#t}}fields.address-text-two.accessibility-label{{/t}}</span>
+        </legend>
+        {{#input-text}}address-text-two{{/input-text}}
 
-<legend class=visuallyhidden>
-  <span class="form-label-bold">{{#t}}fields.address-text-three.label{{/t}}</span>
-</legend>
-{{#input-text}}address-text-three{{/input-text}}
+        <legend class=visuallyhidden>
+          <span class="form-label-bold">{{#t}}fields.address-text-three.accessibility-label{{/t}}</span>
+        </legend>
+        {{#input-text}}address-text-three{{/input-text}}
 
-<legend class=visuallyhidden>
-  <span class="form-label-bold">{{#t}}fields.address-text-four.label{{/t}}</span>
-</legend>
-{{#input-text}}address-text-four{{/input-text}}
+        <legend class=visuallyhidden>
+          <span class="form-label-bold">{{#t}}fields.address-text-four.accessibility-label{{/t}}</span>
+        </legend>
+        {{#input-text}}address-text-four{{/input-text}}
 
-<legend class=visuallyhidden>
-  <span class="form-label-bold">{{#t}}fields.address-text-five.label{{/t}}</span>
-</legend>
-{{#input-text}}address-text-five{{/input-text}}
+        <legend class=visuallyhidden>
+          <span class="form-label-bold">{{#t}}fields.address-text-five.accessibility-label{{/t}}</span>
+        </legend>
+        {{#input-text}}address-text-five{{/input-text}}
 
-{{#input-submit}}continue{{/input-submit}}
-{{/form}}
+        {{#input-submit}}continue{{/input-submit}}
+      {{/form}}
 
-{{/partials-form}}
+    {{/partials-form}}
 
-{{/content}}
+  {{/content}}
 
 {{/layout}}

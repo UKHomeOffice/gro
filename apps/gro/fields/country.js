@@ -1,14 +1,12 @@
 'use strict';
 
 module.exports = {
-  'country': {
+  country: {
     className: ['typeahead', 'js-hidden'],
     options: [''].concat(require('../../../assets/countries').allCountries),
     legend: {
-      className: 'visuallyhidden',
-      value: 'fields.country.label'
+      className: 'visuallyhidden'
     },
-    validate: ['required'],
-    label: 'fields.country.label'
+    validate: ['required']
   }
 };

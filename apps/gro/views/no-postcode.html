@@ -1,64 +1,60 @@
 {{<layout}}
-{{$step}}Step 2{{/step}}
+  {{$step}}Step 2{{/step}}
 
+  {{$journeyHeader}}
+    {{#t}}journey.header{{/t}}
+  {{/journeyHeader}}
 
-{{$journeyHeader}}
-{{#t}}journey.header{{/t}}
-{{/journeyHeader}}
+  {{$validationSummary}}
+    {{> partials-validation-summary}}
+  {{/validationSummary}}
 
-{{$validationSummary}}
-{{> partials-validation-summary}}
-{{/validationSummary}}
+  {{$propositionHeader}}
+    {{> partials-navigation}}
+  {{/propositionHeader}}
 
-{{$propositionHeader}}
-{{> partials-navigation}}
-{{/propositionHeader}}
+  {{$header}}{{#t}}pages.post.header{{/t}}{{/header}}
 
-{{$header}}{{#t}}pages.post.header{{/t}}{{/header}}
+  {{$content}}
 
-{{$content}}
+    {{<partials-form}}
 
-{{<partials-form}}
+      {{$form}}
+        <p>
+          <span class="postcode">{{values.postcode}}</span>
+          <span class="link"><a href="{{baseUrl}}/postcode">{{#t}}pages.address.edit{{/t}}</a></span>
+        </p>
 
-{{$form}}
-<p>
-  <span class="postcode">{{values.postcode}}</span>
-  <span class="link"><a href="{{baseUrl}}/postcode">{{#t}}pages.address.edit{{/t}}</a></span>
-</p>
+        <legend class="visuallyhidden">
+          <span class="form-label-bold">{{values.postcode-error}}</span>
+        </legend>
 
-<legend class="visuallyhidden">
-  <span class="form-label-bold">{{values.postcode-error}}</span>
-</legend>
+        <div class="validation-error">
+          <span id="postcode-error" class="error-message">
+            {{values.postcode-error}}
+        </span>
+        </div>
 
+        {{#input-text}}address-text-one{{/input-text}}
 
+        <legend class=visuallyhidden>
+          <span class="form-label-bold">{{#t}}fields.address-text-two.accessibility-label{{/t}}</span>
+        </legend>
+        {{#input-text}}address-text-two{{/input-text}}
 
-<div class="validation-error">
-  <span id="postcode-error" class="error-message">
-    {{values.postcode-error}}
-</span>
-</div>
-<p></p>
-<p></p>
-{{#input-text}}address-text-one{{/input-text}}
+        <legend class=visuallyhidden>
+          <span class="form-label-bold">{{#t}}fields.address-text-three.accessibility-label{{/t}}</span>
+        </legend>
+        {{#input-text}}address-text-three{{/input-text}}
 
-<legend class=visuallyhidden>
-  <span class="form-label-bold">{{#t}}fields.address-text-two.label{{/t}}</span>
-</legend>
-{{#input-text}}address-text-two{{/input-text}}
+        {{#input-text}}town{{/input-text}}
 
-<legend class=visuallyhidden>
-  <span class="form-label-bold">{{#t}}fields.address-text-three.label{{/t}}</span>
-</legend>
-{{#input-text}}address-text-three{{/input-text}}
+        {{#input-submit}}continue{{/input-submit}}
 
-{{#input-text}}town{{/input-text}}
+      {{/form}}
 
-{{#input-submit}}continue{{/input-submit}}
+    {{/partials-form}}
 
-{{/form}}
-
-{{/partials-form}}
-
-{{/content}}
+  {{/content}}
 
 {{/layout}}

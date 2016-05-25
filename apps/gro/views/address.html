@@ -1,44 +1,40 @@
 {{<layout}}
-{{$step}}Step 2{{/step}}
+  {{$step}}Step 2{{/step}}
 
 
-{{$journeyHeader}}
-{{#t}}journey.header{{/t}}
-{{/journeyHeader}}
+  {{$journeyHeader}}
+    {{#t}}journey.header{{/t}}
+  {{/journeyHeader}}
 
-{{$validationSummary}}
-{{> partials-validation-summary}}
-{{/validationSummary}}
+  {{$validationSummary}}
+    {{> partials-validation-summary}}
+  {{/validationSummary}}
 
-{{$propositionHeader}}
-{{> partials-navigation}}
-{{/propositionHeader}}
+  {{$propositionHeader}}
+    {{> partials-navigation}}
+  {{/propositionHeader}}
 
-{{$header}}{{#t}}pages.post.header{{/t}}{{/header}}
+  {{$header}}{{#t}}pages.post.header{{/t}}{{/header}}
 
-{{$content}}
+  {{$content}}
 
-{{<partials-form}}
+    {{<partials-form}}
 
-{{$form}}
-<p>
-  <span class="postcode">{{values.postcode}}</span>
-  <span class="link"><a href="{{baseUrl}}/postcode">{{#t}}pages.address.edit{{/t}}</a></span>
-</p>
+      {{$form}}
+        <p>
+          <span class="postcode">{{values.postcode}}</span>
+          <span class="link"><a href="{{baseUrl}}/postcode">{{#t}}pages.address.edit{{/t}}</a></span>
+        </p>
 
-<legend class="visuallyhidden">
-  <span class="form-label-bold">{{#t}}fields.address.label{{/t}}</span>
-</legend>
+        <p class="address">{{#select}}address{{/select}}</p>
 
-<p class="address">{{#select}}address{{/select}}</p>
+        <p><span class="link"><a href="{{baseUrl}}/address-inside">{{#t}}pages.address.cantfind{{/t}}</a></span></p>
 
-<p><span class="link"><a href="{{baseUrl}}/address-inside">{{#t}}pages.address.cantfind{{/t}}</a></span></p></p>
+        {{#input-submit}}continue{{/input-submit}}
+      {{/form}}
 
-{{#input-submit}}continue{{/input-submit}}
-{{/form}}
+    {{/partials-form}}
 
-{{/partials-form}}
-
-{{/content}}
+  {{/content}}
 
 {{/layout}}
