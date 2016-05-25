@@ -126,3 +126,28 @@ h1 {
     color: #000;
   }
 }
+
+.input-code {
+  width: 25%;
+}
+
+select.address {
+  margin: 0 0.6em 0 0;
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid #aaa;
+  font-family: "nta",Arial,sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  width: auto;
+}
+
+span.postcode {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+

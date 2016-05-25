@@ -133,5 +133,35 @@
   },
   "address-text-one": {
     "label": "Address"
+  },
+  "country": {
+    "label": "Country"
+  },
+  "address-text-one": {
+    "label": "Address"
+  },
+  "address-text-two": {
+    "label": "Address line 2"
+  },
+  "address-text-three": {
+    "label": "Address line 3"
+  },
+  "address-text-four": {
+    "label": "Address line 4"
+  },
+  "address-text-five": {
+    "label": "Address line 5"
+  },
+  "postcode": {
+    "label": "Postcode"
+  },
+  "address": {
+    "label": "Address"
+  },
+  "town": {
+    "label": "Town or city"
+  },
+  "address-found-message": {
+    "label": "test"
   }
 }

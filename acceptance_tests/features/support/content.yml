@@ -44,10 +44,12 @@ previous_yes: 'additional-radio-yes'
 previous_no: 'additional-radio-no'
 name_text: 'name-text'
 email_text: 'email-text'
-country_text: 'country-text'
+country_text: 'country'
+postcode_text: 'postcode'
 address_text_one: 'address-text-one'
 address_text_two: 'address-text-two'
 address_text_three: 'address-text-three'
+
 
 #Content
 free_text: 'Something, something, something dark side'
@@ -66,6 +68,8 @@ invalid_year: 'abcd'
 order_no: '123456789'
 email_address: 'james.bond@007.com'
 country: 'Oz'
+country_uk: 'United Kingdom'
+postcode: 'CR0 2EU'
 address_one: 'Yellow Brick Road'
 address_two: 'Emerald City'
 post_code: 'OZ1'
@@ -79,7 +83,8 @@ marriage_summary: 'marriage'
 standard_summary: 'standard'
 online_summary: 'online'
 date_summary: '10-10-2015'
-address_summary: 'Yellow Brick Road Emerald City OZ1'
+country_summary: 'United Kingdom'
+address_summary: '49 Sydenham Road Croydon'
 confirmation_content: 'Thank you for contacting the General Register Office'
   
 #Summary page table headers
@@ -104,6 +109,7 @@ table_order_number: "Order number"
 table_when: "Date of application"
 table_name: "Full name"
 table_email: "Email address"
+table_country: "Country"
 table_post: "Address"
 
 #Errors

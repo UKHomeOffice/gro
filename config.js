@@ -55,5 +55,13 @@ module.exports = {
   },
   ga: {
     tagId: process.env.GA_TAG_ID
+  },
+  postcode: {
+    hostname: 'https://postcodeinfo.service.justice.gov.uk',
+    authorization: process.env.POSTCODE_AUTH,
+    addresses: {
+      path: '/addresses',
+      param: 'postcode'
+    }
   }
 };
