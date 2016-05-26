@@ -3,6 +3,5 @@
 module.exports = {
   'email-text': {
     validate: ['required', 'email'],
-    label: ' '
   }
 };

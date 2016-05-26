@@ -3,7 +3,7 @@ about_header: 'What would you like to contact us about?'
 type_header: 'What type of certificate did you order?'
 details_header: 'Provide details of your complaint'
 person_header: 'Whose name, including any initials, is on the certificate you received?'
-people_header: 'Tell us the full names of the people on the certificate you requested'
+people_header: 'Tell us the full names of party one on the certificate you requested'
 additional_header: 'What else would you like to tell us about your enquiry?'
 how_header: 'How did you place your order?'
 which_header: 'Which service did you pay for?'
@@ -81,7 +81,7 @@ online_summary: 'online'
 date_summary: '10-10-2015'
 address_summary: 'Yellow Brick Road Emerald City OZ1'
 confirmation_content: 'Thank you for contacting the General Register Office'
-  
+
 #Summary page table headers
 table_not_received: 'Reason for contact'
 table_enquiry_details: "Your enquiry details"

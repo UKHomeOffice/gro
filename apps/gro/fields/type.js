@@ -4,10 +4,6 @@ module.exports = {
   'type-radio': {
     validate: ['required'],
     className: ['block', 'form-group'],
-    legend: {
-      className: 'visuallyhidden',
-      value: ''
-    },
     options: [{
       value: 'birth',
       label: 'fields.type-radio.options.birth.label'

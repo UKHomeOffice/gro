@@ -1,15 +1,10 @@
 'use strict';
 
 module.exports = {
-  'additional-text': {
-    label: ' '
-  },
+  'additional-text': {},
   'additional-radio': {
     validate: ['required'],
     className: ['inline', 'form-group'],
-    legend: {
-      value: 'fields.additional-radio.legend'
-    },
     options: [{
       value: 'yes',
       label: 'Yes'

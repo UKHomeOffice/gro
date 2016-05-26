@@ -2,8 +2,7 @@
 
 module.exports = {
   'details-text': {
-    validate: ['required'],
-    label: ' '
+    validate: ['required']
   },
   'existing-radio': {
     validate: ['required'],
