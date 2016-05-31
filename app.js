@@ -10,7 +10,9 @@ var redis = require('redis');
 var config = require('./config');
 require('moment-business');
 
-if (config.env !== 'ci') {
+if (config.env === 'ci') {
+  app.use(require('./ci.js'));
+} else {
   app.use(churchill(logger));
 }
 
@@ -99,7 +101,6 @@ app.use(require('hof').middleware.errors({
   translate: require('hof').i18n.translate,
   debug: config.env === 'development'
 }));
-
 
 /*eslint camelcase: 0*/
 app.listen(config.port, config.listen_host);

@@ -31,9 +31,9 @@ module.exports = class AddressStartController extends BaseController {
             req.sessionModel.set('postcode-found', false);
             if (data.detail === 'You do not have permission to perform this action.') {
               req.sessionModel.set('postcode-error', 'Sorry – we couldn’t connect to the server at this time.');
+              logger.error('Postcode lookup error: ', 'Authorisation error');
             } else {
               req.sessionModel.set('postcode-error', 'Sorry – we couldn’t find any addresses for that postcode.');
-              logger.error('Postcode lookup error: ', 'Authorisation error');
             }
           }
           req.sessionModel.set('previouspostcode', req.sessionModel.attributes.postcode);
