@@ -25,14 +25,10 @@
           <span class="link"><a href="{{baseUrl}}/postcode">{{#t}}pages.address.edit{{/t}}</a></span>
         </p>
 
-        <legend class="visuallyhidden">
-          <span class="form-label-bold">{{values.postcode-error}}</span>
-        </legend>
-
-        <div class="validation-error">
-          <span id="postcode-error" class="error-message">
-            {{values.postcode-error}}
-        </span>
+        <div class="alert-info">
+          <span class="info-message">
+            {{#t}}pages.no-postcode.postcode-api.{{postcodeApiMessageKey}}{{/t}}
+          </span>
         </div>
 
         {{#input-text}}address-text-one{{/input-text}}

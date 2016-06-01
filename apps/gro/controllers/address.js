@@ -4,12 +4,8 @@ const ErrorController = require('hof').controllers.error;
 const _ = require('lodash');
 
 module.exports = class Address extends BaseController {
-  constructor(options) {
-    super(options);
-  }
 
   getValues(req, res, callback) {
-    res.locals.backLink = req.sessionModel.get('previous-step');
     const addresses = req.sessionModel.get('addresses');
     const formattedlist = _.map(_.map(addresses, 'formatted_address'), arg => arg.split('\n').join(', '));
 

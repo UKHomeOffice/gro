@@ -133,16 +133,17 @@ module.exports = {
       'country'
     ],
     forks: [{
-      target: '/address-outside',
-      condition: function checkIfNotUK(req) {
-        return req.form.values.country !== 'United Kingdom';
+      target: '/postcode',
+      condition: {
+        field: 'country',
+        value: 'United Kingdom'
       }
     }],
     continueOnEdit: true,
-    next: '/postcode'
+    next: '/address-outside'
   },
   '/postcode': {
-    template: 'postcode',
+    controller: require('./controllers/postcode'),
     fields: [
       'postcode'
     ],
@@ -151,27 +152,18 @@ module.exports = {
       condition: function checkNI(req) {
         return _.startsWith(req.form.values.postcode, 'BT');
       }
-    }],
-    continueOnEdit: true,
-    next: '/address-start'
-  },
-  '/address-start': {
-    controller: require('./controllers/address-start'),
-    fields: [
-      'address-found'
-    ],
-    forks: [{
-      target: '/no-postcode',
-      condition: function hasPostcode(req) {
-        return !(req.sessionModel.get('postcode-found'));
+    }, {
+      target: '/address',
+      condition(req) {
+        var addresses = req.sessionModel.get('addresses');
+        return addresses && addresses.length;
       }
     }],
     continueOnEdit: true,
-    next: '/address'
+    next: '/no-postcode'
   },
   '/address': {
     controller: require('./controllers/address'),
-    template: 'address',
     fields: [
       'address'
     ],
@@ -179,14 +171,14 @@ module.exports = {
     next: '/confirm'
   },
   '/no-postcode': {
+    controller: require('./controllers/no-postcode'),
     template: 'no-postcode',
     fields: [
       'address-text-one',
       'address-text-two',
       'address-text-three',
       'address-text-four',
-      'address-text-five',
-      'postcode-error'
+      'address-text-five'
     ],
     continueOnEdit: true,
     next: '/confirm'
@@ -200,8 +192,7 @@ module.exports = {
       'address-text-five'
     ],
     continueOnEdit: true,
-    next: '/confirm',
-    backLinks: ['/country']
+    next: '/confirm'
   },
   '/address-inside': {
     fields: [
@@ -212,8 +203,7 @@ module.exports = {
       'town'
     ],
     continueOnEdit: true,
-    next: '/confirm',
-    backLinks: ['address']
+    next: '/confirm'
   },
   '/post': {
     controller: require('./controllers/post'),
