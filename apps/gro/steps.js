@@ -58,7 +58,7 @@ module.exports = {
     forks: [{
       target: '/how',
       condition: function checkSteps(req) {
-        return _.contains(req.sessionModel.get('steps'), '/details') && req.params.action !== 'edit';
+        return _.contains(req.sessionModel.get('steps'), '/details');
       }
     }]
   },
@@ -73,7 +73,7 @@ module.exports = {
     forks: [{
       target: '/how',
       condition: function checkSteps(req) {
-        return _.contains(req.sessionModel.get('steps'), '/details') && req.params.action !== 'edit';
+        return _.contains(req.sessionModel.get('steps'), '/details');
       }
     }]
   },
