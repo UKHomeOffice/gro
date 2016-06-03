@@ -23,7 +23,6 @@ module.exports = {
     template: 'type',
     fields: ['type-radio'],
     next: '/person',
-    prereqs: ['/about', '/details'],
     continueOnEdit: true,
     forks: [{
       target: '/people',
@@ -41,7 +40,6 @@ module.exports = {
     ],
     next: '/type',
     continueOnEdit: true,
-    backLinks: ['about'],
     forks: [{
       target: '/name',
       condition: {
@@ -84,8 +82,7 @@ module.exports = {
       'additional-radio'
     ],
     next: '/how',
-    continueOnEdit: true,
-    prereqs: ['/person', '/people']
+    continueOnEdit: true
   },
   '/how': {
     template: 'how',
@@ -96,9 +93,7 @@ module.exports = {
       'post-toggle-text',
     ],
     continueOnEdit: true,
-    next: '/which',
-    backLinks: ['person', 'people'],
-    prereqs: ['/person', '/people', 'additional']
+    next: '/which'
   },
   '/which': {
     template: 'which',
@@ -125,9 +120,7 @@ module.exports = {
     template: 'name',
     fields: ['name-text'],
     continueOnEdit: true,
-    next: '/email',
-    backLinks: ['details'],
-    prereqs: ['/when', '/details']
+    next: '/email'
   },
   '/email': {
     template: 'email',
@@ -159,5 +152,4 @@ module.exports = {
     backLink: false,
     clearSession: true
   }
-}
-;
+};
