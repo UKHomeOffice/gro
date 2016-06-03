@@ -16,7 +16,7 @@ $ npm install
 $ npm run dev
 ```
 
-Then visit: [http://localhost:8080/certificate-enquiries](http://localhost:8080/certificate-enquiries)
+Then visit: [http://localhost:8080/](http://localhost:8080/)
 
 ## Testing
 
