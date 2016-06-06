@@ -124,8 +124,7 @@
     "label": "What is your full name?"
   },
   "email-text": {
-    "label": "What is your email address?",
-    "hint": "If you placed your order online, you should use the same email address"
+    "label": "What is your email address?"
   },
   "country-text": {
     "label": "Country"
