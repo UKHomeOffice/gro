@@ -14,7 +14,7 @@ module.exports = class PostcodesModel extends Model {
           postcode: options.postcode
         }
       });
-      var reqConf = url.parse(this.url(options));
+      const reqConf = url.parse(this.url(options));
 
       reqConf.method = 'GET';
       reqConf.headers = {
