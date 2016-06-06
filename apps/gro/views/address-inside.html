@@ -24,19 +24,17 @@
         {{#t}}fields.postcode.label{{/t}}
         <p>
           <span class="postcode">{{values.postcode}}</span>
-          <span class="link"><a href="{{baseUrl}}/postcode">{{#t}}pages.address.edit{{/t}}</a></span>
+            {{#backLink}}
+              <span class="link">
+                <a href="{{#url}}{{backLink}}{{/url}}">{{#t}}pages.address.edit{{/t}}</a>
+              </span>
+            {{/backLink}}
         </p>
 
         {{#input-text}}address-text-one{{/input-text}}
 
-        <legend class=visuallyhidden>
-          <span class="form-label-bold">{{#t}}fields.address-text-two.accessibility-label{{/t}}</span>
-        </legend>
         {{#input-text}}address-text-two{{/input-text}}
 
-        <legend class=visuallyhidden>
-          <span class="form-label-bold">{{#t}}fields.address-text-three.accessibility-label{{/t}}</span>
-        </legend>
         {{#input-text}}address-text-three{{/input-text}}
 
         {{#input-text}}town{{/input-text}}
