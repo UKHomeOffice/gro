@@ -155,7 +155,7 @@ module.exports = {
     }, {
       target: '/address',
       condition(req) {
-        var addresses = req.sessionModel.get('addresses');
+        const addresses = req.sessionModel.get('addresses');
         return addresses && addresses.length;
       }
     }],
