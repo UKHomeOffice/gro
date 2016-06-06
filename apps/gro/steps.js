@@ -205,20 +205,6 @@ module.exports = {
     continueOnEdit: true,
     next: '/confirm'
   },
-  '/post': {
-    controller: require('./controllers/post'),
-    template: 'post',
-    fields: [
-      'country-text',
-      'address-text-one',
-      'address-text-two',
-      'address-text-three',
-      'address-text-four',
-      'address-text-five'
-    ],
-    continueOnEdit: true,
-    next: '/confirm'
-  },
   '/confirm': {
     controller: require('./controllers/confirm'),
     template: 'confirm.html',
