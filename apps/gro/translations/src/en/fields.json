@@ -9,7 +9,7 @@
         "label": "Wrong certificate received"
       },
       "damaged": {
-        "label": "Damaged or badly printed certificate"
+        "label": "Poor quality certificate"
       },
       "refund": {
         "label": "Refund query"
@@ -18,7 +18,7 @@
         "label": "Service complaint"
       },
       "other": {
-        "label": "Other"
+        "label": "Other issues and feedback"
       }
     }
   },
