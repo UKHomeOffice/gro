@@ -1,7 +1,6 @@
 'use strict';
 
-const controllers = require('hof').controllers;
-const BaseController = controllers.base;
+const BaseController = require('hof').controllers.base;
 
 module.exports = class NoPostcodeController extends BaseController {
   locals(req, res, callback) {
