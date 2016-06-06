@@ -12,8 +12,12 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I enter my full name
     Then I am taken to the email page of the form
     When I enter my email address
-    Then I am taken to the post page of the form
-    When I fill in my address
+    Then I am taken to the country page of the form
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I enter my postcode
+    Then I am taken to the address page of the form
+    When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
       |  table_not_received         |  complaint_summary  |
@@ -22,6 +26,7 @@ Feature: I am able to change my answers and correctly navigate through the form
       |  table_previous             |  no_summary         |
       |  table_name                 |  full_name          |
       |  table_email                |  email_address      |
+      |  table_country              |  country_summary    |
       |  table_post                 |  address_summary    |
     When I click change about from the about page
     Then I am taken to the about page of the form
@@ -45,8 +50,12 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I click continue
     Then I am taken to the email page of the form
     When I click continue
-    Then I am taken to the post page of the form
-    When I click continue
+    Then I am taken to the country page of the form
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I enter my postcode
+    Then I am taken to the address page of the form
+    When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
       |  table_not_received         |  not_received_summary  |
@@ -59,6 +68,7 @@ Feature: I am able to change my answers and correctly navigate through the form
       |  table_when                 |  date_summary          |
       |  table_name                 |  full_name             |
       |  table_email                |  email_address         |
+      |  table_country              |  country_summary       |
       |  table_post                 |  address_summary       |
 
   @type @debug
@@ -72,8 +82,12 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I enter my full name
     Then I am taken to the email page of the form
     When I enter my email address
-    Then I am taken to the post page of the form
-    When I fill in my address
+    Then I am taken to the country page of the form
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I enter my postcode
+    Then I am taken to the address page of the form
+    When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
       |  table_not_received         |  complaint_summary  |
@@ -82,6 +96,7 @@ Feature: I am able to change my answers and correctly navigate through the form
       |  table_previous             |  no_summary         |
       |  table_name                 |  full_name          |
       |  table_email                |  email_address      |
+      |  table_country              |  country_summary    |
       |  table_post                 |  address_summary    |
     When I click change details_text from the details page
     Then I am taken to the details page of the form
@@ -91,8 +106,12 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I click continue
     Then I am taken to the email page of the form
     When I click continue
-    Then I am taken to the post page of the form
-    When I click continue
+    Then I am taken to the country page of the form
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I enter my postcode
+    Then I am taken to the address page of the form
+    When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
       |  table_not_received         |  complaint_summary  |
@@ -101,6 +120,7 @@ Feature: I am able to change my answers and correctly navigate through the form
       |  table_previous             |  no_summary         |
       |  table_name                 |  full_name          |
       |  table_email                |  email_address      |
+      |  table_country              |  country_summary    |
       |  table_post                 |  address_summary    |
 
   @details
@@ -114,8 +134,12 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I enter my full name
     Then I am taken to the email page of the form
     When I enter my email address
-    Then I am taken to the post page of the form
-    When I fill in my address
+    Then I am taken to the country page of the form
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I enter my postcode
+    Then I am taken to the address page of the form
+    When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
       |  table_not_received         |  complaint_summary  |
@@ -124,6 +148,7 @@ Feature: I am able to change my answers and correctly navigate through the form
       |  table_previous             |  no_summary         |
       |  table_name                 |  full_name          |
       |  table_email                |  email_address      |
+      |  table_country              |  country_summary    |
       |  table_post                 |  address_summary    |
     When I click change existing from the details page
     Then I am taken to the details page of the form
@@ -145,8 +170,12 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I click continue
     Then I am taken to the email page of the form
     When I click continue
-    Then I am taken to the post page of the form
-    When I click continue
+    Then I am taken to the country page of the form
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I enter my postcode
+    Then I am taken to the address page of the form
+    When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
       |  table_not_received         |  complaint_summary  |
@@ -163,6 +192,7 @@ Feature: I am able to change my answers and correctly navigate through the form
       |  table_when                 |  date_summary       |
       |  table_name                 |  full_name          |
       |  table_email                |  email_address      |
+      |  table_country              |  country_summary    |
       |  table_post                 |  address_summary    |
 
   @about @type
@@ -189,8 +219,12 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I enter my full name
     Then I am taken to the email page of the form
     When I enter my email address
-    Then I am taken to the post page of the form
-    When I fill in my address
+    Then I am taken to the country page of the form
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I enter my postcode
+    Then I am taken to the address page of the form
+    When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
       |  table_not_received         |  not_received_summary  |
@@ -203,6 +237,7 @@ Feature: I am able to change my answers and correctly navigate through the form
       |  table_when                 |  date_summary          |
       |  table_name                 |  full_name             |
       |  table_email                |  email_address         |
+      |  table_country              |  country_summary       |
       |  table_post                 |  address_summary       |
     When I click change about from the about page
     Then I am taken to the about page of the form
@@ -213,8 +248,12 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I enter my full name
     Then I am taken to the email page of the form
     When I enter my email address
-    Then I am taken to the post page of the form
-    When I fill in my address
+    Then I am taken to the country page of the form
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I enter my postcode
+    Then I am taken to the address page of the form
+    When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
       |  table_not_received         |  complaint_summary  |
@@ -223,4 +262,5 @@ Feature: I am able to change my answers and correctly navigate through the form
       |  table_previous             |  no_summary         |
       |  table_name                 |  full_name          |
       |  table_email                |  email_address      |
+      |  table_country              |  country_summary    |
       |  table_post                 |  address_summary    |

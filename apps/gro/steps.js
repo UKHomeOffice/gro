@@ -1,6 +1,6 @@
 'use strict';
 
-var _ = require('underscore');
+var _ = require('lodash');
 
 module.exports = {
   '/': {
@@ -126,18 +126,78 @@ module.exports = {
     template: 'email',
     fields: ['email-text'],
     continueOnEdit: true,
-    next: '/post'
+    next: '/country'
   },
-  '/post': {
-    controller: require('./controllers/post'),
-    template: 'post',
+  '/country': {
     fields: [
-      'country-text',
+      'country'
+    ],
+    forks: [{
+      target: '/postcode',
+      condition: {
+        field: 'country',
+        value: 'United Kingdom'
+      }
+    }],
+    continueOnEdit: true,
+    next: '/address-outside'
+  },
+  '/postcode': {
+    controller: require('./controllers/postcode'),
+    fields: [
+      'postcode'
+    ],
+    forks: [{
+      target: '/address-inside',
+      condition: req => _.startsWith(req.form.values.postcode, 'BT')
+    }, {
+      target: '/address',
+      condition(req) {
+        const addresses = req.sessionModel.get('addresses');
+        return addresses && addresses.length;
+      }
+    }],
+    continueOnEdit: true,
+    next: '/no-postcode'
+  },
+  '/address': {
+    controller: require('./controllers/address'),
+    fields: [
+      'address'
+    ],
+    continueOnEdit: true,
+    next: '/confirm'
+  },
+  '/no-postcode': {
+    controller: require('./controllers/no-postcode'),
+    fields: [
       'address-text-one',
       'address-text-two',
       'address-text-three',
       'address-text-four',
       'address-text-five'
+    ],
+    continueOnEdit: true,
+    next: '/confirm'
+  },
+  '/address-outside': {
+    fields: [
+      'address-text-one',
+      'address-text-two',
+      'address-text-three',
+      'address-text-four',
+      'address-text-five'
+    ],
+    continueOnEdit: true,
+    next: '/confirm'
+  },
+  '/address-inside': {
+    fields: [
+      'address-text-one',
+      'address-text-two',
+      'address-text-three',
+      'address-text-four',
+      'town'
     ],
     continueOnEdit: true,
     next: '/confirm'

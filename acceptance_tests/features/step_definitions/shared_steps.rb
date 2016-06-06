@@ -17,6 +17,7 @@ When(/^I click on (.*)$/) do | field |
 end
 
 Then(/^I am taken to the (.*) page of the form$/) do | header |
+  puts #header
   expect(page).to have_content CONTENT["#{header}_header"]
 end
 
@@ -84,12 +85,26 @@ When(/^I click continue$/) do
   click_button("Continue")
 end
 
+When(/^I click find address/) do
+  click_button("Find address")
+end
+
+When(/^I select an address/) do
+  find('#address').find(:xpath, 'option[2]').select_option
+end
+
+
+
 When(/^I select (.*) on the (.*) button$/) do | choice, button |
   find_by_id("#{button}-#{choice}").click
 end
 
 When(/^I click the back link$/) do
   click_link('Back')
+end
+
+When(/^I click the cant find address link$/) do
+  click_link('I can\'t find my address in list')
 end
 
 Then(/^I should see the (.*) error$/) do | type |
@@ -130,4 +145,55 @@ end
 
 Then(/^I am taken to the confirmation page$/) do
   expect(page).to have_content CONTENT['confirmation_content']
+end
+
+When(/^I enter my country$/) do
+  step 'I enter country_uk into the country_text field'
+  step 'I click continue'
+end
+
+When(/^I enter my country uk$/) do
+  step 'I enter country_uk into the country_text field'
+  step 'I click continue'
+end
+
+When(/^I enter my country not uk$/) do
+  step 'I enter country_not_uk into the country_text field'
+  step 'I click continue'
+end
+
+When(/^I enter my postcode$/) do
+  step 'I enter postcode into the postcode_text field'
+  step 'I click find address'
+end
+
+When(/^I enter my postcode in Northern Ireland$/) do
+  step 'I enter postcode_NI into the postcode_text field'
+  step 'I click find address'
+end
+
+When(/^I enter my postcode not in MOJ$/) do
+  step 'I enter postcode_not_in_MOJ into the postcode_text field'
+  step 'I click find address'
+end
+
+When(/^I select my address$/) do
+  step 'I select an address'
+  step 'I click continue'
+end
+
+When(/^I enter my address$/) do
+  step 'I enter address_one into the address_text_one field'
+  step 'I enter address_two into the address_text_two field'
+  step 'I click continue'
+end
+
+When(/^I enter my NI address$/) do
+  step 'I enter address_one into the address_text_one field'
+  step 'I enter address_two into the address_text_two field'
+  step 'I click continue'
+end
+
+When(/^I cant find the address$/) do
+  step 'I click the cant find address link'
 end

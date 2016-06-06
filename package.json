@@ -53,7 +53,7 @@
     "nodemailer-smtp-transport": "^1.0.3",
     "nodemailer-stub-transport": "^1.0.0",
     "redis": "^0.12.1",
-    "typeahead.js-browserify": "^1.0.5",
+    "typeahead-aria": "^1.0.1",
     "underscore": "^1.8.3",
     "winston": "^1.0.1"
   },

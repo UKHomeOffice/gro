@@ -1,24 +1,19 @@
 'use strict';
 
 module.exports = {
-  'country-text': {
-    validate: ['required'],
-    label: 'fields.country-text.label'
-  },
   'address-text-one': {
     validate: ['required'],
-    label: 'fields.address-text-one.label'
   },
   'address-text-two': {
-    label: ' '
+    labelClassName: 'visuallyhidden'
   },
   'address-text-three': {
-    label: ' '
+    labelClassName: 'visuallyhidden'
   },
   'address-text-four': {
-    label: ' '
+    labelClassName: 'visuallyhidden'
   },
   'address-text-five': {
-    label: ' '
+    labelClassName: 'visuallyhidden'
   }
 };

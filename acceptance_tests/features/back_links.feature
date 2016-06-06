@@ -150,11 +150,19 @@ Feature: The back link is correct as I move through the form
     When I enter my full name
     Then I am taken to the email page of the form
     When I enter my email address
-    Then I am taken to the post page of the form
-    When I fill in my address
+    Then I am taken to the country page of the form
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I enter my postcode
+    Then I am taken to the address page of the form
+    When I select my address
     Then I am taken to the confirm page of the form
     When I click the back link
-    Then I am taken to the post page of the form
+    Then I am taken to the address page of the form
+    When I click the back link
+    Then I am taken to the postcode page of the form
+    When I click the back link
+    Then I am taken to the country page of the form
     When I click the back link
     Then I am taken to the email page of the form
     When I click the back link

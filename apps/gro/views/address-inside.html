@@ -1,0 +1,49 @@
+{{<layout}}
+  {{$step}}Step 2{{/step}}
+
+  {{$journeyHeader}}
+    {{#t}}journey.header{{/t}}
+  {{/journeyHeader}}
+
+  {{$validationSummary}}
+    {{> partials-validation-summary}}
+  {{/validationSummary}}
+
+  {{$propositionHeader}}
+    {{> partials-navigation}}
+  {{/propositionHeader}}
+
+  {{$header}}{{#t}}pages.post.header{{/t}}{{/header}}
+
+  {{$content}}
+
+    {{<partials-form}}
+
+      {{$form}}
+
+        {{#t}}fields.postcode.label{{/t}}
+        <p>
+          <span class="postcode">{{values.postcode}}</span>
+            {{#backLink}}
+              <span class="link">
+                <a href="{{#url}}{{backLink}}{{/url}}">{{#t}}pages.address.edit{{/t}}</a>
+              </span>
+            {{/backLink}}
+        </p>
+
+        {{#input-text}}address-text-one{{/input-text}}
+
+        {{#input-text}}address-text-two{{/input-text}}
+
+        {{#input-text}}address-text-three{{/input-text}}
+
+        {{#input-text}}town{{/input-text}}
+
+        {{#input-submit}}continue{{/input-submit}}
+      {{/form}}
+
+    {{/partials-form}}
+
+  {{/content}}
+
+{{/layout}}
