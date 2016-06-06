@@ -149,9 +149,7 @@ module.exports = {
     ],
     forks: [{
       target: '/address-inside',
-      condition: function checkNI(req) {
-        return _.startsWith(req.form.values.postcode, 'BT');
-      }
+      condition: req => _.startsWith(req.form.values.postcode, 'BT')
     }, {
       target: '/address',
       condition(req) {
@@ -172,7 +170,6 @@ module.exports = {
   },
   '/no-postcode': {
     controller: require('./controllers/no-postcode'),
-    template: 'no-postcode',
     fields: [
       'address-text-one',
       'address-text-two',
