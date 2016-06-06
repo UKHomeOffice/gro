@@ -2,7 +2,6 @@
 
 module.exports = {
   address: {
-    className: ['address'],
-    options: ['']
+    className: ['address']
   }
 };
