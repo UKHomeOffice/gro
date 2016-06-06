@@ -11,8 +11,5 @@ module.exports = {
       value: 'priority',
       label: 'fields.which-radio.options.priority.label'
     }]
-  },
-  'order-number-text': {
-    validate: ['required']
   }
 };

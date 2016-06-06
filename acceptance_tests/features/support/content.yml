@@ -29,7 +29,6 @@ telephone: 'how-radio-telephone'
 telephone_toggle_text: 'telephone-toggle-text'
 post: 'how-radio-post'
 post_toggle_text: 'post-toggle-text'
-order_number: 'order-number-text'
 standard: 'which-radio-standard'
 when_day: 'when-date-day'
 when_month: 'when-date-month'
@@ -100,7 +99,6 @@ table_additional_radio: "Have you already enquired about this issue?"
 table_how: "How was the order placed?"
 table_online_toggle_text: "COL Number"
 table_which: "Service"
-table_order_number: "Order number"
 table_when: "Date of application"
 table_name: "Full name"
 table_email: "Email address"

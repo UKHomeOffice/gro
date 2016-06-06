@@ -36,12 +36,6 @@ When(/^I enter my full name$/) do
   step 'I click continue'
 end
 
-When(/^I choose (.*) and enter my order number$/) do | field |
-  find_by_id(CONTENT[field]).click
-  step 'I enter order_no into the order_number field'
-  step 'I click continue'
-end
-
 When(/^I enter a date$/) do
   step 'I enter day into the when_day field'
   step 'I enter month into the when_month field'
