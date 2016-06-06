@@ -1,40 +1,15 @@
 {
-  "about": {
-    "header": "What would you like to contact us about?"
+  "enquiry-details": {
+    "header": "Your enquiry details"
   },
-  "type": {
-    "header": "What type of certificate did you order?"
+  "order-details": {
+    "header": "Your order details"
   },
-  "details": {
-    "header": "Provide details of your complaint"
-  },
-  "person": {
-    "header": "Whose name, including any initials, is on the certificate you received?"
-  },
-  "people": {
-    "header": "Tell us the full names of the people on the certificate you requested"
-  },
-  "additional": {
-    "header": "What else would you like to tell us about your enquiry?"
-  },
-  "how": {
-    "header": "How did you place your order?",
-    "description": "The next pages will demonstrate more complex features"
-  },
-  "which": {
-    "header": "Which service did you pay for?"
-  },
-  "when": {
-    "header": "When did you place your order?"
-  },
-  "name": {
-    "header": "What is your full name?"
-  },
-  "email-address": {
-    "header": "What is your email address?"
+  "contact-details": {
+    "header": "Your personal and contact details"
   },
   "post": {
-    "header": "What is your address?"
+    "sub-header": "What is your address?"
   },
   "confirm": {
     "header": "Is the information you have given us correct?",
@@ -74,7 +49,7 @@
     "content-whats-next": "What happens next",
     "content-respond": "We will respond to your enquiry as soon as possible.",
     "content-feedback-link": "Tell us what you think of this form",
-    "content-feedback-time": "(takes 30 seconds)"    
+    "content-feedback-time": "(takes 30 seconds)"
   },
   "email": {
     "content": {

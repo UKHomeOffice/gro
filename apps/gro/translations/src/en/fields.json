@@ -1,5 +1,6 @@
 {
   "about-radio": {
+    "legend": "What would you like to contact us about?",
     "options": {
       "not-received": {
         "label": "Certificate not received"
@@ -22,6 +23,7 @@
     }
   },
   "type-radio": {
+    "legend": "What type of certificate did you order?",
     "options": {
       "birth": {
         "label": "Birth"
@@ -40,6 +42,9 @@
       }
     }
   },
+  "details-text": {
+    "label": "Provide details of your complaint"
+  },
   "existing-radio": {
     "legend": "Is your complaint about an existing order?"
   },
@@ -47,18 +52,22 @@
     "legend": "Have you already complained about this issue?"
   },
   "person-text": {
-    "label": "Full name"
+    "label": "Whose name, including any initials, is on the certificate you received?"
   },
   "person-one": {
-    "label": "Party one"
+    "label": "Tell us the full names of party one on the certificate you requested"
   },
   "person-two": {
-    "label": "Party two (optional)"
+    "label": "Tell us the full names of party two on the certificate you requested (optional)"
+  },
+  "additional-text": {
+    "label": "What else would you like to tell us about your enquiry?"
   },
   "additional-radio": {
     "legend": "Have you previously been in contact about this enquiry?"
   },
   "how-radio": {
+    "legend": "How did you place your order?",
     "options": {
       "online": {
         "label": "Online"
@@ -84,6 +93,7 @@
     "hint": "The account number will have been given to you when you placed your order by post. Account numbers aways start with HMPO and typically look like this HMPO45678ERF0. If you can't find your account number, you may have to send us a copy of the certificate."
   },
   "which-radio": {
+    "legend": "Which service did you pay for?",
     "options": {
       "standard": {
         "label": "Standard"
@@ -98,8 +108,7 @@
     "hint": "Your order number would have been given to you when you ordered by telephone. Order numbers typically look like this 12345-1"
   },
   "when-date": {
-    "label": "Date",
-    "legend": "Date of order",
+    "legend": "When did you place your order?",
     "hint": "For example, 11  6  2015"
   },
   "when-date-day": {
@@ -112,13 +121,11 @@
     "label": "Year"
   },
   "name-text": {
-    "label": "Full name"
+    "label": "What is your full name?"
   },
   "email-text": {
-    "label": "Email address"
-  },
-  "email-hint": {
-    "label": "If you placed your order online, you should use the same email address"
+    "label": "What is your email address?",
+    "hint": "If you placed your order online, you should use the same email address"
   },
   "country-text": {
     "label": "Country"

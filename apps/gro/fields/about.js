@@ -4,10 +4,6 @@ module.exports = {
   'about-radio': {
     validate: ['required'],
     className: ['block', 'form-group'],
-    legend: {
-      className: 'visuallyhidden',
-      value: ''
-    },
     options: [{
       value: 'not-received',
       label: 'fields.about-radio.options.not-received.label'
