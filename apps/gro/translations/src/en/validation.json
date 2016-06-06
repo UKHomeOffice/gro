@@ -26,15 +26,6 @@
   "how-radio": {
     "required": "Tell us how you placed your order"
   },
-  "online-toggle-text": {
-    "required": "Tell us your COL number"
-  },
-  "telephone-toggle-text": {
-    "required": "Tell us your account number"
-  },
-  "post-toggle-text": {
-    "required": "Tell us your account number"
-  },
   "which-radio": {
     "required": "Tell us which service you paid for"
   },
