@@ -54,7 +54,6 @@
     "nodemailer-stub-transport": "^1.0.0",
     "redis": "^0.12.1",
     "typeahead-aria": "^1.0.1",
-    "underscore": "^1.8.3",
     "winston": "^1.0.1"
   },
   "devDependencies": {
