@@ -50,7 +50,7 @@ Feature: I see the correct error messages in the form
     When I click continue
     Then I should see the person error
 
-  @which @standard @order_number
+  @which
   Scenario: Which page validation
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
@@ -68,8 +68,6 @@ Feature: I see the correct error messages in the form
     Then I am taken to the which page of the form
     When I click continue
     Then I should see the which error
-    When I click standard and then continue
-    Then I should see the order_number error
 
   @when
   Scenario: When page validation
@@ -87,7 +85,7 @@ Feature: I see the correct error messages in the form
     And I enter col_number into the online_text field
     When I click continue
     Then I am taken to the which page of the form
-    When I choose standard and enter my order number
+    When I click standard and then continue
     Then I am taken to the when page of the form
     When I click continue
     Then I should see the when error
@@ -108,7 +106,7 @@ Feature: I see the correct error messages in the form
     And I enter col_number into the online_text field
     When I click continue
     Then I am taken to the which page of the form
-    When I choose standard and enter my order number
+    When I click standard and then continue
     Then I am taken to the when page of the form
     When I enter an invalid date
     Then I should see the date error
@@ -129,7 +127,7 @@ Feature: I see the correct error messages in the form
     And I enter col_number into the online_text field
     When I click continue
     Then I am taken to the which page of the form
-    When I choose standard and enter my order number
+    When I click standard and then continue
     Then I am taken to the when page of the form
     When I enter a date
     Then I am taken to the name page of the form

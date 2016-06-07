@@ -18,7 +18,7 @@ Feature: I am able to navigate through the GRO form correctly
     And I enter col_number into the online_text field
     When I click continue
     Then I am taken to the which page of the form
-    When I choose standard and enter my order number
+    When I click standard and then continue
     Then I am taken to the when page of the form
     When I enter a date
     Then I am taken to the name page of the form
@@ -39,7 +39,6 @@ Feature: I am able to navigate through the GRO form correctly
       |  table_additional_text      |  free_text             |
       |  table_additional_radio     |  yes_summary           |
       |  table_which                |  standard_summary      |
-      |  table_order_number         |  order_no              |
       |  table_when                 |  date_summary          |
       |  table_name                 |  full_name             |
       |  table_email                |  email_address         |
@@ -94,7 +93,7 @@ Feature: I am able to navigate through the GRO form correctly
     And I enter col_number into the online_text field
     When I click continue
     Then I am taken to the which page of the form
-    When I choose standard and enter my order number
+    When I click standard and then continue
     Then I am taken to the when page of the form
     When I enter a date
     Then I am taken to the name page of the form
@@ -119,7 +118,6 @@ Feature: I am able to navigate through the GRO form correctly
       |  table_how                  |  online_summary    |
       |  table_online_toggle_text   |  col_number        |
       |  table_which                |  standard_summary  |
-      |  table_order_number         |  order_no          |
       |  table_when                 |  date_summary      |
       |  table_name                 |  full_name         |
       |  table_email                |  email_address     |
