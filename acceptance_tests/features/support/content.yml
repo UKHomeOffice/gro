@@ -45,9 +45,7 @@ name_text: 'name-text'
 email_text: 'email-text'
 country_text: 'country'
 postcode_text: 'postcode'
-address_text_one: 'address-text-one'
-address_text_two: 'address-text-two'
-address_text_three: 'address-text-three'
+address_text: 'address-text'
 
 
 #Content
@@ -72,8 +70,7 @@ country_not_uk: 'France'
 postcode: 'CR0 2EU'
 postcode_not_in_MOJ: 'SE9 8HF'
 postcode_NI: 'BT1 8AA'
-address_one: '49 Yellow Brick Road'
-address_two: 'Emerald City'
+address_entry: '49 Yellow Brick Road Emerald City'
 post_code: 'OZ1'
 yes_summary: 'yes'
 no_summary: 'no'
@@ -118,7 +115,7 @@ table_when: "Date of application"
 table_name: "Full name"
 table_email: "Email address"
 table_country: "Country"
-table_post: "Address"
+table_address: "Address"
 
 #Errors
 general_error: 'Please fix the following error'

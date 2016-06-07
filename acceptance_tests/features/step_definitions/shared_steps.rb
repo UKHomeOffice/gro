@@ -177,14 +177,12 @@ When(/^I select my address$/) do
 end
 
 When(/^I enter my address$/) do
-  step 'I enter address_one into the address_text_one field'
-  step 'I enter address_two into the address_text_two field'
+  step 'I enter address_entry into the address_text field'
   step 'I click continue'
 end
 
 When(/^I enter my NI address$/) do
-  step 'I enter address_one into the address_text_one field'
-  step 'I enter address_two into the address_text_two field'
+  step 'I enter address_entry into the address_text field'
   step 'I click continue'
 end
 

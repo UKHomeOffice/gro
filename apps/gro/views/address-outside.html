@@ -13,7 +13,7 @@
     {{> partials-navigation}}
   {{/propositionHeader}}
 
-  {{$header}}{{#t}}pages.post.header{{/t}}{{/header}}
+  {{$header}}{{#t}}pages.postcode.header{{/t}}{{/header}}
 
   {{$content}}
 
@@ -21,15 +21,7 @@
 
       {{$form}}
 
-        {{#input-text}}address-text-one{{/input-text}}
-
-        {{#input-text}}address-text-two{{/input-text}}
-
-        {{#input-text}}address-text-three{{/input-text}}
-
-        {{#input-text}}address-text-four{{/input-text}}
-
-        {{#input-text}}address-text-five{{/input-text}}
+        {{#textarea}}address-text{{/textarea}}
 
         {{#input-submit}}continue{{/input-submit}}
       {{/form}}
