@@ -16,7 +16,7 @@ module.exports = class Address extends BaseController {
 
   saveValues(req, res, callback) {
     const addressLines = req.form.values.address.split(', ').join('\n');
-    req.sessionModel.set('address-text', addressLines);
+    req.sessionModel.set('address-textarea', addressLines);
 
     super.saveValues(req, res, callback);
   }

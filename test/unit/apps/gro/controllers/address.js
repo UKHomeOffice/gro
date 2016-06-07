@@ -80,7 +80,8 @@ describe('apps/gro/controllers/address', () => {
     });
 
     it('adds new session Model values for the address', () => {
-      req.sessionModel.set.should.have.been.calledWith('address-text', 'Home Office\nMarsham Street\nLondon\nSW1P 4DF');
+      req.sessionModel.set.should.have.been.calledWith('address-textarea',
+        'Home Office\nMarsham Street\nLondon\nSW1P 4DF');
     });
 
   });

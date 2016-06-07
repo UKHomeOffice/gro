@@ -1,8 +1,9 @@
 'use strict';
 
 module.exports = {
-  'address-text': {
+  'address-textarea': {
     validate: ['required'],
-    'ignore-defaults': true
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens']
   }
 };

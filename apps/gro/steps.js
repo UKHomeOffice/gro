@@ -170,21 +170,21 @@ module.exports = {
   '/no-postcode': {
     controller: require('./controllers/no-postcode'),
     fields: [
-      'address-text'
+      'address-textarea'
     ],
     continueOnEdit: true,
     next: '/confirm'
   },
   '/address-outside': {
     fields: [
-      'address-text'
+      'address-textarea'
     ],
     continueOnEdit: true,
     next: '/confirm'
   },
   '/address-inside': {
     fields: [
-      'address-text'
+      'address-textarea'
     ],
     continueOnEdit: true,
     next: '/confirm'

@@ -45,7 +45,7 @@ name_text: 'name-text'
 email_text: 'email-text'
 country_text: 'country'
 postcode_text: 'postcode'
-address_text: 'address-text'
+address_text: 'address-textarea'
 
 
 #Content

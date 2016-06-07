@@ -137,7 +137,7 @@
   "town": {
     "label": "Town or city"
   },
-  "address-text": {
+  "address-textarea": {
     "label": "Address"
   }
 }
