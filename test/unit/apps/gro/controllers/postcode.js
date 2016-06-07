@@ -53,6 +53,26 @@ describe('apps/gro/controllers/no-postcode', () => {
       });
     });
 
+    describe('Northern Irish Postcodes', () => {
+      beforeEach(() => {
+        req.form.values.postcode = 'BT1 1AA';
+        req.sessionModel.unset = sinon.stub();
+        controller.process(req, res, callback);
+      });
+
+      it('unsets postcodeApiMeta from the sessionModel', () => {
+        req.sessionModel.unset.firstCall.should.have.been.calledWithExactly('postcodeApiMeta');
+      });
+
+      it('unsets addresses from the sessionModel', () => {
+        req.sessionModel.unset.secondCall.should.have.been.calledWithExactly('addresses');
+      });
+
+      it('should have called callback', function () {
+        callback.should.have.been.calledOnce.and.calledWithExactly();
+      });
+    });
+
     describe('api executed', () => {
       let promiseStub = data => new Promise((resolve) => resolve(data));
 

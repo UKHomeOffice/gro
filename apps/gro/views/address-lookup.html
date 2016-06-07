@@ -20,8 +20,11 @@
     {{<partials-form}}
 
       {{$form}}
+        {{> partials-amend-postcode}}
 
-        {{#textarea}}address-textarea{{/textarea}}
+        {{#select}}address-lookup{{/select}}
+
+        <p><span class="link"><a href="{{baseUrl}}/address">{{#t}}pages.address.cantfind{{/t}}</a></span></p>
 
         {{#input-submit}}continue{{/input-submit}}
       {{/form}}

@@ -84,7 +84,7 @@ When(/^I click find address/) do
 end
 
 When(/^I select an address/) do
-  find('#address').find(:xpath, 'option[2]').select_option
+  find('#address-lookup').find(:xpath, 'option[2]').select_option
 end
 
 
