@@ -1,19 +1,9 @@
 'use strict';
 
 module.exports = {
-  'address-text-one': {
+  'address-textarea': {
     validate: ['required'],
-  },
-  'address-text-two': {
-    labelClassName: 'visuallyhidden'
-  },
-  'address-text-three': {
-    labelClassName: 'visuallyhidden'
-  },
-  'address-text-four': {
-    labelClassName: 'visuallyhidden'
-  },
-  'address-text-five': {
-    labelClassName: 'visuallyhidden'
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens']
   }
 };

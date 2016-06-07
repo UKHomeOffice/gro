@@ -15,14 +15,8 @@ module.exports = class Address extends BaseController {
   }
 
   saveValues(req, res, callback) {
-    const addressLines = req.form.values.address.split(', ');
-    const addressFields = [
-      'address-text-one',
-      'address-text-two',
-      'address-text-three',
-      'address-text-four',
-      'address-text-five'];
-    addressLines.forEach((obj, index) => req.sessionModel.set(addressFields[index], obj));
+    const addressLines = req.form.values.address.split(', ').join('\n');
+    req.sessionModel.set('address-textarea', addressLines);
 
     super.saveValues(req, res, callback);
   }

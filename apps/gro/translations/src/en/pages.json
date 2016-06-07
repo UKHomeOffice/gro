@@ -8,8 +8,8 @@
   "contact-details": {
     "header": "Your personal and contact details"
   },
-  "post": {
-    "sub-header": "What is your address?"
+  "postcode": {
+    "header": "What is your address?"
   },
   "address": {
     "edit": "Change",
@@ -51,7 +51,7 @@
         "when-date": "Date of application",
         "name-text": "Full name",
         "email-text": "Email address",
-        "post-text": "Address",
+        "address-text": "Address",
         "country-text": "Country"
       }
     }

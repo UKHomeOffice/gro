@@ -170,33 +170,21 @@ module.exports = {
   '/no-postcode': {
     controller: require('./controllers/no-postcode'),
     fields: [
-      'address-text-one',
-      'address-text-two',
-      'address-text-three',
-      'address-text-four',
-      'address-text-five'
+      'address-textarea'
     ],
     continueOnEdit: true,
     next: '/confirm'
   },
   '/address-outside': {
     fields: [
-      'address-text-one',
-      'address-text-two',
-      'address-text-three',
-      'address-text-four',
-      'address-text-five'
+      'address-textarea'
     ],
     continueOnEdit: true,
     next: '/confirm'
   },
   '/address-inside': {
     fields: [
-      'address-text-one',
-      'address-text-two',
-      'address-text-three',
-      'address-text-four',
-      'town'
+      'address-textarea'
     ],
     continueOnEdit: true,
     next: '/confirm'
