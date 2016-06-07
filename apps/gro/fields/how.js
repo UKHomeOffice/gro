@@ -21,28 +21,7 @@ module.exports = {
       child: 'input-text'
     }]
   },
-  'online-toggle-text': {
-    validate: ['required'],
-    hint: 'fields.online-toggle-text.hint',
-    dependent: {
-      field: 'how-radio',
-      value: 'online'
-    }
-  },
-  'telephone-toggle-text': {
-    validate: ['required'],
-    hint: 'fields.telephone-toggle-text.hint',
-    dependent: {
-      field: 'how-radio',
-      value: 'telephone'
-    }
-  },
-  'post-toggle-text': {
-    validate: ['required'],
-    hint: 'fields.post-toggle-text.hint',
-    dependent: {
-      field: 'how-radio',
-      value: 'post'
-    }
-  }
+  'online-toggle-text': {},
+  'telephone-toggle-text': {},
+  'post-toggle-text': {}
 };
