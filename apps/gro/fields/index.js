@@ -14,8 +14,8 @@ module.exports = _.extend(
   require('./when'),
   require('./name'),
   require('./email'),
-  require('./address-outside'),
   require('./country'),
   require('./postcode'),
+  require('./address-lookup'),
   require('./address')
 );

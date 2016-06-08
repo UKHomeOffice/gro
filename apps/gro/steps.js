@@ -139,7 +139,7 @@ module.exports = {
       }
     }],
     continueOnEdit: true,
-    next: '/address-outside'
+    next: '/address'
   },
   '/postcode': {
     controller: require('./controllers/postcode'),
@@ -147,42 +147,25 @@ module.exports = {
       'postcode'
     ],
     forks: [{
-      target: '/address-inside',
-      condition: req => _.startsWith(req.form.values.postcode, 'BT')
-    }, {
-      target: '/address',
+      target: '/address-lookup',
       condition(req) {
         const addresses = req.sessionModel.get('addresses');
         return addresses && addresses.length;
       }
     }],
     continueOnEdit: true,
-    next: '/no-postcode'
+    next: '/address'
+  },
+  '/address-lookup': {
+    controller: require('./controllers/address-lookup'),
+    fields: [
+      'address-lookup'
+    ],
+    continueOnEdit: true,
+    next: '/confirm'
   },
   '/address': {
     controller: require('./controllers/address'),
-    fields: [
-      'address'
-    ],
-    continueOnEdit: true,
-    next: '/confirm'
-  },
-  '/no-postcode': {
-    controller: require('./controllers/no-postcode'),
-    fields: [
-      'address-textarea'
-    ],
-    continueOnEdit: true,
-    next: '/confirm'
-  },
-  '/address-outside': {
-    fields: [
-      'address-textarea'
-    ],
-    continueOnEdit: true,
-    next: '/confirm'
-  },
-  '/address-inside': {
     fields: [
       'address-textarea'
     ],

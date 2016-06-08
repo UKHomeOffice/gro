@@ -4,12 +4,20 @@ const controllers = require('hof').controllers;
 const BaseController = controllers.base;
 const PostcodesModel = require('../models/postcodes');
 const logger = require('../../../lib/logger');
+const _ = require('lodash');
 
 module.exports = class PostcodeController extends BaseController {
   process(req, res, callback) {
     const postcode = req.form.values.postcode;
     const previousPostcode = req.sessionModel.get('postcode');
-    if (!postcode || previousPostcode && previousPostcode === postcode) {
+    if (!postcode
+      || previousPostcode && previousPostcode === postcode) {
+      return callback();
+    }
+
+    if (_.startsWith(postcode, 'BT')) {
+      req.sessionModel.unset('postcodeApiMeta');
+      req.sessionModel.unset('addresses');
       return callback();
     }
 
