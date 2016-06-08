@@ -1,14 +1,13 @@
 'use strict';
 
-var express = require('express');
-var app = express();
-var path = require('path');
-var logger = require('./lib/logger');
-var churchill = require('churchill');
-var session = require('express-session');
-var redis = require('redis');
-var config = require('./config');
-require('moment-business');
+const express = require('express');
+const app = express();
+const path = require('path');
+const logger = require('./lib/logger');
+const churchill = require('churchill');
+const session = require('express-session');
+const redis = require('redis');
+const config = require('./config');
 
 if (config.env === 'ci') {
   app.use(require('./ci.js'));
@@ -20,7 +19,7 @@ if (config.env === 'development' || config.env === 'docker' || config.env === 'c
   app.use('/public', express.static(path.resolve(__dirname, './public')));
 }
 
-app.use(function injectLocals(req, res, next) {
+app.use((req, res, next) => {
   req.baseUrl = config.siteroot + req.baseUrl;
   res.locals.assetPath = config.siteroot + '/public';
   res.locals.gaTagId = config.ga.tagId;
@@ -37,7 +36,7 @@ app.engine('html', require('hogan-express-strict'));
 app.use(require('body-parser').urlencoded({extended: true}));
 app.use(require('body-parser').json());
 
-app.use(function setBaseUrl(req, res, next) {
+app.use((req, res, next) => {
   res.locals.baseUrl = req.baseUrl;
   next();
 });
@@ -45,22 +44,22 @@ app.use(function setBaseUrl(req, res, next) {
 /*************************************/
 /******* Redis session storage *******/
 /*************************************/
-var RedisStore = require('connect-redis-crypto')(session);
-var client = redis.createClient(config.redis.port, config.redis.host);
+const RedisStore = require('connect-redis-crypto')(session);
+const client = redis.createClient(config.redis.port, config.redis.host);
 
-client.on('error', function clientErrorHandler(e) {
+client.on('error', e => {
   throw e;
 });
 
-var redisStore = new RedisStore({
-  client: client,
+const redisStore = new RedisStore({
+  client,
   ttl: config.session.ttl,
   secret: config.session.secret
 });
 
 function secureCookies(req, res, next) {
-  var cookie = res.cookie.bind(res);
-  res.cookie = function cookieHandler(name, value, options) {
+  const cookie = res.cookie.bind(res);
+  res.cookie = (name, value, options) => {
     options = options || {};
     options.secure = (req.protocol === 'https');
     options.httpOnly = true;
@@ -86,13 +85,8 @@ app.use(session({
 // apps
 app.use(require('./apps/gro/'));
 
-app.get('/cookies', function renderCookies(req, res) {
-  res.render('cookies');
-});
-app.get('/terms-and-conditions', function renderTerms(req, res) {
-  res.render('terms');
-});
-
+app.get('/cookies', (req, res) => res.render('cookies'));
+app.get('/terms-and-conditions', (req, res) => res.render('terms'));
 app.get('/healthz/ping', (req, res) => res.send(200));
 
 // errors
