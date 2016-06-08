@@ -8,7 +8,6 @@ module.exports = {
     next: '/about'
   },
   '/about': {
-    template: 'about',
     fields: ['about-radio'],
     next: '/type',
     continueOnEdit: true,
@@ -20,7 +19,6 @@ module.exports = {
     }]
   },
   '/type': {
-    template: 'type',
     fields: ['type-radio'],
     next: '/person',
     continueOnEdit: true,
@@ -32,7 +30,6 @@ module.exports = {
     }]
   },
   '/details': {
-    template: 'details',
     fields: [
       'details-text',
       'existing-radio',
@@ -49,7 +46,6 @@ module.exports = {
     }]
   },
   '/person': {
-    template: 'person',
     fields: ['person-text'],
     next: '/additional',
     continueOnEdit: true,
@@ -61,7 +57,6 @@ module.exports = {
     }]
   },
   '/people': {
-    template: 'people',
     fields: [
       'person-one',
       'person-two'
@@ -76,7 +71,6 @@ module.exports = {
     }]
   },
   '/additional': {
-    template: 'additional',
     fields: [
       'additional-text',
       'additional-radio'
@@ -85,7 +79,6 @@ module.exports = {
     continueOnEdit: true
   },
   '/how': {
-    template: 'how',
     fields: [
       'how-radio',
       'online-toggle-text',
@@ -96,7 +89,6 @@ module.exports = {
     next: '/which'
   },
   '/which': {
-    template: 'which',
     fields: [
       'which-radio'
     ],
@@ -105,7 +97,6 @@ module.exports = {
   },
   '/when': {
     controller: require('./controllers/when'),
-    template: 'when',
     fields: [
       'when-date',
       'when-date-day',
@@ -116,13 +107,11 @@ module.exports = {
     next: '/name'
   },
   '/name': {
-    template: 'name',
     fields: ['name-text'],
     continueOnEdit: true,
     next: '/email'
   },
   '/email': {
-    template: 'email',
     fields: ['email-text'],
     continueOnEdit: true,
     next: '/country'
@@ -174,11 +163,9 @@ module.exports = {
   },
   '/confirm': {
     controller: require('./controllers/confirm'),
-    template: 'confirm.html',
     next: '/confirmation'
   },
   '/confirmation': {
-    template: 'confirmation.html',
     backLink: false,
     clearSession: true
   }
