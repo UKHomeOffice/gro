@@ -48,7 +48,7 @@ def runIntegrationTests() {
 repository = 'quay.io'
 namespace = 'ukhomeofficedigital'
 container_name = 'gro-form'
-repo_name = repository + '/' + namespace + '/' container_name
+repo_name = repository + '/' + namespace + '/' + container_name
 
 node() {
     stage "Build (includes unit tests)"
