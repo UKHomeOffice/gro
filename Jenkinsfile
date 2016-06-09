@@ -1,6 +1,6 @@
 #!groovy
 
-def build() {
+def build(repo_name) {
     deleteDir()
     checkout scm
     sh "git rev-parse --short HEAD > GIT_COMMIT"
@@ -10,7 +10,7 @@ def build() {
     docker_hash=readFile('DOCKER_HASH').trim()
 
     app_tag="git-${git_commit}-docker-${docker_hash}"
-    app_repo="quay.io/ukhomeofficedigital/gro-form:${app_tag}"
+    app_repo=${repo_name} + ":" + ${app_tag}
     sh "docker tag ${docker_hash} ${app_repo}"
 
     return app_tag
@@ -58,8 +58,8 @@ node() {
         push(app_tag)
 }
 
-    stage "Deploy to Dev"
-        deploy('dev', app_tag)
+stage "Deploy to Dev"
+    deploy('dev', app_tag)
 
 stage "Run End-to-End"
 
