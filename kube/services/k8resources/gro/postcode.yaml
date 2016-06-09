@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: postcode_auth
+  name: postcode-auth
 type: "Opaque"
 data:
-  key: ${ postcode_token }
+  token: ${ postcode_token }
