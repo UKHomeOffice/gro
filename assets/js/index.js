@@ -1,46 +1,35 @@
 'use strict';
 
-var toolkit = require('hof').toolkit;
-var helpers = toolkit.helpers;
-var progressiveReveal = toolkit.progressiveReveal;
-var formFocus = toolkit.formFocus;
+const toolkit = require('hof').toolkit;
+const helpers = toolkit.helpers;
+const progressiveReveal = toolkit.progressiveReveal;
+const formFocus = toolkit.formFocus;
 
 helpers.documentReady(progressiveReveal);
 helpers.documentReady(formFocus);
 
-var $ = require('jquery');
-var typeahead = require('typeahead-aria');
-var Bloodhound = require('typeahead-aria').Bloodhound;
+const $ = require('jquery');
+const typeahead = require('typeahead-aria');
+const Bloodhound = require('typeahead-aria').Bloodhound;
 
 typeahead.loadjQueryPlugin();
 
-$('.typeahead').each(function applyTypeahead() {
-  var $el = $(this);
-  var $parent = $el.parent();
-  var attributes = $el.prop('attributes');
-  var $input = $('<input/>');
-  var selectedValue = $el.val();
-  var typeaheadList = $el.find('option').map(function mapOptions() {
-    if (this.value === '') {
-      // remove any empty values from typeahead
-      /*eslint consistent-return: 0*/
-      return;
-      /*eslint consistent-return: 1*/
-    }
-    return this.value;
-  }).get();
+$('.typeahead').each((ind, object) => {
+  const $el = $(object);
+  const $parent = $el.parent();
+  const attributes = $el.prop('attributes');
+  const $input = $('<input/>');
+  const selectedValue = $el.val();
+  const typeaheadList = $el.find('option').map((index, obj) => obj.value === '' ? undefined : obj.value).get();
 
   // remove the selectbox
   $el.remove();
 
-  $.each(attributes, function applyAttributes() {
-    $input.attr(this.name, this.value);
-  });
+  $.each(attributes, (index, obj) => $input.attr(obj.name, obj.value));
 
   $input.removeClass('js-hidden');
   $input.addClass('form-control');
   $input.val(selectedValue);
-
   $parent.append($input);
 
   $input.typeahead({
@@ -50,26 +39,25 @@ $('.typeahead').each(function applyTypeahead() {
       datumTokenizer: Bloodhound.tokenizers.whitespace,
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       local: typeaheadList,
-      sorter: function sorter(a, b) {
-        var input = $input.val();
-        var startsWithInput = function startsWithInput(x) {
+      sorter(a, b) {
+        const input = $input.val();
+        function startsWithInput(x) {
           return (x.toLowerCase().substr(0, input.length) === input.toLowerCase()) ? -1 : 1;
-        };
+        }
 
-        var compareAlpha = function compareAlpha(x, y) {
-          var less = (x < y) ? -1 : 1;
+        function compareAlpha(x, y) {
+          const less = (x < y) ? -1 : 1;
           return (x === y) ? 0 : less;
-        };
+        }
 
-        var compareStartsWithInput = function compareStartsWithInput(x, y) {
-          var startsWithFirst = startsWithInput(x);
-          var startsWithSecond = startsWithInput(y);
+        function compareStartsWithInput(x, y) {
+          const startsWithFirst = startsWithInput(x);
+          const startsWithSecond = startsWithInput(y);
 
           return (startsWithFirst === startsWithSecond) ? 0 : startsWithFirst;
-        };
+        }
 
-        var first = compareStartsWithInput(a, b);
-
+        const first = compareStartsWithInput(a, b);
         return (first === 0) ? compareAlpha(a, b) : first;
       }
     }),
