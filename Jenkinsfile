@@ -10,7 +10,7 @@ def build(repo_name) {
     docker_hash=readFile('DOCKER_HASH').trim()
 
     app_tag="git-${git_commit}-docker-${docker_hash}"
-    app_repo=${repo_name} + ":" + ${app_tag}
+    app_repo="${repo_name}:${app_tag}"
     sh "docker tag ${docker_hash} ${app_repo}"
 
     return app_tag
