@@ -40,7 +40,7 @@ spec:
         - name: POSTCODE_AUTH
           valueFrom:
             secretKeyRef:
-              name: postcode_auth
+              name: postcode-auth
               key: token
         - name: NODE_ENV
           value: docker
