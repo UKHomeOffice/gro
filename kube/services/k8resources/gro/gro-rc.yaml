@@ -37,6 +37,11 @@ spec:
         image: quay.io/ukhomeofficedigital/gro-form:${app_tag}
         imagePullPolicy: Always
         env:
+        - name: POSTCODE_AUTH
+          valueFrom:
+            secretKeyRef:
+              name: postcode-auth
+              key: token
         - name: NODE_ENV
           value: docker
         - name: LISTEN_HOST
@@ -47,14 +52,8 @@ spec:
           value: redis
         - name: REDIS_PORT
           value: "6379"
-        - name: POSTCODE_AUTH
-          valueFrom:
-            secretKeyRef:
-              name: postcode_auth
-              key: token
         ports:
         - containerPort: 8080
-
       volumes:
         - name: external-tls
           secret:
