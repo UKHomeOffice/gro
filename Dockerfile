@@ -4,7 +4,8 @@ COPY . /app
 
 RUN npm install -g npm@3
 
-RUN yum clean all && \
+RUN rpm --rebuilddb && \ 
+  yum clean all && \
   yum update -y && \
   yum install -y git && \
   yum clean all && \
