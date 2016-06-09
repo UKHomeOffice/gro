@@ -44,7 +44,6 @@ def deploy(environment, app_tag) {
 def runIntegrationTests() {
 }
 
-# main logic
 
 repository = 'quay.io'
 namespace = 'ukhomeofficedigital'
