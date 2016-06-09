@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: tls
-        image: quay.io/ukhomeofficedigital/nginx-proxy:${tls_tag}
+        image: ${tls_tag}
         imagePullPolicy: Always
         ports:
         - containerPort: 443
@@ -34,7 +34,7 @@ spec:
             mountPath: /etc/keys
             readOnly: true
       - name: app
-        image: quay.io/ukhomeofficedigital/gro-form:${app_tag}
+        image: ${app_tag}
         imagePullPolicy: Always
         env:
         - name: NODE_ENV
