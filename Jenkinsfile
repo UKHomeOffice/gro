@@ -11,10 +11,9 @@ def build(repo_name) {
 
     app_tag="git-${git_commit}-docker-${docker_hash}"
     app_repo="${repo_name}:${app_tag}"
-    echo app_repo
     sh "docker tag ${docker_hash} ${app_repo}"
 
-    return app_tag
+    return app_repo
 }
 
 def push( app_tag ) {
