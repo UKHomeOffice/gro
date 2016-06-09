@@ -37,13 +37,13 @@ spec:
         image: ${app_tag}
         imagePullPolicy: Always
         env:
+        - name: NODE_ENV
+          value: docker
         - name: POSTCODE_AUTH
           valueFrom:
             secretKeyRef:
               name: postcode-auth
               key: token
-        - name: NODE_ENV
-          value: docker
         - name: LISTEN_HOST
           value: "127.0.0.1"
         - name: PORT
