@@ -34,7 +34,7 @@ def deploy(environment, app_tag) {
             dir('deploy') {
                 echo 'DEPLOYING TO ' + environment
                 withEnv(["TLS_TAG=quay.io/ukhomeofficedigital/nginx-proxy:v1.1.6", "APP_TAG=${ app_tag }", "REDIS_TAG=quay.io/ukhomeofficedigital/redis:v0.0.1"]) {
-                    sh "./scripts/deploy.sh -e ${ environment } ./services/deploy.yaml"
+                    sh "./scripts/deploy.sh -e ${environment} ./services/deploy.yaml"
                 }    
             }
         }
@@ -53,10 +53,10 @@ repo_name = repository + '/' + namespace + '/' container_name
 
 node() {
     stage "Build (includes unit tests)"
-        app_tag=build( repo_name )
+        app_tag=build(repo_name)
 
     stage "Push"
-        push( app_tag )
+        push(app_tag)
 }
 
     stage "Deploy to Dev"

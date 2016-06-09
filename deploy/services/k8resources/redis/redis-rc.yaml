@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: ${ redis_tag }
+        image: ${redis_tag}
         ports:
         - containerPort: 6379
         command:
