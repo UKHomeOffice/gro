@@ -1,36 +1,88 @@
 'use strict';
 
-const BaseController = require('hof').controllers.confirm;
-const path = require('path');
-const i18n = require('hof').i18n;
-const Model = require('../../common/models/email');
+const BaseConfirmController = require('hof').controllers.confirm;
+const _ = require('lodash');
+const config = require('../../../config');
+const EmailService = require('../../common/services/email');
+const fields = require('../fields');
 
-module.exports = class ConfirmController extends BaseController {
+delete require.cache[require.resolve('../steps')];
+const stepConfig = require('../steps');
 
-  saveValues(req, res, callback) {
-    const locali18n = i18n({
-      path: path.resolve(
-        __dirname, '../translations/__lng__/__ns__.json'
+module.exports = class ConfirmController extends BaseConfirmController {
+
+  formatStepsForEmail(data) {
+    return _(stepConfig)
+      // reject all steps without locals, fields, or all fields in step are empty
+      .reject(step => !step.locals || !step.fields || _.every(
+        step.fields,
+        field => data[field] === undefined)
       )
+      // group by section
+      .groupBy(step => step.locals.section)
+      // flatten fields into sections bypassing steps
+      .map((steps, section) => ({
+          section,
+          fields: _(steps)
+            .pluck('fields')
+            .flatten()
+            // reject any fields with includeInEmail: false
+            .reject(field => fields[field].includeInEmail === false)
+            // map value to field
+            .map(field => ({
+              field,
+              value: data[field]
+            }))
+            .value()
+        })
+      )
+      .value();
+  }
+
+  // eslint-disable-next-line consistent-return
+  saveValues(req, res, callback) {
+    const data = this.formatStepsForEmail(req.sessionModel.toJSON());
+    if (!data.length) {
+      return callback(new Error('No data to send'));
+    }
+    _.first(data).fields.unshift({
+      field: 'submission-date',
+      value: (new Date()).toISOString()
     });
+    Promise.all([
+      this.sendEmail(config.email.caseworker, 'caseworker', data, req, res),
+      this.sendEmail(req.sessionModel.get('email-address'), 'customer', data, req, res)
+    ]).then(() => callback()).catch(err => callback(err));
+  }
 
-    locali18n.on('ready', () => {
+  sendEmail(to, recipient, data, req, res) {
+    const subject = req.translate('email.information.subject');
+    return new Promise((resolve, reject) => {
+      Promise.all([
+        this.renderTemplate(res.locals.partials['email-formatted'], recipient, data, res),
+        this.renderTemplate(res.locals.partials['email-raw'], recipient, data, res),
+      ]).then(values => {
+        EmailService.sendEmail(to, subject, values, err => {
+          if (err) {
+            reject(err);
+          }
+          resolve();
+        });
+      }, err => reject(err));
+    });
+  }
 
-      const subject = locali18n.translate('pages.email.information.subject');
-      const data = {
-        values: Object.assign({}, req.sessionModel.toJSON(), {
-          reportDate: (new Date()).toISOString()
-        }),
-        email: req.sessionModel.get('email-text')
-      };
-
-      const model = new Model(data);
-
-      model.set('template', 'gro');
-      model.set('subject', subject);
-
-      model.save(callback);
-
+  renderTemplate(template, recipient, data, res) {
+    return new Promise((resolve, reject) => {
+      res.render(template, {
+        recipient,
+        data
+      }, (err, html) => {
+        if (err) {
+          reject(err);
+        }
+        resolve(html);
+      });
     });
   }
 };

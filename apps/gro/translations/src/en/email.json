@@ -1,0 +1,37 @@
+{
+  "content": {
+    "caseworker-intro": "GRO enquiry form has been submitted, with details as follows:",
+    "customer-intro": "Thank you for contacting the General Register Office. We will respond to your enquiry as soon as possible:"
+  },
+  "information": {
+    "subject": "GRO enquiry",
+    "enquiry": "Enquiry details",
+    "order": "Order details",
+    "contact-details": "Contact details",
+    "no-data": "No data provided"
+  },
+  "fields": {
+    "submission-date": "Form submission date",
+    "about-radio": "Reason for enquiry",
+    "details-text": "Additional details",
+    "existing-radio": "Regarding existing order",
+    "previous-radio": "Previously enquired",
+    "type-radio": "Type of Certificate",
+    "person-text": "Name on Certificate",
+    "person-one": "Name of party one on Certificate",
+    "person-two": "Name of party two on Certificate",
+    "additional-text": "Further description",
+    "additional-radio": "Previously enquired",
+    "how-radio": "How the order was placed",
+    "online-toggle-text": "COL number",
+    "telephone-toggle-text": "Order number",
+    "post-toggle-text": "Account number",
+    "which-radio": "Service",
+    "when-date": "Application date",
+    "name-text": "Name",
+    "email-text": "Email",
+    "country-select": "Country",
+    "postcode-code": "Postcode",
+    "address-textarea": "Address"
+  }
+}

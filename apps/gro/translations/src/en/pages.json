@@ -59,40 +59,5 @@
     "content-respond": "We will respond to your enquiry as soon as possible.",
     "content-feedback-link": "Tell us what you think of this form",
     "content-feedback-time": "(takes 30 seconds)"
-  },
-  "email": {
-    "content": {
-      "caseworker-intro": "GRO enquiry form has been submitted, with details as follows:",
-      "customer-intro": "Thank you for contacting the General Register Office. We will respond to your enquiry as soon as possible:",
-      "caseworker-outro": "",
-      "customer-outro": ""
-    },
-    "information": {
-      "subject": "GRO enquiry",
-      "enquiry": "Enquiry details",
-      "order": "Order details",
-      "contact-details": "Contact details",
-      "no-data": "No data provided"
-    },
-    "headers": {
-      "enquiry-submission-date": "Form submission date",
-      "enquiry-reason": "Reason for enquiry",
-      "enquiry-certificate-type": "Type of Certificate",
-      "enquiry-certificate-name": "Name on Certificate",
-      "enquiry-certificate-name-one": "Name of party one on Certificate",
-      "enquiry-certificate-name-two": "Name of party two on Certificate",
-      "enquiry-further-information": "Further description",
-      "enquiry-previous-contact": "Previously enquired",
-      "order-how-placed": "How the order was placed",
-      "order-col-number": "COL number",
-      "order-account-number": "Account number",
-      "order-service": "Service",
-      "order-number": "Order number",
-      "order-application-date": "Application date",
-      "contact-details-name": "Name",
-      "contact-details-email": "Email",
-      "contact-details-address": "Address",
-      "contact-details-country": "Country"
-    }
   }
 }

@@ -2,6 +2,7 @@
 
 module.exports = {
   'address-lookup': {
-    className: ['address']
+    className: ['address'],
+    includeInEmail: false
   }
 };
