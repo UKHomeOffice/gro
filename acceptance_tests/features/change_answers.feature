@@ -101,16 +101,6 @@ Feature: I am able to change my answers and correctly navigate through the form
     Then I am taken to the details page of the form
     When I change details_text to alt_text
     When I click continue
-    Then I am taken to the name page of the form
-    When I click continue
-    Then I am taken to the email page of the form
-    When I click continue
-    Then I am taken to the country page of the form
-    When I enter my country
-    Then I am taken to the postcode page of the form
-    When I enter my postcode
-    Then I am taken to the address page of the form
-    When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
       |  table_not_received         |  complaint_summary  |

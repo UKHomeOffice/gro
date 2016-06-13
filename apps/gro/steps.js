@@ -10,7 +10,6 @@ module.exports = {
   '/about': {
     fields: ['about-radio'],
     next: '/type',
-    continueOnEdit: true,
     forks: [{
       target: '/details',
       condition(req) {
@@ -21,7 +20,6 @@ module.exports = {
   '/type': {
     fields: ['type-radio'],
     next: '/person',
-    continueOnEdit: true,
     forks: [{
       target: '/people',
       condition(req) {
@@ -36,7 +34,6 @@ module.exports = {
       'previous-radio'
     ],
     next: '/type',
-    continueOnEdit: true,
     forks: [{
       target: '/name',
       condition: {
@@ -48,7 +45,6 @@ module.exports = {
   '/person': {
     fields: ['person-text'],
     next: '/additional',
-    continueOnEdit: true,
     forks: [{
       target: '/how',
       condition(req) {
@@ -62,7 +58,6 @@ module.exports = {
       'person-two'
     ],
     next: '/additional',
-    continueOnEdit: true,
     forks: [{
       target: '/how',
       condition(req) {
@@ -75,8 +70,7 @@ module.exports = {
       'additional-text',
       'additional-radio'
     ],
-    next: '/how',
-    continueOnEdit: true
+    next: '/how'
   },
   '/how': {
     fields: [
@@ -85,14 +79,12 @@ module.exports = {
       'telephone-toggle-text',
       'post-toggle-text',
     ],
-    continueOnEdit: true,
     next: '/which'
   },
   '/which': {
     fields: [
       'which-radio'
     ],
-    continueOnEdit: true,
     next: '/when'
   },
   '/when': {
@@ -103,17 +95,14 @@ module.exports = {
       'when-date-month',
       'when-date-year'
     ],
-    continueOnEdit: true,
     next: '/name'
   },
   '/name': {
     fields: ['name-text'],
-    continueOnEdit: true,
     next: '/email'
   },
   '/email': {
     fields: ['email-text'],
-    continueOnEdit: true,
     next: '/country'
   },
   '/country': {
@@ -158,7 +147,6 @@ module.exports = {
     fields: [
       'address-textarea'
     ],
-    continueOnEdit: true,
     next: '/confirm'
   },
   '/confirm': {
