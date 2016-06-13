@@ -16,8 +16,11 @@ When(/^I click on (.*)$/) do | field |
 end
 
 Then(/^I am taken to the (.*) page of the form$/) do | header |
-  puts #header
   expect(page).to have_content CONTENT["#{header}_header"]
+end
+
+And(/^I can see the (.*) field/) do | field |
+  expect(page).to have_css "##{CONTENT["#{field}"]}"
 end
 
 When(/^I fill in the name on the certificate$/) do

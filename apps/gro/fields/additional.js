@@ -1,6 +1,13 @@
 'use strict';
 
 module.exports = {
+  'additional-name': {
+    mixin: 'input-text',
+    useWhen: {
+      field: 'about-radio',
+      value: 'wrong-certificate'
+    }
+  },
   'additional-text': {
     mixin: 'input-text'
   },

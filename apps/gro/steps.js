@@ -88,6 +88,7 @@ module.exports = {
   '/additional': {
     template: 'step',
     fields: [
+      'additional-name',
       'additional-text',
       'additional-radio'
     ],
