@@ -47,7 +47,7 @@ Feature: The back link is correct as I move through the form
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
     When I click other and then continue
-    Then I am taken to the details page of the form
+    Then I am taken to the details_other page of the form
     When I choose yes for existing and yes for previous complaint
     Then I am taken to the type page of the form
     When I click marriage and then continue
@@ -62,7 +62,7 @@ Feature: The back link is correct as I move through the form
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
     When I click other and then continue
-    Then I am taken to the details page of the form
+    Then I am taken to the details_other page of the form
     When I choose yes for existing and yes for previous complaint
     Then I am taken to the type page of the form
     When I click birth and then continue
@@ -100,22 +100,22 @@ Feature: The back link is correct as I move through the form
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
     When I click complaint and then continue
-    Then I am taken to the details page of the form
+    Then I am taken to the details_complaint page of the form
     When I choose no for existing and no for previous complaint
     Then I am taken to the name page of the form
     When I click the back link
-    Then I am taken to the details page of the form
+    Then I am taken to the details_complaint page of the form
 
   @type @details
   Scenario: Back link on the type page is details
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
     When I click other and then continue
-    Then I am taken to the details page of the form
+    Then I am taken to the details_other page of the form
     When I choose yes for existing and yes for previous complaint
     Then I am taken to the type page of the form
     When I click the back link
-    Then I am taken to the details page of the form
+    Then I am taken to the details_other page of the form
 
   @type @about
   Scenario: Back link on the type page is about

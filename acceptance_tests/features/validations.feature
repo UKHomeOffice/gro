@@ -25,13 +25,28 @@ Feature: I see the correct error messages in the form
     Then I should see the how error
 
   @details
-  Scenario: Details page validation
+  Scenario: Details page validation (complaint)
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
     When I click complaint and then continue
-    Then I am taken to the details page of the form
+    Then I am taken to the details_complaint page of the form
     When I click continue
-    Then I should see the details error
+    Then I should see the details_complaint error
+    When I enter free_text into the details_text field
+    When I click continue
+    Then I should see the existing error
+    When I click on existing_radio_yes
+    When I click continue
+    Then I should see the previous error
+
+  @details
+  Scenario: Details page validation (other)
+    Given I am on the start page for the form
+    Then I can see the questions for the about page of the form
+    When I click other and then continue
+    Then I am taken to the details_other page of the form
+    When I click continue
+    Then I should see the details_other error
     When I enter free_text into the details_text field
     When I click continue
     Then I should see the existing error
@@ -147,4 +162,3 @@ Feature: I see the correct error messages in the form
     When I enter my postcode
     Then I am taken to the address page of the form
     When I select my address
-

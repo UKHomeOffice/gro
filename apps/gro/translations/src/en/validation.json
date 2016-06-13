@@ -6,7 +6,12 @@
     "required": "Tell us the type of certificate that was ordered"
   },
   "details-text": {
-    "required": "Tell us about your complaint"
+    "required": {
+      "about-radio": {
+        "complaint": "Tell us about your complaint"
+      },
+      "default": "Tell us about your enquiry"
+    }
   },
   "existing-radio": {
     "required": "Tell us if there is an existing order"

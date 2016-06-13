@@ -52,7 +52,7 @@ Feature: I am able to navigate through the GRO form correctly
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
     When I click complaint and then continue
-    Then I am taken to the details page of the form
+    Then I am taken to the details_complaint page of the form
     When I choose no for existing and no for previous complaint
     Then I am taken to the name page of the form
     When I enter my full name
@@ -82,7 +82,7 @@ Feature: I am able to navigate through the GRO form correctly
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
     When I click other and then continue
-    Then I am taken to the details page of the form
+    Then I am taken to the other page of the form
     When I choose yes for existing and yes for previous complaint
     Then I am taken to the type page of the form
     When I click marriage and then continue
