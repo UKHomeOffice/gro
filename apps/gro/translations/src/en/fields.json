@@ -52,7 +52,13 @@
     "legend": "Have you already complained about this issue?"
   },
   "person-text": {
-    "label": "Whose name, including any initials, is on the certificate you received?"
+    "label": {
+      "about-radio": {
+        "wrong-certificate": "Tell us the full names of the person in the certificate you requested",
+        "damaged": "Whose name, including all middle names, is on the certificate you received?"
+      },
+      "default": "Whose name, including any middle names, is on the certificate you ordered?"
+    }
   },
   "person-one": {
     "label": "Tell us the full names of party one on the certificate you requested"
