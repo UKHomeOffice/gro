@@ -15,7 +15,7 @@ if (config.env === 'ci') {
   app.use(churchill(logger));
 }
 
-if (config.env === 'development' || config.env === 'docker' || config.env === 'ci') {
+if (config.env === 'development' || config.env === 'docker-compose' || config.env === 'ci') {
   app.use('/public', express.static(path.resolve(__dirname, './public')));
 }
 
@@ -74,7 +74,7 @@ app.use(secureCookies);
 app.use(session({
   store: redisStore,
   cookie: {
-    secure: (config.env === 'development' || config.env === 'docker' || config.env === 'ci') ? false : true
+    secure: (config.env === 'development' || config.env === 'docker-compose' || config.env === 'ci') ? false : true
   },
   key: 'hmgro.sid',
   secret: config.session.secret,
