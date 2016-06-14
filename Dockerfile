@@ -11,7 +11,7 @@ RUN yum clean all && \
   rpm --rebuilddb && \
   rm -rf node_modules && \
   npm --production=false install --unsafe-perm --no-optional && \
-  NODE_ENV=development npm test && \
+  npm test && \
   npm prune --production && \
   chown -R nodejs:nodejs .
 

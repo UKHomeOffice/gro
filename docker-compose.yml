@@ -2,7 +2,7 @@ app:
   build: .
   env_file: secrets.env
   environment:
-    - NODE_ENV=docker
+    - NODE_ENV=docker-compose
     - EMAIL_IGNORE_TLS=true
     - CASEWORKER_EMAIL=a@user.com
   net: "host"
