@@ -16,5 +16,4 @@ before_script:
   - NODE_ENV='ci' npm start&
 
 script:
-  - npm run test:ci
-  - npm run test:acceptance
+  -  npm run test:ci && npm run test:acceptance
