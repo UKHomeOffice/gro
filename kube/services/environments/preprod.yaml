@@ -22,6 +22,10 @@ Fn::FileData:
   encode: base64
   files:
   - ../secrets/preprod/gro-form-crt
+- name: postcode_token
+  encode: base64
+  files:
+  - ../secrets/preprod/postcode_token
 
 GRO_HTTP_PORT: 30243
 GRO_HTTPS_PORT: 30244
