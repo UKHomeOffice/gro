@@ -1,0 +1,18 @@
+{{^emptySection}}
+  <table class="table-details">
+    <thead>
+      <p>{{#t}}pages.confirm.table.headers.{{name}}{{/t}}</p>
+    </thead>
+    <tbody>
+      {{#fields}}
+        <tr>
+          <td>{{#t}}pages.confirm.table.headers.{{name}}{{/t}}</td>
+          <td>
+            {{{value}}}
+          </td>
+          <td><a href="{{baseUrl}}{{step}}/edit#{{name}}" class="button" id="{{name}}-change">{{#t}}buttons.change{{/t}}</a></td>
+        </tr>
+      {{/fields}}
+    </tbody>
+  </table>
+{{/emptySection}}

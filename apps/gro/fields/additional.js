@@ -1,8 +1,11 @@
 'use strict';
 
 module.exports = {
-  'additional-text': {},
+  'additional-text': {
+    mixin: 'input-text'
+  },
   'additional-radio': {
+    mixin: 'radio-group',
     validate: ['required'],
     className: ['inline', 'form-group'],
     options: [{

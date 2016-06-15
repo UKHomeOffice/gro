@@ -1,5 +1,5 @@
 {{<layout}}
-{{$step}}Step 3{{/step}}
+{{$step}}Step 1{{/step}}
 
 {{$journeyHeader}}
 {{#t}}journey.header{{/t}}
@@ -13,17 +13,18 @@
 {{> partials-navigation}}
 {{/propositionHeader}}
 
-{{$header}}{{#t}}pages.contact-details.header{{/t}}{{/header}}
-
+{{$header}}{{#t}}pages.{{section}}.header{{/t}}{{/header}}
 {{$content}}
 
 {{<partials-form}}
 
 {{$form}}
-
-{{#input-text}}email-text{{/input-text}}
-
-{{#input-submit}}continue{{/input-submit}}
+  {{#subsection}}
+    <p class="form-block">
+      {{#t}}pages.{{subsection}}.header{{/t}}
+    </p>
+  {{/subsection}}
+  {{$page-content}}{{/page-content}}
 {{/form}}
 
 {{/partials-form}}

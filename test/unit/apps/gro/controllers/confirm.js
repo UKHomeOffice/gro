@@ -20,13 +20,13 @@ const i18n = sinon.stub().returns({
 const path = sinon.stub();
 
 const ConfirmController = proxyquire('../../../../../apps/gro/controllers/confirm', {
-  'hof': {
+  path,
+  hof: {
+    i18n,
     controllers: {
-      base: BaseController
-    },
-    i18n: i18n
+      confirm: BaseController
+    }
   },
-  'path': path,
   '../../common/models/email': Model
 });
 

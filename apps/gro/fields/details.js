@@ -2,14 +2,13 @@
 
 module.exports = {
   'details-text': {
+    mixin: 'input-text',
     validate: ['required']
   },
   'existing-radio': {
+    mixin: 'radio-group',
     validate: ['required'],
     className: ['inline', 'form-group'],
-    legend: {
-      value: 'fields.existing-radio.legend'
-    },
     options: [{
       value: 'yes',
       label: 'Yes'
@@ -19,11 +18,9 @@ module.exports = {
     }]
   },
   'previous-radio': {
+    mixin: 'radio-group',
     validate: ['required'],
     className: ['inline', 'form-group'],
-    legend: {
-      value: 'fields.previous-radio.legend'
-    },
     options: [{
       value: 'yes',
       label: 'Yes'

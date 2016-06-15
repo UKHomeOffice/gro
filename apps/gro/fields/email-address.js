@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-  'person-text': {
+  'email-text': {
     mixin: 'input-text',
-    validate: ['required']
+    validate: ['required', 'email']
   }
 };

@@ -67,14 +67,6 @@ When(/^I enter my email address$/) do
   step 'I click continue'
 end
 
-When(/^I fill in my address$/) do
-  step 'I enter country into the country_text field'
-  step 'I enter address_one into the address_text_one field'
-  step 'I enter address_two into the address_text_two field'
-  step 'I enter post_code into the address_text_three field'
-  step 'I click continue'
-end
-
 When(/^I click continue$/) do
   click_button("Continue")
 end
@@ -86,8 +78,6 @@ end
 When(/^I select an address/) do
   find('#address-lookup').find(:xpath, 'option[2]').select_option
 end
-
-
 
 When(/^I select (.*) on the (.*) button$/) do | choice, button |
   find_by_id("#{button}-#{choice}").click
@@ -113,7 +103,7 @@ Then(/^I should see the headers and my information in the summary:$/) do | table
 end
 
 When(/^I click change (.*) from the (.*) page$/) do | change, step |
-  find(:xpath, "//a[@href='#{step}/edit##{CONTENT[change]}']").click
+  find(:xpath, "//a[@href='/#{step}/edit##{CONTENT[change]}']").click
 end
 
 Then(/^I should see (.*) on the page$/) do | field |
@@ -142,33 +132,33 @@ Then(/^I am taken to the confirmation page$/) do
 end
 
 When(/^I enter my country$/) do
-  step 'I enter country_uk into the country_text field'
+  step 'I enter country_uk into the country_select field'
   step 'I click continue'
 end
 
 When(/^I enter my country uk$/) do
-  step 'I enter country_uk into the country_text field'
+  step 'I enter country_uk into the country_select field'
   step 'I click continue'
 end
 
 When(/^I enter my country not uk$/) do
-  step 'I enter country_not_uk into the country_text field'
+  step 'I enter country_not_uk into the country_select field'
   step 'I click continue'
 end
 
 When(/^I enter my postcode$/) do
-  step 'I enter postcode into the postcode_text field'
-  step 'I click find address'
+  step 'I enter postcode into the postcode_code field'
+  step 'I click continue'
 end
 
 When(/^I enter my postcode in Northern Ireland$/) do
-  step 'I enter postcode_NI into the postcode_text field'
-  step 'I click find address'
+  step 'I enter postcode_NI into the postcode_code field'
+  step 'I click continue'
 end
 
 When(/^I enter my postcode not in MOJ$/) do
-  step 'I enter postcode_not_in_MOJ into the postcode_text field'
-  step 'I click find address'
+  step 'I enter postcode_not_in_MOJ into the postcode_code field'
+  step 'I click continue'
 end
 
 When(/^I select my address$/) do
@@ -177,12 +167,12 @@ When(/^I select my address$/) do
 end
 
 When(/^I enter my address$/) do
-  step 'I enter address_entry into the address_text field'
+  step 'I enter address_entry into the address_textarea field'
   step 'I click continue'
 end
 
 When(/^I enter my NI address$/) do
-  step 'I enter address_entry into the address_text field'
+  step 'I enter address_entry into the address_textarea field'
   step 'I click continue'
 end
 

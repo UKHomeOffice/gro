@@ -13,7 +13,7 @@ module.exports = _.extend(
   require('./which'),
   require('./when'),
   require('./name'),
-  require('./email'),
+  require('./email-address'),
   require('./country'),
   require('./postcode'),
   require('./address-lookup'),

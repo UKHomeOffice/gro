@@ -1,7 +1,6 @@
 'use strict';
 
-const controllers = require('hof').controllers;
-const BaseController = controllers.base;
+const BaseController = require('hof').controllers.confirm;
 const path = require('path');
 const i18n = require('hof').i18n;
 const Model = require('../../common/models/email');
