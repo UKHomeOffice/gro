@@ -20,9 +20,8 @@ describe('apps/common/models/email', () => {
       const emailData = {
         some: 'email data'
       };
-      /*eslint no-unused-vars: 0*/
+      // eslint-disable-next-line no-unused-vars
       const model = new EmailModel(emailData);
-      /*eslint no-unused-vars: 1*/
       hof.Model.should.have.been.calledWith(emailData);
     });
   });

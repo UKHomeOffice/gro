@@ -23,9 +23,9 @@ if (maildev_details.length > 1) {
 
 process.title = 'gro';
 
-/*eslint no-process-env: 0*/
-/*eslint no-inline-comments: 0*/
-/*eslint camelcase: 0*/
+/* eslint no-process-env: 0 */
+/* eslint no-inline-comments: 0 */
+/* eslint camelcase: 0 */
 module.exports = {
   env: process.env.NODE_ENV || 'local',
   siteroot: process.env.SITEROOT || '',

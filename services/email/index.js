@@ -33,8 +33,9 @@ var translationLocation = {
   gro: 'gro'
 };
 
-var transport = (config.email.host === '' && config.email.port === '') ?
-  require('nodemailer-stub-transport') : require('nodemailer-smtp-transport');
+var transport = config.email.host === '' && config.email.port === ''
+  ? require('nodemailer-stub-transport')
+  : require('nodemailer-smtp-transport');
 
 var emailOptions = {
   host: config.email.host,
