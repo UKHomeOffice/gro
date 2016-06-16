@@ -45,7 +45,7 @@ describe('apps/gro/controllers/postcode', () => {
       PostcodesModel.prototype.fetch.should.not.have.been.called;
     });
 
-    it('should call fetch with postcode in options object if postcode isn\'t saved to sessionModel', function () {
+    it('should call fetch with postcode in options object if postcode isn\'t saved to sessionModel', () => {
       req.sessionModel.get = sinon.stub().returns(undefined);
       controller.process(req, res, callback);
       PostcodesModel.prototype.fetch.should.have.been.calledOnce.and.calledWithExactly({
@@ -68,7 +68,7 @@ describe('apps/gro/controllers/postcode', () => {
         req.sessionModel.unset.secondCall.should.have.been.calledWithExactly('addresses');
       });
 
-      it('should have called callback', function () {
+      it('should have called callback', () => {
         callback.should.have.been.calledOnce.and.calledWithExactly();
       });
     });

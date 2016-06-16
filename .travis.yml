@@ -6,10 +6,6 @@ node_js:
 services:
   - redis-server
 
-cache:
-  directories:
-    - node_modules
-
 before_install:
   - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
   - rvm install 2.2.2

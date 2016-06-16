@@ -8,10 +8,9 @@ module.exports = class StartController extends BaseController {
     super(options);
   }
 
-  /*eslint no-unused-vars: 0*/
   getValues(req, res, callback) {
     req.sessionModel.reset();
-    super.successHandler.apply(this, arguments);
+    super.successHandler(req, res, callback);
   }
 
 };

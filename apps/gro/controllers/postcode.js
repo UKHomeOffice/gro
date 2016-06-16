@@ -1,3 +1,5 @@
+/* eslint consistent-return: 0 */
+
 'use strict';
 
 const controllers = require('hof').controllers;

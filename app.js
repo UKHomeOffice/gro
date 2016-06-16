@@ -41,9 +41,7 @@ app.use((req, res, next) => {
   next();
 });
 
-/*************************************/
-/******* Redis session storage *******/
-/*************************************/
+// Redis session storage
 const RedisStore = require('connect-redis-crypto')(session);
 const client = redis.createClient(config.redis.port, config.redis.host);
 
@@ -61,7 +59,7 @@ function secureCookies(req, res, next) {
   const cookie = res.cookie.bind(res);
   res.cookie = (name, value, options) => {
     options = options || {};
-    options.secure = (req.protocol === 'https');
+    options.secure = req.protocol === 'https';
     options.httpOnly = true;
     options.path = '/';
     cookie(name, value, options);
@@ -74,7 +72,7 @@ app.use(secureCookies);
 app.use(session({
   store: redisStore,
   cookie: {
-    secure: (config.env === 'development' || config.env === 'docker-compose' || config.env === 'ci') ? false : true
+    secure: !(config.env === 'development' || config.env === 'docker-compose' || config.env === 'ci')
   },
   key: 'hmgro.sid',
   secret: config.session.secret,
@@ -96,7 +94,6 @@ app.use(require('hof').middleware.errors({
   debug: config.env === 'development'
 }));
 
-/*eslint camelcase: 0*/
+// eslint-disable-next-line camelcase
 app.listen(config.port, config.listen_host);
-/*eslint camelcase: 1*/
 logger.info('App listening on port', config.port);
