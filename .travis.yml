@@ -12,6 +12,7 @@ cache:
 
 before_install:
   - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+  - npm cache clean
   - rvm install 2.2.2
 
 before_script:
