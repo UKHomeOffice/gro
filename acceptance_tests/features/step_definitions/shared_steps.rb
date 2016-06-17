@@ -3,7 +3,6 @@ Given(/^I am on the start page for the form$/) do
 end
 
 Then(/^I can see the questions for the (.*) page of the form$/) do | header |
-  expect(page).to have_content 'Step 1'
   expect(page).to have_content CONTENT["#{header}_header"]
 end
 
