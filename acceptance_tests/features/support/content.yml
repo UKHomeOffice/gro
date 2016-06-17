@@ -2,7 +2,7 @@
 about_header: 'What would you like to contact us about?'
 type_header: 'What type of certificate did you order?'
 details_header: 'Provide details of your complaint'
-person_header: 'Whose name, including any initials, is on the certificate you received?'
+person_header: 'Whose name, including any middle names, is on the certificate you ordered?'
 people_header: 'Tell us the full names of party one on the certificate you requested'
 additional_header: 'What else would you like to tell us about your enquiry?'
 how_header: 'How did you place your order?'
