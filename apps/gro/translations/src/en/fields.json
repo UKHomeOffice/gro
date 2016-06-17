@@ -43,13 +43,28 @@
     }
   },
   "details-text": {
-    "label": "Provide details of your complaint"
+    "label": {
+      "about-radio": {
+        "complaint": "Provide details of your complaint"
+      },
+      "default": "Provide details of your enquiry"
+    }
   },
   "existing-radio": {
-    "legend": "Is your complaint about an existing order?"
+    "legend": {
+      "about-radio": {
+        "complaint": "Is your complaint about an existing order?"
+      },
+      "default": "Is your enquiry about an existing order?"
+    }
   },
   "previous-radio": {
-    "legend": "Have you already complained about this issue?"
+    "legend": {
+      "about-radio": {
+        "complaint": "Have you already complained about this issue?"
+      },
+      "default": "Have you previously been contact about this?"
+    }
   },
   "person-text": {
     "label": {

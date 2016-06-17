@@ -6,7 +6,7 @@ Feature: I am able to change my answers and correctly navigate through the form
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
     When I click complaint and then continue
-    Then I am taken to the details page of the form
+    Then I am taken to the details_complaint page of the form
     When I choose no for existing and no for previous complaint
     Then I am taken to the name page of the form
     When I enter my full name
@@ -75,7 +75,7 @@ Feature: I am able to change my answers and correctly navigate through the form
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
     When I click complaint and then continue
-    Then I am taken to the details page of the form
+    Then I am taken to the details_complaint page of the form
     When I choose no for existing and no for previous complaint
     Then I am taken to the name page of the form
     When I enter my full name
@@ -98,7 +98,7 @@ Feature: I am able to change my answers and correctly navigate through the form
       |  table_country              |  country_summary    |
       |  table_post                 |  address_summary    |
     When I click change details_text from the details page
-    Then I am taken to the details page of the form
+    Then I am taken to the details_complaint page of the form
     When I change details_text to alt_text
     When I click continue
     Then I am taken to the confirm page of the form
@@ -117,7 +117,7 @@ Feature: I am able to change my answers and correctly navigate through the form
     Given I am on the start page for the form
     Then I can see the questions for the about page of the form
     When I click complaint and then continue
-    Then I am taken to the details page of the form
+    Then I am taken to the details_complaint page of the form
     When I choose no for existing and no for previous complaint
     Then I am taken to the name page of the form
     When I enter my full name
@@ -140,7 +140,7 @@ Feature: I am able to change my answers and correctly navigate through the form
       |  table_country              |  country_summary    |
       |  table_post                 |  address_summary    |
     When I click change existing from the details page
-    Then I am taken to the details page of the form
+    Then I am taken to the details_complaint page of the form
     When I click on existing_radio_yes
     When I click continue
     Then I am taken to the type page of the form
@@ -229,7 +229,7 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I click change about from the about page
     Then I am taken to the about page of the form
     When I click complaint and then continue
-    Then I am taken to the details page of the form
+    Then I am taken to the details_complaint page of the form
     When I choose no for existing and no for previous complaint
     Then I am taken to the name page of the form
     When I enter my full name
