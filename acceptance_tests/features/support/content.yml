@@ -97,6 +97,7 @@ address_summary_not_uk: '49 Yellow Brick Road Emerald City'
 address_summary_NI: '49 Yellow Brick Road Emerald City'
 address_summary_other: '49 Yellow Brick Road Emerald City'
 address_summary_not_in_MOJ: '49 Yellow Brick Road Emerald City'
+manual_lookup: 'manual-entry'
 
 confirmation_content: 'Thank you for contacting the General Register Office'
 

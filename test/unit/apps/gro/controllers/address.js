@@ -16,21 +16,41 @@ describe('apps/gro/controllers/address', () => {
   const res = {};
   const cb = () => {};
 
-  describe('locals', () => {
+  beforeEach(() => {
+    req = {
+      sessionModel: {
+        get: sinon.stub(),
+        unset: sinon.stub()
+      },
+      form: {
+        values: {}
+      },
+      params: {
+        action: undefined
+      }
+    };
+    controller = new AddressController();
+    BaseController.prototype.locals = sinon.stub().returns({});
+    BaseController.prototype.getValues = sinon.stub().returns({});
+  });
 
-    beforeEach(() => {
-      req = {
-        sessionModel: {
-          get: sinon.stub()
-        },
-        form: {
-          values: {}
-        }
-      };
-      controller = new AddressController();
-      BaseController.prototype.locals = sinon.stub().returns({});
+  describe('getValues', () => {
+    it('calls parent', () => {
+      controller.getValues(req, res, cb);
+      BaseController.prototype.getValues.should.have.been.calledOnce;
     });
 
+    it('unsets postcode-code if action is manual', () => {
+      req.params.action = 'manual';
+      controller.getValues(req, res, cb);
+      req.sessionModel.unset.should.have.been.calledOnce.and.calledWithExactly([
+        'postcode-code',
+        'postcodeApiMeta'
+      ]);
+    });
+  });
+
+  describe('locals', () => {
     it('returns locals including postcodeApiMessageKey, taken from sessionModel', () => {
       req.sessionModel.get.returns({messageKey: 'test'});
       controller.locals(req, res, cb).should.have.property('postcodeApiMessageKey')
@@ -49,13 +69,10 @@ describe('apps/gro/controllers/address', () => {
         .and.be.false;
     });
 
-
     it('returns locals including postcodeApiMessageKey, taken from sessionModel', () => {
       req.sessionModel.get.returns({messageKey: 'anotherErrorKey'});
       controller.locals(req, res, cb).should.have.property('postcodeApiMessageKey')
         .and.be.equal('anotherErrorKey');
     });
-
   });
-
 });
