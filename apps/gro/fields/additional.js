@@ -9,7 +9,9 @@ module.exports = {
     }
   },
   'additional-text': {
-    mixin: 'input-text'
+    mixin: 'textarea',
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens']
   },
   'additional-radio': {
     mixin: 'radio-group',
