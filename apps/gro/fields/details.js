@@ -2,8 +2,10 @@
 
 module.exports = {
   'details-text': {
-    mixin: 'input-text',
-    validate: ['required']
+    mixin: 'textarea',
+    validate: ['required'],
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens']
   },
   'existing-radio': {
     mixin: 'radio-group',
