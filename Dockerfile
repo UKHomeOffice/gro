@@ -15,8 +15,6 @@ RUN yum clean all && \
   npm prune --production && \
   chown -R nodejs:nodejs .
 
-RUN npm install -g nodemon
-
 USER nodejs
 
 EXPOSE 8080

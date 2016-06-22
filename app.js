@@ -18,7 +18,9 @@ if (config.env === 'ci') {
   app.use(churchill(logger));
 }
 
-app.use('/public', express.static(path.resolve(__dirname, './public')));
+if (config.env === 'development' || config.env === 'ci') {
+  app.use('/public', express.static(path.resolve(__dirname, './public')));
+}
 
 app.use((req, res, next) => {
   req.baseUrl = config.siteroot + req.baseUrl;
