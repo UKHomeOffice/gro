@@ -13,12 +13,12 @@ def build() {
         app_repo="quay.io/ukhomeofficedigital/gro-form:${app_tag}"
         sh "docker tag ${docker_hash} ${app_repo}"
 
-        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'quay-login', 
+        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'quay-login',
                 passwordVariable: 'PASS', usernameVariable: 'USER']]) {
             sh "docker login -e devops@digital.homeoffice.gov.uk -u ${env.USER} -p ${env.PASS} quay.io"
             sh "docker push ${app_repo}"
         }
-       
+
         return app_tag
     }
 }
@@ -30,9 +30,9 @@ def deploy(environment, app_tag) {
             checkout scm
             dir('kube') {
                 echo 'DEPLOYING TO ' + environment
-                withEnv(['TLS_TAG=v1.1.6', "APP_TAG=${app_tag}", 'REDIS_TAG=v0.0.1']) {
+                withEnv(['TLS_TAG=v1.2.3', "APP_TAG=${app_tag}", 'REDIS_TAG=v0.0.1']) {
                     sh "./scripts/deploy.sh -e ${environment} ./services/gro.yaml"
-                }    
+                }
             }
         }
     }
