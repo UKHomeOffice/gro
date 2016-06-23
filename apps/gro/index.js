@@ -22,7 +22,7 @@ router.use(deepTranslate({
 
 router.use(mixins(fields));
 
-router.use('/', wizard(steps, fields, {
+router.use('/test', wizard(steps, fields, {
   controller: BaseController,
   templatePath: path.resolve(__dirname, 'views'),
   params: '/:action?'
