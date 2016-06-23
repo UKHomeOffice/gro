@@ -83,27 +83,31 @@ app.use(session({
   saveUninitialized: true
 }));
 
+// use the hof middleware to enforce cookies
+const i18n = require('hof').i18n({
+  path: path.resolve(__dirname, './apps/common/translations/__lng__/__ns__.json')
+});
+
+app.use(require('hof').middleware.cookies());
 
 app.get('/cookies', (req, res) => res.render('cookies'));
 app.get('/terms-and-conditions', (req, res) => res.render('terms'));
 app.get('/healthz/ping', (req, res) => res.send(200));
 
-// use the hof middleware to enforce cookies
-app.use(require('hof').middleware.cookies());
-
-// apps
+// the app
 app.use(require('./apps/gro/'));
+
+// errors
+app.use(require('hof').middleware.errors({
+  logger: require('./lib/logger'),
+  translate: i18n.translate.bind(i18n),
+  debug: config.env === 'development'
+}));
 
 // not found
 app.use(require('hof').middleware.notFound({
   logger: require('./lib/logger'),
-  translate: require('hof').i18n.translate
-}));
-// errors
-app.use(require('hof').middleware.errors({
-  logger: require('./lib/logger'),
-  translate: require('hof').i18n.translate,
-  debug: config.env === 'development'
+  translate: i18n.translate.bind(i18n)
 }));
 
 // eslint-disable-next-line camelcase

@@ -1,16 +1,16 @@
 {{<layout}}
 
 {{$title}}
-  {{content.title}}
+  {{title}}
 {{/title}}
 
 {{$header}}
-  {{content.title}}
+  {{title}}
 {{/header}}
 
 {{$content}}
-  <p>{{content.message}}</p>
-  <a href="/{{startLink}}" class="button" role="button">Start again</a>
+  <p>{{description}}</p>
+  <a href="/{{startLink}}" class="button" role="button">{{#t}}buttons.start{{/t}}</a>
   {{#showStack}}
     <pre>
       {{error.stack}}
