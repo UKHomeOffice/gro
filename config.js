@@ -40,9 +40,7 @@ module.exports = {
     host: redis_addr
   },
   email: {
-    caseworker: {
-      gro: process.env.CASEWORKER_EMAIL || ''
-    },
+    caseworker: process.env.CASEWORKER_EMAIL || '',
     port: maildev_port,
     host: maildev_addr,
     auth: {
