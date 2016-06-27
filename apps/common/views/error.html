@@ -5,8 +5,8 @@
 {{/header}}
 
 {{$content}}
-    <p>{{content.message}}</p>
-    <a href="/{{startLink}}" class="button" role="button">Start again</a>
+    <p>{{{content.message}}}</p>
+    <a href="/" class="button" role="button">Start again</a>
     {{#showStack}}
       <pre>
         {{error.stack}}
