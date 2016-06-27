@@ -8,6 +8,9 @@ const churchill = require('churchill');
 const session = require('express-session');
 const redis = require('redis');
 const config = require('./config');
+const i18n = require('hof').i18n({
+  path: path.resolve(__dirname, './apps/common/translations/__lng__/__ns__.json')
+});
 
 if (config.env === 'ci') {
   app.use(require('./ci.js'));
@@ -78,18 +81,28 @@ app.use(session({
   saveUninitialized: true
 }));
 
+// check for cookies
+app.use(require('hof').middleware.cookies());
+
 // apps
 app.use(require('./apps/gro/'));
 
 app.get('/cookies', (req, res) => res.render('cookies'));
 app.get('/terms-and-conditions', (req, res) => res.render('terms'));
+
+// shallow health check
 app.get('/healthz/ping', (req, res) => res.send(200));
+
+// 404's
+app.use(require('hof').middleware.notFound({
+  logger: require('./lib/logger'),
+  translate: i18n.translate.bind(i18n),
+}));
 
 // errors
 app.use(require('hof').middleware.errors({
   logger: require('./lib/logger'),
-  translate: require('hof').i18n.translate,
-  debug: config.env === 'development'
+  translate: i18n.translate.bind(i18n)
 }));
 
 // eslint-disable-next-line camelcase
