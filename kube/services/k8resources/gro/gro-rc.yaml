@@ -3,7 +3,7 @@ kind: ReplicationController
 metadata:
   name: gro
 spec:
-  replicas: 3
+  replicas: "3"
   selector:
     name: gro
   template:
@@ -16,13 +16,13 @@ spec:
         image: quay.io/ukhomeofficedigital/nginx-proxy:${tls_tag}
         imagePullPolicy: Always
         ports:
-        - containerPort: 443
-        - containerPort: 80
+        - containerPort: "443"
+        - containerPort: "80"
         env:
         - name: LOAD_BALANCER_CIDR
-          value: '10.50.0.0/22'
+          value: "10.50.0.0/22"
         - name: PROXY_SERVICE_HOST
-          value: 127.0.0.1
+          value: "127.0.0.1"
         - name: PROXY_SERVICE_PORT
           value: "8080"
         - name: ENABLE_UUID_PARAM
@@ -30,7 +30,7 @@ spec:
         - name: NAXSI_USE_DEFAULT_RULES
           value: "FALSE"
         - name: ERROR_REDIRECT_CODES
-          value: 599
+          value: "599"
         - name: ADD_NGINX_SERVER_CFG
           value: |
             add_header Cache-Control private;
@@ -68,7 +68,7 @@ spec:
         - name: REDIS_PORT
           value: "6379"
         ports:
-        - containerPort: 8080
+        - containerPort: "8080"
       volumes:
         - name: external-tls
           secret:
