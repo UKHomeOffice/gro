@@ -51,7 +51,7 @@ module.exports = class ConfirmController extends BaseConfirmController {
     });
     Promise.all([
       this.sendEmail(config.email.caseworker, 'caseworker', data, req, res),
-      this.sendEmail(req.sessionModel.get('email-address'), 'customer', data, req, res)
+      this.sendEmail(req.sessionModel.get('email-text'), 'customer', data, req, res)
     ]).then(() => callback()).catch(err => callback(err));
   }
 

@@ -5,6 +5,7 @@ const nodemailer = require('nodemailer');
 const config = require('../../../config');
 const stubTransport = require('nodemailer-stub-transport');
 const smtpTransport = require('nodemailer-smtp-transport');
+const debug = require('debug')('email');
 
 const emailOptions = {
   host: config.email.host,
@@ -20,14 +21,17 @@ if (config.email.secure) {
   emailOptions.secure = config.email.secure;
 }
 
-const transport = config.email.host === '' && config.email.port === ''
-  ? stubTransport
-  : smtpTransport;
+let transport = smtpTransport;
+if (config.email.host === '' && config.email.port === '') {
+  transport = stubTransport;
+  debug('using stub transport');
+}
 
 const emailer = nodemailer.createTransport(transport(emailOptions));
 
 module.exports = class EmailService {
   static sendEmail(to, subject, values, callback) {
+    debug('sending mail');
     emailer.sendMail({
       to,
       subject,
@@ -49,6 +53,9 @@ module.exports = class EmailService {
         path: path.resolve(__dirname, '../images/spacer.gif'),
         cid: 'spacer_image'
       }]
-    }, callback);
+    }, () => {
+      debug('email sent');
+      callback();
+    });
   }
 };

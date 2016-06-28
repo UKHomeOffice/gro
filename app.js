@@ -18,7 +18,9 @@ if (config.env === 'ci') {
   app.use(churchill(logger));
 }
 
-app.use('/public', express.static(path.resolve(__dirname, './public')));
+if (config.env === 'development' || config.env === 'ci') {
+  app.use('/public', express.static(path.resolve(__dirname, './public')));
+}
 
 app.use((req, res, next) => {
   req.baseUrl = config.siteroot + req.baseUrl;
@@ -42,12 +44,27 @@ app.use((req, res, next) => {
   next();
 });
 
+// Trust proxy for secure cookies
+app.set('trust proxy', 1);
+
 // Redis session storage
 const RedisStore = require('connect-redis-crypto')(session);
 const client = redis.createClient(config.redis.port, config.redis.host);
 
-client.on('error', e => {
-  throw e;
+client.on('connecting', () => {
+  logger.info('Connecting to redis');
+});
+
+client.on('connect', () => {
+  logger.info('Connected to redis');
+});
+
+client.on('reconnecting', () => {
+  logger.info('Reconnecting to redis');
+});
+
+client.on('error', (e) => {
+  logger.error(e);
 });
 
 const redisStore = new RedisStore({
@@ -73,7 +90,7 @@ app.use(secureCookies);
 app.use(session({
   store: redisStore,
   cookie: {
-    secure: !(config.env === 'development' || config.env === 'docker-compose' || config.env === 'ci')
+    secure: (config.env === 'development' || config.env === 'ci') ? false : true
   },
   key: 'hmgro.sid',
   secret: config.session.secret,
