@@ -18,7 +18,7 @@ if (config.env === 'ci') {
   app.use(churchill(logger));
 }
 
-if (config.env === 'development' || config.env === 'ci') {
+if (config.env === 'development') {
   app.use('/public', express.static(path.resolve(__dirname, './public')));
 }
 
@@ -51,8 +51,20 @@ app.set('trust proxy', 1);
 const RedisStore = require('connect-redis-crypto')(session);
 const client = redis.createClient(config.redis.port, config.redis.host);
 
-client.on('error', e => {
-  throw e;
+client.on('connecting', () => {
+  logger.info('Connecting to redis');
+});
+
+client.on('connect', () => {
+  logger.info('Connected to redis');
+});
+
+client.on('reconnecting', () => {
+  logger.info('Reconnecting to redis');
+});
+
+client.on('error', (e) => {
+  logger.error(e);
 });
 
 const redisStore = new RedisStore({
