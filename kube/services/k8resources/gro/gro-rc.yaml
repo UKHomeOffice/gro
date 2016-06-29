@@ -30,7 +30,7 @@ spec:
         - name: NAXSI_USE_DEFAULT_RULES
           value: "FALSE"
         - name: ERROR_REDIRECT_CODES
-          value: 599
+          value: "599"
         - name: ADD_NGINX_SERVER_CFG
           value: |
             add_header Cache-Control private;
@@ -48,6 +48,8 @@ spec:
           - name: external-tls
             mountPath: /etc/keys
             readOnly: true
+          - mountPath: /public
+            name: public
       - name: app
         image: quay.io/ukhomeofficedigital/gro-form:${app_tag}
         imagePullPolicy: Always
@@ -69,7 +71,14 @@ spec:
           value: "6379"
         ports:
         - containerPort: 8080
+        command:
+          - "/app/run.sh"
+        volumeMounts:
+        - mountPath: /public
+          name: public
       volumes:
         - name: external-tls
           secret:
             secretName: external-tls
+        - name: public
+          emptyDir: {}

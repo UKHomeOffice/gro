@@ -12,13 +12,13 @@ services:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       # - DEBUG=email
-    volumes:
-      - "/public"
     links:
       - redis
       - maildev
     ports:
       - "8080:8080"
+    volumes:
+      - "/public"
   redis:
     image: redis
 
@@ -30,12 +30,12 @@ services:
       - NAXSI_USE_DEFAULT_RULES=FALSE
       - ADD_NGINX_SERVER_CFG=add_header Cache-Control private;add_header X-Frame-Options "SAMEORIGIN" always;add_header X-Content-Type-Options "nosniff" always;add_header X-XSS-Protection "1; mode=block" always;location /public {add_header Cache-Control max-age=86400;add_header X-Frame-Options "SAMEORIGIN" always;add_header X-Content-Type-Options "nosniff" always;add_header X-XSS-Protection "1; mode=block" always;alias /public;}
       - ERROR_REDIRECT_CODES=599
-    volumes:
-      - ./public:/public
     ports:
       - "443:443"
       - "80:80"
     links:
+      - app
+    volumes_from:
       - app
 
   maildev:

@@ -3,7 +3,7 @@
 def build() {
     node {
         checkout scm
-        sh 'docker build . | tee build.log || exit 1; ID=$(tail -1 build.log | awk \'{print $3;}\'); echo $ID > DOCKER_HASH'
+        sh '((docker build . | tee build.log) || exit 1) && ID=$(tail -1 build.log | awk \'{print $3;}\') && echo $ID > DOCKER_HASH'
         docker_hash=readFile('DOCKER_HASH').trim()
 
         sh "git rev-parse --short HEAD > GIT_COMMIT"
@@ -52,7 +52,3 @@ stage "Run End-to-End"
 stage "Promote to Preprod"
     input "Are you Sure?"
     deploy('preprod', app_tag)
-
-stage "Promote to Production"
-    input "Are you Sure?"
-    deploy('prod', app_tag)
