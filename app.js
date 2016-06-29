@@ -87,16 +87,17 @@ function secureCookies(req, res, next) {
 
 app.use(require('cookie-parser')(config.session.secret));
 app.use(secureCookies);
-app.use(session({
+
+const sessionOpts = Object.assign({
   store: redisStore,
-  cookie: {
-    secure: (config.env === 'development' || config.env === 'ci') ? false : true
-  },
-  key: 'hmgro.sid',
+  name: config.session.name,
+  cookie: {secure: config.protocol === 'https'},
   secret: config.session.secret,
-  resave: true,
-  saveUninitialized: true
-}));
+  saveUninitialized: true,
+  resave: true
+}, config.session);
+
+app.use(session(sessionOpts));
 
 // check for cookies
 app.use(require('hof').middleware.cookies());
