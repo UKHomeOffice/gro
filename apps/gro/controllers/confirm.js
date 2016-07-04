@@ -3,7 +3,7 @@
 const BaseConfirmController = require('hof').controllers.confirm;
 const _ = require('lodash');
 const config = require('../../../config');
-const EmailService = require('../../common/services/email');
+const EmailService = require('../services/email');
 const fields = require('../fields');
 
 delete require.cache[require.resolve('../steps')];
