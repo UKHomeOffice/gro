@@ -5,5 +5,7 @@ then echo "starting service"
   SITEROOT=/gro GA_TAG_ID=UA-72527484-1
 fi
 
-exec node app.js
+cp -r /app/public/* /public/
+
+su nodejs -c 'exec node app.js'
 

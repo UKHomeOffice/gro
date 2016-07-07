@@ -28,7 +28,8 @@
     "sass": "node-sass ./assets/scss/app.scss ./public/css/app.css --include-path ./node_modules",
     "create:public": "mkdir -p ./public/js ./public/css ./public/images",
     "hof-transpile": "hof-transpiler ./apps/**/translations/src -w --shared ./apps/common/translations/src",
-    "postinstall": "npm run create:public; npm run sass; npm run browserify; npm run copy:images; npm run hof-transpile"
+    "prepareapp": "npm run create:public; npm run sass; npm run browserify; npm run copy:images; npm run hof-transpile",
+    "postinstall": "bash -c 'if [[ ${NODE_ENV} != production ]]; then npm run prepareapp; fi;'"
   },
   "author": "HomeOffice",
   "dependencies": {
@@ -40,7 +41,7 @@
     "express": "^4.12.4",
     "express-partial-templates": "^0.1.0",
     "express-session": "^1.11.3",
-    "hof": "https://github.com/UKHomeOffice/hof.git#so-master",
+    "hof": "UKHomeOffice/hof#so-master",
     "hogan-express-strict": "^0.5.4",
     "hogan.js": "^3.0.2",
     "i18n-lookup": "^0.1.0",
@@ -52,12 +53,12 @@
     "nodemailer-stub-transport": "^1.0.0",
     "redis": "^0.12.1",
     "typeahead-aria": "^1.0.1",
-    "winston": "^1.0.1"
+    "winston": "^1.0.1",
+    "hof-transpiler": "0.0.4"
   },
   "devDependencies": {
     "chai": "^3.0.0",
     "debug": "^2.2.0",
-    "hof-transpiler": "0.0.4",
     "istanbul": "^0.4.3",
     "jscs": "^1.13.1",
     "mocha": "^2.2.5",
