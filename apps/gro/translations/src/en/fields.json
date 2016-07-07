@@ -114,7 +114,7 @@
   },
   "post-toggle-text": {
     "label": "What is the account number?",
-    "hint": "The account number will have been given to you when you placed your order by post. Account numbers aways start with HMPO and typically look like this HMPO45678ERF0."
+    "hint": "The account number will have been given to you when you placed your order by post. Account numbers consist of between 3 and 7 digits, so look like 1234567, but without a dash and extra number on the end."
   },
   "which-radio": {
     "legend": "Which service did you pay for?",
