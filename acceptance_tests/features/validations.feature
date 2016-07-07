@@ -162,3 +162,20 @@ Feature: I see the correct error messages in the form
     When I enter my postcode
     Then I am taken to the address page of the form
     When I select my address
+
+  @how @invalid_account
+  Scenario: When page validation
+    Given I am on the start page for the form
+    Then I can see the questions for the about page of the form
+    When I click not_received and then continue
+    Then I am taken to the type page of the form
+    When I click birth and then continue
+    Then I am taken to the person page of the form
+    When I fill in the name on the certificate
+    Then I am taken to the additional page of the form
+    When I click previous_yes and then continue
+    Then I am taken to the how page of the form
+    When I click on post
+    And I enter invalid_acc_number into the post_text field
+    When I click continue
+    Then I should see the invalid_account error

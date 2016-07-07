@@ -23,5 +23,9 @@ module.exports = {
   },
   'online-toggle-text': {},
   'telephone-toggle-text': {},
-  'post-toggle-text': {}
+  'post-toggle-text': {
+    validate: ['numeric',
+      {'type': 'minlength', 'arguments': [3]},
+      {'type': 'maxlength', 'arguments': [7]}]
+  }
 };

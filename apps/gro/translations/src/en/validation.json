@@ -31,6 +31,11 @@
   "how-radio": {
     "required": "Tell us how you placed your order"
   },
+  "post-toggle-text": {
+    "numeric": "Account numbers must consist of between 3 and 7 digits",
+    "minlength": "Account numbers must consist of between 3 and 7 digits",
+    "maxlength": "Account numbers must consist of between 3 and 7 digits"
+  },
   "which-radio": {
     "required": "Tell us which service you paid for"
   },
