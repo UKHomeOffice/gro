@@ -50,7 +50,7 @@
   "country-text": {
     "required": "Enter your country"
   },
-  "address-text-one": {
+  "address-textarea": {
     "required": "Enter your address"
   },
   "country": {
@@ -60,9 +60,6 @@
   "postcode": {
     "postcode": "This postcode isn't valid, enter a valid postcode",
     "required": "Enter your postcode"
-  },
-  "address-text-one": {
-    "required": "Enter your address"
   },
   "address": {
     "required": "Select an address"
