@@ -1,10 +1,11 @@
 'use strict';
 
-var _ = require('lodash');
+const _ = require('lodash');
+const controllers = require('hof').controllers;
 
 module.exports = {
   '/': {
-    controller: require('../common/controllers/start'),
+    controller: controllers.start,
     next: '/about'
   },
   '/about': {
