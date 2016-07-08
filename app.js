@@ -60,7 +60,7 @@ i18n.on('ready', () => {
   if (config.env !== 'ci') {
     // Redis session storage
     const redis = require('redis');
-    const RedisStore = require('connect-redis-crypto')(session);
+    const RedisStore = connectRedisCrypto(session);
     const client = redis.createClient(config.redis.port, config.redis.host);
 
     client.on('connecting', () => {
