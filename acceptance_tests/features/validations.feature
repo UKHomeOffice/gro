@@ -179,3 +179,33 @@ Feature: I see the correct error messages in the form
     And I enter invalid_acc_number into the post_text field
     When I click continue
     Then I should see the invalid_account error
+
+  @address @invalid_address
+  Scenario: Name page validation
+    Given I am on the start page for the form
+    Then I can see the questions for the about page of the form
+    When I click not_received and then continue
+    Then I am taken to the type page of the form
+    When I click birth and then continue
+    Then I am taken to the person page of the form
+    When I fill in the name on the certificate
+    Then I am taken to the additional page of the form
+    When I click previous_yes and then continue
+    Then I am taken to the how page of the form
+    When I click on online
+    And I enter col_number into the online_text field
+    When I click continue
+    Then I am taken to the which page of the form
+    When I click standard and then continue
+    Then I am taken to the when page of the form
+    When I enter a date
+    Then I am taken to the name page of the form
+    When I enter my full name
+    Then I am taken to the email page of the form
+    When I enter my email address
+    Then I am taken to the country page of the form
+    When I enter my country not uk
+    Then I am taken to the address-outside page of the form
+    When I enter invalid_address into the address_textarea field
+    When I click continue
+    Then I should see the invalid_address error
