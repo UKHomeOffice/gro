@@ -161,7 +161,6 @@ Feature: I see the correct error messages in the form
     Then I am taken to the postcode page of the form
     When I enter my postcode
     Then I am taken to the address page of the form
-    When I select my address
 
   @how @invalid_account
   Scenario: When page validation
@@ -179,3 +178,32 @@ Feature: I see the correct error messages in the form
     And I enter invalid_acc_number into the post_text field
     When I click continue
     Then I should see the invalid_account error
+
+  @address @country @postcode
+  Scenario: Address page validation
+    Given I am on the start page for the form
+    And I click complaint and then continue
+    And I choose no for existing and no for previous complaint
+    Then I am taken to the name page of the form
+    When I enter my full name
+    And I click continue
+    And I enter my email address
+    And I click continue
+    Then I am taken to the country page of the form
+    When I click continue
+    Then I should see the country_missing error
+    When I enter free_text into the country_select field
+    And I click continue
+    Then I should see the country_invalid error
+    When I enter my country
+    Then I am taken to the postcode page of the form
+    When I click continue
+    Then I should see the postcode_missing error
+    When I enter free_text into the postcode_code field
+    And I click continue
+    Then I should see the postcode_invalid error
+    When I enter my postcode
+    And I click continue
+    Then I am taken to the address page of the form
+    When I click continue
+    Then I should see the address_lookup error
