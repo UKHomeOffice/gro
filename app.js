@@ -6,7 +6,6 @@ const path = require('path');
 const logger = require('./lib/logger');
 const churchill = require('churchill');
 const session = require('express-session');
-const redis = require('redis');
 const config = require('./config');
 const mockAPI = require('./ci.js');
 const expressPartialTemplates = require('express-partial-templates');
@@ -15,7 +14,7 @@ const bodyParser = require('body-parser');
 const connectRedisCrypto = require('connect-redis-crypto');
 const cookieParser = require('cookie-parser');
 const gro = require('./apps/gro/');
-
+let sessionStore;
 const i18n = hof.i18n({
   path: path.resolve(__dirname, './apps/common/translations/__lng__/__ns__.json')
 });
@@ -58,31 +57,34 @@ i18n.on('ready', () => {
   // Trust proxy for secure cookies
   app.set('trust proxy', 1);
 
-  // Redis session storage
-  const RedisStore = connectRedisCrypto(session);
-  const client = redis.createClient(config.redis.port, config.redis.host);
+  if (config.env !== 'ci') {
+    // Redis session storage
+    const redis = require('redis');
+    const RedisStore = connectRedisCrypto(session);
+    const client = redis.createClient(config.redis.port, config.redis.host);
 
-  client.on('connecting', () => {
-    logger.info('Connecting to redis');
-  });
+    client.on('connecting', () => {
+      logger.info('Connecting to redis');
+    });
 
-  client.on('connect', () => {
-    logger.info('Connected to redis');
-  });
+    client.on('connect', () => {
+      logger.info('Connected to redis');
+    });
 
-  client.on('reconnecting', () => {
-    logger.info('Reconnecting to redis');
-  });
+    client.on('reconnecting', () => {
+      logger.info('Reconnecting to redis');
+    });
 
-  client.on('error', (e) => {
-    logger.error(e);
-  });
+    client.on('error', (e) => {
+      logger.error(e);
+    });
 
-  const redisStore = new RedisStore({
-    client,
-    ttl: config.session.ttl,
-    secret: config.session.secret
-  });
+    sessionStore = new RedisStore({
+      client,
+      ttl: config.session.ttl,
+      secret: config.session.secret
+    });
+  }
 
   function secureCookies(req, res, next) {
     const cookie = res.cookie.bind(res);
@@ -100,7 +102,7 @@ i18n.on('ready', () => {
   app.use(secureCookies);
 
   const sessionOpts = Object.assign({
-    store: redisStore,
+    store: sessionStore,
     name: config.session.name,
     cookie: {secure: config.protocol === 'https'},
     secret: config.session.secret,
