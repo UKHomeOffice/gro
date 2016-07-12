@@ -40,17 +40,17 @@ module.exports = class EmailService {
       text: values[1],
       attachments: [{
         filename: 'govuk_logotype_email.png',
-        path: path.resolve(__dirname, '../images/govuk_logotype_email.png'),
+        path: path.resolve(__dirname, '../../../assets/email/images/govuk_logotype_email.png'),
         cid: 'govuk_logotype_email'
       },
       {
         filename: 'ho_crest_27px.png',
-        path: path.resolve(__dirname, '../images/ho_crest_27px.png'),
+        path: path.resolve(__dirname, '../../../assets/email/images/ho_crest_27px.png'),
         cid: 'ho_crest_27px'
       },
       {
         filename: 'spacer.gif',
-        path: path.resolve(__dirname, '../images/spacer.gif'),
+        path: path.resolve(__dirname, '../../../assets/email/images/spacer.gif'),
         cid: 'spacer_image'
       }]
     }, () => {

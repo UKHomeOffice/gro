@@ -9,7 +9,6 @@ module.exports = {
     next: '/about'
   },
   '/about': {
-    template: 'step',
     fields: ['about-radio'],
     next: '/type',
     forks: [{
@@ -23,7 +22,6 @@ module.exports = {
     }
   },
   '/type': {
-    template: 'step',
     fields: ['type-radio'],
     next: '/person',
     forks: [{
@@ -37,7 +35,6 @@ module.exports = {
     }
   },
   '/details': {
-    template: 'step',
     fields: [
       'details-text',
       'existing-radio',
@@ -56,7 +53,6 @@ module.exports = {
     }
   },
   '/person': {
-    template: 'step',
     fields: ['person-text'],
     next: '/additional',
     forks: [{
@@ -70,7 +66,6 @@ module.exports = {
     }
   },
   '/people': {
-    template: 'step',
     fields: [
       'person-one',
       'person-two'
@@ -87,7 +82,6 @@ module.exports = {
     }
   },
   '/additional': {
-    template: 'step',
     fields: [
       'additional-name',
       'additional-text',
@@ -111,7 +105,6 @@ module.exports = {
     }
   },
   '/which': {
-    template: 'step',
     fields: [
       'which-radio'
     ],
@@ -134,7 +127,6 @@ module.exports = {
     }
   },
   '/name': {
-    template: 'step',
     fields: ['name-text'],
     next: '/email-address',
     locals: {
@@ -142,7 +134,6 @@ module.exports = {
     }
   },
   '/email-address': {
-    template: 'step',
     fields: ['email-text'],
     next: '/country',
     locals: {
@@ -150,7 +141,6 @@ module.exports = {
     }
   },
   '/country': {
-    template: 'step',
     fields: [
       'country-select'
     ],
@@ -169,7 +159,6 @@ module.exports = {
     }
   },
   '/postcode': {
-    template: 'step',
     controller: require('./controllers/postcode'),
     fields: [
       'postcode-code'

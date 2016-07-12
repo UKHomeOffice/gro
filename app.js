@@ -13,11 +13,14 @@ const hoganExpressStrict = require('hogan-express-strict');
 const bodyParser = require('body-parser');
 const connectRedisCrypto = require('connect-redis-crypto');
 const cookieParser = require('cookie-parser');
+const hofTemplatePartials = require('hof-template-partials');
 const gro = require('./apps/gro/');
-let sessionStore;
+
 const i18n = hof.i18n({
-  path: path.resolve(__dirname, './apps/common/translations/__lng__/__ns__.json')
+  path: hofTemplatePartials.translations
 });
+
+let sessionStore;
 
 i18n.on('ready', () => {
   const app = express();
@@ -41,7 +44,10 @@ i18n.on('ready', () => {
 
   hof.template.setup(app);
   app.set('view engine', 'html');
-  app.set('views', path.resolve(__dirname, './apps/common/views'));
+  app.set('views', [
+    path.resolve(__dirname, './apps/common/views'),
+    hofTemplatePartials.views
+  ]);
   app.enable('view cache');
   app.use(expressPartialTemplates(app));
   app.engine('html', hoganExpressStrict);
@@ -118,8 +124,9 @@ i18n.on('ready', () => {
   // apps
   app.use(gro);
 
-  app.get('/cookies', (req, res) => res.render('cookies'));
-  app.get('/terms-and-conditions', (req, res) => res.render('terms'));
+  app.get('/cookies', (req, res) => res.render('cookies', i18n.translate('cookies')));
+
+  app.get('/terms-and-conditions', (req, res) => res.render('terms', i18n.translate('terms')));
 
   // shallow health check
   app.get('/healthz/ping', (req, res) => res.send(200));
