@@ -32,12 +32,10 @@ Feature: I see the correct error messages in the form
     Then I am taken to the details_complaint page of the form
     When I click continue
     Then I should see the details_complaint error
-    When I enter free_text into the details_text field
-    When I click continue
-    Then I should see the existing error
-    When I click on existing_radio_yes
-    When I click continue
-    Then I should see the previous error
+    And I should see the existing_complaint error
+    And I should see the previous_complaint error
+    When I choose no for existing and no for previous complaint
+    Then I am taken to the name page of the form
 
   @details
   Scenario: Details page validation (other)
@@ -47,12 +45,10 @@ Feature: I see the correct error messages in the form
     Then I am taken to the details_other page of the form
     When I click continue
     Then I should see the details_other error
-    When I enter free_text into the details_text field
-    When I click continue
-    Then I should see the existing error
-    When I click on existing_radio_yes
-    When I click continue
-    Then I should see the previous error
+    And I should see the existing_other error
+    And I should see the previous_other error
+    When I choose no for existing and no for previous complaint
+    Then I am taken to the name page of the form
 
   @people
   Scenario: People page validation

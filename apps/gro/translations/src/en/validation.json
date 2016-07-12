@@ -14,10 +14,20 @@
     }
   },
   "existing-radio": {
-    "required": "Tell us if there is an existing order"
+    "required": {
+      "about-radio": {
+        "complaint": "Tell us if your complaint is about an existing order"
+      },
+      "default": "Tell us if your enquiry is about an existing order"
+    }
   },
   "previous-radio": {
-    "required": "Tell us you have already complained about this issue"
+    "required": {
+      "about-radio": {
+        "complaint": "Tell us you have already complained about this issue"
+      },
+      "default": "Tell us you have already enquired about this issue"
+    }
   },
   "person-text": {
     "required": "Enter a full name"
