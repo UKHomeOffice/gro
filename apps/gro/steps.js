@@ -83,7 +83,7 @@ module.exports = {
   },
   '/additional': {
     fields: [
-      'additional-name',
+      'additional-names',
       'additional-text',
       'additional-radio'
     ],

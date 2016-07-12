@@ -41,7 +41,7 @@ details_text: 'details-text'
 person_text: 'person-text'
 person_one: 'person-one'
 person_two: 'person-two'
-additional_name: 'additional-name'
+additional_names: 'additional-names'
 additional_text: 'additional-text'
 previous: 'previous-radio'
 previous_yes: 'additional-radio-yes'
@@ -60,6 +60,7 @@ acc_number: 'HMPO45678ERF0'
 full_name: 'Jack Bauer'
 first_alt_name: 'Jason Bourne'
 second_alt_name: 'James Bond'
+additional_fullname: 'Clarke Kent'
 day: 10
 month: 10
 year: 2015
@@ -80,6 +81,7 @@ post_code: 'OZ1'
 yes_summary: 'yes'
 no_summary: 'no'
 not_received_summary: 'not-received'
+wrong_certificate_summary: 'wrong-certificate'
 complaint_summary: 'complaint'
 other_summary: 'other'
 birth_summary: 'birth'
@@ -108,9 +110,10 @@ table_type: "Type of certificate"
 table_details: "Further description"
 table_previous: "Have you already enquired about this issue?"
 table_existing: "About an existing order?"
-table_person_text: "Name on certificate"
-table_person_one: "Party one on certificate"
-table_person_two: "Party two on certificate"
+table_person_text: "Name on certificate requested"
+table_person_one: "Party one on certificate requested"
+table_person_two: "Party two on certificate requested"
+table_additional_names: "Name(s) on certificate received"
 table_additional_text: "Further description"
 table_additional_radio: "Have you already enquired about this issue?"
 table_how: "How was the order placed?"

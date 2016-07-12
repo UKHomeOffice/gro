@@ -12,6 +12,7 @@ module.exports = {
       'details-text',
       'existing-radio',
       'previous-radio',
+      'additional-names',
       'additional-text',
       'additional-radio'
     ]
