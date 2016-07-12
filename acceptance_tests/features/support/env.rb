@@ -4,7 +4,6 @@ require 'capybara/dsl'
 require 'rspec'
 require 'show_me_the_cookies'
 require 'capybara/poltergeist'
-require 'phantomjs'
 # require 'selenium-webdriver'
 
 require 'yaml'
@@ -29,9 +28,6 @@ if ENV['IN_BROWSER']
   end
 else
   Capybara.run_server = false
-  Capybara.register_driver :poltergeist do |app|
-    Capybara::Poltergeist::Driver.new(app, :phantomjs => Phantomjs.path)
-  end
   Capybara.default_driver = :poltergeist
 end
 
