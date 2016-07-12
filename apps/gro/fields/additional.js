@@ -1,8 +1,10 @@
 'use strict';
 
 module.exports = {
-  'additional-name': {
-    mixin: 'input-text',
+  'additional-names': {
+    mixin: 'textarea',
+    'ignore-defaults': true,
+    formatter: ['trim', 'hyphens'],
     useWhen: {
       field: 'about-radio',
       value: 'wrong-certificate'

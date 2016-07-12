@@ -84,8 +84,8 @@
   "additional-text": {
     "label": "What else would you like to tell us about your enquiry?"
   },
-  "additional-name": {
-    "label": "Whose name, including any middle names, is on the certificate you received?"
+  "additional-names": {
+    "label": "Whose name(s), including any middle names, is on the certificate you received?"
   },
   "additional-radio": {
     "legend": "Have you previously been in contact about this enquiry?"
