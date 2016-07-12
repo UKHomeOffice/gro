@@ -11,4 +11,4 @@ Feature: I am shown different content depending on previous answers
     Then I am taken to the person_wrong_certificate page of the form
     When I fill in the name on the certificate
     Then I am taken to the additional page of the form
-    And I can see the additional_name field
+    And I can see the additional_names field
