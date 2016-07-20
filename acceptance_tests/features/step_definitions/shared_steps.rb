@@ -19,8 +19,8 @@ Then(/^I am taken to the (.*) page of the form$/) do | header |
   expect(page).to have_content CONTENT["#{header}_header"]
 end
 
-And(/^I can see the (.*) field/) do | field |
-  expect(page).to have_css "##{CONTENT["#{field}"]}"
+And(/^I can see the (.*) (?:element|field)$/) do | element |
+  expect(page).to have_css "##{CONTENT["#{element}"]}"
 end
 
 When(/^I fill in the name on the certificate$/) do
@@ -90,7 +90,7 @@ When(/^I click the back link$/) do
 end
 
 When(/^I click the cant find address link$/) do
-  click_link('I can\'t find my address in list')
+  click_link('I can\'t find my address in the list')
 end
 
 Then(/^I should see the (.*) error$/) do | type |

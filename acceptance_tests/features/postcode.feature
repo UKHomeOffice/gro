@@ -136,3 +136,9 @@ Feature: I am able to navigate through the GRO form correctly
     When I click Confirm submission
     Then I am taken to the confirmation page
 
+  Scenario: Manual postcode lookup
+    When I enter my country uk
+    Then I am taken to the postcode page of the form
+    And I can see the manual_lookup element
+    When I click on manual_lookup
+    Then I am taken to the address page of the form

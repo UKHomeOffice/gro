@@ -1,0 +1,13 @@
+{{<partials-page}}
+  {{$page-content}}
+    <p>
+      <span class="link">
+        <a id='manual-entry' href="{{baseUrl}}/address/manual">{{#t}}pages.postcode.manual{{/t}}</a>
+      </span>
+    </p>
+    {{#fields}}
+      {{#renderField}}{{/renderField}}
+    {{/fields}}
+    {{#input-submit}}continue{{/input-submit}}
+  {{/page-content}}
+{{/partials-page}}
