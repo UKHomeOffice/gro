@@ -3,7 +3,7 @@ kind: ReplicationController
 metadata:
   name: gro
 spec:
-  replicas: 3
+  replicas: ${REPLICAS}
   selector:
     name: gro
   template:
