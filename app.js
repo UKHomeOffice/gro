@@ -31,9 +31,7 @@ i18n.on('ready', () => {
     app.use(churchill(logger));
   }
 
-  if (config.env === 'development' || config.env === 'ci') {
-    app.use('/public', express.static(path.resolve(__dirname, './public')));
-  }
+  app.use('/public', express.static(path.resolve(__dirname, './public')));
 
   app.use((req, res, next) => {
     req.baseUrl = config.siteroot + req.baseUrl;

@@ -48,8 +48,6 @@ spec:
           - name: external-tls
             mountPath: /etc/keys
             readOnly: true
-          - mountPath: /public
-            name: public
       - name: app
         image: quay.io/ukhomeofficedigital/gro-form:${app_tag}
         imagePullPolicy: Always
@@ -73,12 +71,7 @@ spec:
         - containerPort: 8080
         command:
           - "/app/run.sh"
-        volumeMounts:
-        - mountPath: /public
-          name: public
       volumes:
         - name: external-tls
           secret:
             secretName: external-tls
-        - name: public
-          emptyDir: {}
