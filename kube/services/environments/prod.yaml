@@ -27,6 +27,4 @@ Fn::FileData:
   files:
   - ../secrets/prod/postcode_token
 
-
-GRO_HTTP_PORT: 30241
-GRO_HTTPS_PORT: 30242
+external_url: www.gro-certificate-enquiry.homeoffice.gov.uk

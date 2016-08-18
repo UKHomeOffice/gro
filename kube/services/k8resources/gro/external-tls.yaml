@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: "external-tls"
-type: "Opaque"
-data:
-  key: ${ tls_key }
-  crt: ${ tls_crt }

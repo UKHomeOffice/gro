@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    ingress.kubernetes.io/secure-backends: "true"
+  name: example
+spec:
+  rules:
+  - host: ${external_url}
+    http:
+      paths:
+      - backend:
+          serviceName: gro
+          servicePort: 443
+        path: /
+  tls:
+  - hosts:
+    - ${external_url}
+    secretName: letsencrypt-tls
