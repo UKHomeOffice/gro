@@ -27,4 +27,4 @@ Fn::FileData:
   files:
   - ../secrets/prod/postcode_token
 
-external_url: www.gro-certificate-enquiry.homeoffice.gov.uk
+external_url: gro-certificate-enquiry.homeoffice.gov.uk
