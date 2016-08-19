@@ -17,8 +17,6 @@ services:
       - maildev
     ports:
       - "8080:8080"
-    volumes:
-      - "/public"
   redis:
     image: redis
 
@@ -34,8 +32,6 @@ services:
       - "443:443"
       - "80:80"
     links:
-      - app
-    volumes_from:
       - app
 
   maildev:
