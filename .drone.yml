@@ -79,6 +79,27 @@ pipeline:
     when:
       branch: master
 
+  trigger_deploy_to_gro_form_dev:
+    image: quay.io/ukhomeofficedigital/drone-trigger:latest
+    drone_server: https://drone.digital.homeoffice.gov.uk
+    repo: UKHomeOffice/kube-gro
+    branch: master
+    deploy_to: gro-form-dev
+    params: APP_IMAGE_TAG=${DRONE_COMMIT_SHA},KUBE_NAMESPACE=gro-form-dev
+    when:
+      branch: master
+      event: push
+
+  trigger_deploy_to_gro_form_preprod:
+    image: quay.io/ukhomeofficedigital/drone-trigger:latest
+    drone_server: https://drone.digital.homeoffice.gov.uk
+    repo: UKHomeOffice/kube-gro
+    branch: master
+    deploy_to: gro-form-preprod
+    params: APP_IMAGE_TAG=${DRONE_COMMIT_SHA},KUBE_NAMESPACE=gro-form-preprod
+    when:
+      event: tag
+
 services:
   redis:
     image: redis
