@@ -3,7 +3,7 @@
 const hof = require('hof');
 const express = require('express');
 const path = require('path');
-const logger = require('./lib/logger');
+const logger = require('hof-logger')();
 const churchill = require('churchill');
 const session = require('express-session');
 const config = require('./config');
@@ -24,6 +24,11 @@ let sessionStore;
 
 i18n.on('ready', () => {
   const app = express();
+
+  app.use((req, res, next) => {
+    req.logger = logger;
+    next();
+  });
 
   if (config.env === 'ci') {
     app.use(mockAPI);

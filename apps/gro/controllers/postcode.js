@@ -5,7 +5,6 @@
 const controllers = require('hof').controllers;
 const BaseController = controllers.base;
 const PostcodesModel = require('../models/postcodes');
-const logger = require('../../../lib/logger');
 const _ = require('lodash');
 
 module.exports = class PostcodeController extends BaseController {
@@ -40,7 +39,7 @@ module.exports = class PostcodeController extends BaseController {
         req.sessionModel.set('postcodeApiMeta', {
           messageKey: 'cant-connect'
         });
-        logger.error('Postcode lookup error: ',
+        req.logger.error('Postcode lookup error: ',
           `Code: ${err.status}; Detail: ${err.detail}`);
         return callback();
       });
