@@ -5,6 +5,7 @@ const controllers = require('hof').controllers;
 
 module.exports = {
   name: 'gro',
+  params: '/:action?',
   steps: {
     '/': {
       controller: controllers.start,
@@ -16,7 +17,7 @@ module.exports = {
       forks: [{
         target: '/details',
         condition(req) {
-          return _.contains(['complaint', 'other'], req.form.values['about-radio']);
+          return _.includes(['complaint', 'other'], req.form.values['about-radio']);
         }
       }],
       locals: {
@@ -29,7 +30,7 @@ module.exports = {
       forks: [{
         target: '/people',
         condition(req) {
-          return _.contains(['marriage', 'partnership'], req.form.values['type-radio']);
+          return _.includes(['marriage', 'partnership'], req.form.values['type-radio']);
         }
       }],
       locals: {
@@ -60,7 +61,7 @@ module.exports = {
       forks: [{
         target: '/how',
         condition(req) {
-          return _.contains(req.sessionModel.get('steps'), '/details');
+          return _.includes(req.sessionModel.get('steps'), '/details');
         }
       }],
       locals: {
@@ -76,7 +77,7 @@ module.exports = {
       forks: [{
         target: '/how',
         condition(req) {
-          return _.contains(req.sessionModel.get('steps'), '/details');
+          return _.includes(req.sessionModel.get('steps'), '/details');
         }
       }],
       locals: {
