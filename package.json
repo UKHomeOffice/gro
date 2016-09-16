@@ -36,7 +36,11 @@
     "browserify": "^12.0.1",
     "hof-bootstrap": "UKHomeOffice/hof-bootstrap#development",
     "hof-transpiler": "^0.1.0",
-    "node-sass": "^3.10.0"
+    "node-sass": "^3.10.0",
+    "nodemailer": "^2.6.0",
+    "nodemailer-smtp-transport": "^2.7.2",
+    "nodemailer-stub-transport": "^1.1.0",
+    "typeahead-aria": "^1.0.1"
   },
   "devDependencies": {
     "chai": "^3.0.0",

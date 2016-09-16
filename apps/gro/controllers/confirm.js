@@ -24,7 +24,7 @@ module.exports = class ConfirmController extends BaseConfirmController {
       .map((steps, section) => ({
           section,
           fields: _(steps)
-            .pluck('fields')
+            .map('fields')
             .flatten()
             // reject any fields with includeInEmail: false
             .reject(field => fields[field].includeInEmail === false)
