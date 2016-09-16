@@ -6,8 +6,8 @@ const config = require('../../../config');
 const EmailService = require('../services/email');
 const fields = require('../fields');
 
-delete require.cache[require.resolve('../steps')];
-const stepConfig = require('../steps');
+delete require.cache[require.resolve('../')];
+const stepConfig = require('../').steps;
 
 module.exports = class ConfirmController extends BaseConfirmController {
 
