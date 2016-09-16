@@ -3,21 +3,8 @@
 process.title = 'gro';
 
 /* eslint no-process-env: 0 */
-/* eslint no-inline-comments: 0 */
-/* eslint camelcase: 0 */
 module.exports = {
-  env: process.env.NODE_ENV || 'local',
-  siteroot: process.env.SITEROOT || '',
-  port: process.env.PORT || 8080,
-  listen_host: process.env.LISTEN_HOST || '0.0.0.0',
-  session: {
-    secret: process.env.SESSION_SECRET || 'howdoesyourgardengrow',
-    ttl: process.env.SESSION_TTL || 1800 /* 30 mins timeout */
-  },
-  redis: {
-    port: process.env.REDIS_PORT || '6379',
-    host: process.env.REDIS_HOST || '127.0.0.1'
-  },
+  env: process.env.NODE_ENV,
   email: {
     caseworker: process.env.CASEWORKER_EMAIL || '',
     port: process.env.EMAIL_PORT || '',

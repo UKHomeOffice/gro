@@ -6,8 +6,8 @@ const config = require('../../../config');
 const EmailService = require('../services/email');
 const fields = require('../fields');
 
-delete require.cache[require.resolve('../steps')];
-const stepConfig = require('../steps');
+delete require.cache[require.resolve('../')];
+const stepConfig = require('../').steps;
 
 module.exports = class ConfirmController extends BaseConfirmController {
 
@@ -24,7 +24,7 @@ module.exports = class ConfirmController extends BaseConfirmController {
       .map((steps, section) => ({
           section,
           fields: _(steps)
-            .pluck('fields')
+            .map('fields')
             .flatten()
             // reject any fields with includeInEmail: false
             .reject(field => fields[field].includeInEmail === false)

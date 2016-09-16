@@ -14,31 +14,33 @@ const Controller = proxyquire('../../../../../apps/gro/controllers/confirm', {
       cb();
     }
   },
-  '../steps': {
-    '/step-1': {
-      fields: [
-        'field-1',
-        'field-2'
-      ],
-      locals: {
-        section: 'section-1'
-      }
-    },
-    '/step-2': {
-      fields: [
-        'field-3',
-      ],
-      locals: {
-        section: 'section-1'
-      }
-    },
-    '/step-3': {
-      fields: [
-        'field-4',
-        'field-5'
-      ],
-      locals: {
-        section: 'section-2'
+  '../': {
+    steps: {
+      '/step-1': {
+        fields: [
+          'field-1',
+          'field-2'
+        ],
+        locals: {
+          section: 'section-1'
+        }
+      },
+      '/step-2': {
+        fields: [
+          'field-3',
+        ],
+        locals: {
+          section: 'section-1'
+        }
+      },
+      '/step-3': {
+        fields: [
+          'field-4',
+          'field-5'
+        ],
+        locals: {
+          section: 'section-2'
+        }
       }
     }
   },
