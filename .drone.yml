@@ -2,7 +2,7 @@ pipeline:
   build_4:
     image: node:4.4.2
     commands:
-      - npm --loglevel warn install -g npm@3
+      - npm --loglevel warn install -g npm@>=3.10.8
       - npm --loglevel warn install
       - npm run test:ci
 
