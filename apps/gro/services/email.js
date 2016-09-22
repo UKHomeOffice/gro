@@ -28,10 +28,8 @@ if (config.email.host === '' && config.email.port === '') {
 }
 
 const emailer = nodemailer.createTransport(transport(emailOptions));
-
 module.exports = class EmailService {
   static sendEmail(to, subject, values, callback) {
-    debug('sending mail');
     emailer.sendMail({
       to,
       subject,
@@ -40,22 +38,21 @@ module.exports = class EmailService {
       text: values[1],
       attachments: [{
         filename: 'govuk_logotype_email.png',
-        path: path.resolve(__dirname, '../../../assets/email/images/govuk_logotype_email.png'),
+        path: path.resolve(__dirname, '../../../assets/images/email/govuk_logotype_email.png'),
         cid: 'govuk_logotype_email'
       },
       {
         filename: 'ho_crest_27px.png',
-        path: path.resolve(__dirname, '../../../assets/email/images/ho_crest_27px.png'),
+        path: path.resolve(__dirname, '../../../assets/images/email/ho_crest_27px.png'),
         cid: 'ho_crest_27px'
       },
       {
         filename: 'spacer.gif',
-        path: path.resolve(__dirname, '../../../assets/email/images/spacer.gif'),
+        path: path.resolve(__dirname, '../../../assets/images/email/spacer.gif'),
         cid: 'spacer_image'
       }]
-    }, () => {
-      debug('email sent');
-      callback();
+    }, (err) => {
+      callback(err);
     });
   }
 };

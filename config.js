@@ -7,15 +7,15 @@ module.exports = {
   env: process.env.NODE_ENV,
   email: {
     caseworker: process.env.CASEWORKER_EMAIL || '',
+    from: process.env.FROM_ADDRESS || '',
     port: process.env.EMAIL_PORT || '',
     host: process.env.EMAIL_HOST || '',
+    ignoreTLS: process.env.EMAIL_IGNORE_TLS || false,
+    secure: process.env.EMAIL_SECURE || false,
     auth: {
       user: process.env.SMTP_USER || '',
       pass: process.env.SMTP_PASSWORD || ''
-    },
-    from: process.env.FROM_ADDRESS || '',
-    ignoreTLS: process.env.EMAIL_IGNORE_TLS || false,
-    secure: process.env.EMAIL_SECURE || false
+    }
   },
   ga: {
     tagId: process.env.GA_TAG_ID
