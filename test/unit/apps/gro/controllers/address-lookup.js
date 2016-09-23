@@ -1,5 +1,6 @@
 'use strict';
 
+const _ = require('lodash');
 const proxyquire = require('proxyquire');
 const BaseController = sinon.stub();
 const ErrorController = require('hof').controllers.error;
@@ -62,7 +63,7 @@ describe('apps/gro/controllers/address-lookup', () => {
     });
 
     it('sets the list of addresses to the options', () => {
-      controller.options.fields['address-lookup'].options.should.deep.equal(expectedAddress);
+      _.map(controller.options.fields['address-lookup'].options, 'value').should.deep.equal(expectedAddress);
     });
 
   });
