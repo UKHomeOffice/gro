@@ -108,6 +108,9 @@ h1 {
   margin-bottom: 3em;
 
   tbody {
+    td {
+      white-space: pre-wrap;
+    }
     td:nth-child(1) {
       width: 20%;
     }
