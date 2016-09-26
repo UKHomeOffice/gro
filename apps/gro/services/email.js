@@ -51,8 +51,6 @@ module.exports = class EmailService {
         path: path.resolve(__dirname, '../../../assets/images/email/spacer.gif'),
         cid: 'spacer_image'
       }]
-    }, (err) => {
-      callback(err);
-    });
+    }, callback);
   }
 };

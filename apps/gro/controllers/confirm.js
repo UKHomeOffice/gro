@@ -62,14 +62,14 @@ module.exports = class ConfirmController extends BaseConfirmController {
         this.renderTemplate(res.locals.partials['email-formatted'], recipient, data, res),
         this.renderTemplate(res.locals.partials['email-raw'], recipient, data, res),
       ]).then(values => {
-        EmailService.sendEmail(to, subject, values, (err) => {
+        EmailService.sendEmail(to, subject, values, (err, info) => {
           if (err) {
             // eslint-disable-next-line no-console
-            console.error(err);
+            console.error('Error sending email to: ', to, err);
             return reject(err);
           }
           // eslint-disable-next-line no-console
-          console.info('Email sent');
+          console.info('Email sent to ', to, info);
           return resolve();
         });
       }, err => reject(err));
