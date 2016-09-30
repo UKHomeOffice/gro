@@ -47,7 +47,7 @@ module.exports = class ConfirmController extends BaseConfirmController {
     }
     _.first(data).fields.unshift({
       field: 'submission-date',
-      value: (new Date()).toISOString()
+      value: (new Date()).toUTCString()
     });
     Promise.all([
       this.sendEmail(config.email.caseworker, 'caseworker', data, req, res),
