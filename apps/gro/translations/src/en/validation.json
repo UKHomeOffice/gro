@@ -24,9 +24,9 @@
   "previous-radio": {
     "required": {
       "about-radio": {
-        "complaint": "Tell us you have already complained about this issue"
+        "complaint": "Tell us if you have already complained about this issue"
       },
-      "default": "Tell us you have already enquired about this issue"
+      "default": "Tell us if you have already enquired about this issue"
     }
   },
   "person-text": {
