@@ -51,6 +51,16 @@
         "country-select": "Country",
         "postcode-code": "Postcode",
         "address-textarea": "Address"
+      },
+      "values": {
+        "about-radio": {
+          "not-received": "Certificate not received",
+          "wrong-certificate": "Wrong certificate received",
+          "damaged": "Poor quality certificate",
+          "refund": "Refund query",
+          "complaint": "Service complaint",
+          "other": "Other issues abd feedback"
+        }
       }
     }
   },
