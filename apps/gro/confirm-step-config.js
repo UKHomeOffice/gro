@@ -1,6 +1,10 @@
 'use strict';
 
 module.exports = {
+  modifiers: {
+    'about-radio': (value, req) =>
+      req.translate(`pages.confirm.table.values['about-radio'][${value}]`)
+  },
   tableSections: [{
     name: 'enquiry-details',
     fields: [
