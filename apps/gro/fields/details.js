@@ -11,24 +11,18 @@ module.exports = {
     mixin: 'radio-group',
     validate: ['required'],
     className: ['inline', 'form-group'],
-    options: [{
-      value: 'yes',
-      label: 'Yes'
-    }, {
-      value: 'no',
-      label: 'No'
-    }]
+    options: [
+      'yes',
+      'no'
+    ]
   },
   'previous-radio': {
     mixin: 'radio-group',
     validate: ['required'],
     className: ['inline', 'form-group'],
-    options: [{
-      value: 'yes',
-      label: 'Yes'
-    }, {
-      value: 'no',
-      label: 'No'
-    }]
+    options: [
+      'yes',
+      'no'
+    ]
   }
 };

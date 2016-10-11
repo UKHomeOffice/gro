@@ -56,6 +56,14 @@
         "complaint": "Is your complaint about an existing order?"
       },
       "default": "Is your enquiry about an existing order?"
+    },
+    "options": {
+      "yes": {
+        "label": "Yes"
+      },
+      "no": {
+        "label": "No"
+      }
     }
   },
   "previous-radio": {
@@ -64,6 +72,14 @@
         "complaint": "Have you already complained about this issue?"
       },
       "default": "Have you previously been in contact about this?"
+    },
+    "options": {
+      "yes": {
+        "label": "Yes"
+      },
+      "no": {
+        "label": "No"
+      }
     }
   },
   "person-text": {
@@ -88,7 +104,15 @@
     "label": "Whose name(s), including any middle names, is on the certificate you received?"
   },
   "additional-radio": {
-    "legend": "Have you previously been in contact about this enquiry?"
+    "legend": "Have you previously been in contact about this enquiry?",
+    "options": {
+      "yes": {
+        "label": "Yes"
+      },
+      "no": {
+        "label": "No"
+      }
+    }
   },
   "how-radio": {
     "legend": "How did you place your order?",
