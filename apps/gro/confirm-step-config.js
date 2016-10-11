@@ -3,7 +3,7 @@
 module.exports = {
   modifiers: {
     'about-radio': (value, req) =>
-      req.translate(`pages.confirm.table.values['about-radio'][${value}]`)
+      req.translate(`fields['about-radio'].options[${value}].label`)
   },
   tableSections: [{
     name: 'enquiry-details',
