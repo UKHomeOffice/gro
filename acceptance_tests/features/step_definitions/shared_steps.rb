@@ -101,7 +101,6 @@ Then(/^I should see the headers and my information in the summary:$/) do | table
   table.rows_hash.each do | header, information |
     expect(page).to have_content CONTENT[header]
     cellContent = CONTENT[information]
-
     expect(page).to have_xpath "//td[@data-value=\"#{cellContent}\"]"
   end
 end
