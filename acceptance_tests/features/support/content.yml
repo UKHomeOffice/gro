@@ -90,7 +90,7 @@ online_summary: 'online'
 date_summary: '10-10-2015'
 country_summary: 'United Kingdom'
 country_summary_not_uk: 'France'
-address_summary: '49 Sydenham Road Croydon'
+address_summary: "49 Sydenham Road\nCroydon\nCR0 2EU"
 address_summary_uk: '49 Sydenham Road Croydon'
 address_summary_not_uk: '49 Yellow Brick Road Emerald City'
 address_summary_NI: '49 Yellow Brick Road Emerald City'

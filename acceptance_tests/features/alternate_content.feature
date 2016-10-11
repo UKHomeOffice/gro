@@ -38,7 +38,7 @@ Feature: I am shown different content depending on previous answers
       |  table_not_received         |  wrong_certificate_summary  |
       |  table_type                 |  birth_summary              |
       |  table_person_text          |  full_name                  |
-      |  table_additional_names     |  addtional_fullname         |
+      |  table_additional_names     |  additional_fullname         |
       |  table_additional_text      |  free_text                  |
       |  table_additional_radio     |  yes_summary                |
       |  table_which                |  standard_summary           |
