@@ -41,7 +41,7 @@
   "how-radio": {
     "required": "Tell us how you placed your order"
   },
-  "post-toggle-text": {
+  "telephone-toggle-text-2": {
     "numeric": "Account numbers must consist of between 3 and 7 digits",
     "minlength": "Account numbers must consist of between 3 and 7 digits",
     "maxlength": "Account numbers must consist of between 3 and 7 digits"

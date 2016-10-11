@@ -170,8 +170,8 @@ Feature: I see the correct error messages in the form
     Then I am taken to the additional page of the form
     When I click previous_yes and then continue
     Then I am taken to the how page of the form
-    When I click on post
-    And I enter invalid_acc_number into the post_text field
+    When I click on telephone
+    And I enter invalid_acc_number into the telephone_toggle_text_2 field
     When I click continue
     Then I should see the invalid_account error
 

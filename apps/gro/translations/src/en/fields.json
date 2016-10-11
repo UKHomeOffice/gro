@@ -112,7 +112,7 @@
     "label": "What is your order number?",
     "hint": "Your order number would have been given to you when you ordered by telephone. Order numbers typically look like this: 12345-1"
   },
-  "post-toggle-text": {
+  "telephone-toggle-text-2": {
     "label": "What is the account number?",
     "hint": "The account number will have been given to you when you placed your order by post. Account numbers consist of between 3 and 7 digits, so look like 1234567, but without a dash and extra number on the end."
   },
