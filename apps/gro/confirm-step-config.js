@@ -22,7 +22,7 @@ module.exports = {
       'how-radio',
       'online-toggle-text',
       'telephone-toggle-text',
-      'post-toggle-text',
+      'telephone-toggle-text-2',
       'which-radio',
       'order-number-text',
       'when-date'
