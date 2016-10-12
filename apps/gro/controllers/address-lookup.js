@@ -27,6 +27,11 @@ module.exports = class AddressLookup extends BaseController {
     super.saveValues(req, res, callback);
   }
 
+  post(req, res, cb) {
+    this.getValues(req, res, () => {});
+    super.post(req, res, cb);
+  }
+
   validateField(key, req) {
     if (req.form.values[key] === this.options.fields['address-lookup'].options[0].value) {
       return new ErrorController('address-lookup', {
