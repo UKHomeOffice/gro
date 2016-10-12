@@ -6,12 +6,10 @@ module.exports = {
     className: ['block', 'form-group'],
     options: [{
       value: 'online',
-      label: 'fields.how-radio.options.online.label',
       toggle: 'online-toggle-text',
       child: 'input-text'
     }, {
       value: 'telephone',
-      label: 'fields.how-radio.options.telephone.label',
       toggle: 'telephone-toggle-text',
       child: `<div id='telephone-toggle-text-panel'>
                 <div class='panel-indent'>
@@ -21,7 +19,8 @@ module.exports = {
               </div>`
     }, {
       value: 'post',
-      label: 'fields.how-radio.options.post.label'
+      toggle: 'post-toggle-text',
+      child: 'input-text'
     }]
   },
   'online-toggle-text': {},
