@@ -17,11 +17,9 @@ module.exports = {
                   {{#input-text}}telephone-toggle-text-2{{/input-text}}
                 </div>
               </div>`
-    }, {
-      value: 'post',
-      toggle: 'post-toggle-text',
-      child: 'input-text'
-    }]
+    },
+    'post'
+  ]
   },
   'online-toggle-text': {},
   'telephone-toggle-text': {},
