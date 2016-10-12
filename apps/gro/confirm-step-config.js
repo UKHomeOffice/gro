@@ -1,11 +1,23 @@
 'use strict';
 
+const _ = require('lodash');
+
+function getLabelFromValue(value, req) {
+  return req.translate(`fields[${this.name}].options[${value}].label`);
+}
+
+const radioFields = [
+  'about-radio',
+  'type-radio',
+  'additional-radio',
+  'existing-radio',
+  'previous-radio',
+  'how-radio',
+  'which-radio'
+];
+
 module.exports = {
-  modifiers: {
-    'about-radio': function translateValue(value, req) {
-      return req.translate(`fields[${this.name}].options[${value}].label`);
-    }
-  },
+  modifiers: _.zipObject(radioFields, _.map(radioFields, () => getLabelFromValue)),
   tableSections: [{
     name: 'enquiry-details',
     fields: [
