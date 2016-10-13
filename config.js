@@ -12,6 +12,7 @@ module.exports = {
     host: process.env.EMAIL_HOST || '',
     ignoreTLS: process.env.EMAIL_IGNORE_TLS || false,
     secure: process.env.EMAIL_SECURE || false,
+    replyTo: process.env.REPLY_TO || '',
     auth: {
       user: process.env.SMTP_USER || '',
       pass: process.env.SMTP_PASSWORD || ''
