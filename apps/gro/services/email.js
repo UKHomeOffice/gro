@@ -36,6 +36,7 @@ module.exports = class EmailService {
       from: config.email.from,
       html: values[0],
       text: values[1],
+      replyTo: config.email.replyTo,
       attachments: [{
         filename: 'govuk_logotype_email.png',
         path: path.resolve(__dirname, '../../../assets/images/email/govuk_logotype_email.png'),
