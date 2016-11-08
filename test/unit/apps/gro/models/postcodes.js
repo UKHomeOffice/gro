@@ -82,7 +82,7 @@ describe('apps/gro/models/postcodes', () => {
       it('throws an error if BaseModel.prototype.request calls callback with err defined', done => {
         model.fetch()
           .catch(err => {
-            console.error(err);
+            err.should.equal(true);
             done();
           });
       });
