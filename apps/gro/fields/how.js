@@ -4,6 +4,7 @@ module.exports = {
   'how-radio': {
     validate: ['required'],
     className: ['block', 'form-group'],
+    mixin: 'radio-group',
     options: [{
       value: 'online',
       toggle: 'online-toggle-text',

@@ -204,9 +204,11 @@ module.exports = {
       }
     },
     '/confirm': {
-      controller: require('./controllers/confirm'),
       next: '/confirmation',
-      config: require('./confirm-step-config'),
+      controller: controllers.confirm,
+      fieldsConfig: require('./fields'),
+      emailConfig: require('../../config').email,
+      customerEmailField: 'email-text',
       locals: {
         section: 'confirm'
       }
