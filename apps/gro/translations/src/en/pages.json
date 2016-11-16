@@ -8,6 +8,12 @@
   "contact-details": {
     "header": "Your personal and contact details"
   },
+  "additional": {
+    "header": "Additional information"
+  },
+  "country": {
+    "header": "What is your address?"
+  },
   "address": {
     "header": "What is your address?",
     "edit": "Change",
@@ -18,6 +24,7 @@
     }
   },
   "postcode": {
+    "header": "What is your address?",
     "manual": "Enter manually"
   },
   "confirm": {

@@ -1,16 +1,11 @@
 {{<partials-page}}
   {{$page-content}}
     <fieldset id="when-date-group" class="{{#errors.when-date}}validation-error{{/errors.when-date}}">
-      <legend>
-        <span class="form-label-bold">{{#t}}fields.when-date.legend{{/t}}</span>
-      </legend>
-
       {{#errors.when-date}}
         <span id="when-date-error" class="error-message">
           {{errors.when-date.message}}
         </span>
       {{/errors.when-date}}
-
       <p class="form-hint">{{#t}}fields.when-date.hint{{/t}}</p>
       <div class="form-group form-date">
         {{#input-date}}when-date{{/input-date}}
