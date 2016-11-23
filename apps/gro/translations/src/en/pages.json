@@ -38,5 +38,12 @@
     "content-respond": "We will respond to your enquiry as soon as possible.",
     "content-feedback-link": "Tell us what you think of this form",
     "content-feedback-time": "(takes 30 seconds)"
+  },
+  "email": {
+    "intro": {
+      "caseworker": "GRO enquiry form has been submitted, with details as follows:",
+      "customer": "Thank you for contacting the General Register Office. We will respond to your enquiry as soon as possible:"
+    },
+    "subject": "GRO enquiry"
   }
 }
