@@ -1,6 +1,6 @@
 'use strict';
 
-const DateController = require('hof').controllers.date;
+const DateController = require('hof-controllers').date;
 
 module.exports = class WhenController extends DateController {
 

@@ -2,7 +2,7 @@
 
 'use strict';
 
-const controllers = require('hof').controllers;
+const controllers = require('hof-controllers');
 const BaseController = controllers.base;
 const PostcodesModel = require('../models/postcodes');
 const logger = require('../../../lib/logger');

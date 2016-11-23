@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseController = require('hof').controllers.base;
+const BaseController = require('hof-controllers').base;
 
 module.exports = class AddressController extends BaseController {
   getValues(req, res, callback) {

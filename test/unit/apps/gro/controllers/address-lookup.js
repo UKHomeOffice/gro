@@ -3,14 +3,12 @@
 const _ = require('lodash');
 const proxyquire = require('proxyquire');
 const BaseController = sinon.stub();
-const ErrorController = require('hof').controllers.error;
+const ErrorController = require('hof-controllers').error;
 
 const AddressLookupController = proxyquire('../../../../../apps/gro/controllers/address-lookup', {
-  'hof': {
-    controllers: {
-      base: BaseController,
-      error: ErrorController
-    }
+  'hof-controllers': {
+    base: BaseController,
+    error: ErrorController
   }
 });
 

@@ -2,10 +2,8 @@
 
 const BaseController = sinon.stub();
 const AddressController = require('proxyquire')('../../../../../apps/gro/controllers/address', {
-  'hof': {
-    controllers: {
-      base: BaseController
-    }
+  'hof-controllers': {
+    base: BaseController
   }
 });
 
