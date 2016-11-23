@@ -2,10 +2,8 @@
 
 const DateController = sinon.stub();
 const WhenController = require('proxyquire')('../../../../../apps/gro/controllers/when', {
-  'hof': {
-    controllers: {
-      date: DateController
-    }
+  'hof-controllers': {
+    date: DateController
   }
 });
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const Model = require('hof').Model;
+const Model = require('hmpo-model');
 const config = require('../../../config');
 const url = require('url');
 

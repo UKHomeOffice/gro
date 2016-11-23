@@ -1,7 +1,7 @@
 'use strict';
 
 const _ = require('lodash');
-const controllers = require('hof').controllers;
+const controllers = require('hof-controllers');
 
 module.exports = {
   name: 'gro',

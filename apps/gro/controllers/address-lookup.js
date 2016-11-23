@@ -1,6 +1,8 @@
 'use strict';
-const BaseController = require('hof').controllers.base;
-const ErrorController = require('hof').controllers.error;
+
+const controllers = require('hof-controllers');
+const BaseController = controllers.base;
+const ErrorController = controllers.error;
 const _ = require('lodash');
 
 module.exports = class AddressLookup extends BaseController {

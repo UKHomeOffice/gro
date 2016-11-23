@@ -19,10 +19,8 @@ describe('apps/gro/controllers/postcode', () => {
     };
     PostcodesModel.prototype.fetch = sinon.stub().returns(new Promise((resolve) => resolve()));
     PostcodeController = proxyquire('../../../../../apps/gro/controllers/postcode', {
-      'hof': {
-        controllers: {
-          base: BaseController
-        }
+      'hof-controllers': {
+        base: BaseController
       },
       '../models/postcodes': PostcodesModel,
       '../../../lib/logger': logger
