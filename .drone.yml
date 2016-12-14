@@ -73,11 +73,12 @@ pipeline:
     environment:
       - DOCKER_HOST=tcp://127.0.0.1:2375
     commands:
-      - docker login -u="ukhomeofficedigital+drone" -p=${DOCKER_PASSWORD} quay.io
+      - docker login -u="ukhomeofficedigital+gro_form" -p=${DOCKER_PASSWORD} quay.io
       - docker tag gro quay.io/ukhomeofficedigital/gro-form:${DRONE_COMMIT_SHA}
       - docker push quay.io/ukhomeofficedigital/gro-form:${DRONE_COMMIT_SHA}
     when:
       branch: master
+      event: push
 
   trigger_deploy_to_gro_form_dev:
     image: quay.io/ukhomeofficedigital/drone-trigger:latest
