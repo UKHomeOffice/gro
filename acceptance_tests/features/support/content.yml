@@ -144,7 +144,7 @@ post_error: 'Tell us your account number'
 which_error: 'Tell us which service you paid for'
 order_error: 'Tell us your order number'
 name_error: 'Tell us your full name'
-date_error: 'Date must only contain numbers'
+date_error: 'Enter a valid date'
 email_error: 'Enter an email address'
 invalid_email_error: "The email address isn't valid, enter a valid email address"
 invalid_account_error: 'Account numbers must consist of between 3 and 7 digits'
