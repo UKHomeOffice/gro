@@ -51,7 +51,7 @@
   },
   "when-date": {
     "required": "Tell us when you placed your order",
-    "numeric": "Date must only contain numbers",
+    "numeric": "Enter a valid date",
     "format": "Enter the date in the correct format",
     "future": "The date is in the future"
   },
