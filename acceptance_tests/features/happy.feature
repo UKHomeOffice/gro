@@ -33,17 +33,17 @@ Feature: I am able to navigate through the GRO form correctly
     When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
-      |  table_not_received         |  not_received_summary  |
-      |  table_type                 |  birth_summary         |
-      |  table_person_text          |  full_name             |
-      |  table_additional_text      |  free_text             |
-      |  table_additional_radio     |  yes_summary           |
-      |  table_which                |  standard_summary      |
-      |  table_when                 |  date_summary          |
-      |  table_name                 |  full_name             |
-      |  table_email                |  email_address         |
-      |  table_country              |  country_summary       |
-      |  table_post                 |  address_summary       |
+      |  table_not_received         |  not_received_summary   |
+      |  table_type                 |  birth_summary          |
+      |  table_person_text          |  full_name              |
+      |  table_additional_text      |  free_text              |
+      |  table_additional_radio     |  yes_summary            |
+      |  table_which                |  standard_summary       |
+      |  table_when                 |  date_summary           |
+      |  table_name                 |  full_name              |
+      |  table_email                |  email_address          |
+      |  table_country              |  country_summary        |
+      |  table_post                 |  address_select_summary |
     When I click Confirm submission
     Then I am taken to the confirmation page
 
@@ -66,14 +66,14 @@ Feature: I am able to navigate through the GRO form correctly
     When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
-      |  table_not_received         |  complaint_summary  |
-      |  table_details              |  free_text          |
-      |  table_existing             |  no_summary         |
-      |  table_previous             |  no_summary         |
-      |  table_name                 |  full_name          |
-      |  table_email                |  email_address      |
-      |  table_country              |  country_summary    |
-      |  table_post                 |  address_summary    |
+      |  table_not_received         |  complaint_summary      |
+      |  table_details              |  free_text              |
+      |  table_existing             |  no_summary             |
+      |  table_previous             |  no_summary             |
+      |  table_name                 |  full_name              |
+      |  table_email                |  email_address          |
+      |  table_country              |  country_summary        |
+      |  table_post                 |  address_select_summary |
     When I click Confirm submission
     Then I am taken to the confirmation page
 
@@ -108,20 +108,20 @@ Feature: I am able to navigate through the GRO form correctly
     When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
-      |  table_not_received         |  other_summary     |
-      |  table_details              |  free_text         |
-      |  table_existing             |  yes_summary       |
-      |  table_previous             |  yes_summary       |
-      |  table_type                 |  marriage_summary  |
-      |  table_person_one           |  full_name         |
-      |  table_person_two           |  first_alt_name    |
-      |  table_how                  |  online_summary    |
-      |  table_online_toggle_text   |  col_number        |
-      |  table_which                |  standard_summary  |
-      |  table_when                 |  date_summary      |
-      |  table_name                 |  full_name         |
-      |  table_email                |  email_address     |
-      |  table_country              |  country_summary   |
-      |  table_post                 |  address_summary   |
+      |  table_not_received         |  other_summary          |
+      |  table_details              |  free_text              |
+      |  table_existing             |  yes_summary            |
+      |  table_previous             |  yes_summary            |
+      |  table_type                 |  marriage_summary       |
+      |  table_person_one           |  full_name              |
+      |  table_person_two           |  first_alt_name         |
+      |  table_how                  |  online_summary         |
+      |  table_online_toggle_text   |  col_number             |
+      |  table_which                |  standard_summary       |
+      |  table_when                 |  date_summary           |
+      |  table_name                 |  full_name              |
+      |  table_email                |  email_address          |
+      |  table_country              |  country_summary        |
+      |  table_post                 |  address_select_summary |
     When I click Confirm submission
     Then I am taken to the confirmation page

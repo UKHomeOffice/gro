@@ -198,7 +198,8 @@
     "label": "Postcode"
   },
   "address-lookup": {
-    "label": "Select your address"
+    "label": "Select your address",
+    "summary": "Address"
   },
   "address-textarea": {
     "summary": "Address",
