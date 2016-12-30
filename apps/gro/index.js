@@ -205,8 +205,8 @@ module.exports = {
     },
     '/confirm': {
       next: '/confirmation',
-      controller: controllers.confirm,
-      fieldsConfig: require('./fields'),
+      controller: require('./controllers/confirm'),
+      fieldsConfig: _.cloneDeep(require('./fields')),
       emailConfig: require('../../config').email,
       customerEmailField: 'email-text',
       locals: {

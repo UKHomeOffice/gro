@@ -20,14 +20,14 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
-      |  table_not_received         |  complaint_summary  |
-      |  table_details              |  free_text          |
-      |  table_existing             |  no_summary         |
-      |  table_previous             |  no_summary         |
-      |  table_name                 |  full_name          |
-      |  table_email                |  email_address      |
-      |  table_country              |  country_summary    |
-      |  table_post                 |  address_summary    |
+      |  table_not_received         |  complaint_summary      |
+      |  table_details              |  free_text              |
+      |  table_existing             |  no_summary             |
+      |  table_previous             |  no_summary             |
+      |  table_name                 |  full_name              |
+      |  table_email                |  email_address          |
+      |  table_country              |  country_summary        |
+      |  table_post                 |  address_select_summary |
     When I click change about from the about page
     Then I am taken to the about page of the form
     When I click not_received and then continue
@@ -58,17 +58,17 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
-      |  table_not_received         |  not_received_summary  |
-      |  table_type                 |  birth_summary         |
-      |  table_person_text          |  full_name             |
-      |  table_additional_text      |  free_text             |
-      |  table_additional_radio     |  yes_summary           |
-      |  table_which                |  standard_summary      |
-      |  table_when                 |  date_summary          |
-      |  table_name                 |  full_name             |
-      |  table_email                |  email_address         |
-      |  table_country              |  country_summary       |
-      |  table_post                 |  address_summary       |
+      |  table_not_received         |  not_received_summary   |
+      |  table_type                 |  birth_summary          |
+      |  table_person_text          |  full_name              |
+      |  table_additional_text      |  free_text              |
+      |  table_additional_radio     |  yes_summary            |
+      |  table_which                |  standard_summary       |
+      |  table_when                 |  date_summary           |
+      |  table_name                 |  full_name              |
+      |  table_email                |  email_address          |
+      |  table_country              |  country_summary        |
+      |  table_post                 |  address_select_summary |
 
   @type @debug
   Scenario: Change details text but not the path through the form
@@ -89,28 +89,28 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
-      |  table_not_received         |  complaint_summary  |
-      |  table_details              |  free_text          |
-      |  table_existing             |  no_summary         |
-      |  table_previous             |  no_summary         |
-      |  table_name                 |  full_name          |
-      |  table_email                |  email_address      |
-      |  table_country              |  country_summary    |
-      |  table_post                 |  address_summary    |
+      |  table_not_received         |  complaint_summary      |
+      |  table_details              |  free_text              |
+      |  table_existing             |  no_summary             |
+      |  table_previous             |  no_summary             |
+      |  table_name                 |  full_name              |
+      |  table_email                |  email_address          |
+      |  table_country              |  country_summary        |
+      |  table_post                 |  address_select_summary |
     When I click change details_text from the details page
     Then I am taken to the details_complaint page of the form
     When I change details_text to alt_text
     When I click continue
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
-      |  table_not_received         |  complaint_summary  |
-      |  table_details              |  alt_text           |
-      |  table_existing             |  no_summary         |
-      |  table_previous             |  no_summary         |
-      |  table_name                 |  full_name          |
-      |  table_email                |  email_address      |
-      |  table_country              |  country_summary    |
-      |  table_post                 |  address_summary    |
+      |  table_not_received         |  complaint_summary      |
+      |  table_details              |  alt_text               |
+      |  table_existing             |  no_summary             |
+      |  table_previous             |  no_summary             |
+      |  table_name                 |  full_name              |
+      |  table_email                |  email_address          |
+      |  table_country              |  country_summary        |
+      |  table_post                 |  address_select_summary |
 
   @details
   Scenario: Happy path through details, then back through type
@@ -131,14 +131,14 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
-      |  table_not_received         |  complaint_summary  |
-      |  table_details              |  free_text          |
-      |  table_existing             |  no_summary         |
-      |  table_previous             |  no_summary         |
-      |  table_name                 |  full_name          |
-      |  table_email                |  email_address      |
-      |  table_country              |  country_summary    |
-      |  table_post                 |  address_summary    |
+      |  table_not_received         |  complaint_summary      |
+      |  table_details              |  free_text              |
+      |  table_existing             |  no_summary             |
+      |  table_previous             |  no_summary             |
+      |  table_name                 |  full_name              |
+      |  table_email                |  email_address          |
+      |  table_country              |  country_summary        |
+      |  table_post                 |  address_select_summary |
     When I click change existing from the details page
     Then I am taken to the details_complaint page of the form
     When I click on existing_radio_yes
@@ -167,21 +167,21 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
-      |  table_not_received         |  complaint_summary  |
-      |  table_details              |  free_text          |
-      |  table_existing             |  yes_summary        |
-      |  table_previous             |  no_summary         |
-      |  table_type                 |  marriage_summary   |
-      |  table_person_one           |  full_name          |
-      |  table_person_two           |  first_alt_name     |
-      |  table_how                  |  online_summary     |
-      |  table_online_toggle_text   |  col_number         |
-      |  table_which                |  standard_summary   |
-      |  table_when                 |  date_summary       |
-      |  table_name                 |  full_name          |
-      |  table_email                |  email_address      |
-      |  table_country              |  country_summary    |
-      |  table_post                 |  address_summary    |
+      |  table_not_received         |  complaint_summary      |
+      |  table_details              |  free_text              |
+      |  table_existing             |  yes_summary            |
+      |  table_previous             |  no_summary             |
+      |  table_type                 |  marriage_summary       |
+      |  table_person_one           |  full_name              |
+      |  table_person_two           |  first_alt_name         |
+      |  table_how                  |  online_summary         |
+      |  table_online_toggle_text   |  col_number             |
+      |  table_which                |  standard_summary       |
+      |  table_when                 |  date_summary           |
+      |  table_name                 |  full_name              |
+      |  table_email                |  email_address          |
+      |  table_country              |  country_summary        |
+      |  table_post                 |  address_select_summary |
 
   @about @type
   Scenario: Change
@@ -215,17 +215,17 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
-      |  table_not_received         |  not_received_summary  |
-      |  table_type                 |  birth_summary         |
-      |  table_person_text          |  full_name             |
-      |  table_additional_text      |  free_text             |
-      |  table_additional_radio     |  yes_summary           |
-      |  table_which                |  standard_summary      |
-      |  table_when                 |  date_summary          |
-      |  table_name                 |  full_name             |
-      |  table_email                |  email_address         |
-      |  table_country              |  country_summary       |
-      |  table_post                 |  address_summary       |
+      |  table_not_received         |  not_received_summary   |
+      |  table_type                 |  birth_summary          |
+      |  table_person_text          |  full_name              |
+      |  table_additional_text      |  free_text              |
+      |  table_additional_radio     |  yes_summary            |
+      |  table_which                |  standard_summary       |
+      |  table_when                 |  date_summary           |
+      |  table_name                 |  full_name              |
+      |  table_email                |  email_address          |
+      |  table_country              |  country_summary        |
+      |  table_post                 |  address_select_summary |
     When I click change about from the about page
     Then I am taken to the about page of the form
     When I click complaint and then continue
@@ -243,11 +243,11 @@ Feature: I am able to change my answers and correctly navigate through the form
     When I select my address
     Then I am taken to the confirm page of the form
     Then I should see the headers and my information in the summary:
-      |  table_not_received         |  complaint_summary  |
-      |  table_details              |  free_text          |
-      |  table_existing             |  no_summary         |
-      |  table_previous             |  no_summary         |
-      |  table_name                 |  full_name          |
-      |  table_email                |  email_address      |
-      |  table_country              |  country_summary    |
-      |  table_post                 |  address_summary    |
+      |  table_not_received         |  complaint_summary      |
+      |  table_details              |  free_text              |
+      |  table_existing             |  no_summary             |
+      |  table_previous             |  no_summary             |
+      |  table_name                 |  full_name              |
+      |  table_email                |  email_address          |
+      |  table_country              |  country_summary        |
+      |  table_post                 |  address_select_summary |

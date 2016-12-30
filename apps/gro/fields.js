@@ -141,7 +141,8 @@ module.exports = {
   'postcode-code': {
     mixin: 'input-text-code',
     validate: ['required', 'postcode'],
-    formatter: 'uppercase'
+    formatter: 'uppercase',
+    includeInSummary: false
   },
   'type-radio': {
     legend: {
