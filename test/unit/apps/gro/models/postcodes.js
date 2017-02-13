@@ -18,7 +18,7 @@ describe('apps/gro/models/postcodes', () => {
 
   beforeEach(() => {
     PostcodeModel = proxyquire('../../../../../apps/gro/models/postcodes', {
-      'hmpo-model': BaseModel,
+      'hof-model': BaseModel,
       url: {
         parse: props => props
       }
@@ -66,7 +66,7 @@ describe('apps/gro/models/postcodes', () => {
         sinon.spy(BaseModel.prototype, 'request');
 
         PostcodeModel = proxyquire('../../../../../apps/gro/models/postcodes', {
-          'hmpo-model': BaseModel,
+          'hof-model': BaseModel,
           url: {
             parse: props => props
           }
