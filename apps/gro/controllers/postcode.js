@@ -1,11 +1,10 @@
-/* eslint consistent-return: 0 */
+/* eslint consistent-return: 0, no-console: 0 */
 
 'use strict';
 
 const controllers = require('hof-controllers');
 const BaseController = controllers.base;
 const PostcodesModel = require('../models/postcodes');
-const logger = require('../../../lib/logger');
 const _ = require('lodash');
 
 module.exports = class PostcodeController extends BaseController {
@@ -40,7 +39,9 @@ module.exports = class PostcodeController extends BaseController {
         req.sessionModel.set('postcodeApiMeta', {
           messageKey: 'cant-connect'
         });
-        logger.error('Postcode lookup error: ',
+        // Update churchill in hof-bootstrap to access
+        // req.logger
+        console.error('Postcode lookup error: ',
           `Code: ${err.status}; Detail: ${err.detail}`);
         return callback();
       });

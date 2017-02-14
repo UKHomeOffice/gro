@@ -10,20 +10,17 @@ describe('apps/gro/controllers/postcode', () => {
   const req = {};
   const res = {};
   let callback;
-  let logger;
 
   beforeEach(() => {
     callback = sinon.stub();
-    logger = {
-      error: sinon.stub()
-    };
+    sinon.stub(console, 'error');
+
     PostcodesModel.prototype.fetch = sinon.stub().returns(new Promise((resolve) => resolve()));
     PostcodeController = proxyquire('../../../../../apps/gro/controllers/postcode', {
       'hof-controllers': {
         base: BaseController
       },
-      '../models/postcodes': PostcodesModel,
-      '../../../lib/logger': logger
+      '../models/postcodes': PostcodesModel
     });
     req.sessionModel = {
       get: sinon.stub().returns('BN1 1AA')
@@ -34,6 +31,10 @@ describe('apps/gro/controllers/postcode', () => {
       }
     };
     controller = new PostcodeController();
+  });
+
+  afterEach(() => {
+    console.error.restore();
   });
 
   describe('process', () => {
@@ -145,10 +146,10 @@ describe('apps/gro/controllers/postcode', () => {
           });
         });
 
-        it('calls logger.error with status: 404, detail: \'something went wrong\'', done => {
+        it('calls console.error with status: 404, detail: \'something went wrong\'', done => {
           controller.process(req, res, callback);
           Promise.all([promiseStub()]).catch(() => {
-            logger.error.should.have.been.calledWithExactly('Postcode lookup error: ',
+            console.error.should.have.been.calledWithExactly('Postcode lookup error: ',
               'Code: 404; Detail: something went wrong'
             );
             done();
