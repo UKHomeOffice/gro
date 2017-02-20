@@ -191,7 +191,8 @@
   },
   "country-select": {
     "summary": "Country",
-    "label": "Country"
+    "label": "Country",
+    "hint": "Start to type the country name and options will appear"
   },
   "postcode-code": {
     "summary": "Postcode",

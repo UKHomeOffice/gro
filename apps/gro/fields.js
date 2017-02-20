@@ -53,7 +53,7 @@ module.exports = {
   'country-select': {
     mixin: 'select',
     className: ['typeahead', 'js-hidden'],
-    options: [''].concat(require('../../assets/countries').allCountries),
+    options: [''].concat(require('homeoffice-countries').allCountries),
     legend: {
       className: 'visuallyhidden'
     },
