@@ -12,37 +12,25 @@
   "scripts": {
     "start": "node .",
     "stop": "pkill --signal SIGINT gro",
-    "dev": "npm-run-all --parallel watch:app watch:scss watch:js watch:translations",
-    "watch:app": "NODE_ENV=development nodemon .",
-    "watch:scss": "nodemon -e scss -x 'npm run sass'",
-    "watch:js": "nodemon --watch assets/js -e js -x 'npm run browserify'",
-    "watch:translations": "nodemon --watch apps/**/translations/src -x 'npm run hof-transpile'",
-    "test": "NODE_ENV=test mocha",
-    "browserify": "browserify ./assets/js/index.js > ./public/js/bundle.js",
+    "dev": "NODE_ENV=development hof-build watch",
+    "test": "NODE_ENV=test npm run lint && npm run test:unit",
+    "test:unit": "istanbul cover _mocha",
     "test:acceptance": "cd acceptance_tests/; bundle install && cucumber",
     "test:ci": "npm run lint && npm run style && npm run test",
     "lint": "eslint .",
-    "copy:images": "cp -r ./assets/images ./public/",
-    "style": "jscs **/*.js --config=./.jscsrc",
-    "cover": "istanbul cover _mocha && istanbul check-coverage",
-    "sass": "npm-sass ./assets/scss/app.scss > ./public/css/app.css",
-    "create:public": "mkdir -p ./public/js ./public/css ./public/images",
-    "hof-transpile": "hof-transpiler ./apps/**/translations/src --shared ./node_modules/hof-template-partials/translations/src",
-    "prepareapp": "npm run create:public; npm run sass; npm run browserify; npm run copy:images; npm run hof-transpile",
-    "postinstall": "bash -c 'if [[ ${NODE_ENV} != production ]]; then npm run prepareapp; fi;'"
+    "prepareapp": "hof-build",
+    "postinstall": "npm run prepareapp"
   },
   "author": "HomeOffice",
   "dependencies": {
-    "browserify": "^12.0.1",
     "hof-bootstrap": "^9.0.0",
+    "hof-build": "^1.3.4",
     "hof-controllers": "^4.0.1",
     "hof-frontend-toolkit": "^1.0.1",
     "hof-model": "^2.1.0",
-    "hof-transpiler": "^0.1.0",
     "homeoffice-countries": "^0.1.0",
     "jquery": "^3.1.0",
     "lodash": "^4.16.3",
-    "npm-sass": "^2.0.0",
     "typeahead-aria": "^1.0.1"
   },
   "devDependencies": {
@@ -65,9 +53,6 @@
     "sinon-chai": "^2.8.0"
   },
   "pre-commit": [
-    "lint",
-    "style",
-    "test",
-    "cover"
+    "test"
   ]
 }
