@@ -56,10 +56,10 @@ pipeline:
     environment:
       - DOCKER_HOST=tcp://172.17.0.1:2375
     commands:
-      - docker run -d --userns host --net host redis
-      - docker run -d -e NODE_ENV=ci --net host --userns host gro
-      - docker run --rm --net host --userns host acceptance
-      - docker rm -vf "gro" "redis"
+      - docker run -d --name=redis redis
+      - docker run -d -e NODE_ENV=ci --name=app --net=container:redis gro
+      - docker run --rm --net=container:app acceptance
+      - docker rm -vf "app" "redis"
     when:
       event: pull_request
 
@@ -68,10 +68,10 @@ pipeline:
     environment:
       - DOCKER_HOST=tcp://172.17.0.1:2375
     commands:
-      - docker run -d --userns host --net host redis
-      - docker run -d -e NODE_ENV=ci --net host --userns host gro
-      - docker run --rm --net host --userns host acceptance
-      - docker rm -vf "gro" "redis"
+      - docker run -d --name=redis redis
+      - docker run -d -e NODE_ENV=ci --name=app --net=container:redis gro
+      - docker run --rm --net=container:app acceptance
+      - docker rm -vf "app" "redis"
     when:
       branch: master
 
