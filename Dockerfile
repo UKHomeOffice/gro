@@ -1,4 +1,4 @@
-FROM quay.io/ukhomeofficedigital/nodejs-base:v6.11.1
+FROM quay.io/ukhomeofficedigital/nodejs-base:v8
 
 RUN mkdir /public
 
@@ -7,4 +7,6 @@ RUN npm --loglevel warn install --production --no-optional
 COPY . /app
 RUN npm --loglevel warn run postinstall
 
-CMD /app/run.sh
+USER 999
+
+CMD ["/app/run.sh"]
