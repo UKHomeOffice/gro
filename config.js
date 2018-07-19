@@ -5,6 +5,9 @@ process.title = 'gro';
 /* eslint no-process-env: 0 */
 module.exports = {
   env: process.env.NODE_ENV,
+  redis: {
+    password: process.env.REDIS_PASSWORD
+  },
   email: {
     caseworker: process.env.CASEWORKER_EMAIL || '',
     from: process.env.FROM_ADDRESS || '',
