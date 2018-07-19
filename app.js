@@ -10,7 +10,8 @@ const options = {
   fields: false,
   routes: [
     require('./apps/gro')
-  ]
+  ],
+  redis: config.redis
 };
 
 if (config.env === 'ci') {
