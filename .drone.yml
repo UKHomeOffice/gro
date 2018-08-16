@@ -109,3 +109,16 @@ pipeline:
     when:
       event: deployment
       environment: preprod
+
+  trigger_deploy_to_gro_form_prod:
+    image: quay.io/ukhomeofficedigital/drone-trigger:v0.3.0
+    secrets:
+      - DRONE_TOKEN
+    drone_server: https://drone.acp.homeoffice.gov.uk
+    repo: UKHomeOffice/kube-gro
+    branch: master
+    deploy_to: prod
+    params: APP_IMAGE_TAG=${DRONE_COMMIT_SHA},KUBE_NAMESPACE=gro-form
+    when:
+      event: deployment
+      environment: prod
