@@ -36,7 +36,7 @@
     "browserify": "^12.0.1",
     "hof-bootstrap": "^9.0.0",
     "hof-controllers": "^4.0.1",
-    "hof-frontend-toolkit": "^1.0.1",
+    "hof-frontend-toolkit": "^2.1.1",
     "hof-model": "^2.1.0",
     "hof-transpiler": "^0.1.0",
     "homeoffice-countries": "^0.1.0",
