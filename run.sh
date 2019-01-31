@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ "$NODE_ENV" = "ci" ]
 then echo "starting service"

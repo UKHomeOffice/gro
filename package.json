@@ -29,7 +29,7 @@
     "create:public": "mkdir -p ./public/js ./public/css ./public/images",
     "hof-transpile": "hof-transpiler ./apps/**/translations/src --shared ./node_modules/hof-template-partials/translations/src",
     "prepareapp": "npm run create:public; npm run sass; npm run browserify; npm run copy:images; npm run hof-transpile",
-    "postinstall": "bash -c 'if [[ ${NODE_ENV} != production ]]; then npm run prepareapp; fi;'"
+    "postinstall": "if [ ${NODE_ENV} != production ]; then npm run prepareapp; fi;"
   },
   "author": "HomeOffice",
   "dependencies": {
