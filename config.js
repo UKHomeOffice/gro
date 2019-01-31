@@ -25,7 +25,7 @@ module.exports = {
   postcode: {
     hostname: process.env.NODE_ENV === 'ci' ?
       `http://${process.env.LISTEN_HOST || '0.0.0.0'}:${process.env.PORT || 8080}/api/postcode-test` :
-      'https://postcodeinfo.service.justice.gov.uk',
+      process.env.POSTCODE_HOST,
     authorization: process.env.POSTCODE_AUTH,
     addresses: {
       path: '/addresses',
