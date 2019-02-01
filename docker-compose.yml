@@ -3,13 +3,14 @@ services:
   app:
     build: .
     environment:
-      - NODE_ENV=ci
+      - NODE_ENV=production
       - EMAIL_IGNORE_TLS=true
       - EMAIL_HOST=maildev
       - EMAIL_PORT=25
       - CASEWORKER_EMAIL=caseworker@gov.uk.test
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+      - SESSION_SECRET=adsasdasd
       # - DEBUG=email
     links:
       - redis
@@ -42,4 +43,3 @@ services:
     ports:
       - "8000:80"
       - "25"
-
