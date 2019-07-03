@@ -1,0 +1,30 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - hof-bootstrap > hof-middleware > lodash:
+        patched: '2019-07-03T23:31:26.014Z'
+    - lodash:
+        patched: '2019-07-03T23:31:26.014Z'
+    - hof-model > lodash:
+        patched: '2019-07-03T23:31:26.014Z'
+    - hof-bootstrap > hof-form-wizard > lodash:
+        patched: '2019-07-03T23:31:26.014Z'
+    - hof-controllers > hof-emailer > lodash:
+        patched: '2019-07-03T23:31:26.014Z'
+    - hof-bootstrap > hof-template-partials > lodash:
+        patched: '2019-07-03T23:31:26.014Z'
+    - hof-bootstrap > lodash:
+        patched: '2019-07-03T23:31:26.014Z'
+    - hof-bootstrap > hof-form-wizard > hof-model > lodash:
+        patched: '2019-07-03T23:31:26.014Z'
+    - hof-bootstrap > hof-form-wizard > hof-controllers > lodash:
+        patched: '2019-07-03T23:31:26.014Z'
+    - npm-sass > node-sass > sass-graph > lodash:
+        patched: '2019-07-03T23:31:26.014Z'
+    - hof-bootstrap > hof-form-wizard > hof-controllers > hof-emailer > lodash:
+        patched: '2019-07-03T23:31:26.014Z'
+    - npm-sass > node-sass > gaze > globule > lodash:
+        patched: '2019-07-03T23:31:26.014Z'
