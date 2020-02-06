@@ -1,0 +1,12 @@
+{{<layout}}
+  {{$email-content}}
+    {{#data}}
+      {{> section-row}}
+      {{#fields}}
+        {{#value}}
+          {{> data-row}}
+        {{/value}}
+      {{/fields}}
+    {{/data}}
+  {{/email-content}}
+{{/layout}}
