@@ -1,5 +1,7 @@
 'use strict';
 
+const path = require('path');
+
 process.title = 'gro';
 
 /* eslint no-process-env: 0 */
@@ -16,8 +18,9 @@ module.exports = {
     replyTo: process.env.REPLY_TO || '',
     accessKeyId: process.env.AWS_USER || '',
     secretAccessKey: process.env.AWS_PASSWORD || '',
-    transportType: 'ses',
-    region: process.env.EMAIL_REGION || ''
+    transportType: process.env.SEND_TYPE || 'ses',
+    region: process.env.EMAIL_REGION || '',
+    customViews: path.resolve(__dirname, ('./apps/gro/views/email/'))
   },
   ga: {
     tagId: process.env.GA_TAG
