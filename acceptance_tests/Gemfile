@@ -1,11 +1,11 @@
 source "https://rubygems.org"
 
-gem 'cucumber'
+gem 'cucumber', '>= 4.0.0'
 gem 'capybara'
 gem 'poltergeist'
 gem 'rspec'
 gem 'phantomjs'
 gem 'phantomjs-binaries'
 gem 'show_me_the_cookies'
-gem 'yard-cucumber'
+gem 'yard-cucumber', '>= 2.2.3'
 gem 'selenium-webdriver', '2.45.0'
