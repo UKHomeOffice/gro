@@ -11,6 +11,7 @@ steps:
   - npm ci
   - npm test
   when:
+    branch: [ master, features/* ]
     event: push
 
 - name: build_gro
