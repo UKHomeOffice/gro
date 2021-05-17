@@ -34,7 +34,12 @@
   "author": "HomeOffice",
   "dependencies": {
     "browserify": "^12.0.1",
+    "cached-path-relative": "^1.0.2",
     "deprecate": "^1.0.0",
+    "diff": "^3.5.0",
+    "express-partial-templates": "^0.2.1",
+    "fstream": "^1.0.12",
+    "growl": "^1.10.0",
     "hof-bootstrap": "^9.0.0",
     "hof-controllers": "^4.0.1",
     "hof-frontend-toolkit": "^1.0.1",
@@ -42,9 +47,14 @@
     "hof-transpiler": "^0.1.0",
     "homeoffice-countries": "^0.1.0",
     "jquery": "^3.1.0",
-    "lodash": "^4.17.19",
+    "js-yaml": "^3.13.1",
+    "lodash": "^4.17.21",
+    "nodemailer": "^6.4.16",
     "npm-sass": "^2.0.0",
-    "typeahead-aria": "^1.0.1"
+    "set-value": "^2.0.1",
+    "tar": "^2.2.2",
+    "typeahead-aria": "^1.0.1",
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "chai": "^3.0.0",
