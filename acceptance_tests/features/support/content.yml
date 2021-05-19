@@ -152,6 +152,6 @@ invalid_account_error: 'Account numbers must consist of between 3 and 7 digits'
 country_missing_error: 'Enter your country'
 country_invalid_error: 'Pick a country from the list'
 postcode_missing_error: 'Enter your postcode'
-postcode_invalid_error: "This postcode isn\'t valid, enter a valid postcode"
+postcode_invalid_error: "This postcode isn't valid, enter a valid postcode"
 address_textarea_error: 'Enter your address'
 address_lookup_error: 'Select an address'
