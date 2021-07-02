@@ -1,16 +1,19 @@
 'use strict';
 
 const _ = require('lodash');
-const controllers = require('hof-controllers');
+const address = require('./behaviours/address');
+const addressLookup = require('./behaviours/address-lookup');
+const confirm = require('./behaviours/confirm');
+const postcode = require('./behaviours/postcode');
 
 module.exports = {
   name: 'gro',
   params: '/:action?',
+  pages: {
+    '/cookies': 'cookies',
+    '/terms-and-conditions': 'terms'
+  },
   steps: {
-    '/': {
-      controller: controllers.start,
-      next: '/about'
-    },
     '/about': {
       fields: ['about-radio'],
       next: '/type',
@@ -117,7 +120,6 @@ module.exports = {
       }
     },
     '/when': {
-      controller: require('./controllers/when'),
       fields: [
         'when-date',
         'when-date-day',
@@ -162,10 +164,10 @@ module.exports = {
       }
     },
     '/postcode': {
-      controller: require('./controllers/postcode'),
       fields: [
         'postcode-code'
       ],
+      behaviours: [postcode],
       forks: [{
         target: '/address-lookup',
         condition(req) {
@@ -181,22 +183,22 @@ module.exports = {
       }
     },
     '/address-lookup': {
-      controller: require('./controllers/address-lookup'),
       fields: [
         'address-lookup'
       ],
       continueOnEdit: true,
       next: '/confirm',
+      behaviours: [addressLookup],
       locals: {
         section: 'contact-details',
         subsection: 'address'
       }
     },
     '/address': {
-      controller: require('./controllers/address'),
       fields: [
         'address-textarea'
       ],
+      behaviors: [address],
       next: '/confirm',
       locals: {
         section: 'contact-details',
@@ -205,7 +207,7 @@ module.exports = {
     },
     '/confirm': {
       next: '/confirmation',
-      controller: require('./controllers/confirm'),
+      behaviours: [confirm],
       fieldsConfig: _.cloneDeep(require('./fields')),
       emailConfig: require('../../config').email,
       customerEmailField: 'email-text',

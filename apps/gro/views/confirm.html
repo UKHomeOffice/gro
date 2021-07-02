@@ -1,0 +1,109 @@
+{{<step}}
+{{$page-content}}
+<div id="pre-submit">
+  <dl>
+    <div class="confirm-row">
+      <dt class="confirm-label">{{#t}}pages.confirm.enquiry-details.reason.label{{/t}}</dt>
+      <dd class="confirm-value">{{#t}}pages.confirm.enquiry-details.reason.value{{/t}}</dd>
+      <dd class="confirm-link"><a href="/about/edit#about-radio-{{values.about-radio}}" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+    </div>
+    <div class="confirm-row">
+      <dt class="confirm-label">{{#t}}pages.confirm.enquiry-details.type.label{{/t}}</dt>
+      <dd class="confirm-value">{{#t}}pages.confirm.enquiry-details.type.value{{/t}}</dd>
+      <dd><a href="/type/edit#type-radio-{{values.type-radio}}" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+    </div>
+
+  {{#values.person-text}}
+    <div class="confirm-row">
+      <dt class="confirm-label">{{#t}}fields.person-text.summary{{/t}}</dt>
+      <dd class="confirm-value">{{values.person-text}}</dd>
+      <dd><a href="/person/edit#person-text" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+    </div>
+  {{/values.person-text}}
+
+  {{#values.person-one}}
+  <div class="confirm-row">
+    <dt class="confirm-label">{{#t}}fields.person-one.summary{{/t}}</dt>
+    <dd class="confirm-value">{{values.person-one}}</dd>
+    <dd><a href="/people/edit#person-one" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+  </div>
+  <div class="confirm-row">
+    <dt class="confirm-label">{{#t}}fields.person-two.summary{{/t}}</dt>
+    <dd class="confirm-value">{{values.person-two}}</dd>
+    <dd><a href="/people/edit#person-two" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+  </div>
+  {{/values.person-one}}
+
+
+  {{#values.additional-text}}
+  <div class="confirm-row">
+    <dt class="confirm-label">{{#t}}fields.additional-text.summary{{/t}}</dt>
+    <dd class="confirm-value">{{values.additional-text}}</dd>
+    <dd><a href="/additional/edit#additional-text" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+  </div>
+  {{/values.additional-text}}
+
+  <div class="confirm-row">
+    <dt class="confirm-label">{{#t}}fields.additional-radio.summary{{/t}}</dt>
+    <dd class="confirm-value">{{#t}}pages.confirm.enquiry-details.additional-radio.value{{/t}}</dd>
+    <dd><a href="/additional/edit#additional-radio-{{values.additional-radio}}" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+  </div>
+  </dl>
+
+
+  <h2>{{#t}}pages.order-details.header{{/t}}</h2>
+  <dl>
+    <div class="confirm-row">
+      <dt class="confirm-label">{{#t}}fields.how-radio.summary{{/t}}</dt>
+      <dd class="confirm-value">{{#t}}pages.confirm.order-details.how-radio.value{{/t}}</dd>
+      <dd><a href="/how/edit#how-radio-{{values.how-radio}}" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+    </div>
+
+    {{#values.online-toggle-text}}
+    <div class="confirm-row">
+      <dt class="confirm-label">{{#t}}fields.online-toggle-text.summary{{/t}}</dt>
+      <dd class="confirm-value">{{values.online-toggle-text}}</dd>
+      <dd><a href="/how/edit#online-toggle-text" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+    </div>
+    {{/values.online-toggle-text}}
+    <div class="confirm-row">
+      <dt class="confirm-label">{{#t}}fields.which-radio.summary{{/t}}</dt>
+      <dd class="confirm-value">{{#t}}pages.confirm.order-details.which-radio.value{{/t}}</dd>
+      <dd><a href="/which/edit#which-radio-{{values.which-radio}}" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+    </div>
+    <div class="confirm-row">
+      <dt class="confirm-label">{{#t}}fields.when-date.summary{{/t}}</dt>
+      <dd class="confirm-value">{{values.when-date-day}}-{{values.when-date-month}}-{{values.when-date-year}}</dd>
+      <dd><a href="/when/edit#when-date-day" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+    </div>
+  </dl>
+
+  <h2>{{#t}}pages.contact-details.header{{/t}}</h2>
+  <dl>
+    <div class="confirm-row">
+      <dt class="confirm-label">{{#t}}fields.name-text.summary{{/t}}</dt>
+      <dd class="confirm-value">{{values.name-text}}</dd>
+      <dd><a href="/name/edit#name-text" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+    </div>
+    <div class="confirm-row">
+      <dt class="confirm-label">{{#t}}fields.email-text.summary{{/t}}</dt>
+      <dd class="confirm-value">{{values.email-text}}</dd>
+      <dd><a href="/email-address/edit#email-text" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+    </div>
+    <div class="confirm-row">
+      <dt class="confirm-label">{{#t}}fields.country-select.summary{{/t}}</dt>
+      <dd class="confirm-value">{{values.country-select}}</dd>
+      <dd><a href="/country/edit#country-select" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+    </div>
+    <div class="confirm-row">
+      <dt class="confirm-label">{{#t}}fields.address-textarea.summary{{/t}}</dt>
+      <dd class="confirm-value">{{values.address-textarea}}</dd>
+      <dd><a href="/address/edit#address-textarea" class="link">{{#t}}pages.confirm.change.plain{{/t}}</a></dd>
+    </div>
+  </dl>
+
+
+  {{#input-submit}}confirm{{/input-submit}}
+</div>
+{{/page-content}}
+{{/step}}

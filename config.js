@@ -13,11 +13,11 @@ module.exports = {
     password: process.env.REDIS_PASSWORD
   },
   email: {
-    caseworker: process.env.CASEWORKER_EMAIL || '',
-    from: process.env.FROM_ADDRESS || '',
-    replyTo: process.env.REPLY_TO || '',
-    accessKeyId: process.env.AWS_USER || '',
-    secretAccessKey: process.env.AWS_PASSWORD || '',
+    caseworker: process.env.CASEWORKER_EMAIL || 'test@test.com',
+    from: process.env.FROM_ADDRESS || 'test@test.com',
+    replyTo: process.env.REPLY_TO || 'test@test.com',
+    accessKeyId: process.env.AWS_USER || 'test',
+    secretAccessKey: process.env.AWS_PASSWORD || 'test',
     transportType: process.env.SEND_TYPE || 'ses',
     region: process.env.EMAIL_REGION || '',
     customViews: path.resolve(__dirname, ('./apps/gro/views/email/'))

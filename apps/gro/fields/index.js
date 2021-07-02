@@ -110,8 +110,8 @@ module.exports = {
                 </div>
               </div>`
     },
-    'post'
-  ]
+      'post'
+    ]
   },
   'online-toggle-text': {},
   'telephone-toggle-text': {},

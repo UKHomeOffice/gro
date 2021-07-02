@@ -29,7 +29,58 @@
   },
   "confirm": {
     "header": "Is the information you have given us correct?",
-    "subheader": "If any information is incorrect, you can change it here."
+    "enquiry-details": {
+      "reason": {
+        "label": "Reason for contact",
+        "value": {
+          "about-radio": {
+            "not-received": "Certificate not received",
+            "wrong-certificate": "Wrong certificate received",
+            "damaged": "Poor quality certificate",
+            "refund": "Refund query",
+            "complaint": "Service complaint",
+            "other": "Other issues and feedback"
+          }
+        }
+      },
+      "type": {
+        "label": "Type of certificate",
+        "value": {
+          "type-radio": {
+            "birth": "Birth",
+            "marriage": "Marriage",
+            "death": "Death",
+            "adoption": "Adoption",
+            "partnership": "Civil Partnership"
+          }
+        }
+      },
+      "additional-radio": {
+        "value": {
+          "no": "No",
+          "yes": "Yes"
+        }
+      }
+    },
+    "order-details": {
+      "how-radio": {
+        "value": {
+          "online": "Online",
+          "telephone": "Telephone",
+          "post": "Post"
+        }
+      },
+      "which-radio": {
+        "value": {
+          "standard": "Standard",
+          "priority": "Priority"
+        }
+      }
+    },
+    "change": {
+      "plain": "Change",
+      "hidden": {}
+    }
   },
   "confirmation": {
     "header": "Thank you for contacting the General Register Office.",
