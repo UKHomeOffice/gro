@@ -235,7 +235,7 @@ steps:
       IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
       LOCAL_IMAGE: true
       TOLERATE: medium
-      WHITELIST_FILE: hof-cve-exceptions/gro-form.txt
+      WHITELIST_FILE: hof-cve-exceptions/general-registrars-office.txt
     when:
       branch: master
       event: pull_request
@@ -420,7 +420,7 @@ steps:
       IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
       LOCAL_IMAGE: true
       TOLERATE: medium
-      WHITELIST_FILE: hof-cve-exceptions/gro-form.txt
+      WHITELIST_FILE: hof-cve-exceptions/general-registrars-office.txt
     when:
       cron: security_scans
       event: cron
