@@ -142,7 +142,7 @@ steps:
     - docker push $${IMAGE_URL}/$${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
     when:
       branch: master
-      event: push
+      event: [push, pull_request]
 
   # Deploy to pull request UAT environment
   - name: deploy_to_branch
