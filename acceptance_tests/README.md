@@ -4,7 +4,29 @@ The tests follow the standard principles of feature files and step definitions.
 
 ##Installation:
 
+Install rvm (Ruby Version Manager)
+```
+curl -sSL https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer | bash -s stable
+```
+
+Then install Ruby 3.0.0
+```
+rvm install ruby@3.0.0
+```
+
+Then specify the default version of Ruby for your Mac to use
+```
+rvm use ruby-3.0.0 --default
+```
+
+After that run bundle to install
+```
+bundle
+```
+
 ###Install Bundler
+
+Gemfile.lock created using Ruby version 3.0.1
 
 ```
 gem install bundler
