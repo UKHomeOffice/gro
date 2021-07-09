@@ -7,6 +7,7 @@ process.title = 'gro';
 /* eslint no-process-env: 0 */
 module.exports = {
   env: process.env.NODE_ENV,
+  PRETTY_DATE_FORMAT: 'Do MMMM YYYY',
   redis: {
     port: process.env.REDIS_PORT || 6379,
     host: process.env.REDIS_HOST || '127.0.0.1',

@@ -1,0 +1,10 @@
+{
+  "appName": "General Registrars Office",
+  "theme": "govUK",
+  "routes": [
+    "./apps/gro"
+  ],
+  "session": {
+    "name": "general-registrars-office.hof.sid"
+  }
+}

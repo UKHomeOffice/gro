@@ -1,9 +1,8 @@
 'use strict';
 
-const BaseConfirmController = require('hof-controllers').confirm;
-
-module.exports = class ConfirmController extends BaseConfirmController {
+module.exports = superclass => class ConfirmController extends superclass {
   get(req, res, callback) {
+    console.log(res.locals);
     this.removeDuplicateAddress(req);
     return super.get(req, res, callback);
   }

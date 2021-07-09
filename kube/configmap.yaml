@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
+  name: {{ .APP_NAME }}-configmap-{{ .DRONE_SOURCE_BRANCH }}
+  {{ else }}
+  name: {{ .APP_NAME }}-configmap
+  {{ end }}
+  namespace: {{ .KUBE_NAMESPACE }}
+  labels:
+    {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
+    name: {{ .APP_NAME }}-{{ .DRONE_SOURCE_BRANCH }}
+    {{ else }}
+    name: {{ .APP_NAME }}
+    {{ end }}
+data:
+{{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
+  node-env: development
+  from-address: hof@digital.homeoffice.gov.uk
+  reply-to: hof@digital.homeoffice.gov.uk
+  caseworker-email: hof@digital.homeoffice.gov.uk
+  email-region: eu-west-1
+  ga-tag: UA-83580926-1
+  postcode-host: https://www.postcodeinfo-notprod.homeoffice.gov.uk
+# {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
+#   node-env: development
+#   from-address: hof@digital.homeoffice.gov.uk
+#   reply-to: hof@digital.homeoffice.gov.uk
+#   caseworker-email: hof@digital.homeoffice.gov.uk
+#   email-region: eu-west-1
+#   ga-tag: UA-83580926-1
+#   postcode-host: https://www.postcodeinfo-notprod.homeoffice.gov.uk
+{{ else if eq .KUBE_NAMESPACE .STG_ENV }}
+  node-env: production
+  from-address: hof@digital.homeoffice.gov.uk
+  reply-to: hof@digital.homeoffice.gov.uk
+  caseworker-email: hof@digital.homeoffice.gov.uk
+  email-region: eu-west-1
+  ga-tag: UA-83580926-2
+  postcode-host: https://www.postcodeinfo-notprod.homeoffice.gov.uk
+{{ else if eq .KUBE_NAMESPACE .PROD_ENV }}
+  node-env: production
+  from-address: customerservices@certificate-enquiries.homeoffice.gov.uk
+  reply-to: grocustomerservices@gro.gsi.gov.uk
+  caseworker-email: grocustomerservices@gro.gsi.gov.uk
+  email-region: eu-west-1
+  ga-tag: UA-83580926-3
+  postcode-host: https://www.postcodeinfo.homeoffice.gov.uk
+{{ end }}

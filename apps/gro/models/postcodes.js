@@ -1,6 +1,6 @@
 'use strict';
 
-const Model = require('hof-model');
+const Model = require('hof').model;
 const config = require('../../../config');
 const url = require('url');
 
