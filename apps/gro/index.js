@@ -1,16 +1,12 @@
 'use strict';
 
 const _ = require('lodash');
-const controllers = require('hof-controllers');
 
 module.exports = {
   name: 'gro',
   params: '/:action?',
+  baseUrl: '/',
   steps: {
-    '/': {
-      controller: controllers.start,
-      next: '/about'
-    },
     '/about': {
       fields: ['about-radio'],
       next: '/type',
@@ -117,7 +113,7 @@ module.exports = {
       }
     },
     '/when': {
-      controller: require('./controllers/when'),
+      behaviours: require('./behaviours/when'),
       fields: [
         'when-date',
         'when-date-day',
@@ -162,7 +158,7 @@ module.exports = {
       }
     },
     '/postcode': {
-      controller: require('./controllers/postcode'),
+      behaviours: require('./behaviours/postcode'),
       fields: [
         'postcode-code'
       ],
@@ -181,7 +177,7 @@ module.exports = {
       }
     },
     '/address-lookup': {
-      controller: require('./controllers/address-lookup'),
+      behaviours: require('./behaviours/address-lookup'),
       fields: [
         'address-lookup'
       ],
@@ -193,7 +189,7 @@ module.exports = {
       }
     },
     '/address': {
-      controller: require('./controllers/address'),
+      behaviours: require('./behaviours/address'),
       fields: [
         'address-textarea'
       ],
@@ -205,10 +201,12 @@ module.exports = {
     },
     '/confirm': {
       next: '/confirmation',
-      controller: require('./controllers/confirm'),
+      // require('./behaviours/summary')
+      behaviours: [require('hof').components.summary, require('./behaviours/confirm')],
       fieldsConfig: _.cloneDeep(require('./fields')),
       emailConfig: require('../../config').email,
       customerEmailField: 'email-text',
+      sections: require('./sections/summary-data-sections'),
       locals: {
         section: 'confirm'
       }

@@ -1,7 +1,0 @@
-node_modules
-public
-kube
-acceptance_tests
-apps/**/translations/**/default.json
-run.sh
-coverage

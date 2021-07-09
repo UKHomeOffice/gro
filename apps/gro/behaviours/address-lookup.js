@@ -1,11 +1,8 @@
 'use strict';
 
-const controllers = require('hof-controllers');
-const BaseController = controllers.base;
-const ErrorController = controllers.error;
 const _ = require('lodash');
 
-module.exports = class AddressLookup extends BaseController {
+module.exports = superclass => class AddressLookup extends superclass {
 
   getValues(req, res, callback) {
     const addresses = req.sessionModel.get('addresses');
@@ -34,14 +31,16 @@ module.exports = class AddressLookup extends BaseController {
     super.post(req, res, cb);
   }
 
-  validateField(key, req) {
+  validate(key, req) {
     if (req.form.values[key] === this.options.fields['address-lookup'].options[0].value) {
-      return new ErrorController('address-lookup', {
-        key: 'address-lookup',
-        type: 'required',
-        redirect: undefined
-      });
+      const imageValidationErrors = this.customError('address-lookup', 'required');
+      return next(imageValidationErrors);
     }
-    return undefined;
+    return super.validate(req, res, next);
+  }
+
+  customError(field, type) {
+    const customError = typeof type === 'string' ? { type } : type;
+    return { [field]: new this.ValidationError(field, customError) };
   }
 };

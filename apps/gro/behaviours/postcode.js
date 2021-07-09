@@ -2,12 +2,10 @@
 
 'use strict';
 
-const controllers = require('hof-controllers');
-const BaseController = controllers.base;
 const PostcodesModel = require('../models/postcodes');
 const _ = require('lodash');
 
-module.exports = class PostcodeController extends BaseController {
+module.exports = superclass => class PostcodeController extends superclass {
   process(req, res, callback) {
     const postcode = req.form.values['postcode-code'];
     const previousPostcode = req.sessionModel.get('postcode-code');

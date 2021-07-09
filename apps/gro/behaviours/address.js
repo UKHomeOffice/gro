@@ -1,8 +1,6 @@
 'use strict';
 
-const BaseController = require('hof-controllers').base;
-
-module.exports = class AddressController extends BaseController {
+module.exports = superclass => class AddressController extends superclass {
   getValues(req, res, callback) {
     if (req.params.action === 'manual') {
       req.sessionModel.unset([
