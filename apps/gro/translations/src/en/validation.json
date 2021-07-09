@@ -31,14 +31,14 @@
   },
   "person-text": {
     "required": "Enter a full name",
-    "notUrl" : "Enter a full name"
+    "notUrl" : "Ensure there are no URLs present in the text area"
   },
   "person-one": {
     "required": "Enter a full name",
-    "notUrl" : "Enter a full name"
+    "notUrl" : "Ensure there are no URLs present in the text area"
   },
   "person-two": {
-    "notUrl" : "Enter a full name"
+    "notUrl" : "Ensure there are no URLs present in the text area"
   },
   "additional-radio": {
     "required": "Tell us if you have previously been in contact about this enquiry"
@@ -62,7 +62,7 @@
   },
   "name-text": {
     "required": "Tell us your full name",
-    "notUrl" : "Tell us your full name"
+    "notUrl" : "Ensure there are no URLs present in the text area"
   },
   "email-text": {
     "required": "Enter an email address",
@@ -78,7 +78,7 @@
   },
   "address-textarea": {
     "required": "Enter your address",
-    "notUrl" : "Enter your address"
+    "notUrl" : "Ensure there are no URLs present in the text area"
   },
   "address-lookup": {
     "required": "Select an address"
@@ -87,6 +87,6 @@
     "notUrl" : "Ensure there are no URLs present in the text area"
   },
   "additional-names" : {
-    "notUrl" : "Enter a full name"
+    "notUrl" : "Ensure there are no URLs present in the text area"
   }
 }
