@@ -7,18 +7,15 @@ metadata:
   {{ else }}
   name: {{ .APP_NAME }}-internal
   {{ end }}
-  labels:
-    cert-manager.io/solver: route53
-  annotations:
-{{ file .INGRESS_INTERNAL_ANNOTATIONS | indent 4 }}
+{{ file .INGRESS_INTERNAL_ANNOTATIONS | indent 2 }}
 spec:
   tls:
     - hosts:
       {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
         - {{ .DRONE_BUILD_NUMBER }}.branch.internal.sas-notprod.homeoffice.gov.uk
         - {{ .APP_NAME }}-{{ .DRONE_SOURCE_BRANCH }}.branch.internal.sas-notprod.homeoffice.gov.uk
-      # {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
-      #   - {{ .APP_NAME }}.uat.internal.sas-notprod.homeoffice.gov.uk
+      {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
+        - {{ .APP_NAME }}.uat.internal.sas-notprod.homeoffice.gov.uk
       {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
         - stg.internal.{{ .APP_NAME }}.sas.homeoffice.gov.uk
       {{ end }}
@@ -30,8 +27,8 @@ spec:
   rules:
     {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
     - host: {{ .APP_NAME }}-{{ .DRONE_SOURCE_BRANCH }}.branch.internal.sas-notprod.homeoffice.gov.uk
-    # {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
-    # - host: {{ .APP_NAME }}.uat.internal.sas-notprod.homeoffice.gov.uk
+    {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
+    - host: {{ .APP_NAME }}.uat.internal.sas-notprod.homeoffice.gov.uk
     {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
     - host: stg.internal.{{ .APP_NAME }}.sas.homeoffice.gov.uk
     {{ end }}

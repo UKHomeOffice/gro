@@ -3,10 +3,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ .APP_NAME }}-external
-  labels:
-    cert-manager.io/solver: http01
-  annotations:
-{{ file .INGRESS_EXTERNAL_ANNOTATIONS | indent 4 }}
+{{ file .INGRESS_EXTERNAL_ANNOTATIONS | indent 2 }}
 spec:
   tls:
     - hosts:
