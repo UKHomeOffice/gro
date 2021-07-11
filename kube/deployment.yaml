@@ -109,6 +109,9 @@ spec:
             limits:
               cpu: "100m"
               memory: "200Mi"
+          volumeMounts:
+            - mountPath: /public
+              name: public
         - name: nginx-proxy
           image: quay.io/ukhomeofficedigital/nginx-proxy-govuk:v3
           resources:

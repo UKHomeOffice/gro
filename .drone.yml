@@ -7,7 +7,7 @@ environment:
   APP_NAME: general-registrars-office
   PROD_ENV: gro-form
   STG_ENV: gro-form-preprod
-  # UAT_ENV: gro-form-uat
+  UAT_ENV: gro-form-uat
   BRANCH_ENV: gro-form-dev
   PRODUCTION_URL: www.certificate-enquiries.homeoffice.gov.uk
   IMAGE_URL: quay.io/ukhomeofficedigital
@@ -244,7 +244,7 @@ steps:
       IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
       LOCAL_IMAGE: true
       TOLERATE: medium
-      WHITELIST_FILE: hof-cve-exceptions/general-registrars-office.txt
+      WHITELIST_FILE: hof-services-config/General_Registrars_Office/anchore-cve-exceptions.txt
     when:
       branch: master
       event: pull_request
@@ -398,10 +398,15 @@ steps:
       event: cron
 
   # CRON job steps that runs security scans using Snyk & Anchore
-  - name: cron_clone_repos
+  - name: clone_repos
     image: alpine/git
+    environment:
+      DRONE_GIT_USERNAME:
+        from_secret: drone_git_username
+      DRONE_GIT_TOKEN:
+        from_secret: drone_git_token
     commands:
-      - git clone https://github.com/UKHomeOfficeForms/hof-cve-exceptions
+      - git clone https://$${DRONE_GIT_USERNAME}:$${DRONE_GIT_TOKEN}@github.com/UKHomeOfficeForms/hof-services-config.git
     when:
       cron: security_scans
       event: cron
@@ -438,7 +443,7 @@ steps:
       IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
       LOCAL_IMAGE: true
       TOLERATE: medium
-      WHITELIST_FILE: hof-cve-exceptions/general-registrars-office.txt
+      WHITELIST_FILE: hof-services-config/General_Registrars_Office/anchore-cve-exceptions.txt
     when:
       cron: security_scans
       event: cron
