@@ -1,6 +1,28 @@
 'use strict';
 
 const _ = require('lodash');
+const hof = require('hof');
+const config = require('../../config')
+const Address = require('./behaviours/address');
+const AddressLookup = require('./behaviours/address-lookup');
+const Postcode = require('./behaviours/postcode');
+const Confirm = require('./behaviours/confirm');
+const Summary = hof.components.summary;
+const Emailer = hof.components.emailer;
+
+const emailer = Emailer({
+  transport: config.email.transportType,
+  transportOptions: {
+    accessKeyId: config.email.accessKeyId,
+    secretAccessKey: config.email.secretAccessKey,
+    region: config.email.region
+  },
+  template: config.email.customViews,
+  from: config.email.from,
+  replyTo: config.email.replyTo,
+  recipient: 'email-text',
+  subject: 'Application Successful'
+});
 
 module.exports = {
   name: 'gro',
@@ -113,13 +135,7 @@ module.exports = {
       }
     },
     '/when': {
-      behaviours: require('./behaviours/when'),
-      fields: [
-        'when-date',
-        'when-date-day',
-        'when-date-month',
-        'when-date-year'
-      ],
+      fields: ['when-date'],
       next: '/name',
       locals: {
         section: 'order-details'
@@ -158,7 +174,7 @@ module.exports = {
       }
     },
     '/postcode': {
-      behaviours: require('./behaviours/postcode'),
+      behaviours: Postcode,
       fields: [
         'postcode-code'
       ],
@@ -177,7 +193,7 @@ module.exports = {
       }
     },
     '/address-lookup': {
-      behaviours: require('./behaviours/address-lookup'),
+      behaviours: AddressLookup,
       fields: [
         'address-lookup'
       ],
@@ -189,7 +205,7 @@ module.exports = {
       }
     },
     '/address': {
-      behaviours: require('./behaviours/address'),
+      behaviours: Address,
       fields: [
         'address-textarea'
       ],
@@ -201,11 +217,8 @@ module.exports = {
     },
     '/confirm': {
       next: '/confirmation',
-      // require('./behaviours/summary')
-      behaviours: [require('hof').components.summary, require('./behaviours/confirm')],
+      behaviours: [Confirm, Summary, emailer],
       fieldsConfig: _.cloneDeep(require('./fields')),
-      emailConfig: require('../../config').email,
-      customerEmailField: 'email-text',
       sections: require('./sections/summary-data-sections'),
       locals: {
         section: 'confirm'

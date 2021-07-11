@@ -172,15 +172,6 @@
     "legend": "When did you place your order?",
     "hint": "For example, 11  6  2015"
   },
-  "when-date-day": {
-    "label": "Day"
-  },
-  "when-date-month": {
-    "label": "Month"
-  },
-  "when-date-year": {
-    "label": "Year"
-  },
   "name-text": {
     "summary": "Full name",
     "label": "What is your full name?"

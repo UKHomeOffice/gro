@@ -1,13 +1,13 @@
 'use strict';
 
 const BaseController = sinon.stub();
-const AddressController = require('proxyquire')('../../../../../apps/gro/controllers/address', {
+const AddressController = require('proxyquire')('../../../../../apps/gro/behaviours/address', {
   'hof-controllers': {
     base: BaseController
   }
 });
 
-describe('apps/gro/controllers/address', () => {
+describe('Address Behaviour', () => {
 
   let controller;
   let req;
