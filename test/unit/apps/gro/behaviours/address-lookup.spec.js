@@ -4,9 +4,9 @@ const _ = require('lodash');
 const proxyquire = require('proxyquire');
 const BaseController = sinon.stub();
 
-const AddressLookupController = require('../../../../../apps/gro/controllers/address-lookup');
+const AddressLookupController = require('../../../../../apps/gro/behaviours/address-lookup');
 
-describe('apps/gro/controllers/address-lookup', () => {
+describe('Address Lookup Behaviour', () => {
 
   let controller;
   const req = {

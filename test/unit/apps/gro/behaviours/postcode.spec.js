@@ -4,7 +4,7 @@ const proxyquire = require('proxyquire');
 const BaseController = sinon.stub();
 class PostcodesModel {}
 
-describe('apps/gro/controllers/postcode', () => {
+describe('Postcode Behaviour', () => {
   let PostcodeController;
   let controller;
   const req = {};
@@ -16,7 +16,7 @@ describe('apps/gro/controllers/postcode', () => {
     sinon.stub(console, 'error');
 
     PostcodesModel.prototype.fetch = sinon.stub().returns(new Promise((resolve) => resolve()));
-    PostcodeController = proxyquire('../../../../../apps/gro/controllers/postcode', {
+    PostcodeController = proxyquire('../../../../../apps/gro/behaviours/postcode', {
       'hof-controllers': {
         base: BaseController
       },

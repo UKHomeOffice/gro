@@ -2,7 +2,7 @@
 
 const proxyquire = require('proxyquire');
 
-describe('Confirm Controller', () => {
+describe('Confirm Behaviour', () => {
   const req = {};
   const res = {};
   const cb = sinon.stub();
@@ -13,7 +13,7 @@ describe('Confirm Controller', () => {
   beforeEach(() => {
     StubController.prototype.get = sinon.stub();
     StubController.prototype.post = sinon.stub();
-    Controller = proxyquire('../../../../../apps/gro/controllers/confirm', {
+    Controller = proxyquire('../../../../../apps/gro/behaviours/confirm', {
       'hof-controllers': {
         confirm: StubController
       }

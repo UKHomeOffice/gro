@@ -32,16 +32,7 @@
     "express-partial-templates": "^0.2.1",
     "fstream": "^1.0.12",
     "growl": "^1.10.0",
-<<<<<<< HEAD
-    "hof-bootstrap": "^9.0.0",
-    "hof-controllers": "^6.1.0",
-    "hof-form-controller": "^6.2.2",
-    "hof-frontend-toolkit": "^1.0.1",
-    "hof-model": "^2.1.0",
-    "hof-transpiler": "^0.1.0",
-=======
-    "hof": "^19.2.0",
->>>>>>> Add all kube and drone updates with latest hof
+    "hof": "^19.3.2",
     "homeoffice-countries": "^0.1.0",
     "jquery": "^3.6.0",
     "js-yaml": "^3.13.1",

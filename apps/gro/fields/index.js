@@ -1,5 +1,7 @@
 'use strict';
 
+const hof = require('hof');
+const dateComponent = hof.components.date;
 
 module.exports = {
   'about-radio': {
@@ -93,12 +95,8 @@ module.exports = {
     validate: ['required', 'email'],
   },
   'how-radio': {
-    legend: {
-      className: 'visuallyhidden'
-    },
-    validate: ['required'],
-    className: ['block', 'form-group'],
     mixin: 'radio-group',
+    validate: ['required'],
     options: [{
       value: 'online',
       toggle: 'online-toggle-text',
@@ -106,26 +104,37 @@ module.exports = {
     }, {
       value: 'telephone',
       toggle: 'telephone-toggle-text',
-      child: `<div id='telephone-toggle-text-panel'>
-                <div class='panel-indent'>
-                  {{#input-text}}telephone-toggle-text{{/input-text}}
-                  {{#input-text}}telephone-toggle-text-2{{/input-text}}
-                </div>
-              </div>`
+      child: 'partials/how-telephone-details'
     },
-    'post'
-  ]
+    { value: 'post' }
+    ],
+    legend: {
+      className: 'visuallyhidden'
+    }
   },
   'online-toggle-text': {
-    validate: ['notUrl']
+    validate: ['required', 'notUrl'],
+    dependent: {
+      field: 'how-radio',
+      value: 'online'
+    }
   },
   'telephone-toggle-text': {
-    validate: ['notUrl']
+    validate: ['required', 'notUrl'],
+    dependent: {
+      field: 'how-radio',
+      value: 'telephone'
+    }
   },
   'telephone-toggle-text-2': {
-    validate: ['numeric',
+    validate: ['required', 'notUrl', 'numeric',
       {'type': 'minlength', 'arguments': [3]},
-      {'type': 'maxlength', 'arguments': [7]}]
+      {'type': 'maxlength', 'arguments': [7]}
+    ],
+    dependent: {
+      field: 'how-radio',
+      value: 'telephone'
+    }
   },
   'name-text': {
     labelClassName: 'visuallyhidden',
@@ -167,22 +176,9 @@ module.exports = {
       'partnership'
     ]
   },
-  'when-date': {},
-  'when-date-day': {
-    validate: ['required', 'numeric'],
-    includeInEmail: false,
-    includeInSummary: false
-  },
-  'when-date-month': {
-    validate: ['required', 'numeric'],
-    includeInEmail: false,
-    includeInSummary: false
-  },
-  'when-date-year': {
-    validate: ['required', 'numeric'],
-    includeInEmail: false,
-    includeInSummary: false
-  },
+  'when-date': dateComponent('when-date', {
+    validate: ['required', 'before']
+  }),
   'which-radio': {
     legend: {
       className: 'visuallyhidden'

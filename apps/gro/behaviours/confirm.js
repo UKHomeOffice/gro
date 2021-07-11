@@ -2,7 +2,6 @@
 
 module.exports = superclass => class ConfirmController extends superclass {
   get(req, res, callback) {
-    console.log(res.locals);
     this.removeDuplicateAddress(req);
     return super.get(req, res, callback);
   }
