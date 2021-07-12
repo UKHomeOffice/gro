@@ -55,8 +55,11 @@ steps:
     commands:
       - git clone https://$${DRONE_GIT_USERNAME}:$${DRONE_GIT_TOKEN}@github.com/UKHomeOfficeForms/hof-services-config.git
     when:
-      branch: master
-      event: pull_request
+      branch:
+        include:
+        - master
+        - feature/*
+      event: [push, pull_request]
 
   - name: setup
     pull: if-not-exists
