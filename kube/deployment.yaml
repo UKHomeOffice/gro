@@ -66,6 +66,15 @@ spec:
               {{ else }}
               value: redis
               {{ end }}
+            - name: NOTIFY_KEY
+              {{ if eq .NOTIFY_STUB "stub" }}
+              value: USE_MOCK
+              {{ else }}
+              valueFrom:
+                secretKeyRef:
+                  name: ril-notify-key
+                  key: ril-notify-key
+              {{ end }}
             {{ if or (eq .KUBE_NAMESPACE .STG_ENV) (eq .KUBE_NAMESPACE .PROD_ENV) }}
             - name: SESSION_SECRET
               valueFrom:

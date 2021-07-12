@@ -3,7 +3,7 @@ set -e
 
 export IGNORE_NETPOL=("acp-deny-all")
 export IGNORE_CONFIGMAP=("bundle")
-export IGNORE_SECRET=()
+export IGNORE_SECRET=("notify-key")
 
 export kubectl="kubectl --insecure-skip-tls-verify --server=$KUBE_SERVER --namespace=$KUBE_NAMESPACE --token=$KUBE_TOKEN"
 
