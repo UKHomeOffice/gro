@@ -6,9 +6,9 @@ type: kubernetes
 environment:
   APP_NAME: general-registrars-office
   PROD_ENV: gro-form
-  STG_ENV: gro-form-preprod
+  STG_ENV: gro-form-stg
   UAT_ENV: gro-form-uat
-  BRANCH_ENV: gro-form-dev
+  BRANCH_ENV: gro-form-branch
   PRODUCTION_URL: www.certificate-enquiries.homeoffice.gov.uk
   IMAGE_URL: quay.io/ukhomeofficedigital
   IMAGE_REPO: gro-form
