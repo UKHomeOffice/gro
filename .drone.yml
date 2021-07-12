@@ -16,6 +16,7 @@ environment:
   HOF_CONFIG: hof-services-config/General_Registrars_Office
   NON_PROD_AVAILABILITY: Mon-Fri 08:00-19:00 Europe/London
   READY_FOR_TEST_DELAY: 20s
+  NOTIFY_STUB: off
 
 trigger:
   branch:
@@ -158,6 +159,7 @@ steps:
     pull: if-not-exists
     image: quay.io/ukhomeofficedigital/kd:v1.14.0
     environment:
+      # NOTIFY_STUB: stub
       KUBE_SERVER:
         from_secret: kube_server_dev
       KUBE_TOKEN_GRO_ACP_NOTPROD:
