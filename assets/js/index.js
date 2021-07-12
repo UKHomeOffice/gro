@@ -1,5 +1,6 @@
 'use strict';
 
+require('hof/frontend/themes/gov-uk/client-js');
 var toolkit = require('hof/frontend/toolkit');
 var helpers = toolkit.helpers;
 var progressiveReveal = toolkit.progressiveReveal;
