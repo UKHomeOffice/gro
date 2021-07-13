@@ -21,7 +21,7 @@ module.exports = {
     secretAccessKey: process.env.AWS_PASSWORD || '',
     transportType: process.env.SEND_TYPE || 'ses',
     region: process.env.EMAIL_REGION || '',
-    customViews: path.resolve(__dirname, ('./apps/gro/views/email/'))
+    customViews: path.resolve(__dirname, ('./apps/gro/views/email/layout.html'))
   },
   ga: {
     tagId: process.env.GA_TAG
