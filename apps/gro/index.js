@@ -8,35 +8,8 @@ const AddressLookup = require('./behaviours/address-lookup');
 const Postcode = require('./behaviours/postcode');
 const Confirm = require('./behaviours/confirm');
 const Summary = hof.components.summary;
-const Emailer = hof.components.emailer;
-
-const applicantEmailer = Emailer({
-  transport: config.email.transportType,
-  transportOptions: {
-    accessKeyId: config.email.accessKeyId,
-    secretAccessKey: config.email.secretAccessKey,
-    region: config.email.region
-  },
-  template: config.email.customViews,
-  from: config.email.from,
-  replyTo: config.email.replyTo,
-  recipient: 'email-text',
-  subject: 'Application Successful'
-});
-
-const caseworkerEmailer = Emailer({
-  transport: config.email.transportType,
-  transportOptions: {
-    accessKeyId: config.email.accessKeyId,
-    secretAccessKey: config.email.secretAccessKey,
-    region: config.email.region
-  },
-  template: config.email.customViews,
-  from: config.email.from,
-  replyTo: config.email.replyTo,
-  recipient: config.email.caseworker,
-  subject: 'Application Received'
-});
+const ApplicantEmailer = require('./behaviours/applicant_emailer')(config.email);
+const CaseworkerEmailer = require('./behaviours/caseworker_emailer')(config.email);
 
 module.exports = {
   name: 'gro',
@@ -231,8 +204,7 @@ module.exports = {
     },
     '/confirm': {
       next: '/confirmation',
-      behaviours: [Confirm, Summary, applicantEmailer, caseworkerEmailer],
-      fieldsConfig: _.cloneDeep(require('./fields')),
+      behaviours: [Confirm, Summary, ApplicantEmailer, CaseworkerEmailer],
       sections: require('./sections/summary-data-sections'),
       locals: {
         section: 'confirm'
