@@ -1,7 +1,7 @@
 
 <p>GRO enquiry form has been submitted, with details as follows:</p>
 
-<h4>Your enquiry details</h4>
+<h4>{{enquiryHeader}}</h4>
 <table width="100%" cellspacing="0" cellpadding="0" rules="none">
   {{#enquiryDetails}}
   {{#value}}
@@ -12,7 +12,7 @@
   {{/value}}
   {{/enquiryDetails}}
 </table>
-<h4>Your order details</h4>
+<h4>{{orderHeader}}</h4>
 <table width="100%" cellspacing="0" cellpadding="0" rules="none">
   {{#orderDetails}}
   {{#value}}
@@ -23,7 +23,7 @@
   {{/value}}
   {{/orderDetails}}
 </table>
-<h4>Your personal and contact details</h4>
+<h4>{{contactHeader}}</h4>
 <table width="100%" cellspacing="0" cellpadding="0" rules="none">
   {{#personalDetails}}
   {{#value}}
