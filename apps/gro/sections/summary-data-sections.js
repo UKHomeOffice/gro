@@ -6,11 +6,15 @@ module.exports = {
   'enquiry-details': [
     'about-radio',
     'type-radio',
+    'additional-names',
     'details-text',
     'existing-radio',
     'previous-radio',
     'person-one',
-    'person-two'
+    'person-two',
+    'person-text',
+    'additional-text',
+    'additional-radio'
   ],
   'order-details': [
     'how-radio',
@@ -24,6 +28,8 @@ module.exports = {
     'name-text',
     'email-text',
     'country-select',
-    'address-textarea'
+    'address-lookup',
+    'address-textarea',
+    'postcode-code'
   ]
 };
