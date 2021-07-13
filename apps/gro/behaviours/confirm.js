@@ -1,7 +1,10 @@
 'use strict';
 
+const uuidv1 = require('uuid/v1');
+
 module.exports = superclass => class ConfirmController extends superclass {
   get(req, res, callback) {
+    req.sessionModel.set('uniqueId', uuidv1());
     this.removeDuplicateAddress(req);
     return super.get(req, res, callback);
   }

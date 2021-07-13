@@ -8,6 +8,7 @@ process.title = 'gro';
 module.exports = {
   env: process.env.NODE_ENV,
   PRETTY_DATE_FORMAT: 'Do MMMM YYYY',
+  dateTimeFormat: 'DD-MM-YYYY, hh:mma',
   redis: {
     port: process.env.REDIS_PORT || 6379,
     host: process.env.REDIS_HOST || '127.0.0.1',
@@ -15,13 +16,15 @@ module.exports = {
   },
   email: {
     caseworker: process.env.CASEWORKER_EMAIL || '',
+    applicant: 'email-text',
     from: process.env.FROM_ADDRESS || '',
     replyTo: process.env.REPLY_TO || '',
-    accessKeyId: process.env.AWS_USER || '',
-    secretAccessKey: process.env.AWS_PASSWORD || '',
-    transportType: process.env.SEND_TYPE || 'ses',
-    region: process.env.EMAIL_REGION || '',
-    customViews: path.resolve(__dirname, ('./apps/gro/views/email/layout.html'))
+    transport: process.env.SEND_TYPE || 'ses',
+    transportOptions: {
+      accessKeyId: process.env.AWS_USER || '',
+      secretAccessKey: process.env.AWS_PASSWORD || '',
+      region: process.env.EMAIL_REGION || '',
+    }
   },
   ga: {
     tagId: process.env.GA_TAG

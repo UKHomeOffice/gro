@@ -1,18 +1,15 @@
 
-const moment = require('moment');
-const config = require('../../../config');
-
 module.exports = {
   'enquiry-details': [
     'about-radio',
     'type-radio',
-    'additional-names',
     'details-text',
     'existing-radio',
     'previous-radio',
     'person-one',
     'person-two',
     'person-text',
+    'additional-names',
     'additional-text',
     'additional-radio'
   ],
