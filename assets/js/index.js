@@ -1,13 +1,6 @@
 'use strict';
 
 require('hof/frontend/themes/gov-uk/client-js');
-var toolkit = require('hof/frontend/toolkit');
-var helpers = toolkit.helpers;
-var progressiveReveal = toolkit.progressiveReveal;
-var formFocus = toolkit.formFocus;
-
-helpers.documentReady(progressiveReveal);
-helpers.documentReady(formFocus);
 
 var $ = require('jquery');
 var typeahead = require('typeahead-aria');
