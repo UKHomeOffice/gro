@@ -14,7 +14,7 @@ environment:
   IMAGE_REPO: gro-form
   GIT_REPO: UKHomeOffice/gro
   HOF_CONFIG: hof-services-config/General_Registrars_Office
-  NON_PROD_AVAILABILITY: Mon-Fri 08:00-19:00 Europe/London
+  NON_PROD_AVAILABILITY: Mon-Fri 08:00-23:00 Europe/London
   READY_FOR_TEST_DELAY: 20s
   NOTIFY_STUB: stub
 
