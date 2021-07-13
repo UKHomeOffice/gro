@@ -1,37 +1,36 @@
 
 <p>Thank you for your enquiry. You will receive a response in due course.</p>
 
-<h4>Your enquiry details</h4>
+<h4>{{enquiryHeader}}</h4>
 <table width="100%" cellspacing="0" cellpadding="0" rules="none">
   {{#enquiryDetails}}
-    {{#value}}
-      <tr>
-        <td width="40%" style="padding: 15px 0;border-bottom:1px solid #ccc;">{{label}}</td>
-        <td width="60%" style="padding: 15px 0;border-bottom:1px solid #ccc;">{{value}}</td>
-      </tr>
-    {{/value}}
+  {{#value}}
+  <tr>
+    <td width="40%" style="padding: 15px 0;border-bottom:1px solid #ccc;">{{label}}</td>
+    <td width="60%" style="padding: 15px 0;border-bottom:1px solid #ccc;">{{value}}</td>
+  </tr>
+  {{/value}}
   {{/enquiryDetails}}
 </table>
-<h4>Your order details</h4>
+<h4>{{orderHeader}}</h4>
 <table width="100%" cellspacing="0" cellpadding="0" rules="none">
   {{#orderDetails}}
-    {{#value}}
-      <tr>
-        <td width="40%" style="padding: 15px 0;border-bottom:1px solid #ccc;">{{label}}</td>
-        <td width="60%" style="padding: 15px 0;border-bottom:1px solid #ccc;">{{value}}</td>
-      </tr>
-    {{/value}}
+  {{#value}}
+  <tr>
+    <td width="40%" style="padding: 15px 0;border-bottom:1px solid #ccc;">{{label}}</td>
+    <td width="60%" style="padding: 15px 0;border-bottom:1px solid #ccc;">{{value}}</td>
+  </tr>
+  {{/value}}
   {{/orderDetails}}
 </table>
-<h4>Your personal and contact details</h4>
+<h4>{{contactHeader}}</h4>
 <table width="100%" cellspacing="0" cellpadding="0" rules="none">
   {{#personalDetails}}
-    {{#value}}
-      <tr>
-        <td width="40%" style="padding: 15px 0;border-bottom:1px solid #ccc;">{{label}}</td>
-        <td width="60%" style="padding: 15px 0;border-bottom:1px solid #ccc;">{{value}}</td>
-      </tr>
-    {{/value}}
+  {{#value}}
+  <tr>
+    <td width="40%" style="padding: 15px 0;border-bottom:1px solid #ccc;">{{label}}</td>
+    <td width="60%" style="padding: 15px 0;border-bottom:1px solid #ccc;">{{value}}</td>
+  </tr>
+  {{/value}}
   {{/personalDetails}}
 </table>
-

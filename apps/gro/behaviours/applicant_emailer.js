@@ -44,6 +44,9 @@ const parse = (model, translate) => {
   ];
 
   return {
+    enquiryHeader: translate(`pages.enquiry-details`),
+    orderHeader: translate(`pages.order-details`),
+    contactHeader: translate(`pages.contact-details`),
     enquiryDetails: [
       { label: getLabel('uniqueId'), value: model.uniqueId },
       { label: getLabel('submitted'), value: moment().format(config.dateTimeFormat) },
