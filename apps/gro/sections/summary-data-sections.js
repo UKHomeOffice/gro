@@ -24,9 +24,10 @@ module.exports = {
   'contact-details': [
     'name-text',
     'email-text',
-    'country-select',
-    'address-lookup',
-    'address-textarea',
-    'postcode-code'
+    'building',
+    'street',
+    'townOrCity',
+    'postcode',
+    'country-select'
   ]
 };

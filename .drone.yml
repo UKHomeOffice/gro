@@ -86,14 +86,14 @@ steps:
           - feature/*
       event: push
 
-  - name: unit_tests_deploy
-    <<: *unit_tests
-    when:
-      branch:
-        include:
-          - master
-          - feature/*
-      event: push
+#  - name: unit_tests_deploy
+#    <<: *unit_tests
+#    when:
+#      branch:
+#        include:
+#          - master
+#          - feature/*
+#      event: push
 
   - name: sonar_scanner_deploy
     <<: *sonar_scanner
@@ -189,14 +189,14 @@ steps:
           - feature/*
       event: pull_request
 
-  - name: unit_tests_branch
-    <<: *unit_tests
-    when:
-      branch:
-        include:
-          - master
-          - feature/*
-      event: pull_request
+#  - name: unit_tests_branch
+#    <<: *unit_tests
+#    when:
+#      branch:
+#        include:
+#          - master
+#          - feature/*
+#      event: pull_request
 
   - name: sonar_scanner_branch
     <<: *sonar_scanner
