@@ -5,7 +5,6 @@ const Emailer = hof.components.emailer;
 const path = require('path');
 const moment = require('moment');
 const config = require('../../../config');
-const sections = require('../sections/summary-data-sections.js');
 const fields = require('../translations/src/en/fields.json');
 const _ = require('lodash');
 
@@ -45,9 +44,9 @@ const parse = (model, translate) => {
   ];
 
   return {
-    enquiryHeader: translate(`pages.enquiry-details`),
-    orderHeader: translate(`pages.order-details`),
-    contactHeader: translate(`pages.contact-details`),
+    enquiryHeader: translate('pages.enquiry-details'),
+    orderHeader: translate('pages.order-details'),
+    contactHeader: translate('pages.contact-details'),
     enquiryDetails: [
       { label: getLabel('uniqueId'), value: model.uniqueId },
       { label: getLabel('submitted'), value: moment().format(config.dateTimeFormat) },

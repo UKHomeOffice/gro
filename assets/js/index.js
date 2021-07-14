@@ -1,3 +1,4 @@
+/* eslint-disable no-var, vars-on-top, func-names */
 'use strict';
 
 require('hof/frontend/themes/gov-uk/client-js');
