@@ -1,6 +1,5 @@
-/* eslint implicit-dependencies/no-implicit: [2, {dev:true}] */
-
 'use strict';
+
 const router = require('express').Router();
 
 module.exports = router.use('/api/postcode-test', (req, res) => {

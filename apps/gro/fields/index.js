@@ -109,8 +109,8 @@ module.exports = {
   },
   'telephone-toggle-text-2': {
     validate: ['required', 'numeric',
-      {'type': 'minlength', 'arguments': [3]},
-      {'type': 'maxlength', 'arguments': [7]}
+      { type: 'minlength', arguments: [3] },
+      { type: 'maxlength', arguments: [7] }
     ],
     dependent: {
       field: 'how-radio',

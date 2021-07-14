@@ -1,7 +1,5 @@
 'use strict';
 
-const path = require('path');
-
 process.title = 'gro';
 
 /* eslint no-process-env: 0 */
@@ -23,7 +21,7 @@ module.exports = {
     transportOptions: {
       accessKeyId: process.env.AWS_USER || '',
       secretAccessKey: process.env.AWS_PASSWORD || '',
-      region: process.env.EMAIL_REGION || '',
+      region: process.env.EMAIL_REGION || ''
     }
   },
   ga: {
