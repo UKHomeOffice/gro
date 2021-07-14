@@ -1,0 +1,19 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .APP_NAME }}-external
+{{ file .INGRESS_EXTERNAL_ANNOTATIONS | indent 2 }}
+spec:
+  tls:
+    - hosts:
+        - {{ .PRODUCTION_URL }}
+      secretName: {{ .APP_NAME }}-external
+  rules:
+    - host: {{ .PRODUCTION_URL }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ .APP_NAME }}
+              servicePort: 10443

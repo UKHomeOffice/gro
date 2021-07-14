@@ -12,24 +12,95 @@
     "header": "Additional information"
   },
   "country": {
-    "header": "What is your address?"
+    "header": "What country is your address located?"
   },
   "address": {
     "header": "What is your address?",
-    "edit": "Change",
-    "cantfind": "I can't find my address in the list",
-    "postcode-api": {
-      "not-found": "Sorry – we couldn’t find any addresses for that postcode, enter your address manually",
-      "cant-connect": "Sorry – we couldn’t connect to the postcode lookup service at this time, enter your address manually"
-    }
-  },
-  "postcode": {
-    "header": "What is your address?",
-    "manual": "Enter manually"
+    "intro": "If you have no fixed address, enter an address where we can contact you."
   },
   "confirm": {
     "header": "Is the information you have given us correct?",
-    "subheader": "If any information is incorrect, you can change it here."
+    "subheader": "If any information is incorrect, you can change it here.",
+    "fields": {
+      "uniqueId": {
+        "label": "Submission ID"
+      },
+      "submitted": {
+        "label": "Submission Date"
+      },
+      "about-radio": {
+        "label": "Reason for contact"
+      },
+      "type-radio": {
+        "label": "Type of certificate"
+      },
+      "person-text": {
+        "label": "Name on certificate requested"
+      },
+      "additional-names": {
+        "label": "Name(s) on certificate received"
+      },
+      "additional-text": {
+        "label": "Further description"
+      },
+      "additional-radio": {
+        "label": "Have you previously been in contact about this enquiry?"
+      },
+      "details-text": {
+        "label": "Further description"
+      },
+      "existing-radio": {
+        "label": "About an existing order?"
+      },
+      "previous-radio": {
+        "label": "Have you already enquired about this issue?"
+      },
+      "person-one": {
+        "label": "Party one on certificate requested"
+      },
+      "person-two": {
+        "label": "Party two on certificate requested"
+      },
+      "how-radio": {
+        "label": "How was the order placed?"
+      },
+      "online-toggle-text": {
+        "label": "COL Number"
+      },
+      "telephone-toggle-text": {
+        "label": "Order Number"
+      },
+      "telephone-toggle-text-2": {
+        "label": "Account Number"
+      },
+      "which-radio": {
+        "label": "Service"
+      },
+      "when-date": {
+        "label": "Date of application"
+      },
+      "name-text": {
+        "label": "Full Name"
+      },
+      "email-text": {
+        "label": "Email address"
+      },
+      "country-select": {
+        "label": "Country"
+      },
+      "building": {
+        "label": "Building and street"
+      },
+      "street": {
+        "label": "Address line 2"
+      },
+      "townOrCity": {
+        "label": "Town or city"
+      },
+      "postcode": {
+        "label": "Postcode"
+      }
+    }
   },
   "confirmation": {
     "header": "Thank you for contacting the General Register Office.",
