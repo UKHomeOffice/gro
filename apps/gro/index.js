@@ -2,11 +2,8 @@
 
 const _ = require('lodash');
 const hof = require('hof');
-const config = require('../../config')
-const Address = require('./behaviours/address');
-const AddressLookup = require('./behaviours/address-lookup');
-const Postcode = require('./behaviours/postcode');
-const Confirm = require('./behaviours/confirm');
+const config = require('../../config');
+const CountrySelect = require('./behaviours/country-select');
 const Summary = hof.components.summary;
 const ApplicantEmailer = require('./behaviours/applicant_emailer')(config.email);
 const CaseworkerEmailer = require('./behaviours/caseworker_emailer')(config.email);
@@ -143,68 +140,25 @@ module.exports = {
       }
     },
     '/country': {
+      behaviours: CountrySelect,
       fields: [
         'country-select'
       ],
-      forks: [{
-        target: '/postcode',
-        condition: {
-          field: 'country-select',
-          value: 'United Kingdom'
-        }
-      }],
       continueOnEdit: true,
       next: '/address',
-      locals: {
-        section: 'contact-details',
-        subsection: 'address'
-      }
-    },
-    '/postcode': {
-      behaviours: Postcode,
-      fields: [
-        'postcode-code'
-      ],
-      forks: [{
-        target: '/address-lookup',
-        condition(req) {
-          const addresses = req.sessionModel.get('addresses');
-          return addresses && addresses.length;
-        }
-      }],
-      continueOnEdit: true,
-      next: '/address',
-      locals: {
-        section: 'contact-details',
-        subsection: 'address'
-      }
-    },
-    '/address-lookup': {
-      behaviours: AddressLookup,
-      fields: [
-        'address-lookup'
-      ],
-      continueOnEdit: true,
-      next: '/confirm',
       locals: {
         section: 'contact-details',
         subsection: 'address'
       }
     },
     '/address': {
-      behaviours: Address,
-      fields: [
-        'address-textarea'
-      ],
+      fields: ['building', 'street', 'townOrCity', 'postcode'],
       next: '/confirm',
-      locals: {
-        section: 'contact-details',
-        subsection: 'address'
-      }
+      continueOnEdit: true
     },
     '/confirm': {
       next: '/confirmation',
-      behaviours: [Confirm, Summary, ApplicantEmailer, CaseworkerEmailer],
+      behaviours: [Summary, ApplicantEmailer, CaseworkerEmailer],
       sections: require('./sections/summary-data-sections'),
       locals: {
         section: 'confirm'

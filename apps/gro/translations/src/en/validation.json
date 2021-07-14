@@ -71,14 +71,13 @@
     "default": "Enter your country",
     "equal": "Pick a country from the list"
   },
-  "postcode-code": {
-    "postcode": "This postcode isn't valid, enter a valid postcode",
+  "building": {
+    "default": "Enter details of your building and street"
+  },
+  "townOrCity": {
+    "default": "Enter a town or city"
+  },
+  "postcode": {
     "default": "Enter your postcode"
-  },
-  "address-textarea": {
-    "default": "Enter your address"
-  },
-  "address-lookup": {
-    "default": "Select an address"
   }
 }

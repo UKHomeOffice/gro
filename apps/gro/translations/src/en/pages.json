@@ -12,20 +12,11 @@
     "header": "Additional information"
   },
   "country": {
-    "header": "What is your address?"
+    "header": "What country is your address located?"
   },
   "address": {
     "header": "What is your address?",
-    "edit": "Change",
-    "cantfind": "I can't find my address in the list",
-    "postcode-api": {
-      "not-found": "Sorry – we couldn’t find any addresses for that postcode, enter your address manually",
-      "cant-connect": "Sorry – we couldn’t connect to the postcode lookup service at this time, enter your address manually"
-    }
-  },
-  "postcode": {
-    "header": "What is your address?",
-    "manual": "Enter manually"
+    "intro": "If you have no fixed address, enter an address where we can contact you."
   },
   "confirm": {
     "header": "Is the information you have given us correct?",
@@ -97,8 +88,17 @@
       "country-select": {
         "label": "Country"
       },
-      "address-textarea": {
-        "label": "Address"
+      "building": {
+        "label": "Building and street"
+      },
+      "street": {
+        "label": "Address line 2"
+      },
+      "townOrCity": {
+        "label": "Town or city"
+      },
+      "postcode": {
+        "label": "Postcode"
       }
     }
   },

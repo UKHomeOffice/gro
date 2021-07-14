@@ -23,6 +23,7 @@ module.exports = {
   'additional-names': {
     validate: ['notUrl'],
     mixin: 'textarea',
+    validate: ['notUrl'],
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
     useWhen: {
@@ -45,29 +46,10 @@ module.exports = {
       'no'
     ]
   },
-  'address-lookup': {
-    className: ['address'],
-    includeInEmail: false
-  },
-  'address-textarea': {
-    mixin: 'textarea',
-    validate: ['required', 'notUrl'],
-    'ignore-defaults': true,
-    formatter: ['trim', 'hyphens']
-  },
-  'country-select': {
-    mixin: 'select',
-    className: ['typeahead', 'js-hidden'],
-    options: [''].concat(require('homeoffice-countries').allCountries),
-    legend: {
-      className: 'visuallyhidden'
-    },
-    validate: ['required']
-  },
   'details-text': {
     labelClassName: 'visuallyhidden',
     mixin: 'textarea',
-    validate: ['required'],
+    validate: ['required', 'notUrl'],
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens']
   },
@@ -127,7 +109,7 @@ module.exports = {
     }
   },
   'telephone-toggle-text-2': {
-    validate: ['required', 'notUrl', 'numeric',
+    validate: ['required', 'numeric',
       {'type': 'minlength', 'arguments': [3]},
       {'type': 'maxlength', 'arguments': [7]}
     ],
@@ -144,7 +126,7 @@ module.exports = {
   'person-one': {
     labelClassName: 'visuallyhidden',
     mixin: 'input-text',
-    validate: ['required', 'notUrl'],
+    validate: ['required', 'notUrl']
   },
   'person-two': {
     mixin: 'input-text',
@@ -154,12 +136,6 @@ module.exports = {
     labelClassName: 'visuallyhidden',
     mixin: 'input-text',
     validate: ['required', 'notUrl']
-  },
-  'postcode-code': {
-    mixin: 'input-text-code',
-    validate: ['required', 'postcode'],
-    formatter: 'uppercase',
-    includeInSummary: false
   },
   'type-radio': {
     legend: {
@@ -190,5 +166,28 @@ module.exports = {
       'standard',
       'priority'
     ]
+  },
+  'country-select': {
+    mixin: 'select',
+    className: ['typeahead', 'js-hidden'],
+    options: [''].concat(require('homeoffice-countries').allCountries),
+    legend: {
+      className: 'visuallyhidden'
+    },
+    validate: ['required']
+  },
+  building: {
+    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 100 }]
+  },
+  street: {
+    validate: ['notUrl', { type: 'maxlength', arguments: 50 }],
+    labelClassName: 'visuallyhidden'
+  },
+  townOrCity: {
+    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 100 }]
+  },
+  postcode: {
+    validate: ['required', 'postcode'],
+    formatter: ['removespaces', 'uppercase']
   }
 };

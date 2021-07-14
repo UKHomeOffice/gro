@@ -15,8 +15,7 @@
   "scripts": {
     "start": "node server.js",
     "start:dev": "hof-build watch",
-    "test": "npm run test:unit && npm run test:lint",
-    "test:unit": "nyc _mocha \"test/unit/**/*.spec.js\"",
+    "test": "npm run test:lint",
     "test:acceptance": "cd acceptance_tests/; bundle install && cucumber",
     "test:lint": "eslint . --config ./node_modules/eslint-config-hof/default.js",
     "test:snyk": "snyk config set api=SNYK_TOKEN && snyk test",
