@@ -12,8 +12,8 @@
 
 ```bash
 $ cd gro
-$ npm install
-$ npm run dev
+$ yarn
+$ yarn run start:dev
 ```
 
 Then visit: [http://localhost:8080/](http://localhost:8080/)
@@ -21,7 +21,7 @@ Then visit: [http://localhost:8080/](http://localhost:8080/)
 ## Testing
 
 ### Acceptance Tests
-With the server running in development mode (`npm run dev`), start the acceptance tests:
+With the server running in development mode (`yarn run start:dev`), start the acceptance tests:
 
 ```bash
 $ npm run test:acceptance
@@ -30,7 +30,7 @@ Phantomjs is required to run the acceptance tests (`npm install phantomjs`), or 
 
 ### Unit Tests
 ```bash
-$ npm t
+$ yarn test
 ```
 
 ## Contributing
@@ -46,5 +46,3 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 This project is licensed under the GPLv2 License - see the [LICENSE.md](LICENSE.md) file for details
 
 The General Registrars Office uses BrowserStack for mobile and desktop testing https://www.browserstack.com/
-
-
