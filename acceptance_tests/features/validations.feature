@@ -203,3 +203,34 @@ Feature: I see the correct error messages in the form
     Then I am taken to the address page of the form
     When I click continue
     Then I should see the address_lookup error
+
+    @name @not_url_error
+    Scenario: notUrl validation name-field
+    Given I am on the start page for the form
+    Then I can see the questions for the about page of the form
+    When I click not_received and then continue
+    Then I am taken to the type page of the form
+    When I click birth and then continue
+    Then I am taken to the person page of the form
+    When I enter url into the person-text field
+    And I click continue
+    Then I should see the not_url_error error
+
+    @address @not_url_error
+    Scenario: notUrl validation address-field
+    Given I am on the start page for the form
+    Then I can see the questions for the about page of the form
+    When I click not_received and then continue
+    Then I am taken to the type page of the form
+    When I click birth and then continue
+    Then I am taken to the person page of the form
+    When I enter my full name into the person-text field
+    And I click continue
+    When I enter url into the additional-text field
+    And I click continue
+    Then I should see the not_url_error error
+
+
+
+
+
