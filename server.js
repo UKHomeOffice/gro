@@ -18,15 +18,4 @@ if (config.env === 'ci') {
 
 const app = hof(settings);
 
-app.use('/cookies', (req, res, next) => {
-  res.locals.serviceName = 'General Registrars Office Service';
-  next();
-});
-
-app.use((req, res, next) => {
-  res.locals.serviceName = 'General Registrars Office Service';
-  res.locals.htmlLang = 'en';
-  next();
-});
-
 module.exports = app;
