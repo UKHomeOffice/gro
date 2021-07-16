@@ -52,6 +52,7 @@ postcode_code: 'postcode-code'
 address_textarea: 'address-textarea'
 
 #Content
+url: 'www.google.co.uk'
 free_text: 'Something, something, something dark side'
 alt_text: 'Zero Code === Zero Bugs'
 col_number: 'COL123456/2015'
@@ -155,3 +156,4 @@ postcode_missing_error: 'Enter your postcode'
 postcode_invalid_error: "This postcode isn't valid, enter a valid postcode"
 address_textarea_error: 'Enter your address'
 address_lookup_error: 'Select an address'
+not_url_error: 'Ensure there are no URLs present in the text area'

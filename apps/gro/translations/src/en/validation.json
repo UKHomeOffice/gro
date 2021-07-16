@@ -30,10 +30,15 @@
     }
   },
   "person-text": {
-    "required": "Enter a full name"
+    "required": "Enter a full name",
+    "notUrl" : "Ensure there are no URLs present in the text area"
   },
   "person-one": {
-    "required": "Enter a full name"
+    "required": "Enter a full name",
+    "notUrl" : "Ensure there are no URLs present in the text area"
+  },
+  "person-two": {
+    "notUrl" : "Ensure there are no URLs present in the text area"
   },
   "additional-radio": {
     "required": "Tell us if you have previously been in contact about this enquiry"
@@ -56,7 +61,8 @@
     "future": "The date is in the future"
   },
   "name-text": {
-    "required": "Tell us your full name"
+    "required": "Tell us your full name",
+    "notUrl" : "Ensure there are no URLs present in the text area"
   },
   "email-text": {
     "required": "Enter an email address",
@@ -71,9 +77,16 @@
     "required": "Enter your postcode"
   },
   "address-textarea": {
-    "required": "Enter your address"
+    "required": "Enter your address",
+    "notUrl" : "Ensure there are no URLs present in the text area"
   },
   "address-lookup": {
     "required": "Select an address"
+  },
+  "additional-text" : {
+    "notUrl" : "Ensure there are no URLs present in the text area"
+  },
+  "additional-names" : {
+    "notUrl" : "Ensure there are no URLs present in the text area"
   }
 }

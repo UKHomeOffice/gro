@@ -1,5 +1,6 @@
 'use strict';
 
+
 module.exports = {
   'about-radio': {
     legend: {
@@ -18,6 +19,7 @@ module.exports = {
     ]
   },
   'additional-names': {
+    validate: ['notUrl'],
     mixin: 'textarea',
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens'],
@@ -28,6 +30,7 @@ module.exports = {
   },
   'additional-text': {
     mixin: 'textarea',
+    validate: ['notUrl'],
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens']
   },
@@ -46,7 +49,7 @@ module.exports = {
   },
   'address-textarea': {
     mixin: 'textarea',
-    validate: ['required'],
+    validate: ['required', 'notUrl'],
     'ignore-defaults': true,
     formatter: ['trim', 'hyphens']
   },
@@ -87,7 +90,7 @@ module.exports = {
   'email-text': {
     labelClassName: 'visuallyhidden',
     mixin: 'input-text',
-    validate: ['required', 'email']
+    validate: ['required', 'email'],
   },
   'how-radio': {
     legend: {
@@ -113,8 +116,12 @@ module.exports = {
     'post'
   ]
   },
-  'online-toggle-text': {},
-  'telephone-toggle-text': {},
+  'online-toggle-text': {
+    validate: ['notUrl']
+  },
+  'telephone-toggle-text': {
+    validate: ['notUrl']
+  },
   'telephone-toggle-text-2': {
     validate: ['numeric',
       {'type': 'minlength', 'arguments': [3]},
@@ -123,20 +130,21 @@ module.exports = {
   'name-text': {
     labelClassName: 'visuallyhidden',
     mixin: 'input-text',
-    validate: ['required']
+    validate: ['required', 'notUrl']
   },
   'person-one': {
     labelClassName: 'visuallyhidden',
     mixin: 'input-text',
-    validate: ['required'],
+    validate: ['required', 'notUrl'],
   },
   'person-two': {
     mixin: 'input-text',
+    validate: ['notUrl']
   },
   'person-text': {
     labelClassName: 'visuallyhidden',
     mixin: 'input-text',
-    validate: ['required']
+    validate: ['required', 'notUrl']
   },
   'postcode-code': {
     mixin: 'input-text-code',
