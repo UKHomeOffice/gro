@@ -45,6 +45,10 @@ sonar_scanner: &sonar_scanner
   commands:
     - sonar-scanner -Dproject.settings=./sonar-project.properties
 
+acceptance_tests: &acceptance_tests
+  pull: if-not-exists
+  image: mcr.microsoft.com/playwright:v1.12.3-focal
+
 steps:
   - name: clone_repos
     image: alpine/git
@@ -104,29 +108,13 @@ steps:
           - feature/*
       event: push
 
-  - name: build_acceptance_deploy
-    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
+  - name: acceptance_tests_uat
+    <<: *acceptance_tests
     commands:
-      - docker build --no-cache -f Dockerfile-acceptance -t acceptance-$${DRONE_COMMIT_SHA} .
+      - export ACCEPTANCE_HOST_NAME=https://$${APP_NAME}.uat.internal.sas-notprod.homeoffice.gov.uk
+      - npm run test:acceptance
     when:
-      branch:
-        include:
-          - master
-          - feature/*
-      event: push
-
-  - name: test_acceptance_deploy
-    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
-    commands:
-    - docker run -d --name=redis-$${DRONE_COMMIT_SHA} redis
-    - docker run -d -e NODE_ENV=ci --name=$${IMAGE_REPO}-$${DRONE_COMMIT_SHA} --net=container:redis-$${DRONE_COMMIT_SHA} $${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
-    - docker run -e OPENSSL_CONF=/etc/ssl/ --rm --net=container:$${IMAGE_REPO}-$${DRONE_COMMIT_SHA} acceptance-$${DRONE_COMMIT_SHA}
-    - docker rm -vf "$${IMAGE_REPO}-$${DRONE_COMMIT_SHA}" "redis-$${DRONE_COMMIT_SHA}"
-    when:
-      branch:
-        include:
-          - master
-          - feature/*
+      branch: master
       event: push
 
   - name: build_image
@@ -207,21 +195,11 @@ steps:
           - feature/*
       event: pull_request
 
-  - name: build_acceptance_branch
-    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
+  - name: acceptance_tests_branch
+    <<: *acceptance_tests
     commands:
-      - docker build --no-cache -f Dockerfile-acceptance -t acceptance-$${DRONE_COMMIT_SHA} .
-    when:
-      branch: master
-      event: pull_request
-
-  - name: test_acceptance_branch
-    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
-    commands:
-    - docker run -d --name=redis-$${DRONE_COMMIT_SHA} redis
-    - docker run -d -e NODE_ENV=ci --name=$${IMAGE_REPO}-$${DRONE_COMMIT_SHA} --net=container:redis-$${DRONE_COMMIT_SHA} $${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
-    - docker run -e OPENSSL_CONF=/etc/ssl/ --rm --net=container:$${IMAGE_REPO}-$${DRONE_COMMIT_SHA} acceptance-$${DRONE_COMMIT_SHA}
-    - docker rm -vf "$${IMAGE_REPO}-$${DRONE_COMMIT_SHA}" "redis-$${DRONE_COMMIT_SHA}"
+      - export ACCEPTANCE_HOST_NAME=https://$${APP_NAME}-$${DRONE_SOURCE_BRANCH}.branch.internal.sas-notprod.homeoffice.gov.uk
+      - npm run test:acceptance
     when:
       branch: master
       event: pull_request
