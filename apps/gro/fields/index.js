@@ -21,7 +21,6 @@ module.exports = {
     ]
   },
   'additional-names': {
-    validate: ['notUrl'],
     mixin: 'textarea',
     validate: ['notUrl'],
     'ignore-defaults': true,
@@ -74,7 +73,7 @@ module.exports = {
   'email-text': {
     labelClassName: 'visuallyhidden',
     mixin: 'input-text',
-    validate: ['required', 'email'],
+    validate: ['required', 'email']
   },
   'how-radio': {
     mixin: 'radio-group',
@@ -88,7 +87,7 @@ module.exports = {
       toggle: 'telephone-toggle-text',
       child: 'partials/how-telephone-details'
     },
-    { value: 'post' }
+      { value: 'post' }
     ],
     legend: {
       className: 'visuallyhidden'
