@@ -10,7 +10,10 @@ const _ = require('lodash');
 
 const parse = (model, translate) => {
   const getLabel = key => translate(`pages.confirm.fields.${key}.label`);
-  const transformValue = (key, value) => _.get(fields, `${key}.options.${value}.label`) || value;
+  const transformValue = (key, value) => {
+    return _.get(fields, `${key}.options.${value}.label`) ||
+      (key === 'when-date' ? moment(value).format('DD-MM-YYYY') : value);
+  };
 
   const enquiryFields = [
     'about-radio',

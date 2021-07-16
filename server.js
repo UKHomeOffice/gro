@@ -7,6 +7,7 @@ const mockPostcode = require('./mock-postcode');
 let settings = require('./hof.settings');
 
 settings = Object.assign({}, settings, {
+  behaviours: settings.behaviours.map(require),
   routes: settings.routes.map(require)
 });
 

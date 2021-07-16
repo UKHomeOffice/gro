@@ -1,4 +1,7 @@
 
+const moment = require('moment');
+const config = require('../../../config');
+
 module.exports = {
   'enquiry-details': [
     'about-radio',
@@ -19,7 +22,10 @@ module.exports = {
     'telephone-toggle-text',
     'telephone-toggle-text-2',
     'which-radio',
-    'when-date'
+    {
+      field: 'when-date',
+      parse: d => d && moment(d).format(config.PRETTY_DATE_FORMAT)
+    }
   ],
   'contact-details': [
     'name-text',

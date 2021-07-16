@@ -24,6 +24,9 @@ module.exports = {
       region: process.env.EMAIL_REGION || ''
     }
   },
+  routes: {
+    confirmStep: '/confirm'
+  },
   ga: {
     tagId: process.env.GA_TAG
   },
