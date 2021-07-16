@@ -1,4 +1,4 @@
-@feature @gro @single
+@feature @gro @certificate_reasons
 Feature: Certificate Reasons
   A user should be able to select a certificate reason and go through the appropriate pages following this selection
 
