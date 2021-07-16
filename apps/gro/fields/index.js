@@ -96,6 +96,7 @@ module.exports = {
     }
   },
   'online-toggle-text': {
+    formatter: ['uppercase'],
     validate: ['required', 'notUrl', { type: 'regex', arguments: /^COL[0-9]{6}\/[0-9]{4}$/ }],
     dependent: {
       field: 'how-radio',
