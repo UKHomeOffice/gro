@@ -88,9 +88,9 @@ module.exports = {
       value: 'telephone',
       toggle: 'telephone-toggle-text',
       child: 'partials/how-telephone-details'
-    },
-      { value: 'post' }
-    ],
+    }, {
+      value: 'post'
+    }],
     legend: {
       className: 'visuallyhidden'
     }

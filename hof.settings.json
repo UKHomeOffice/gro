@@ -2,7 +2,7 @@
   "appName": "General Registrars Office",
   "theme": "govUK",
   "behaviours": [
-    "./apps/common/behaviours/clear-session"
+    "hof/components/clear-session"
   ],
   "routes": [
     "./apps/gro"
