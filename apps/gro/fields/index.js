@@ -185,7 +185,10 @@ module.exports = {
     labelClassName: 'visuallyhidden'
   },
   townOrCity: {
-    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 100 }]
+    validate: ['required', 'notUrl',
+      { type: 'regex', arguments: /^([^0-9]*)$/ },
+      { type: 'maxlength', arguments: 100 }
+    ]
   },
   postcode: {
     validate: ['required', 'postcode'],

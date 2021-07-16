@@ -17,7 +17,8 @@
     "default": "Enter your COL Number"
   },
   "telephone-toggle-text": {
-    "default": "Enter your order number"
+    "default": "Enter your order number",
+    "numeric": "Order numbers must only contain digits"
   },
   "telephone-toggle-text-2": {
     "default": "Enter your account number",
@@ -76,7 +77,8 @@
     "default": "Enter details of your building and street"
   },
   "townOrCity": {
-    "default": "Enter a town or city"
+    "default": "Enter a town or city",
+    "regex": "Enter a town or city without including digits"
   },
   "postcode": {
     "default": "Enter your postcode"
