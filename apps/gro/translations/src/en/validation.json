@@ -58,7 +58,8 @@
   },
   "when-date": {
     "default": "Tell us when you placed your order",
-    "before": "Enter a date in the past"
+    "before": "Enter a date in the past",
+    "after": "Enter a date after 1 1 2010"
   },
   "name-text": {
     "default": "Tell us your full name"

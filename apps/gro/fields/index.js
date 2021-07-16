@@ -3,6 +3,8 @@
 const hof = require('hof');
 const dateComponent = hof.components.date;
 
+const after2010Validator = { type: 'after', arguments: ['2010'] };
+
 module.exports = {
   'about-radio': {
     legend: {
@@ -152,7 +154,7 @@ module.exports = {
     ]
   },
   'when-date': dateComponent('when-date', {
-    validate: ['required', 'before']
+    validate: ['required', after2010Validator, 'before']
   }),
   'which-radio': {
     legend: {
