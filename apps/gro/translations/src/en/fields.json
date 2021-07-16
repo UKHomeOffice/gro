@@ -153,7 +153,7 @@
   "telephone-toggle-text-2": {
     "summary": "Account Number",
     "label": "What is the account number?",
-    "hint": "The account number will have been given to you when you placed your order by post. Account numbers consist of between 3 and 7 digits, so look like 1234567, but without a dash and extra number on the end."
+    "hint": "The account number will have been given to you when you placed your order by post. Account numbers consist of between 1 and 8 digits, so look like 12345678, but without a dash and extra number on the end."
   },
   "which-radio": {
     "summary": "Service",

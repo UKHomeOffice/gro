@@ -96,14 +96,14 @@ module.exports = {
     }
   },
   'online-toggle-text': {
-    validate: ['required', 'notUrl'],
+    validate: ['required', 'notUrl', { type: 'regex', arguments: /^COL[0-9]{6}\/[0-9]{4}$/ }],
     dependent: {
       field: 'how-radio',
       value: 'online'
     }
   },
   'telephone-toggle-text': {
-    validate: ['required', 'notUrl'],
+    validate: ['required', 'notUrl', { type: 'regex', arguments: /^[0-9]{5,6}-[0-9]{1,3}$/ }],
     dependent: {
       field: 'how-radio',
       value: 'telephone'
@@ -111,8 +111,8 @@ module.exports = {
   },
   'telephone-toggle-text-2': {
     validate: ['required', 'numeric',
-      { type: 'minlength', arguments: [3] },
-      { type: 'maxlength', arguments: [7] }
+      { type: 'minlength', arguments: [1] },
+      { type: 'maxlength', arguments: [8] }
     ],
     dependent: {
       field: 'how-radio',

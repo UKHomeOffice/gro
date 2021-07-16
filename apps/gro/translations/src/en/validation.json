@@ -22,9 +22,9 @@
   },
   "telephone-toggle-text-2": {
     "default": "Enter your account number",
-    "numeric": "Account numbers must consist of between 3 and 7 digits",
-    "minlength": "Account numbers must consist of between 3 and 7 digits",
-    "maxlength": "Account numbers must consist of between 3 and 7 digits"
+    "numeric": "Account numbers must consist of between 1 and 8 digits",
+    "minlength": "Account numbers must consist of between 1 and 8 digits",
+    "maxlength": "Account numbers must consist of between 1 and 8 digits"
   },
   "existing-radio": {
     "default": {
