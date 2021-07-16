@@ -119,9 +119,9 @@ steps:
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
     commands:
     - docker run -d --name=redis-$${DRONE_COMMIT_SHA} redis
-    - docker run -d -e NODE_ENV=ci --name=$${IMAGE_REPO}:$${DRONE_COMMIT_SHA} --net=container:redis-$${DRONE_COMMIT_SHA} $${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
-    - docker run -e OPENSSL_CONF=/etc/ssl/ --rm --net=container:$${IMAGE_REPO}:$${DRONE_COMMIT_SHA} acceptance-$${DRONE_COMMIT_SHA}
-    - docker rm -vf "$${IMAGE_REPO}:$${DRONE_COMMIT_SHA}" "redis-$${DRONE_COMMIT_SHA}"
+    - docker run -d -e NODE_ENV=ci --name=$${IMAGE_REPO}-$${DRONE_COMMIT_SHA} --net=container:redis-$${DRONE_COMMIT_SHA} $${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
+    - docker run -e OPENSSL_CONF=/etc/ssl/ --rm --net=container:$${IMAGE_REPO}-$${DRONE_COMMIT_SHA} acceptance-$${DRONE_COMMIT_SHA}
+    - docker rm -vf "$${IMAGE_REPO}-$${DRONE_COMMIT_SHA}" "redis-$${DRONE_COMMIT_SHA}"
     when:
       branch:
         include:
