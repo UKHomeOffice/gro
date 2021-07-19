@@ -77,3 +77,8 @@ Then('I should see {string} on the page', async function (content) {
   await this.page.waitForSelector('body', { timeout: 15000 });
   expect(await this.page.innerText('body')).to.include(content);
 }.bind(World));
+
+Then('I should see the {string} error', async function (content) {
+  await this.page.waitForSelector('body', { timeout: 15000 });
+  expect(await this.page.innerText('.validation-summary.error-summary')).to.include(content);
+}.bind(World));
