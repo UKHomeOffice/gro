@@ -108,15 +108,6 @@ steps:
           - feature/*
       event: push
 
-  - name: acceptance_tests_uat
-    <<: *acceptance_tests
-    commands:
-      - export ACCEPTANCE_HOST_NAME=https://$${APP_NAME}.uat.internal.sas-notprod.homeoffice.gov.uk
-      - npm run test:acceptance
-    when:
-      branch: master
-      event: push
-
   - name: build_image
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
     commands:
@@ -251,6 +242,15 @@ steps:
       - kd --insecure-skip-tls-verify -f kube/configmap.yaml -f kube/ingress-internal.yaml -f kube/networkpolicy-internal.yaml -f kube/service.yaml
       - kd --insecure-skip-tls-verify --timeout 10m --check-interval 10s -f kube/deployment.yaml
       - sleep $${READY_FOR_TEST_DELAY}
+    when:
+      branch: master
+      event: push
+
+  - name: acceptance_tests_uat
+    <<: *acceptance_tests
+    commands:
+      - export ACCEPTANCE_HOST_NAME=https://$${APP_NAME}.uat.internal.sas-notprod.homeoffice.gov.uk
+      - npm run test:acceptance
     when:
       branch: master
       event: push
