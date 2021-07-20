@@ -15,8 +15,10 @@ spec:
         - {{ .DRONE_BUILD_NUMBER }}.branch.internal.sas-notprod.homeoffice.gov.uk
         - {{ .APP_NAME }}-{{ .DRONE_SOURCE_BRANCH }}.branch.internal.sas-notprod.homeoffice.gov.uk
       {{ else if eq .KUBE_NAMESPACE .UAT_ENV }}
+        - gro.uat.internal.sas-notprod.homeoffice.gov.uk
         - {{ .APP_NAME }}.uat.internal.sas-notprod.homeoffice.gov.uk
       {{ else if eq .KUBE_NAMESPACE .STG_ENV }}
+        - stg.internal.gro.sas.homeoffice.gov.uk
         - stg.internal.{{ .APP_NAME }}.sas.homeoffice.gov.uk
       {{ end }}
       {{ if eq .KUBE_NAMESPACE .BRANCH_ENV }}
