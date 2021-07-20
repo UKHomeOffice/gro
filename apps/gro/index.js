@@ -1,16 +1,18 @@
 'use strict';
 
 const _ = require('lodash');
-const controllers = require('hof-controllers');
+const hof = require('hof');
+const config = require('../../config');
+const CountrySelect = require('./behaviours/country-select');
+const Summary = hof.components.summary;
+const ApplicantEmailer = require('./behaviours/applicant_emailer')(config.email);
+const CaseworkerEmailer = require('./behaviours/caseworker_emailer')(config.email);
 
 module.exports = {
   name: 'gro',
   params: '/:action?',
+  baseUrl: '/',
   steps: {
-    '/': {
-      controller: controllers.start,
-      next: '/about'
-    },
     '/about': {
       fields: ['about-radio'],
       next: '/type',
@@ -117,13 +119,7 @@ module.exports = {
       }
     },
     '/when': {
-      controller: require('./controllers/when'),
-      fields: [
-        'when-date',
-        'when-date-day',
-        'when-date-month',
-        'when-date-year'
-      ],
+      fields: ['when-date'],
       next: '/name',
       locals: {
         section: 'order-details'
@@ -144,71 +140,26 @@ module.exports = {
       }
     },
     '/country': {
+      behaviours: CountrySelect,
       fields: [
         'country-select'
       ],
-      forks: [{
-        target: '/postcode',
-        condition: {
-          field: 'country-select',
-          value: 'United Kingdom'
-        }
-      }],
       continueOnEdit: true,
       next: '/address',
-      locals: {
-        section: 'contact-details',
-        subsection: 'address'
-      }
-    },
-    '/postcode': {
-      controller: require('./controllers/postcode'),
-      fields: [
-        'postcode-code'
-      ],
-      forks: [{
-        target: '/address-lookup',
-        condition(req) {
-          const addresses = req.sessionModel.get('addresses');
-          return addresses && addresses.length;
-        }
-      }],
-      continueOnEdit: true,
-      next: '/address',
-      locals: {
-        section: 'contact-details',
-        subsection: 'address'
-      }
-    },
-    '/address-lookup': {
-      controller: require('./controllers/address-lookup'),
-      fields: [
-        'address-lookup'
-      ],
-      continueOnEdit: true,
-      next: '/confirm',
       locals: {
         section: 'contact-details',
         subsection: 'address'
       }
     },
     '/address': {
-      controller: require('./controllers/address'),
-      fields: [
-        'address-textarea'
-      ],
+      fields: ['building', 'street', 'townOrCity', 'postcode'],
       next: '/confirm',
-      locals: {
-        section: 'contact-details',
-        subsection: 'address'
-      }
+      continueOnEdit: true
     },
     '/confirm': {
       next: '/confirmation',
-      controller: require('./controllers/confirm'),
-      fieldsConfig: _.cloneDeep(require('./fields')),
-      emailConfig: require('../../config').email,
-      customerEmailField: 'email-text',
+      behaviours: [Summary, ApplicantEmailer, CaseworkerEmailer],
+      sections: require('./sections/summary-data-sections'),
       locals: {
         section: 'confirm'
       }

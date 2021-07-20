@@ -153,7 +153,7 @@
   "telephone-toggle-text-2": {
     "summary": "Account Number",
     "label": "What is the account number?",
-    "hint": "The account number will have been given to you when you placed your order by post. Account numbers consist of between 3 and 7 digits, so look like 1234567, but without a dash and extra number on the end."
+    "hint": "The account number will have been given to you when you placed your order by post. Account numbers consist of between 1 and 8 digits, so look like 12345678, but without a dash and extra number on the end."
   },
   "which-radio": {
     "summary": "Service",
@@ -172,15 +172,6 @@
     "legend": "When did you place your order?",
     "hint": "For example, 11  6  2015"
   },
-  "when-date-day": {
-    "label": "Day"
-  },
-  "when-date-month": {
-    "label": "Month"
-  },
-  "when-date-year": {
-    "label": "Year"
-  },
   "name-text": {
     "summary": "Full name",
     "label": "What is your full name?"
@@ -191,19 +182,23 @@
   },
   "country-select": {
     "summary": "Country",
-    "label": "Country",
+    "label": "Select a country",
     "hint": "Start to type the country name and options will appear"
   },
-  "postcode-code": {
-    "summary": "Postcode",
-    "label": "Postcode"
+  "building": {
+    "label": "Building and street",
+    "changeLinkDescription": "Your current building and street"
   },
-  "address-lookup": {
-    "label": "Select your address",
-    "summary": "Address"
+  "street": {
+    "label": "Address line 2",
+    "changeLinkDescription": "Your current address line 2"
   },
-  "address-textarea": {
-    "summary": "Address",
-    "label": "Address"
+  "townOrCity": {
+    "label": "Town or city",
+    "changeLinkDescription": "Your current town or city"
+  },
+  "postcode": {
+    "label": "Postcode",
+    "changeLinkDescription": "Your current postcode"
   }
 }

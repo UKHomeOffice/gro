@@ -1,20 +1,33 @@
 {
   "about-radio": {
-    "required": "Tell us what you are contacting us about"
+    "default": "Tell us what you are contacting us about"
   },
   "type-radio": {
-    "required": "Tell us the type of certificate that was ordered"
+    "default": "Tell us the type of certificate that was ordered"
   },
   "details-text": {
-    "required": {
+    "default": {
       "about-radio": {
         "complaint": "Tell us about your complaint"
       },
       "default": "Tell us about your enquiry"
     }
   },
+  "online-toggle-text": {
+    "default": "Enter your COL Number"
+  },
+  "telephone-toggle-text": {
+    "default": "Enter your order number",
+    "numeric": "Order numbers must only contain digits"
+  },
+  "telephone-toggle-text-2": {
+    "default": "Enter your account number",
+    "numeric": "Account numbers must consist of between 1 and 8 digits",
+    "minlength": "Account numbers must consist of between 1 and 8 digits",
+    "maxlength": "Account numbers must consist of between 1 and 8 digits"
+  },
   "existing-radio": {
-    "required": {
+    "default": {
       "about-radio": {
         "complaint": "Tell us if your complaint is about an existing order"
       },
@@ -22,7 +35,7 @@
     }
   },
   "previous-radio": {
-    "required": {
+    "default": {
       "about-radio": {
         "complaint": "Tell us if you have already complained about this issue"
       },
@@ -30,63 +43,44 @@
     }
   },
   "person-text": {
-    "required": "Enter a full name",
-    "notUrl" : "Ensure there are no URLs present in the text area"
+    "default": "Enter a full name"
   },
   "person-one": {
-    "required": "Enter a full name",
-    "notUrl" : "Ensure there are no URLs present in the text area"
-  },
-  "person-two": {
-    "notUrl" : "Ensure there are no URLs present in the text area"
+    "default": "Enter a full name"
   },
   "additional-radio": {
-    "required": "Tell us if you have previously been in contact about this enquiry"
+    "default": "Tell us if you have previously been in contact about this enquiry"
   },
   "how-radio": {
-    "required": "Tell us how you placed your order"
-  },
-  "telephone-toggle-text-2": {
-    "numeric": "Account numbers must consist of between 3 and 7 digits",
-    "minlength": "Account numbers must consist of between 3 and 7 digits",
-    "maxlength": "Account numbers must consist of between 3 and 7 digits"
+    "default": "Tell us how you placed your order"
   },
   "which-radio": {
-    "required": "Tell us which service you paid for"
+    "default": "Tell us which service you paid for"
   },
   "when-date": {
-    "required": "Tell us when you placed your order",
-    "numeric": "Enter a valid date",
-    "format": "Enter the date in the correct format",
-    "future": "The date is in the future"
+    "default": "Tell us when you placed your order",
+    "before": "Enter a date in the past",
+    "after": "Enter a date after 1-1-2010"
   },
   "name-text": {
-    "required": "Tell us your full name",
-    "notUrl" : "Ensure there are no URLs present in the text area"
+    "default": "Tell us your full name"
   },
   "email-text": {
-    "required": "Enter an email address",
+    "default": "Enter an email address",
     "email": "The email address isn't valid, enter a valid email address"
   },
   "country-select": {
-    "required": "Enter your country",
+    "default": "Enter your country",
     "equal": "Pick a country from the list"
   },
-  "postcode-code": {
-    "postcode": "This postcode isn't valid, enter a valid postcode",
-    "required": "Enter your postcode"
+  "building": {
+    "default": "Enter details of your building and street"
   },
-  "address-textarea": {
-    "required": "Enter your address",
-    "notUrl" : "Ensure there are no URLs present in the text area"
+  "townOrCity": {
+    "default": "Enter a town or city",
+    "regex": "Enter a town or city without including digits"
   },
-  "address-lookup": {
-    "required": "Select an address"
-  },
-  "additional-text" : {
-    "notUrl" : "Ensure there are no URLs present in the text area"
-  },
-  "additional-names" : {
-    "notUrl" : "Ensure there are no URLs present in the text area"
+  "postcode": {
+    "default": "Enter your postcode"
   }
 }

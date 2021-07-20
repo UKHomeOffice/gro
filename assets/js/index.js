@@ -1,12 +1,7 @@
+/* eslint-disable no-var, vars-on-top, func-names */
 'use strict';
 
-var toolkit = require('hof-frontend-toolkit');
-var helpers = toolkit.helpers;
-var progressiveReveal = toolkit.progressiveReveal;
-var formFocus = toolkit.formFocus;
-
-helpers.documentReady(progressiveReveal);
-helpers.documentReady(formFocus);
+require('hof/frontend/themes/gov-uk/client-js');
 
 var $ = require('jquery');
 var typeahead = require('typeahead-aria');

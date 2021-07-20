@@ -1,7 +1,0 @@
-FROM ruby:3.0.1
-
-COPY acceptance_tests /code
-WORKDIR /code
-RUN bundle install
-
-ENTRYPOINT "cucumber"
