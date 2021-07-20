@@ -2,7 +2,7 @@
 Feature: Existing Enquiry
   A user should answer 'existing enquiry' questions when making a further submission to an existing enquiry
 
-  @full_existing_enquiry @online
+  @full_existing_enquiry @online @smoke_test
   Scenario: A Full Existing Enquiry Submission - Online
     Given I start the 'base' application journey
     Then I should be on the 'about' page showing 'What would you like to contact us about?'
@@ -101,9 +101,6 @@ Feature: Existing Enquiry
     Then I should see 'Your enquiry details' on the page
     Then I should see 'Your order details' on the page
     Then I should see 'Your personal and contact details' on the page
-    Then I submit the application
-    Then I should be on the 'confirmation' page showing 'Thank you for contacting the General Register Office.'
-    Then I should see 'We have sent you an email containing the information you have provided to sas-hof-test@digital.homeoffice.gov.uk' on the page
 
   @full_existing_enquiry @post
   Scenario: A Full Existing Enquiry Submission - Post
@@ -151,6 +148,3 @@ Feature: Existing Enquiry
     Then I should see 'Your enquiry details' on the page
     Then I should see 'Your order details' on the page
     Then I should see 'Your personal and contact details' on the page
-    Then I submit the application
-    Then I should be on the 'confirmation' page showing 'Thank you for contacting the General Register Office.'
-    Then I should see 'We have sent you an email containing the information you have provided to sas-hof-test@digital.homeoffice.gov.uk' on the page
