@@ -4,7 +4,7 @@ name: default
 type: kubernetes
 
 environment:
-  APP_NAME: general-registrars-office
+  APP_NAME: certificate-enquiries
   PROD_ENV: gro-form
   STG_ENV: gro-form-stg
   UAT_ENV: gro-form-uat
