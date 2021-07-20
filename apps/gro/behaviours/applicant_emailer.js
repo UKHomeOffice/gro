@@ -50,7 +50,7 @@ const parse = (model, translate) => {
     contactHeader: translate('pages.contact-details'),
     enquiryDetails: [
       { label: getLabel('uniqueId'), value: model.uniqueId },
-      { label: getLabel('submitted'), value: moment().format(config.dateTimeFormat) },
+      { label: getLabel('submitted'), value: moment().utc().local().format(config.dateTimeFormat) },
       ...enquiryFields.map(f => ({
         label: getLabel(f),
         value: transformValue(f, model[f])
