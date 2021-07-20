@@ -31,6 +31,3 @@ Feature: New Enquiry
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
     Then I should see 'Your enquiry details' on the page
     Then I should see 'Your personal and contact details' on the page
-    Then I submit the application
-    Then I should be on the 'confirmation' page showing 'Thank you for contacting the General Register Office.'
-    Then I should see 'We have sent you an email containing the information you have provided to sas-hof-test@digital.homeoffice.gov.uk' on the page
