@@ -192,7 +192,7 @@ module.exports = {
     ]
   },
   postcode: {
-    validate: ['required', 'postcode'],
+    validate: ['required'],
     formatter: ['removespaces', 'uppercase']
   }
 };
