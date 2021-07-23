@@ -96,8 +96,8 @@ module.exports = {
     }
   },
   'online-toggle-text': {
-    formatter: ['uppercase'],
-    validate: ['required', 'notUrl', { type: 'regex', arguments: /^COL[0-9]{6}\/[0-9]{4}$/ }],
+    // COL Numbers are optional so removed required and regex validation checks here
+    validate: ['notUrl'],
     dependent: {
       field: 'how-radio',
       value: 'online'
