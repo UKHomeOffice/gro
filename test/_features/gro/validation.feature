@@ -57,10 +57,6 @@ Feature: Validations
     Then I click the 'Continue' button
     Then I click the 'Continue' button
     Then I should see the 'Tell us how you placed your order' error
-    Then I check 'how-radio-telephone'
-    Then I click the 'Continue' button
-    Then I should see the 'Enter your order number' error
-    Then I should see the 'Enter your account number' error
     Then I check 'how-radio-online'
     Then I click the 'Continue' button
     Then I click the 'Continue' button

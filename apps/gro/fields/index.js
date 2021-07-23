@@ -104,14 +104,16 @@ module.exports = {
     }
   },
   'telephone-toggle-text': {
-    validate: ['required', 'notUrl', { type: 'regex', arguments: /^[0-9]{5,6}-[0-9]{1,3}$/ }],
+    // Order Numbers are optional so removed required and regex validation checks here
+    validate: ['notUrl'],
     dependent: {
       field: 'how-radio',
       value: 'telephone'
     }
   },
   'telephone-toggle-text-2': {
-    validate: ['required', 'numeric',
+    // Account numbers are optional so removed required and regex validation checks here
+    validate: ['numeric',
       { type: 'minlength', arguments: [1] },
       { type: 'maxlength', arguments: [8] }
     ],

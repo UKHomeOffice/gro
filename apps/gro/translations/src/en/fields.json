@@ -146,13 +146,13 @@
     "hint": "Please enter one if you have received one. A COL number is a Certificate Online number that is sent in the confirmation email when certificates are ordered online. COL numbers typically look like this COL123456/2015."
   },
   "telephone-toggle-text": {
-    "summary": "Account Number",
-    "label": "What is your order number?",
+    "summary": "Order Number",
+    "label": "What is your order number? (Optional)",
     "hint": "Your order number would have been given to you when you ordered by telephone. Order numbers typically look like this: 12345-1"
   },
   "telephone-toggle-text-2": {
     "summary": "Account Number",
-    "label": "What is the account number?",
+    "label": "What is the account number? (Optional)",
     "hint": "The account number will have been given to you when you placed your order by post. Account numbers consist of between 1 and 8 digits, so look like 12345678, but without a dash and extra number on the end."
   },
   "which-radio": {
