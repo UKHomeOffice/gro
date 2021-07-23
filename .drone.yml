@@ -386,7 +386,7 @@ steps:
     environment:
       KUBE_SERVER:
         from_secret: kube_server_dev
-      KUBE_TOKEN_GRO_ACP_PROD:
+      KUBE_TOKEN_GRO_ACP_NOTPROD:
         from_secret: kube_token_dev
     commands:
       - export KUBE_TOKEN=$${KUBE_TOKEN_GRO_ACP_NOTPROD}
