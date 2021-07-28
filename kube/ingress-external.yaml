@@ -7,10 +7,19 @@ metadata:
 spec:
   tls:
     - hosts:
+      {{ if eq .KUBE_NAMESPACE .UAT_ENV }}
+        - gro.uat.sas-notprod.homeoffice.gov.uk
+        - {{ .APP_NAME }}.uat.sas-notprod.homeoffice.gov.uk
+      {{ else }}
         - {{ .PRODUCTION_URL }}
+      {{ end }}
       secretName: {{ .APP_NAME }}-external
   rules:
+    {{ if eq .KUBE_NAMESPACE .UAT_ENV }}
+    - host: {{ .APP_NAME }}.uat.sas-notprod.homeoffice.gov.uk
+    {{ else }}
     - host: {{ .PRODUCTION_URL }}
+    {{ end }}
       http:
         paths:
           - path: /
