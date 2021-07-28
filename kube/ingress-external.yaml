@@ -11,7 +11,6 @@ spec:
   tls:
     - hosts:
       {{ if eq .KUBE_NAMESPACE .UAT_ENV }}
-        - gro.uat.sas-notprod.homeoffice.gov.uk
         - {{ .APP_NAME }}.uat.sas-notprod.homeoffice.gov.uk
       {{ else }}
         - {{ .PRODUCTION_URL }}
