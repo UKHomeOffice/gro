@@ -53,10 +53,6 @@ The account number has been set on field 'telephone-toggle-text-2' using validat
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
-## UI Changes 
-
-A 'county or state' field has been added to the address page. The postcode field on the address page has been updated to 'Postcode or ZIP Code'. 
-
 ## License
 
 This project is licensed under the GPLv2 License - see the [LICENSE.md](LICENSE.md) file for details
