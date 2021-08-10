@@ -193,7 +193,13 @@ module.exports = {
       { type: 'maxlength', arguments: 100 }
     ]
   },
-  postcode: {
+  countyOrState: {
+    validate: ['required', 'notUrl', 
+    { type: 'regex', arguments: /^([^0-9]*)$/ },
+    { type: 'maxlength', arguments: 100 }
+    ]
+  },
+  postcodeOrZIPCode: {
     validate: ['required'],
     formatter: ['removespaces', 'uppercase']
   }

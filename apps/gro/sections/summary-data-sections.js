@@ -33,7 +33,8 @@ module.exports = {
     'building',
     'street',
     'townOrCity',
-    'postcode',
+    'countyOrState',
+    'postcodeOrZIPCode',
     'country-select'
   ]
 };

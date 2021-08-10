@@ -43,7 +43,8 @@ Feature: Existing Enquiry
     Then I fill 'building' with 'Rose House'
     Then I fill 'street' with '1 Love Lane'
     Then I fill 'townOrCity' with 'London'
-    Then I fill 'postcode' with 'N87BQ'
+    Then I fill 'countyOrState' with 'Greater London'
+    Then I fill 'postcodeOrZIPCode' with 'N87BQ'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
     Then I should see 'Your enquiry details' on the page
@@ -95,7 +96,8 @@ Feature: Existing Enquiry
     Then I fill 'building' with 'Rose House'
     Then I fill 'street' with '1 Love Lane'
     Then I fill 'townOrCity' with 'London'
-    Then I fill 'postcode' with 'N87BQ'
+    Then I fill 'countyOrState' with 'Greater London'
+    Then I fill 'postcodeOrZIPCode' with 'N87BQ'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
     Then I should see 'Your enquiry details' on the page
@@ -142,7 +144,8 @@ Feature: Existing Enquiry
     Then I fill 'building' with 'Rose House'
     Then I fill 'street' with '1 Love Lane'
     Then I fill 'townOrCity' with 'London'
-    Then I fill 'postcode' with 'N87BQ'
+    Then I fill 'countyOrState' with 'Greater London'
+    Then I fill 'postcodeOrZIPCode' with 'N87BQ'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
     Then I should see 'Your enquiry details' on the page

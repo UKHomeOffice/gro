@@ -40,7 +40,8 @@ const parse = (model, translate) => {
     'building',
     'street',
     'townOrCity',
-    'postcode',
+    'countyOrState',
+    'postcodeOrZIPCode',
     'country-select'
   ];
 
