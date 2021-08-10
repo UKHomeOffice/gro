@@ -1,6 +1,6 @@
 {
   "name": "GRO",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "server.js",
   "description": "The General Register Office DSP form",
   "license": "GPL-2.0",
