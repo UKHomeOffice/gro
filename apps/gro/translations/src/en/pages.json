@@ -97,8 +97,11 @@
       "townOrCity": {
         "label": "Town or city"
       },
-      "postcode": {
-        "label": "Postcode"
+      "countyOrState": {
+        "label": "County or state"
+      },
+      "postcodeOrZIPCode": {
+        "label": "Postcode or ZIP Code"
       }
     }
   },

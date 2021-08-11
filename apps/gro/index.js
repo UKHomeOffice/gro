@@ -152,7 +152,7 @@ module.exports = {
       }
     },
     '/address': {
-      fields: ['building', 'street', 'townOrCity', 'postcode'],
+      fields: ['building', 'street', 'townOrCity', 'countyOrState', 'postcodeOrZIPCode'],
       next: '/confirm',
       continueOnEdit: true
     },

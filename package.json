@@ -1,6 +1,6 @@
 {
   "name": "GRO",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "server.js",
   "description": "The General Register Office DSP form",
   "license": "GPL-2.0",
@@ -27,23 +27,13 @@
   "author": "HomeOffice",
   "dependencies": {
     "browserify": "^17.0.0",
-    "cached-path-relative": "^1.0.2",
     "deprecate": "^1.0.0",
-    "diff": "^5.0.0",
-    "express-partial-templates": "^0.2.1",
-    "fstream": "^1.0.12",
-    "growl": "^1.10.0",
     "hof": "^19.4.2",
     "homeoffice-countries": "^0.1.0",
     "jquery": "^3.6.0",
-    "js-yaml": "^3.13.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
-    "nodemailer": "^6.4.16",
-    "set-value": "^2.0.1",
-    "tar": "^2.2.2",
-    "typeahead-aria": "^1.0.1",
-    "underscore": "^1.12.1"
+    "typeahead-aria": "^1.0.1"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^7.3.0",
