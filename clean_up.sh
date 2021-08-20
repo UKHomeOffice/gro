@@ -3,7 +3,7 @@ set -e
 
 export IGNORE_NETPOL=("acp-deny-all")
 export IGNORE_CONFIGMAP=("bundle")
-export IGNORE_SECRET=("aws" "postcode-auth" "redis")
+export IGNORE_SECRET=("branch-tls-external" "branch-tls-internal" "aws" "postcode-auth" "redis")
 
 export kubectl="kubectl --insecure-skip-tls-verify --server=$KUBE_SERVER --namespace=$KUBE_NAMESPACE --token=$KUBE_TOKEN"
 
