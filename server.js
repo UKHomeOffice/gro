@@ -19,9 +19,4 @@ if (config.env === 'ci') {
 
 const app = hof(settings);
 
-app.use((req, res, next) => {
-  res.locals.appName = settings.appName;
-  next();
-});
-
 module.exports = app;
