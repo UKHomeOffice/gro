@@ -3903,10 +3903,10 @@ hmac-drbg@^1.0.1:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hof@19.7.3-beta-v1:
-  version "19.7.3-beta-v1"
-  resolved "https://registry.yarnpkg.com/hof/-/hof-19.7.3-beta-v1.tgz#a14a29fdb55d9bcc4b5279f06d4f95519726d65b"
-  integrity sha512-ceZxVHrwah6D4mfcBpDXSP3OKkQGTHWA0muFnaw5J5/FMCln456ZRI4wHkI0pXBeVK6AaxUynjfWlRdoqesnzA==
+hof@19.7.3-beta-v2:
+  version "19.7.3-beta-v2"
+  resolved "https://registry.yarnpkg.com/hof/-/hof-19.7.3-beta-v2.tgz#1168f15fea89ee15908d516b69f4f8f940950417"
+  integrity sha512-/FI1CPJAMSkyeVJ7OudrMkGM9+XBM7vI7wi7pY0utVtTuhMQ1vF3NVDwxKttXXj5v87rH/hOJw1UAfXmLCzqdA==
   dependencies:
     aliasify "^2.1.0"
     bluebird "^3.7.2"
