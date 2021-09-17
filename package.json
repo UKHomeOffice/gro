@@ -50,7 +50,7 @@
     "sinomocha": "^0.2.4",
     "sinon": "^9.2.0",
     "sinon-chai": "^3.7.0",
-    "snyk": "^1.662.0"
+    "snyk": "^1.675.0"
   },
   "resolutions": {
     "underscore": "^1.12.1"
