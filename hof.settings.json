@@ -1,5 +1,5 @@
 {
-  "appName": "General Registrars Office",
+  "appName": "General Register Office",
   "theme": "govUK",
   "behaviours": [
     "hof/components/clear-session"
@@ -8,6 +8,6 @@
     "./apps/gro"
   ],
   "session": {
-    "name": "general-registrars-office.hof.sid"
+    "name": "general-register-office.hof.sid"
   }
 }

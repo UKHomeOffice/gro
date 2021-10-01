@@ -1,4 +1,4 @@
-# GRO (General Registrars Office) [![Build Status](https://drone.digital.homeoffice.gov.uk/api/badges/UKHomeOffice/gro/status.svg)](https://drone.digital.homeoffice.gov.uk/UKHomeOffice/gro)
+# GRO (General Register Office) [![Build Status](https://drone.digital.homeoffice.gov.uk/api/badges/UKHomeOffice/gro/status.svg)](https://drone.digital.homeoffice.gov.uk/UKHomeOffice/gro)
 
 ## Getting Started
 
@@ -57,4 +57,4 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 This project is licensed under the GPLv2 License - see the [LICENSE.md](LICENSE.md) file for details
 
-The General Registrars Office uses BrowserStack for mobile and desktop testing https://www.browserstack.com/
+The General Register Office uses BrowserStack for mobile and desktop testing https://www.browserstack.com/
