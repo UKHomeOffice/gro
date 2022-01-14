@@ -19,4 +19,10 @@ if (config.env === 'ci') {
 
 const app = hof(settings);
 
+app.use((req, res, next) => {
+  // Set HTML Language
+  res.locals.htmlLang = 'en';
+  next();
+});
+
 module.exports = app;
