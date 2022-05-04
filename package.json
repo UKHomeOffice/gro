@@ -19,6 +19,7 @@
     "test:acceptance": "TAGS=\"${TAGS:=@feature}\" npm run test:cucumber",
     "test:acceptance_browser": "ACCEPTANCE_WITH_BROWSER=true TAGS=\"${TAGS:=@feature}\" yarn run test:cucumber",
     "test:cucumber": "cucumber-js -f @cucumber/pretty-formatter \"test/_features/**/*.feature\" --require test/_features/test.setup.js --require \"test/_features/step_definitions/**/*.js\" --tags $TAGS",
+    "test:integration": "_mocha \"test/_integration/**/*.spec.js\" --exit",
     "test:lint": "eslint . --config ./node_modules/eslint-config-hof/default.js",
     "test:snyk": "snyk config set api=SNYK_TOKEN && snyk test",
     "build": "hof-build",
@@ -43,6 +44,7 @@
     "eslint": "^7.30.0",
     "eslint-config-hof": "^1.0.4",
     "express": "^4.14.0",
+    "jsdom": "^19.0.0",
     "mocha": "^9.0.2",
     "nyc": "^15.1.0",
     "playwright": "^1.12.3",
@@ -50,7 +52,9 @@
     "sinomocha": "^0.2.4",
     "sinon": "^9.2.0",
     "sinon-chai": "^3.7.0",
-    "snyk": "^1.675.0"
+    "snyk": "^1.675.0",
+    "supertest": "^6.2.2",
+    "supertest-session": "^4.1.0"
   },
   "resolutions": {
     "underscore": "^1.12.1"
