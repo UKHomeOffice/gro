@@ -91,7 +91,7 @@ const bootstrapSession = (app, appName, stepOrData, data, pages) => {
 
 // eslint-disable-next-line max-params
 function initSession(app, appName, stepOrData, data, subAppPath, pages) {
-  return getUrl(app, `/${appName}`, 302)
+  return getUrl(app, '/', 302)
     .then(() => bootstrapSession(app, appName, stepOrData, data, pages))
     .then(() => {
       const destination = typeof stepOrData === 'string' ? stepOrData : '/';
@@ -114,7 +114,7 @@ function getRedirection(app, expectedStatus, previousResponse) {
 
 function getSupertestApp(subAppName, subAppPath, pages) {
   const app = require('../../../server');
-  let newSubAppPath = (subAppPath || subAppPath === '') ? subAppPath : subAppName;
+  let newSubAppPath = (subAppPath || subAppPath === '') ? subAppPath : '';
   if (newSubAppPath.length > 0) {
     newSubAppPath = `/${newSubAppPath}`;
   }

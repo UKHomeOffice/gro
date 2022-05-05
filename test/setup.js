@@ -7,7 +7,6 @@ global.chai = require('chai')
 global.should = chai.should();
 global.expect = chai.expect;
 global.sinon = require('sinon');
-require('sinomocha')();
 
 const utils = require('./helpers/supertest_session/supertest-utilities.js');
 global.getSupertestApp = (subApp, subAppPath, pages) => utils.getSupertestApp(subApp, subAppPath, pages);
