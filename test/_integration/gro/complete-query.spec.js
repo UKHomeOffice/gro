@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 
-describe('the journey of certificate query', () => {
+describe('the complete journey of a certificate query, not including marriage or partnership', () => {
   let testApp;
   let passStep;
   let initSession;
