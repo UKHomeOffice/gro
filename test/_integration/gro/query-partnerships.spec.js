@@ -1,6 +1,11 @@
 const { expect } = require('chai');
 
-describe('part of the journey of a query through the marriage/civil partnership route', () => {
+describe('query on a partnership certificate', () => {
+  // Partial path, looking at a query for a refund on a civil partnership certificate
+  // Path also applies to all query options below:
+  // certificate not recieved, wrong certificate, poor quality certificate or refund query
+  // on a partnership certificate e.g. Marraige or Civil Partnership.
+
   let testApp;
   let passStep;
   let initSession;
@@ -13,7 +18,7 @@ describe('part of the journey of a query through the marriage/civil partnership 
     initSession = testApp.initSession;
   });
 
-  it('goes to the about page', async () => {
+  it('goes to /about', async () => {
     const URI = '/about';
     await initSession(URI);
     const response = await passStep(URI, {
@@ -23,7 +28,7 @@ describe('part of the journey of a query through the marriage/civil partnership 
     expect(response.text).to.contain('Found. Redirecting to /type');
   });
 
-  it('goes to the type page', async () => {
+  it('goes to /type', async () => {
     const URI = '/type';
     await initSession(URI);
     const response = await passStep(URI, {
@@ -33,7 +38,7 @@ describe('part of the journey of a query through the marriage/civil partnership 
     expect(response.text).to.contain('Found. Redirecting to /people');
   });
 
-  it('goes to the people page', async () => {
+  it('goes to /people', async () => {
     const URI = '/people';
     await initSession(URI);
     const response = await passStep(URI, {

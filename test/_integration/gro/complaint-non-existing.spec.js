@@ -1,6 +1,8 @@
 const { expect } = require('chai');
 
-describe('part of the journey of a complaint on a non-existing order', () => {
+describe('complaint on a non-existing order', () => {
+  // Partial path or users with a complaint about a non-existing order
+
   let testApp;
   let passStep;
   let initSession;
@@ -13,7 +15,7 @@ describe('part of the journey of a complaint on a non-existing order', () => {
     initSession = testApp.initSession;
   });
 
-  it('goes to the about page', async () => {
+  it('goes to /about', async () => {
     const URI = '/about';
     await initSession(URI);
     const response = await passStep(URI, {
@@ -23,7 +25,7 @@ describe('part of the journey of a complaint on a non-existing order', () => {
     expect(response.text).to.contain('Found. Redirecting to /details');
   });
 
-  it('goes to details page', async () => {
+  it('goes to /details', async () => {
     const URI = '/details';
     await initSession(URI);
     const response = await passStep(URI, {
