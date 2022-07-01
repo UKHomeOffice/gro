@@ -75,9 +75,9 @@ function postSessionBootstrapData(app, data) {
   });
 }
 
-const bootstrapSession = (app, appName, stepOrData, data, pages) => {
+const bootstrapSession = (app, appName, stepOrData, data, pages, steps) => {
   let props = {};
-  const baseProps = require('./session-data/base')(appName, pages);
+  const baseProps = require('./session-data/base')(appName, steps, pages);
   if (typeof stepOrData === 'object') {
     Object.assign(props, stepOrData);
   } else {
@@ -90,9 +90,9 @@ const bootstrapSession = (app, appName, stepOrData, data, pages) => {
 };
 
 // eslint-disable-next-line max-params
-function initSession(app, appName, stepOrData, data, subAppPath, pages) {
+function initSession(app, appName, stepOrData, data, subAppPath, pages, steps) {
   return getUrl(app, '/', 302)
-    .then(() => bootstrapSession(app, appName, stepOrData, data, pages))
+    .then(() => bootstrapSession(app, appName, stepOrData, data, pages, steps))
     .then(() => {
       const destination = typeof stepOrData === 'string' ? stepOrData : '/';
       return getUrl(app, `${subAppPath}${destination}`, 200);
@@ -125,7 +125,7 @@ function getSupertestApp(subAppName, subAppPath, pages) {
     passStep: (uri, data) => passStep(testApp, `${newSubAppPath}${uri}`, data),
     getUrl: uri => getUrl(testApp, `${newSubAppPath}${uri}`, 200),
     parseHtml: res => parseHtml(res),
-    initSession: (uri, options) => initSession(testApp, subAppName, uri, options, newSubAppPath, pages),
+    initSession: (uri, steps, options) => initSession(testApp, subAppName, uri, options, newSubAppPath, pages, steps),
     getDom
   };
 }

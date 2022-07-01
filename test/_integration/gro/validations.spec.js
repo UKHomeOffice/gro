@@ -1,7 +1,7 @@
 
 const moment = require('moment');
 
-describe('Validation checks', () => {
+describe('Validation - queries', () => {
   let testApp;
   let passStep;
   let initSession;
@@ -389,9 +389,9 @@ describe('Validation checks', () => {
     });
   });
 
-  describe('Details validation', () => {
-    it('does not pass /details if field is empty', async () => {
-      const URI = '/details';
+  describe('People validation', () => {
+    it('does not pass /people if field is empty', async () => {
+      const URI = '/people';
       await initSession(URI);
       await passStep(URI, {});
 
@@ -401,47 +401,38 @@ describe('Validation checks', () => {
 
       expect(validationSummary.length === 1).to.be.true;
       expect(validationSummary.html())
-        .to.match(/Tell us about your enquiry/);
+        .to.match(/Enter a full name/);
     });
+  });
+});
 
-    it('does not pass /details if existing-radio is not selected', async () => {
-      const URI = '/details';
-      await initSession(URI);
-      await passStep(URI, {
-        'details-text': 'Detail of enquiry'
-      });
+describe('Validation - complaints', () => {
+  let testApp;
+  let passStep;
+  let initSession;
+  let getUrl;
+  let parseHtml;
 
-      const res = await getUrl(URI);
-      const docu = await parseHtml(res);
-      const validationSummary = docu.find('.validation-summary');
+  const SUBAPP = 'gro';
+  const SUBAPP_PATH = '';
+  const STEPS = 'steps-complaints';
 
-      expect(validationSummary.length === 1).to.be.true;
-      expect(validationSummary.html())
-        .to.match(/Tell us if your enquiry is about an existing order/);
-    });
+  before(() => {
+    testApp = getSupertestApp(SUBAPP, SUBAPP_PATH, 'pages-complaint');
+    passStep = testApp.passStep;
+    initSession = testApp.initSession;
+    getUrl = testApp.getUrl;
+    parseHtml = testApp.parseHtml;
+  });
 
-    it('does not pass /details if previous-radio is not selected', async () => {
-      const URI = '/details';
-      await initSession(URI);
-      await passStep(URI, {
-        'details-text': 'Detail of complaint',
-        'existing-radio': 'yes'
-      });
-
-      const res = await getUrl(URI);
-      const docu = await parseHtml(res);
-      const validationSummary = docu.find('.validation-summary');
-
-      expect(validationSummary.length === 1).to.be.true;
-      expect(validationSummary.html())
-        .to.match(/Tell us if you have already enquired about this issue/);
-    });
+  beforeEach(() => {
+    now = moment();
   });
 
   describe('Details validation', () => {
     it('does not pass /details if field is empty', async () => {
       const URI = '/details';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);
@@ -455,7 +446,7 @@ describe('Validation checks', () => {
 
     it('does not pass /details if existing-radio is not selected', async () => {
       const URI = '/details';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {
         'details-text': 'Detail of complaint'
       });
@@ -471,7 +462,7 @@ describe('Validation checks', () => {
 
     it('does not pass /details if previous-radio is not selected', async () => {
       const URI = '/details';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {
         'details-text': 'Detail of complaint',
         'existing-radio': 'yes'
@@ -486,11 +477,35 @@ describe('Validation checks', () => {
         .to.match(/Tell us if you have already complained about this issue/);
     });
   });
+});
 
-  describe('People validation', () => {
-    it('does not pass /people if field is empty', async () => {
-      const URI = '/people';
-      await initSession(URI);
+describe('Validation - other', () => {
+  let testApp;
+  let passStep;
+  let initSession;
+  let getUrl;
+  let parseHtml;
+
+  const SUBAPP = 'gro';
+  const SUBAPP_PATH = '';
+  const STEPS = 'steps-complaints';
+
+  before(() => {
+    testApp = getSupertestApp(SUBAPP, SUBAPP_PATH, 'pages-other');
+    passStep = testApp.passStep;
+    initSession = testApp.initSession;
+    getUrl = testApp.getUrl;
+    parseHtml = testApp.parseHtml;
+  });
+
+  beforeEach(() => {
+    now = moment();
+  });
+
+  describe('Details validation enquiry', () => {
+    it('does not pass /details if field is empty', async () => {
+      const URI = '/details';
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);
@@ -499,7 +514,40 @@ describe('Validation checks', () => {
 
       expect(validationSummary.length === 1).to.be.true;
       expect(validationSummary.html())
-        .to.match(/Enter a full name/);
+        .to.match(/Tell us about your enquiry/);
+    });
+
+    it('does not pass /details if existing-radio is not selected', async () => {
+      const URI = '/details';
+      await initSession(URI, STEPS);
+      await passStep(URI, {
+        'details-text': 'Detail of enquiry'
+      });
+
+      const res = await getUrl(URI);
+      const docu = await parseHtml(res);
+      const validationSummary = docu.find('.validation-summary');
+
+      expect(validationSummary.length === 1).to.be.true;
+      expect(validationSummary.html())
+        .to.match(/Tell us if your enquiry is about an existing order/);
+    });
+
+    it('does not pass /details if previous-radio is not selected', async () => {
+      const URI = '/details';
+      await initSession(URI, STEPS);
+      await passStep(URI, {
+        'details-text': 'Detail of enquiry',
+        'existing-radio': 'yes'
+      });
+
+      const res = await getUrl(URI);
+      const docu = await parseHtml(res);
+      const validationSummary = docu.find('.validation-summary');
+
+      expect(validationSummary.length === 1).to.be.true;
+      expect(validationSummary.html())
+        .to.match(/Tell us if you have already enquired about this issue/);
     });
   });
 });

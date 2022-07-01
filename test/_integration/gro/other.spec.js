@@ -7,6 +7,7 @@ describe('Other issues and feedback', () => {
 
   const SUBAPP = 'gro';
   const SUBAPP_PATH = '';
+  const STEPS = 'steps-complaints';
 
   before(() => {
     testApp = getSupertestApp(SUBAPP, SUBAPP_PATH);
@@ -17,7 +18,7 @@ describe('Other issues and feedback', () => {
   describe('Existing order on a non-partnership certificate', () => {
     it('goes to /about', async () => {
       const URI = '/about';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'about-radio': 'other'
       });
@@ -27,7 +28,7 @@ describe('Other issues and feedback', () => {
 
     it('goes to /details)', async () => {
       const URI = '/details';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'details-text': 'Detail of enquiry',
         'existing-radio': 'yes',
@@ -39,7 +40,7 @@ describe('Other issues and feedback', () => {
 
     it('goes to /type', async () => {
       const URI = '/type';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'type-radio': 'adoption'
       });
@@ -49,7 +50,7 @@ describe('Other issues and feedback', () => {
 
     it('goes to /person', async () => {
       const URI = '/person';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'person-text': 'Jane Doe'
       });

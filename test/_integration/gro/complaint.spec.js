@@ -7,17 +7,20 @@ describe('Complaints', () => {
 
   const SUBAPP = 'gro';
   const SUBAPP_PATH = '';
+  const STEPS = 'steps-complaints';
 
   before(() => {
-    testApp = getSupertestApp(SUBAPP, SUBAPP_PATH);
+    testApp = getSupertestApp(SUBAPP, SUBAPP_PATH, 'pages-complaint');
     passStep = testApp.passStep;
     initSession = testApp.initSession;
+    getUrl = testApp.getUrl;
+    parseHtml = testApp.parseHtml;
   });
 
   describe('Existing order for a partnership certificate', () => {
     it('goes to /about', async () => {
       const URI = '/about';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'about-radio': 'complaint'
       });
@@ -27,7 +30,7 @@ describe('Complaints', () => {
 
     it('goes to /details', async () => {
       const URI = '/details';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'details-text': 'Detail of complaint',
         'existing-radio': 'yes',
@@ -39,7 +42,7 @@ describe('Complaints', () => {
 
     it('goes to /type', async () => {
       const URI = '/type';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'type-radio': 'marriage'
       });
@@ -49,7 +52,7 @@ describe('Complaints', () => {
 
     it('goes to /people', async () => {
       const URI = '/people';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'person-one': 'Jane Doe',
         'person-two': 'Joe Bloggs'
@@ -60,7 +63,7 @@ describe('Complaints', () => {
 
     it('goes to /how', async () => {
       const URI = '/how';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'how-radio': 'post'
       });
@@ -72,7 +75,7 @@ describe('Complaints', () => {
   describe('Non-existing order', () => {
     it('goes to /about', async () => {
       const URI = '/about';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'about-radio': 'complaint'
       });
@@ -82,7 +85,7 @@ describe('Complaints', () => {
 
     it('goes to /details', async () => {
       const URI = '/details';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'details-text': 'Detail of complaint',
         'existing-radio': 'no',

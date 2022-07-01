@@ -1,10 +1,5 @@
 
 describe('Query', () => {
-  // Complete path for users with a wrong certificate enquiry for a birth certificate
-  // Path also applies for other queires listed below:
-  // certificate not recieved, wrong certificate, poor quality certificate or refund, on non-partneship certificates
-  // e.g. birth, death or adoption certificate.
-
   let testApp;
   let passStep;
   let initSession;
