@@ -1,10 +1,11 @@
+
 module.exports = [
   '/',
   '/about',
-  '/type',
   '/details',
-  '/person',
+  '/type',
   '/people',
+  '/person',
   '/additional',
   '/how',
   '/which',
@@ -15,4 +16,4 @@ module.exports = [
   '/address',
   '/confirm',
   '/confirmation'
-]
+];

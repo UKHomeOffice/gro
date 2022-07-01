@@ -114,7 +114,7 @@ function getRedirection(app, expectedStatus, previousResponse) {
 
 function getSupertestApp(subAppName, subAppPath, pages) {
   const app = require('../../../server');
-  let newSubAppPath = (subAppPath || subAppPath === '') ? subAppPath : '';
+  let newSubAppPath = (subAppPath || subAppPath === '') ? subAppPath : subAppName;
   if (newSubAppPath.length > 0) {
     newSubAppPath = `/${newSubAppPath}`;
   }
