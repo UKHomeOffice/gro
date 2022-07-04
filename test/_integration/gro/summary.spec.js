@@ -14,6 +14,7 @@ describe('Journey of a gro application', () => {
 
   const SUBAPP = 'gro';
   const SUBAPP_PATH = '';
+  const STEPS = 'steps';
 
   describe('Summary', () => {
     before(() => {
@@ -26,7 +27,7 @@ describe('Journey of a gro application', () => {
 
     it('shows the summary page', async () => {
       const URI = '/confirm';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const res = await getUrl(URI);
 
       const docu = await parseHtml(res);
@@ -38,7 +39,7 @@ describe('Journey of a gro application', () => {
 
     it('shows enquiry details ', async () => {
       const URI = '/confirm';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const res = await getUrl(URI);
       const docu = await getDom(res);
 
@@ -49,7 +50,7 @@ describe('Journey of a gro application', () => {
 
     it('shows personal and contact details ', async () => {
       const URI = '/confirm';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const res = await getUrl(URI);
       const docu = await getDom(res);
 

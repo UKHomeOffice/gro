@@ -6,6 +6,7 @@ describe('Query', () => {
 
   const SUBAPP = 'gro';
   const SUBAPP_PATH = '';
+  const STEPS = 'steps';
 
   before(() => {
     testApp = getSupertestApp(SUBAPP, SUBAPP_PATH);
@@ -16,7 +17,7 @@ describe('Query', () => {
   describe('Non-partnership certificate, complete path', () => {
     it('goes to /about', async () => {
       const URI = '/about';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'about-radio': 'wrong-certificate'
       });
@@ -26,7 +27,7 @@ describe('Query', () => {
 
     it('goes to /type', async () => {
       const URI = '/type';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'type-radio': 'birth'
       });
@@ -36,7 +37,7 @@ describe('Query', () => {
 
     it('goes to /person', async () => {
       const URI = '/person';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'person-text': 'Jane Doe'
       });
@@ -46,7 +47,7 @@ describe('Query', () => {
 
     it('goes to /additional', async () => {
       const URI = '/additional';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'additional-names': 'Elizabeth',
         'additional-text': 'Some text',
@@ -58,7 +59,7 @@ describe('Query', () => {
 
     it('goes to how', async () => {
       const URI = '/how';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'how-radio': 'post'
       });
@@ -68,7 +69,7 @@ describe('Query', () => {
 
     it('goes to /which', async () => {
       const URI = '/which';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'which-radio': 'priority'
       });
@@ -78,7 +79,7 @@ describe('Query', () => {
 
     it('goes to /when', async () => {
       const URI = '/when';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'when-date': '2020-11-22'
       });
@@ -88,7 +89,7 @@ describe('Query', () => {
 
     it('goes to /name', async () => {
       const URI = '/name';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'name-text': 'Jane Doe'
       });
@@ -98,7 +99,7 @@ describe('Query', () => {
 
     it('goes to /email-address', async () => {
       const URI = '/email-address';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'email-text': 'test@test.com'
       });
@@ -108,7 +109,7 @@ describe('Query', () => {
 
     it('goes to /country', async () => {
       const URI = '/country';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'country-select': 'United Kingdom'
       });
@@ -118,7 +119,7 @@ describe('Query', () => {
 
     it('goes to /address', async () => {
       const URI = '/address';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         building: 'Flat 10',
         street: 'Fake Street',
@@ -134,7 +135,7 @@ describe('Query', () => {
   describe('Partnership certificate', () => {
     it('goes to /about', async () => {
       const URI = '/about';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'about-radio': 'refund'
       });
@@ -144,7 +145,7 @@ describe('Query', () => {
 
     it('goes to /type', async () => {
       const URI = '/type';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'type-radio': 'partnership'
       });
@@ -154,7 +155,7 @@ describe('Query', () => {
 
     it('goes to /people', async () => {
       const URI = '/people';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'person-one': 'Jane Doe',
         'person-two': 'Jess Smith'

@@ -11,6 +11,7 @@ describe('Validation - queries', () => {
 
   const SUBAPP = 'gro';
   const SUBAPP_PATH = '';
+  const STEPS = 'steps';
 
   before(() => {
     testApp = getSupertestApp(SUBAPP, SUBAPP_PATH);
@@ -27,7 +28,7 @@ describe('Validation - queries', () => {
   describe('About validations', () => {
     it('does not pass the about page if nothing is selected', async () => {
       const URI = '/about';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);
@@ -43,7 +44,7 @@ describe('Validation - queries', () => {
   describe('Type validations', () => {
     it('does not pass the type page if nothing is selected', async () => {
       const URI = '/type';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);
@@ -59,7 +60,7 @@ describe('Validation - queries', () => {
   describe('Person validations', () => {
     it('does not pass /person if field is empty', async () => {
       const URI = '/person';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);
@@ -75,7 +76,7 @@ describe('Validation - queries', () => {
   describe('Additional validations', () => {
     it('does not pass /additional if additional-radio is not selected ', async () => {
       const URI = '/additional';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);
@@ -91,7 +92,7 @@ describe('Validation - queries', () => {
   describe('How validations', () => {
     it('does not pass /how page if no options selected', async () => {
       const URI = '/how';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);
@@ -105,7 +106,7 @@ describe('Validation - queries', () => {
 
     it('does not pass /how if telephone is selected and number contains non-digits', async () => {
       const URI = '/how';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {
         'how-radio': 'telephone',
         'telephone-toggle-text-2': '12nts1113'
@@ -122,7 +123,7 @@ describe('Validation - queries', () => {
 
     it('does not pass /how if telephone is selected and does not contain 1-8 digits', async () => {
       const URI = '/how';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {
         'how-radio': 'telephone',
         'telephone-toggle-text-2': '112789572875073457846'
@@ -141,7 +142,7 @@ describe('Validation - queries', () => {
   describe('Which validations', () => {
     it('does not pass /which if no options are selected', async () => {
       const URI = '/which';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);
@@ -157,7 +158,7 @@ describe('Validation - queries', () => {
   describe('When validations', () => {
     it('does not pass /when if field is empty', async () => {
       const URI = '/when';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);
@@ -173,7 +174,7 @@ describe('Validation - queries', () => {
   describe('When validations', () => {
     it('does not pass /when if date entered is earlier than 2010-01-01', async () => {
       const URI = '/when';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {
         'when-date': '2009-11-22'
       });
@@ -189,7 +190,7 @@ describe('Validation - queries', () => {
 
     it('does not pass /when if date entered is not in the past', async () => {
       const URI = '/when';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {
         'when-date': now.add(1, 'days').format('YYYY-MM-DD')
       });
@@ -207,7 +208,7 @@ describe('Validation - queries', () => {
   describe('Name validations', () => {
     it('does not pass /name if field is empty', async () => {
       const URI = '/name';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);
@@ -223,7 +224,7 @@ describe('Validation - queries', () => {
   describe('Email validations', () => {
     it('does not pass /email-address if field is empty', async () => {
       const URI = '/email-address';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);
@@ -237,7 +238,7 @@ describe('Validation - queries', () => {
 
     it('does not pass /email-address if email is invalid', async () => {
       const URI = '/email-address';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {
         'email-text': 'test.com'
       });
@@ -255,7 +256,7 @@ describe('Validation - queries', () => {
   describe('Country validations', () => {
     it('does not pass /country if no options selected', async () => {
       const URI = '/country';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);
@@ -269,7 +270,7 @@ describe('Validation - queries', () => {
 
     it('does not pass /country if a entered country is not on the list', async () => {
       const URI = '/country';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {
         'country-select': 'Fake Kingdom'
       });
@@ -287,7 +288,7 @@ describe('Validation - queries', () => {
   describe('Address validations', () => {
     it('does not pass /address if building field is empty', async () => {
       const URI = '/address';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);
@@ -301,7 +302,7 @@ describe('Validation - queries', () => {
 
     it('does not pass /address if townOrCity is empty', async () => {
       const URI = '/address';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {
         building: 'Flat 10'
       });
@@ -317,7 +318,7 @@ describe('Validation - queries', () => {
 
     it('does not pass /address if townOrCity includes digits', async () => {
       const URI = '/address';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {
         building: 'Flat 10',
         townOrCity: 'London2'
@@ -334,7 +335,7 @@ describe('Validation - queries', () => {
 
     it('does not pass /address if countryOrState is empty', async () => {
       const URI = '/address';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {
         building: 'Flat 10',
         street: 'Fake Street',
@@ -352,7 +353,7 @@ describe('Validation - queries', () => {
 
     it('does not pass /address if countryOrState includes digits', async () => {
       const URI = '/address';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {
         building: 'Flat 10',
         street: 'Fake Street',
@@ -371,7 +372,7 @@ describe('Validation - queries', () => {
 
     it('does not pass /address if postcodeOrZIPcode is left empty', async () => {
       const URI = '/address';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {
         building: 'Flat 10',
         street: 'Fake Street',
@@ -392,7 +393,7 @@ describe('Validation - queries', () => {
   describe('People validation', () => {
     it('does not pass /people if field is empty', async () => {
       const URI = '/people';
-      await initSession(URI);
+      await initSession(URI, STEPS);
       await passStep(URI, {});
 
       const res = await getUrl(URI);

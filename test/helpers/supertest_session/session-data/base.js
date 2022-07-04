@@ -2,9 +2,6 @@
 const _ = require('lodash');
 
 module.exports = (appName, steps, overridenPages) => {
-  if (typeof steps !== 'string') {
-    steps = 'steps';
-  }
   const possibleSteps = require(`./${appName}/${steps}`);
 
   return (stepOrData, data) => {
