@@ -39,7 +39,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "^7.3.0",
     "@cucumber/pretty-formatter": "^1.0.0-alpha.1",
-    "chai": "^3.0.0",
+    "chai": "^4.3.6",
     "debug": "^4.3.2",
     "eslint": "^7.30.0",
     "eslint-config-hof": "^1.0.4",
