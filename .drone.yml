@@ -45,6 +45,14 @@ sonar_scanner: &sonar_scanner
   commands:
     - sonar-scanner -Dproject.settings=./sonar-project.properties
 
+integration_tests: &integration_tests
+  pull: if-not-exists
+  image: node:14
+  environment:
+    NOTIFY_KEY: USE_MOCK
+  commands:
+    - yarn run test:integration
+
 acceptance_tests: &acceptance_tests
   pull: if-not-exists
   image: mcr.microsoft.com/playwright:v1.12.3-focal
@@ -98,6 +106,14 @@ steps:
 
   - name: sonar_scanner_deploy
     <<: *sonar_scanner
+    when:
+      branch:
+        include:
+          - master
+      event: push
+
+  - name: integration_tests_deploy
+    <<: *integration_tests
     when:
       branch:
         include:
@@ -181,6 +197,15 @@ steps:
 
   - name: sonar_scanner_branch
     <<: *sonar_scanner
+    when:
+      branch:
+        include:
+          - master
+          - feature/*
+      event: pull_request
+  
+    - name: integration_tests_branch
+    <<: *integration_tests
     when:
       branch:
         include:
