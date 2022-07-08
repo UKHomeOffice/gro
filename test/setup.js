@@ -1,6 +1,7 @@
 'use strict';
 
 process.env.NODE_ENV = 'test';
+require('dotenv').config();
 
 global.chai = require('chai')
   .use(require('sinon-chai'));

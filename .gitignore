@@ -17,3 +17,4 @@ pdf-form-submissions/*.pdf
 coverage
 .nyc_output
 anchore-reports/
+.env

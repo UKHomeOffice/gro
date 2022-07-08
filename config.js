@@ -13,15 +13,15 @@ module.exports = {
     password: process.env.REDIS_PASSWORD
   },
   email: {
-    caseworker: process.env.CASEWORKER_EMAIL || '',
+    caseworker: process.env.CASEWORKER_EMAIL,
     applicant: 'email-text',
-    from: process.env.FROM_ADDRESS || '',
-    replyTo: process.env.REPLY_TO || '',
-    transport: process.env.SEND_TYPE || 'ses',
+    from: process.env.FROM_ADDRESS,
+    replyTo: process.env.REPLY_TO,
+    transport: process.env.SEND_TYPE,
     transportOptions: {
-      accessKeyId: process.env.AWS_USER || '',
-      secretAccessKey: process.env.AWS_PASSWORD || '',
-      region: process.env.EMAIL_REGION || ''
+      accessKeyId: process.env.AWS_USER,
+      secretAccessKey: process.env.AWS_PASSWORD,
+      region: process.env.EMAIL_REGION
     }
   },
   hosts: {
