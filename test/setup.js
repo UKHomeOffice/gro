@@ -1,7 +1,14 @@
 'use strict';
 
 process.env.NODE_ENV = 'test';
-require('dotenv').config();
+
+process.env.FROM_ADDRESS = 'mock';
+process.env.REPLY_TO = 'mock';
+process.env.CASEWORKER_EMAIL = 'mock';
+process.env.SEND_TYPE = 'ses';
+process.env.AWS_USER = 'mock';
+process.env.AWS_PASSWORD = 'mock';
+process.env.EMAIL_REGION = 'mock';
 
 global.chai = require('chai')
   .use(require('sinon-chai'));

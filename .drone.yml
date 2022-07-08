@@ -50,6 +50,7 @@ integration_tests: &integration_tests
   image: node:14
   environment:
     NOTIFY_KEY: USE_MOCK
+
   commands:
     - yarn run test:integration
 
