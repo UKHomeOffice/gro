@@ -204,7 +204,7 @@ steps:
           - feature/*
       event: pull_request
   
-    - name: integration_tests_branch
+  - name: integration_tests_branch
     <<: *integration_tests
     when:
       branch:
