@@ -28,11 +28,6 @@ $ npm run test:acceptance
 ```
 Phantomjs is required to run the acceptance tests (`npm install phantomjs`), or alternatively, export `IN_BROWSER=true` to run the tests in Firefox.
 
-### Unit Tests
-```bash
-$ yarn test
-```
-
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
