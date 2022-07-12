@@ -7,7 +7,7 @@ const domain = config.hosts.acceptanceTests;
 
 Given('I start the {string} application journey', async function (subApp) {
   this.subApp = subApp === 'base' ? '' : `/${subApp}`;
-  await this.page.goto(`${domain}${this.subApp}`, { waitUntil: "domcontentloaded" });
+  await this.page.goto(`${domain}${this.subApp}`, { waitUntil: 'domcontentloaded' });
 }.bind(World));
 
 Then('I select {string}', async function (name) {
