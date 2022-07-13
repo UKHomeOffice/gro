@@ -96,6 +96,11 @@ spec:
                 secretKeyRef:
                   name: postcode-auth
                   key: token
+            - name: NOTIFY_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: hof-notify-key
+                  key: hof-notify_key
           {{ if not (eq .KUBE_NAMESPACE .BRANCH_ENV) }}
           livenessProbe:
             httpGet:

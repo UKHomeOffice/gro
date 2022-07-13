@@ -1,7 +1,7 @@
 'use strict';
 
 const hof = require('hof');
-const Emailer = hof.components.emailer;
+const Notify = hof.components.notify;
 const path = require('path');
 const moment = require('moment');
 const config = require('../../../config');
@@ -9,7 +9,8 @@ const fields = require('../translations/src/en/fields.json');
 const _ = require('lodash');
 
 const parse = (model, translate) => {
-  const getLabel = key => translate(`pages.confirm.fields.${key}.label`);
+  const format = label => label.includes('?') ? label : label + ":";
+  const getLabel = key => format(translate(`pages.confirm.fields.${key}.label`));
   const transformValue = (key, value) => _.get(fields, `${key}.options.${value}.label`) ||
       (key === 'when-date' ? moment(value).format('DD-MM-YYYY') : value);
 
@@ -73,12 +74,7 @@ const parse = (model, translate) => {
 };
 
 module.exports = settings => {
-  if (!settings.from && !settings.replyTo) {
-    // eslint-disable-next-line no-console
-    console.warn('WARNING: Email `from` address must be provided. Falling back to stub email transport.');
-  }
-
-  return Emailer(Object.assign({}, settings, {
+  return Notify(Object.assign({}, settings, {
     recipient: settings.applicant,
     subject: (model, translate) => translate('pages.email.subject'),
     template: path.resolve(__dirname, ('../views/email/applicant_layout.html')),
