@@ -10,6 +10,8 @@
 
 ### Up & Running
 
+Add a .env file, and add the following env variables FROM_ADDRESS, REPLY_TO, CASEWORKER_EMAIL, AWS_USER, AWS_PASSWORD and set to a non-empty string.
+
 ```bash
 $ cd gro
 $ yarn
@@ -24,24 +26,23 @@ Then visit: [http://localhost:8080/](http://localhost:8080/)
 With the server running in development mode (`yarn run start:dev`), start the acceptance tests:
 
 ```bash
-$ npm run test:acceptance
+$ yarn test:acceptance
 ```
-Phantomjs is required to run the acceptance tests (`npm install phantomjs`), or alternatively, export `IN_BROWSER=true` to run the tests in Firefox.
 
-### Unit Tests
+### Integration Tests
 ```bash
-$ yarn test
+$ yarn test:integration
 ```
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-
 ## GRO Business Logic
 
 ### Online Orders
 The order number given online from the GRO website is always in the format COLXXXXXX/YYYY. This regex has been set to follow this format for the 'online-toggle-text' field, i.e. /^COL[0-9]{6}\/[0-9]{4}$/
+
 ### Telephone Orders
 Telephone orders, the order number is also incremental so will eventually go from 5 to 6 digits, it is followed by a hyphen and line number to indicate which row dependant on the number of items ordered – most orders this is just a single digit but can be up to 3 digits for big orders with 100+ order lines.
 The order number has been set on field 'telephone-toggle-text' using a regex validation to capture this, i.e. /^[0-9]{5,6}-[0-9]{1,3}$/
