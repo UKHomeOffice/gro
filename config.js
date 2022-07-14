@@ -15,7 +15,7 @@ module.exports = {
 
   email: {
     caseworker: process.env.CASEWORKER_EMAIL || 'sas-hof-test@digital.homeoffice.gov.uk',
-    notifyApiKey: process.env.NOTIFY_KEY,
+    notifyApiKey: process.env.NOTIFY_KEY || 'hof_test-89548f6c-39cd-4acb-851c-1f4ffa2e479b-28426e56-443a-4ba4-98ed-fb576e717ed9',|| 'hof_test-89548f6c-39cd-4acb-851c-1f4ffa2e479b-28426e56-443a-4ba4-98ed-fb576e717ed9',
     notifyTemplate: process.env.NOTIFY_TEMPLATE || 'c78918be-fccb-4e7b-a333-beee0436c2bd',
     applicant: 'email-text',
   },
