@@ -9,7 +9,7 @@ const fields = require('../translations/src/en/fields.json');
 const _ = require('lodash');
 
 const parse = (model, translate) => {
-  const format = label => label.includes('?') ? label : label + ":";
+  const format = label => label.includes('?') ? label : label + ':';
   const getLabel = key => format(translate(`pages.confirm.fields.${key}.label`));
   const transformValue = (key, value) => _.get(fields, `${key}.options.${value}.label`) ||
       (key === 'when-date' ? moment(value).format('DD-MM-YYYY') : value);
@@ -74,7 +74,7 @@ const parse = (model, translate) => {
 };
 
 module.exports = settings => {
-  return Notify(Object.assign({}, settings, {
+  Notify(Object.assign({}, settings, {
     recipient: settings.caseworker,
     subject: (model, translate) => translate('pages.email.subject'),
     template: path.resolve(__dirname, ('../views/email/caseworker_layout.html')),
