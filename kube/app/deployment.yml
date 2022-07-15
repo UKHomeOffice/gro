@@ -71,8 +71,8 @@ spec:
               {{ else }}
               valueFrom:
                 secretKeyRef:
-                  name: notify-key
-                  key: notify-key
+                  name: hof-notify-key
+                  key: hof-notify-key
               {{ end }}
             {{ if not (eq .KUBE_NAMESPACE .BRANCH_ENV) }}
             - name: SESSION_SECRET
