@@ -100,7 +100,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: hof-notify-key
-                  key: hof-notify_key
+                  key: hof-notify-key
           {{ if not (eq .KUBE_NAMESPACE .BRANCH_ENV) }}
           livenessProbe:
             httpGet:
