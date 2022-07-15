@@ -5,9 +5,25 @@ ignore:
   SNYK-JS-USERAGENT-174737:
     - device > useragent:
         reason: No available patch currently in circulation
-        expires: '2021-11-01T17:02:21.865Z'
+        expires: '2022-11-01T17:02:21.865Z'
   SNYK-JS-REQUEST-1314897:
     - hof > request:
         reason: Need to replace request in HOF
+        expires: '2022-09-18T14:58:46.388Z'
+  SNYK-JS-CACHEDPATHRELATIVE-2342653:
+    - '*':
+        reason: No updates of the dependents available
+        expires: '2022-09-18T14:58:46.388Z'
+  SNYK-JS-JSONSCHEMA-1920922:
+    - '*':
+        reason: No updates of the dependents available
+        expires: '2022-09-18T14:58:46.388Z'
+  SNYK-JS-MINIMIST-2429795:
+    - '*':
+        reason: No updates of the dependents available
+        expires: '2022-09-18T14:58:46.388Z'
+  SNYK-JS-SHELLQUOTE-1766506:
+    - '*':
+        reason: No updates of the dependents available
         expires: '2022-09-18T14:58:46.388Z'
 patch: {}

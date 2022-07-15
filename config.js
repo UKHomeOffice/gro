@@ -16,7 +16,7 @@ module.exports = {
   email: {
     caseworker: process.env.CASEWORKER_EMAIL || 'sas-hof-test@digital.homeoffice.gov.uk',
     notifyApiKey: process.env.NOTIFY_KEY,
-    notifyTemplate: process.env.NOTIFY_TEMPLATE || 'c78918be-fccb-4e7b-a333-beee0436c2bd',
+    notifyTemplate: process.env.NOTIFY_TEMPLATE,
     applicant: 'email-text'
   },
   hosts: {
