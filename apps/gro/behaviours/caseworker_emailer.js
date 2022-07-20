@@ -72,9 +72,9 @@ const parse = (model, translate) => {
     ]
   };
 };
-
+// eslint-disable-next-line
 module.exports = settings => {
-  Notify(Object.assign({}, settings, {
+  return Notify(Object.assign({}, settings, {
     recipient: settings.caseworker,
     subject: (model, translate) => translate('pages.email.subject'),
     template: path.resolve(__dirname, ('../views/email/caseworker_layout.html')),
