@@ -24,7 +24,7 @@ Then visit: [http://localhost:8080/](http://localhost:8080/)
 With the server running in development mode (`yarn run start:dev`), start the acceptance tests:
 
 ```bash
-$ npm run test:acceptance
+$ yarn run test:acceptance
 ```
 Phantomjs is required to run the acceptance tests (`npm install phantomjs`), or alternatively, export `IN_BROWSER=true` to run the tests in Firefox.
 
