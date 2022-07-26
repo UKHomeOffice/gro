@@ -32,7 +32,7 @@
     "homeoffice-countries": "^0.1.0",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "typeahead-aria": "^1.0.1"
   },
   "devDependencies": {
