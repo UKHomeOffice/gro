@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.19.0
+version: v1.22.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   SNYK-JS-USERAGENT-174737:
@@ -11,19 +11,52 @@ ignore:
         reason: Need to replace request in HOF
         expires: '2022-09-18T14:58:46.388Z'
   SNYK-JS-CACHEDPATHRELATIVE-2342653:
-    - '*':
-        reason: No updates of the dependents available
-        expires: '2022-09-18T14:58:46.388Z'
-  SNYK-JS-JSONSCHEMA-1920922:
-    - '*':
-        reason: No updates of the dependents available
-        expires: '2022-09-18T14:58:46.388Z'
+    - browserify > cached-path-relative:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.786Z'
+    - browserify > module-deps > cached-path-relative:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
+    - hof > browserify > cached-path-relative:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
+    - hof > browserify > module-deps > cached-path-relative:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
   SNYK-JS-MINIMIST-2429795:
-    - '*':
-        reason: No updates of the dependents available
-        expires: '2022-09-18T14:58:46.388Z'
+    - browserify > subarg > minimist:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
+    - browserify > deps-sort > subarg > minimist:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
+    - browserify > module-deps > subarg > minimist:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
+    - browserify > module-deps > detective > minimist:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
+    - hof > browserify > subarg > minimist:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
+    - hof > browserify > deps-sort > subarg > minimist:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
+    - hof > browserify > module-deps > subarg > minimist:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
+    - hof > browserify > module-deps > detective > minimist:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
   SNYK-JS-SHELLQUOTE-1766506:
-    - '*':
-        reason: No updates of the dependents available
-        expires: '2022-09-18T14:58:46.388Z'
+    - browserify > shell-quote:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
+    - hof > browserify > shell-quote:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
+  SNYK-JS-JSONSCHEMA-1920922:
+    - hof > request > http-signature > jsprim > json-schema:
+        reason: No valid upgrade path
+        expires: '2022-08-25T09:23:58.787Z'
 patch: {}
