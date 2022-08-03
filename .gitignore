@@ -4,6 +4,7 @@ logs
 secrets.env
 node_modules
 .idea
+.env
 .DS_Store
 .vscode
 *.iml

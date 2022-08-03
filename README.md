@@ -26,7 +26,7 @@ Then visit: [http://localhost:8080/](http://localhost:8080/)
 With the server running in development mode (`yarn run start:dev`), start the acceptance tests:
 
 ```bash
-$ yarn test:acceptance
+$ yarn run test:acceptance
 ```
 
 ### Integration Tests

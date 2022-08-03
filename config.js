@@ -12,17 +12,12 @@ module.exports = {
     host: process.env.REDIS_HOST || '127.0.0.1',
     password: process.env.REDIS_PASSWORD
   },
+
   email: {
-    caseworker: process.env.CASEWORKER_EMAIL,
-    applicant: 'email-text',
-    from: process.env.FROM_ADDRESS,
-    replyTo: process.env.REPLY_TO,
-    transport: process.env.SEND_TYPE || 'ses',
-    transportOptions: {
-      accessKeyId: process.env.AWS_USER,
-      secretAccessKey: process.env.AWS_PASSWORD,
-      region: process.env.EMAIL_REGION
-    }
+    caseworker: process.env.CASEWORKER_EMAIL || 'sas-hof-test@digital.homeoffice.gov.uk',
+    notifyApiKey: process.env.NOTIFY_KEY,
+    notifyTemplate: process.env.NOTIFY_TEMPLATE,
+    applicant: 'email-text'
   },
   hosts: {
     acceptanceTests: process.env.ACCEPTANCE_HOST_NAME || `http://localhost:${process.env.PORT || 8080}`
