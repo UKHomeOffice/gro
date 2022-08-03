@@ -42,6 +42,10 @@ Then('I fill {string} with {string}', async function (field, value) {
   await this.page.fill(`input[name="${field}"]`, value);
 }.bind(World));
 
+Then('I fill {string} with {string} option', async function (field, value) {
+  await this.page.fill(`input[id="${field}"]`, value);
+}.bind(World));
+
 Then('I fill {string} text area with {string}', async function (field, value) {
   await this.page.fill(`textarea[name="${field}"]`, value);
 }.bind(World));
@@ -71,6 +75,16 @@ Then('I should be on the {string} page showing {string}', async function (uri, h
   await this.page.waitForSelector('body', { timeout: 15000 });
   expect(new URL(await this.page.url()).pathname).to.eql(`${this.subApp}/${uri}`);
   expect(await this.page.innerText('body')).to.include(heading);
+}.bind(World));
+
+Then('I should see {string} and {string} on the page', async function (key, value) {
+  await this.page.waitForSelector('body', { timeout: 15000 });
+  expect(await this.page.innerText('body')).to.include(key);
+  expect(await this.page.innerText('body')).to.include(value);
+}.bind(World));
+
+Then('I select change link {string}', async function (name) {
+  await this.page.click(`a[id="${name}"]`);
 }.bind(World));
 
 Then('I should see {string} on the page', async function (content) {

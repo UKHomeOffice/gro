@@ -1084,6 +1084,11 @@ browserslist@^4.16.6:
     escalade "^3.1.1"
     node-releases "^1.1.71"
 
+buffer-equal-constant-time@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
+  integrity sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA==
+
 buffer-from@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.2.tgz#2b146a6fd72e80b4f55d255f35ed59a3a9a41bd5"
@@ -2891,9 +2896,9 @@ hmac-drbg@^1.0.1:
     minimalistic-crypto-utils "^1.0.1"
 
 hof@^19.14.9:
-  version "19.14.9"
-  resolved "https://registry.yarnpkg.com/hof/-/hof-19.14.9.tgz#1af334b69082628c7ff1e4c43d12c2793a529da8"
-  integrity sha512-hsBsFHjGQnH2qbfwDd6Dt4x7z5BtWMN40J+gkX0Nm2Wx0RPj7FG8qz7UA7yhXV2/Tr0BzY4lZjKXWlVEbGxg3A==
+  version "19.14.13"
+  resolved "https://registry.yarnpkg.com/hof/-/hof-19.14.13.tgz#fe68039b89e91b1ec115d8acaf4f74a5eb443c1f"
+  integrity sha512-FO7w8FMY8g6M0FFa3GcIsxNOmP+v0gX5DGf/1jagtPTWdoYiyAcUwlfLxWXQhmgOgkeTsAPfgcv2JOESdIU6UA==
   dependencies:
     aliasify "^2.1.0"
     bluebird "^3.7.2"
@@ -2931,7 +2936,7 @@ hof@^19.14.9:
     minimatch "^3.0.3"
     minimist "^1.2.6"
     mixwith "^0.1.1"
-    moment "^2.29.2"
+    moment "^2.29.4"
     morgan "^1.10.0"
     mustache "^2.3.0"
     nodemailer "^6.6.3"
@@ -3943,11 +3948,6 @@ minimist@^1.1.0, minimist@^1.1.1, minimist@^1.2.0, minimist@^1.2.5, minimist@^1.
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
-minimist@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
-  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
-
 mixwith@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/mixwith/-/mixwith-0.1.1.tgz#c8995918c5b61fbfda9ad377a857cd47750541c0"
@@ -4020,7 +4020,7 @@ module-not-found-error@^1.0.1:
   resolved "https://registry.yarnpkg.com/module-not-found-error/-/module-not-found-error-1.0.1.tgz#cf8b4ff4f29640674d6cdd02b0e3bc523c2bbdc0"
   integrity sha1-z4tP9PKWQGdNbN0CsOO8UjwrvcA=
 
-moment@^2.29.2, moment@^2.29.3:
+moment@^2.29.3, moment@^2.29.4:
   version "2.29.4"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
   integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
@@ -4201,6 +4201,15 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
+
+notifications-node-client@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/notifications-node-client/-/notifications-node-client-5.1.1.tgz#d98ebf07828a6e999e29ccb180b9d0376faa3878"
+  integrity sha512-/Rutb/s7OLqIvsvgjPi6kVSu4nnEC5Hq1arB6fo219hAJOzkHJ+dJr1fMNIpDo7ubgf3hv5GFNzutPN54wIqOA==
+  dependencies:
+    axios "^0.25.0"
+    jsonwebtoken "^8.2.1"
+    underscore "^1.9.0"
 
 nwsapi@^2.2.0:
   version "2.2.0"
