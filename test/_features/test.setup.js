@@ -1,4 +1,3 @@
-
 const { Before, BeforeAll, AfterAll, After, World } = require('@cucumber/cucumber');
 const { BrowserContext, Page, chromium } = require('playwright');
 
