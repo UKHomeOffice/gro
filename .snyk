@@ -5,7 +5,7 @@ ignore:
   SNYK-JS-USERAGENT-174737:
     - device > useragent:
         reason: No available patch currently in circulation
-        expires: '2022-11-01T17:02:21.865Z'
+        expires: '2021-11-01T17:02:21.865Z'
   SNYK-JS-REQUEST-1314897:
     - hof > request:
         reason: Need to replace request in HOF
