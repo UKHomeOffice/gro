@@ -19,7 +19,7 @@
     "test:acceptance": "TAGS=\"${TAGS:=@feature}\" npm run test:cucumber",
     "test:acceptance_browser": "ACCEPTANCE_WITH_BROWSER=true TAGS=\"${TAGS:=@feature}\" yarn run test:cucumber",
     "test:cucumber": "cucumber-js -f @cucumber/pretty-formatter \"test/_features/**/*.feature\" --require test/_features/test.setup.js --require \"test/_features/step_definitions/**/*.js\" --tags $TAGS",
-    "test:integration": "_mocha \"test/_integration/**/*.spec.js\" --exit",
+    "test:integration": "NODE_ENV=development _mocha \"test/_integration/**/*.spec.js\" -r dotenv/config --exit",
     "test:lint": "eslint . --config ./node_modules/eslint-config-hof/default.js",
     "test:snyk": "snyk config set api=SNYK_TOKEN && snyk test",
     "build": "hof-build",

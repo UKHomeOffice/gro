@@ -169,9 +169,6 @@ module.exports = {
     mixin: 'select',
     className: ['typeahead', 'js-hidden'],
     options: [''].concat(require('homeoffice-countries').allCountries),
-    legend: {
-      className: 'visuallyhidden'
-    },
     validate: ['required']
   },
   building: {

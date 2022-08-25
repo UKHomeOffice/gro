@@ -150,15 +150,24 @@ describe('Query', () => {
         'type-radio': 'partnership'
       });
 
-      expect(response.text).to.contain('Found. Redirecting to /people');
+      expect(response.text).to.contain('Found. Redirecting to /person-one');
     });
 
-    it('goes to /people', async () => {
-      const URI = '/people';
+    it('goes to /person-one', async () => {
+      const URI = '/person-one';
       await initSession(URI, STEPS);
       const response = await passStep(URI, {
-        'person-one': 'Jane Doe',
-        'person-two': 'Jess Smith'
+        'person-one': 'Jane Doe'
+      });
+
+      expect(response.text).to.contain('Found. Redirecting to /person-two');
+    });
+
+    it('goes to /person-two', async () => {
+      const URI = '/person-two';
+      await initSession(URI, STEPS);
+      const response = await passStep(URI, {
+        'person-one': 'Jane Doe'
       });
 
       expect(response.text).to.contain('Found. Redirecting to /additional');

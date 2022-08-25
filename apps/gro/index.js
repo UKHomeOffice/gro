@@ -75,12 +75,6 @@ module.exports = {
         'person-one'
       ],
       next: '/person-two',
-      forks: [{
-        target: '/how',
-        condition(req) {
-          return _.includes(req.sessionModel.get('steps'), '/details');
-        }
-      }],
       locals: {
         section: 'enquiry-details'
       }
@@ -89,6 +83,12 @@ module.exports = {
       fields: [
         'person-two'
       ],
+      forks: [{
+        target: '/how',
+        condition(req) {
+          return _.includes(req.sessionModel.get('steps'), '/details');
+        }
+      }],
       next: '/additional',
       locals: {
         section: 'enquiry-details'
