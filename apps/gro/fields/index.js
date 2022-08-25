@@ -7,9 +7,7 @@ const after2010Validator = { type: 'after', arguments: ['2010'] };
 
 module.exports = {
   'about-radio': {
-    legend: {
-      className: 'visuallyhidden'
-    },
+    isPageHeading: 'true',
     mixin: 'radio-group',
     validate: ['required'],
     className: ['block', 'form-group'],
@@ -48,7 +46,7 @@ module.exports = {
     ]
   },
   'details-text': {
-    labelClassName: 'visuallyhidden',
+    isPageHeading: 'true',
     mixin: 'textarea',
     validate: ['required', 'notUrl'],
     'ignore-defaults': true,
@@ -80,6 +78,7 @@ module.exports = {
   'how-radio': {
     mixin: 'radio-group',
     validate: ['required'],
+    isPageHeading: 'true',
     options: [{
       value: 'online',
       toggle: 'online-toggle-text',
@@ -90,10 +89,7 @@ module.exports = {
       child: 'partials/how-telephone-details'
     }, {
       value: 'post'
-    }],
-    legend: {
-      className: 'visuallyhidden'
-    }
+    }]
   },
   'online-toggle-text': {
     // COL Numbers are optional so removed required and regex validation checks here
@@ -133,18 +129,17 @@ module.exports = {
     validate: ['required', 'notUrl']
   },
   'person-two': {
+    labelClassName: 'visuallyhidden',
     mixin: 'input-text',
     validate: ['notUrl']
   },
   'person-text': {
-    labelClassName: 'visuallyhidden',
+    isPageHeading: 'true',
     mixin: 'input-text',
     validate: ['required', 'notUrl']
   },
   'type-radio': {
-    legend: {
-      className: 'visuallyhidden'
-    },
+    isPageHeading: 'true',
     mixin: 'radio-group',
     validate: ['required'],
     className: ['block', 'form-group'],
@@ -157,12 +152,11 @@ module.exports = {
     ]
   },
   'when-date': dateComponent('when-date', {
+    isPageHeading: 'true',
     validate: ['required', after2010Validator, 'before']
   }),
   'which-radio': {
-    legend: {
-      className: 'visuallyhidden'
-    },
+    isPageHeading: 'true',
     mixin: 'radio-group',
     validate: ['required'],
     className: ['block', 'form-group'],
@@ -188,18 +182,21 @@ module.exports = {
     labelClassName: 'visuallyhidden'
   },
   townOrCity: {
+    className: ['govuk-input govuk-!-width-two-thirds'],
     validate: ['required', 'notUrl',
       { type: 'regex', arguments: /^([^0-9]*)$/ },
       { type: 'maxlength', arguments: 100 }
     ]
   },
   countyOrState: {
+    className: ['govuk-input govuk-!-width-two-thirds'],
     validate: ['required', 'notUrl',
       { type: 'regex', arguments: /^([^0-9]*)$/ },
       { type: 'maxlength', arguments: 100 }
     ]
   },
   postcodeOrZIPCode: {
+    className: ['govuk-input govuk-input--width-10'],
     validate: ['required'],
     formatter: ['removespaces', 'uppercase']
   }

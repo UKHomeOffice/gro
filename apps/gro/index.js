@@ -30,7 +30,7 @@ module.exports = {
       fields: ['type-radio'],
       next: '/person',
       forks: [{
-        target: '/people',
+        target: '/person-one',
         condition(req) {
           return _.includes(['marriage', 'partnership'], req.form.values['type-radio']);
         }
@@ -70,18 +70,26 @@ module.exports = {
         section: 'enquiry-details'
       }
     },
-    '/people': {
+    '/person-one': {
       fields: [
-        'person-one',
-        'person-two'
+        'person-one'
       ],
-      next: '/additional',
+      next: '/person-two',
       forks: [{
         target: '/how',
         condition(req) {
           return _.includes(req.sessionModel.get('steps'), '/details');
         }
       }],
+      locals: {
+        section: 'enquiry-details'
+      }
+    },
+    '/person-two': {
+      fields: [
+        'person-two'
+      ],
+      next: '/additional',
       locals: {
         section: 'enquiry-details'
       }
