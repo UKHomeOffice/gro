@@ -2,11 +2,8 @@
   "enquiry-details": {
     "header": "Your enquiry details"
   },
-  "person-one": {
+  "people": {
     "subHeading": "Tell us the full names of party one on the certificate you requested"
-  },
-  "person-two": {
-    "subHeading": "Tell us the full names of party two on the certificate you requested (optional)"
   },
   "order-details": {
     "header": "Your order details"

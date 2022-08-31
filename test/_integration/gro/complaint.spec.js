@@ -47,25 +47,17 @@ describe('Complaints', () => {
         'type-radio': 'marriage'
       });
 
-      expect(response.text).to.contain('Found. Redirecting to /person-one');
+      expect(response.text).to.contain('Found. Redirecting to /people');
     });
 
-    it('goes to /person-one', async () => {
-      const URI = '/person-one';
+    it('goes to /people', async () => {
+      const URI = '/people';
       await initSession(URI, STEPS);
       const response = await passStep(URI, {
-        'person-one': 'Jane Doe'
-      });
-
-      expect(response.text).to.contain('Found. Redirecting to /person-two');
-    });
-
-    it('goes to /person-two', async () => {
-      const URI = '/person-two';
-      await initSession(URI, STEPS);
-      const response = await passStep(URI, {
+        'person-one': 'Jane Doe',
         'person-two': 'Joe Bloggs'
       });
+
       expect(response.text).to.contain('Found. Redirecting to /how');
     });
 

@@ -129,7 +129,6 @@ module.exports = {
     validate: ['required', 'notUrl']
   },
   'person-two': {
-    labelClassName: 'visuallyhidden',
     mixin: 'input-text',
     validate: ['notUrl']
   },

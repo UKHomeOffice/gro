@@ -391,8 +391,8 @@ describe('Validation - queries', () => {
   });
 
   describe('People validation', () => {
-    it('does not pass /person-one if field is empty', async () => {
-      const URI = '/person-one';
+    it('does not pass /people if field is empty', async () => {
+      const URI = '/people';
       await initSession(URI, STEPS);
       await passStep(URI, {});
 
