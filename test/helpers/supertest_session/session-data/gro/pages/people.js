@@ -1,5 +1,4 @@
 
 module.exports = {
-  'person-one': 'Ben Smith',
-  'person-two': ''
+  'person-one': 'Ben Smith'
 };

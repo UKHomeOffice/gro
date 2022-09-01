@@ -75,13 +75,13 @@ module.exports = {
         'person-one',
         'person-two'
       ],
+      next: '/additional',
       forks: [{
         target: '/how',
         condition(req) {
           return _.includes(req.sessionModel.get('steps'), '/details');
         }
       }],
-      next: '/additional',
       locals: {
         section: 'enquiry-details'
       }

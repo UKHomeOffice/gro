@@ -158,7 +158,7 @@ describe('Query', () => {
       await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'person-one': 'Jane Doe',
-        'person-two': 'Joe Bloggs'
+        'person-two': 'Jess Smith'
       });
 
       expect(response.text).to.contain('Found. Redirecting to /additional');
