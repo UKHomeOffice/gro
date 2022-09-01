@@ -20,7 +20,7 @@ module.exports = {
     applicant: 'email-text'
   },
   hosts: {
-    acceptanceTests: process.env.ACCEPTANCE_HOST_NAME
+    acceptanceTests: process.env.ACCEPTANCE_HOST_NAME || `http://localhost:${process.env.PORT || 8080}`
   },
   ga: {
     tagId: process.env.GA_TAG
