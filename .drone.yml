@@ -133,6 +133,17 @@ steps:
       branch: master
       event: [push, pull_request]
 
+  - name: scan_image
+    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
+    commands:
+      - docker scan $${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
+    volumes:
+      - name: dockersock
+        path: /var/run
+    when:
+      branch: master
+      event: [push, pull_request]
+
   - name: image_to_quay
     pull: if-not-exists
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
@@ -204,7 +215,7 @@ steps:
           - master
           - feature/*
       event: pull_request
-  
+
   - name: integration_tests_branch
     <<: *integration_tests
     when:
