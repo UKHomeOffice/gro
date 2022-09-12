@@ -136,6 +136,7 @@ steps:
   - name: scan_image
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
     commands:
+      - apt-get update && apt-get install docker-scan-plugin
       - docker scan $${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
     volumes:
       - name: dockersock
