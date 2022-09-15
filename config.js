@@ -13,6 +13,12 @@ module.exports = {
     password: process.env.REDIS_PASSWORD
   },
 
+  survey : {
+    urls: {
+      root: `https://eforms.homeoffice.gov.uk/outreach/Feedback.ofml`
+    }
+  },
+
   email: {
     caseworker: process.env.CASEWORKER_EMAIL,
     notifyApiKey: process.env.NOTIFY_KEY,
