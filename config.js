@@ -13,9 +13,9 @@ module.exports = {
     password: process.env.REDIS_PASSWORD
   },
 
-  survey : {
+  survey: {
     urls: {
-      root: `https://eforms.homeoffice.gov.uk/outreach/Feedback.ofml`
+      root: 'https://eforms.homeoffice.gov.uk/outreach/Feedback.ofml'
     }
   },
 
