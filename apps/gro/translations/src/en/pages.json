@@ -115,7 +115,7 @@
     }
   },
   "confirmation": {
-    "subHeading": "Thank you for contacting the General Register Office.",
+    "header": "Thank you for contacting the General Register Office.",
     "content-copy-sent": "We have sent you an email containing the information you have provided to ",
     "content-whats-next": "What happens next",
     "content-respond": "We will respond to your enquiry as soon as possible.",
