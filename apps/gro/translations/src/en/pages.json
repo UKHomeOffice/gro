@@ -3,7 +3,7 @@
     "header": "Your enquiry details"
   },
   "people": {
-    "subHeading": "Tell us the full names of party one on the certificate you requested"
+    "header": "Tell us the full names of party one on the certificate you requested"
   },
   "order-details": {
     "header": "Your order details"
@@ -12,19 +12,19 @@
     "header": "Your personal and contact details"
   },
   "additional": {
-    "subHeading": "Additional information"
+    "header": "Additional information"
   },
   "name": {
-    "subHeading": "What is your full name?"
+    "header": "What is your full name?"
   },
   "email-address": {
-    "subHeading": "What is your email address?"
+    "header": "What is your email address?"
   },
   "country": {
-    "subHeading": "What country is your address located?"
+    "header": "What country is your address located?"
   },
   "address": {
-    "subHeading": "What is your address?",
+    "header": "What is your address?",
     "intro": "If you have no fixed address, enter an address where we can contact you."
   },
   "confirm": {
