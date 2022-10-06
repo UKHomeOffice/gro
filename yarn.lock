@@ -2900,10 +2900,10 @@ hmac-drbg@^1.0.1:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hof@^20.0.0-beta.37:
-  version "20.0.0-beta.37"
-  resolved "https://registry.yarnpkg.com/hof/-/hof-20.0.0-beta.37.tgz#d08985eda91c7a3c7effc8db0deaf09b177ffa2b"
-  integrity sha512-dugv66jC6NuFBt+2NkTnO7BGRuXJpS6E2Jtezxn+dstzpTAi6pZa9r0U4WqrU8RGfTNHPd+kgqYc0yU1Vtgolw==
+hof@^20.0.0:
+  version "20.0.0"
+  resolved "https://registry.yarnpkg.com/hof/-/hof-20.0.0.tgz#e6dff00657306ae917fecff2606f72b79c730c14"
+  integrity sha512-8WSjwDsOB3rGXtW/UQR/+O9tLtK6Ue1IU7dNOb27AhRFUYjdZ8NluI9kxRrRYv6ujh8T7jFfngYM3jQjYKUL1g==
   dependencies:
     aliasify "^2.1.0"
     bluebird "^3.7.2"
@@ -2942,7 +2942,7 @@ hof@^20.0.0-beta.37:
     minimatch "^3.0.3"
     minimist "^1.2.6"
     mixwith "^0.1.1"
-    moment "^2.29.2"
+    moment "^2.29.4"
     morgan "^1.10.0"
     mustache "^2.3.0"
     nodemailer "^6.6.3"
@@ -2959,6 +2959,7 @@ hof@^20.0.0-beta.37:
     uglify-js "^3.14.3"
     underscore "^1.12.1"
     urijs "^1.19.11"
+    uuid "^8.3.2"
     winston "^3.7.2"
 
 hogan-express-strict@^0.5.4:
@@ -4026,7 +4027,7 @@ module-not-found-error@^1.0.1:
   resolved "https://registry.yarnpkg.com/module-not-found-error/-/module-not-found-error-1.0.1.tgz#cf8b4ff4f29640674d6cdd02b0e3bc523c2bbdc0"
   integrity sha1-z4tP9PKWQGdNbN0CsOO8UjwrvcA=
 
-moment@^2.29.2, moment@^2.29.3:
+moment@^2.29.3, moment@^2.29.4:
   version "2.29.4"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
   integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
@@ -5932,7 +5933,7 @@ uuid@3.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
 
-uuid@8.3.2:
+uuid@8.3.2, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==

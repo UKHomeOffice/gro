@@ -178,21 +178,21 @@ module.exports = {
     labelClassName: 'visuallyhidden'
   },
   townOrCity: {
-    className: ['govuk-input govuk-!-width-two-thirds'],
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
     validate: ['required', 'notUrl',
       { type: 'regex', arguments: /^([^0-9]*)$/ },
       { type: 'maxlength', arguments: 100 }
     ]
   },
   countyOrState: {
-    className: ['govuk-input govuk-!-width-two-thirds'],
+    className: ['govuk-input', 'govuk-!-width-two-thirds'],
     validate: ['required', 'notUrl',
       { type: 'regex', arguments: /^([^0-9]*)$/ },
       { type: 'maxlength', arguments: 100 }
     ]
   },
   postcodeOrZIPCode: {
-    className: ['govuk-input govuk-input--width-10'],
+    className: ['govuk-input', 'govuk-input--width-10'],
     validate: ['required'],
     formatter: ['removespaces', 'uppercase']
   }
