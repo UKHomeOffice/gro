@@ -2,6 +2,9 @@
   "enquiry-details": {
     "header": "Your enquiry details"
   },
+  "people": {
+    "header": "Tell us the full names of party one on the certificate you requested"
+  },
   "order-details": {
     "header": "Your order details"
   },
@@ -10,6 +13,12 @@
   },
   "additional": {
     "header": "Additional information"
+  },
+  "name": {
+    "header": "What is your full name?"
+  },
+  "email-address": {
+    "header": "What is your email address?"
   },
   "country": {
     "header": "What country is your address located?"
@@ -20,7 +29,7 @@
   },
   "confirm": {
     "header": "Is the information you have given us correct?",
-    "subheader": "If any information is incorrect, you can change it here.",
+    "subHeading": "If any information is incorrect, you can change it here.",
     "fields": {
       "uniqueId": {
         "label": "Submission ID"
@@ -110,7 +119,7 @@
     "content-copy-sent": "We have sent you an email containing the information you have provided to ",
     "content-whats-next": "What happens next",
     "content-respond": "We will respond to your enquiry as soon as possible.",
-    "complete-again": "<a href='/'>Complete the form again</a>",
+    "complete-again": "<a class=\"govuk-link\" href='/'>Complete the form again</a>",
     "content-feedback-link": "Tell us what you think of this form",
     "content-feedback-time": "(takes 30 seconds)"
   },

@@ -89,6 +89,7 @@
   },
   "person-text": {
     "summary": "Name on certificate requested",
+    "labelClassName": ["govuk-label--l"],
     "label": {
       "about-radio": {
         "wrong-certificate": "Tell us the full names of the person in the certificate you requested",

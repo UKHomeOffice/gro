@@ -32,7 +32,7 @@ describe('Journey of a gro application', () => {
 
       const docu = await parseHtml(res);
 
-      const header = docu.find('header h1');
+      const header = docu.find('h1');
 
       header.html().should.match(/Is the information you have given us correct?/);
     });
