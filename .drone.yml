@@ -272,6 +272,7 @@ steps:
     <<: *acceptance_tests
     commands:
       - export ACCEPTANCE_HOST_NAME=https://$${APP_NAME}.uat.internal.sas-notprod.homeoffice.gov.uk
+      - npx playwright install
       - npm run test:acceptance
     when:
       branch: master
