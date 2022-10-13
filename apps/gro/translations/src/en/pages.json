@@ -119,7 +119,7 @@
     "content-copy-sent": "We have sent you an email containing the information you have provided to ",
     "content-whats-next": "What happens next",
     "content-respond": "We will respond to your enquiry as soon as possible.",
-    "complete-again": "<a href='/'>Complete the form again</a>",
+    "complete-again": "<a class=\"govuk-link\" href='/'>Complete the form again</a>",
     "content-feedback-link": "Tell us what you think of this form",
     "content-feedback-time": "(takes 30 seconds)"
   },
