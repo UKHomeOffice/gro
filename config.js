@@ -8,13 +8,19 @@ module.exports = {
   PRETTY_DATE_FORMAT: 'Do MMMM YYYY',
   dateTimeFormat: 'DD-MM-YYYY, hh:mma',
   redis: {
-    port: process.env.REDIS_PORT || 6379,
-    host: process.env.REDIS_HOST || '127.0.0.1',
+    port: process.env.REDIS_PORT,
+    host: process.env.REDIS_HOST,
     password: process.env.REDIS_PASSWORD
   },
 
+  survey: {
+    urls: {
+      root: 'https://eforms.homeoffice.gov.uk/outreach/Feedback.ofml'
+    }
+  },
+
   email: {
-    caseworker: process.env.CASEWORKER_EMAIL || 'sas-hof-test@digital.homeoffice.gov.uk',
+    caseworker: process.env.CASEWORKER_EMAIL,
     notifyApiKey: process.env.NOTIFY_KEY,
     notifyTemplate: process.env.NOTIFY_TEMPLATE,
     applicant: 'email-text'
