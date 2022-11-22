@@ -2,6 +2,10 @@
 version: v1.22.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
+  SNYK-JS-MINIMATCH-3050818:
+    - hof > i18n-future > glob > minimatch: 
+        reason: No valid upgrade path
+        expires: '2023-02-22T09:20:00.000Z'
   SNYK-JS-UGLIFYJS-3113873:
     - hof > uglify-js:
         reason: No valid upgrade path
