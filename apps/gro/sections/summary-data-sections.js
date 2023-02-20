@@ -4,6 +4,7 @@ const config = require('../../../config');
 
 module.exports = {
   'enquiry-details': [
+    'order-type',
     'about-radio',
     'type-radio',
     'details-text',

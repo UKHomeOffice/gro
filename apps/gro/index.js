@@ -14,6 +14,13 @@ module.exports = {
   baseUrl: '/',
   steps: {
     '/about': {
+      fields: ['order-type'],
+      locals: {
+        section: 'enquiry-details'
+      },
+      next: '/contact-reason'
+    },
+    '/contact-reason': {
       fields: ['about-radio'],
       next: '/type',
       forks: [{

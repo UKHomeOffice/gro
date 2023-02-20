@@ -25,9 +25,25 @@ describe('Validation - queries', () => {
     now = moment();
   });
 
-  describe('About validations', () => {
+  describe('Order Type validations', () => {
     it('does not pass the about page if nothing is selected', async () => {
       const URI = '/about';
+      await initSession(URI, STEPS);
+      await passStep(URI, {});
+
+      const res = await getUrl(URI);
+      const docu = await parseHtml(res);
+      const validationSummary = docu.find('.govuk-error-summary');
+
+      expect(validationSummary.length === 1).to.be.true;
+      expect(validationSummary.html())
+        .to.match(/Tell us which type of order you are contacting us about/);
+    });
+  });
+
+  describe('About validations', () => {
+    it('does not pass the about page if nothing is selected', async () => {
+      const URI = '/contact-reason';
       await initSession(URI, STEPS);
       await passStep(URI, {});
 

@@ -37,6 +37,9 @@
       "submitted": {
         "label": "Submission Date"
       },
+      "order-type": {
+        "label": "Type of Order"
+      },
       "about-radio": {
         "label": "Reason for contact"
       },

@@ -15,6 +15,7 @@ const parse = (model, translate) => {
       (key === 'when-date' ? moment(value).format('DD-MM-YYYY') : value);
 
   const enquiryFields = [
+    'order-type',
     'about-radio',
     'type-radio',
     'details-text',

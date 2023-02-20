@@ -6,8 +6,11 @@ Feature: Validations
   Scenario: Marriage or Civil Partnership Application Start
     Given I start the 'base' application journey
     Then I click the 'Continue' button
-    Then I should see the 'Tell us what you are contacting us about' error
-    Then I choose 'Wrong certificate received'
+    Then I should see the 'Tell us which type of order you are contacting us about' error
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I click the 'Continue' button
     Then I should see the 'Tell us the type of certificate that was ordered' error
@@ -25,6 +28,11 @@ Feature: Validations
 
   Scenario: Service Complaint or Other Issues And Feedback Application Start
     Given I start the 'base' application journey
+    Then I click the 'Continue' button
+    Then I should see the 'Tell us which type of order you are contacting us about' error
+    Then I check 'order-type-pdf-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Other issues and feedback'
     Then I click the 'Continue' button
     Then I click the 'Continue' button
@@ -40,8 +48,13 @@ Feature: Validations
   Scenario: The Rest of the Full Validation Journey
     Given I start the 'base' application journey
     Then I click the 'Continue' button
+    Then I should see the 'Tell us which type of order you are contacting us about' error
+    Then I check 'order-type-online-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I click the 'Continue' button
     Then I should see the 'Tell us what you are contacting us about' error
-    Then I choose 'Certificate not received'
+    Then I choose 'Order not received'
     Then I click the 'Continue' button
     Then I click the 'Continue' button
     Then I should see the 'Tell us the type of certificate that was ordered' error

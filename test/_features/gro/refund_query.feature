@@ -6,7 +6,10 @@ Feature: Refund query
   and paid for the standard service.
   On the confirm page I want to change the reason for contact and Type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
@@ -48,6 +51,7 @@ Feature: Refund query
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
@@ -72,6 +76,7 @@ Feature: Refund query
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
@@ -95,7 +100,10 @@ Feature: Refund query
   online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
@@ -138,6 +146,7 @@ Feature: Refund query
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
@@ -163,6 +172,7 @@ Feature: Refund query
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
@@ -188,6 +198,7 @@ Feature: Refund query
     Then I choose 'Marriage'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
@@ -212,7 +223,10 @@ Feature: Refund query
   online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
@@ -254,6 +268,7 @@ Feature: Refund query
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Death' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
@@ -278,6 +293,7 @@ Feature: Refund query
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Death' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
@@ -302,6 +318,7 @@ Feature: Refund query
     Then I choose 'Death'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Death' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
@@ -325,7 +342,10 @@ Feature: Refund query
   online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
@@ -367,6 +387,7 @@ Feature: Refund query
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Adoption' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
@@ -391,6 +412,7 @@ Feature: Refund query
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Adoption' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
@@ -415,6 +437,7 @@ Feature: Refund query
     Then I choose 'Adoption'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Adoption' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
@@ -438,7 +461,10 @@ Feature: Refund query
   certificate online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
@@ -481,6 +507,7 @@ Feature: Refund query
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Civil partnership' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
@@ -506,6 +533,7 @@ Feature: Refund query
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Civil partnership' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
@@ -531,6 +559,7 @@ Feature: Refund query
     Then I choose 'Civil partnership'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Civil partnership' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
@@ -555,7 +584,10 @@ Feature: Refund query
   the telephone and paid for the priority service.
   On the confirm page I want to change the reason for contact and order placed method.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
@@ -598,6 +630,7 @@ Feature: Refund query
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
@@ -623,6 +656,7 @@ Feature: Refund query
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
@@ -650,6 +684,7 @@ Feature: Refund query
     Then I fill 'telephone-toggle-text-2' with '12345679'
     Then I choose 'Continue'
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
@@ -674,7 +709,10 @@ Feature: Refund query
   by post and paid for the priority service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
@@ -716,6 +754,7 @@ Feature: Refund query
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
@@ -740,6 +779,7 @@ Feature: Refund query
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
@@ -768,6 +808,7 @@ Feature: Refund query
     Then I choose 'Marriage'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Refund query' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page

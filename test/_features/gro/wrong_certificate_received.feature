@@ -6,8 +6,11 @@ Feature: Wrong certificate received
   and paid for the standard service.
   On the confirm page I want to change the reason for contact and Type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Wrong certificate received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Birth'
@@ -49,7 +52,8 @@ Feature: Wrong certificate received
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Name(s) on certificate received' and 'Person Name C' on the page
@@ -71,10 +75,11 @@ Feature: Wrong certificate received
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Wrong certificate received'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Name(s) on certificate received' and 'Person Name C' on the page
@@ -98,8 +103,11 @@ Feature: Wrong certificate received
   online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Wrong certificate received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Marriage'
@@ -141,7 +149,8 @@ Feature: Wrong certificate received
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -163,10 +172,11 @@ Feature: Wrong certificate received
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Wrong certificate received'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -191,7 +201,8 @@ Feature: Wrong certificate received
     Then I choose 'Marriage'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -215,8 +226,11 @@ Feature: Wrong certificate received
   online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Wrong certificate received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Death'
@@ -257,7 +271,8 @@ Feature: Wrong certificate received
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Death' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -278,10 +293,11 @@ Feature: Wrong certificate received
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Wrong certificate received'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Death' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -305,7 +321,8 @@ Feature: Wrong certificate received
     Then I choose 'Death'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Death' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -328,8 +345,11 @@ Feature: Wrong certificate received
   online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Wrong certificate received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Adoption'
@@ -370,7 +390,8 @@ Feature: Wrong certificate received
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Adoption' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -391,10 +412,11 @@ Feature: Wrong certificate received
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Wrong certificate received'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Adoption' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -418,7 +440,8 @@ Feature: Wrong certificate received
     Then I choose 'Adoption'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Adoption' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -441,8 +464,11 @@ Feature: Wrong certificate received
   certificate online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Wrong certificate received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Civil partnership'
@@ -484,7 +510,8 @@ Feature: Wrong certificate received
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Civil partnership' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -506,10 +533,11 @@ Feature: Wrong certificate received
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Wrong certificate received'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Civil partnership' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -534,7 +562,8 @@ Feature: Wrong certificate received
     Then I choose 'Civil partnership'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Civil partnership' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -558,8 +587,11 @@ Feature: Wrong certificate received
   the telephone and paid for the priority service.
   On the confirm page I want to change the reason for contact and order placed method.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Wrong certificate received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Birth'
@@ -601,7 +633,8 @@ Feature: Wrong certificate received
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -623,10 +656,11 @@ Feature: Wrong certificate received
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Wrong certificate received'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -653,7 +687,8 @@ Feature: Wrong certificate received
     Then I fill 'telephone-toggle-text-2' with '12345679'
     Then I choose 'Continue'
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -677,8 +712,11 @@ Feature: Wrong certificate received
   by post and paid for the priority service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Wrong certificate received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Marriage'
@@ -719,7 +757,8 @@ Feature: Wrong certificate received
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -740,10 +779,11 @@ Feature: Wrong certificate received
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Wrong certificate received'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -771,7 +811,8 @@ Feature: Wrong certificate received
     Then I choose 'Marriage'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Wrong certificate received' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Wrong order received' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page

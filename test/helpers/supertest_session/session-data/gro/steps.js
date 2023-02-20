@@ -2,6 +2,7 @@
 module.exports = [
   '/',
   '/about',
+  '/contact-reason',
   '/type',
   '/people',
   '/person',

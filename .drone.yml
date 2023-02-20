@@ -204,7 +204,7 @@ steps:
           - master
           - feature/*
       event: pull_request
-  
+
   - name: integration_tests_branch
     <<: *integration_tests
     when:
@@ -217,6 +217,7 @@ steps:
   - name: acceptance_tests_branch
     <<: *acceptance_tests
     commands:
+      - export DRONE_SOURCE_BRANCH=$(echo $DRONE_SOURCE_BRANCH | tr '[:upper:]' '[:lower:]' | tr '/' '-')
       - export ACCEPTANCE_HOST_NAME=https://$${APP_NAME}-$${DRONE_SOURCE_BRANCH}.internal.$${BRANCH_ENV}.homeoffice.gov.uk
       - export CUCUMBER_PUBLISH_ENABLED=true
       - npx playwright install

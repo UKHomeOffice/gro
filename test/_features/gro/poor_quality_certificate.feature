@@ -6,8 +6,11 @@ Feature: Poor quality certificate
   and paid for the standard service.
   On the confirm page I want to change the reason for contact and Type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Poor quality certificate'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Birth'
@@ -48,7 +51,8 @@ Feature: Poor quality certificate
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -69,10 +73,11 @@ Feature: Poor quality certificate
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Poor quality certificate'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -95,8 +100,11 @@ Feature: Poor quality certificate
   online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Poor quality certificate'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Marriage'
@@ -138,7 +146,8 @@ Feature: Poor quality certificate
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -160,10 +169,11 @@ Feature: Poor quality certificate
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Poor quality certificate'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -188,7 +198,8 @@ Feature: Poor quality certificate
     Then I choose 'Marriage'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -212,8 +223,11 @@ Feature: Poor quality certificate
   online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Poor quality certificate'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Death'
@@ -254,7 +268,8 @@ Feature: Poor quality certificate
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Death' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -275,10 +290,11 @@ Feature: Poor quality certificate
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Poor quality certificate'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Death' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -302,7 +318,8 @@ Feature: Poor quality certificate
     Then I choose 'Death'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Death' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -321,12 +338,15 @@ Feature: Poor quality certificate
     Then I should see 'Country' and 'United Kingdom' on the page
 
 
-  Scenario: I am on the Poor quality certificate (about-radio-damaged) journey, I ordered a adoption certificate
+  Scenario: I am on the Poor quality order (about-radio-damaged) journey, I ordered a adoption certificate
   online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Poor quality certificate'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Adoption'
@@ -367,7 +387,8 @@ Feature: Poor quality certificate
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Adoption' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -388,10 +409,11 @@ Feature: Poor quality certificate
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Poor quality certificate'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Adoption' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -415,7 +437,8 @@ Feature: Poor quality certificate
     Then I choose 'Adoption'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Adoption' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -434,12 +457,15 @@ Feature: Poor quality certificate
     Then I should see 'Country' and 'United Kingdom' on the page
 
 
-  Scenario: I am on the Poor quality certificate (about-radio-damaged) journey, I ordered a Civil partnership
+  Scenario: I am on the Poor quality order (about-radio-damaged) journey, I ordered a Civil partnership
   certificate online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Poor quality certificate'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Civil partnership'
@@ -481,7 +507,8 @@ Feature: Poor quality certificate
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Civil partnership' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -503,10 +530,11 @@ Feature: Poor quality certificate
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Poor quality certificate'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Civil partnership' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -531,7 +559,8 @@ Feature: Poor quality certificate
     Then I choose 'Civil partnership'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Civil partnership' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -551,12 +580,15 @@ Feature: Poor quality certificate
     Then I should see 'Country' and 'United Kingdom' on the page
 
 
-  Scenario: I am on the Poor quality certificate (about-radio-damaged) journey, I ordered a birth certificate on
+  Scenario: I am on the Poor quality order (about-radio-damaged) journey, I ordered a birth certificate on
   the telephone and paid for the priority service.
   On the confirm page I want to change the reason for contact and order placed method.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Poor quality certificate'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Birth'
@@ -598,7 +630,8 @@ Feature: Poor quality certificate
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -620,10 +653,11 @@ Feature: Poor quality certificate
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Poor quality certificate'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -650,7 +684,8 @@ Feature: Poor quality certificate
     Then I fill 'telephone-toggle-text-2' with '12345679'
     Then I choose 'Continue'
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Name on certificate requested' and 'Person Name A' on the page
     Then I should see 'Further description' and 'Additional information' on the page
@@ -670,12 +705,15 @@ Feature: Poor quality certificate
     Then I should see 'Country' and 'United Kingdom' on the page
 
 
-  Scenario: I am on the Poor quality certificate (about-radio-damaged) journey, I ordered a marriage certificate
+  Scenario: I am on the Poor quality order (about-radio-damaged) journey, I ordered a marriage certificate
   by post and paid for the priority service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Poor quality certificate'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Marriage'
@@ -716,7 +754,8 @@ Feature: Poor quality certificate
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -737,10 +776,11 @@ Feature: Poor quality certificate
     # Change Reason For Contact
     Then I select change link 'about-radio-change-'
     Then I should see 'What would you like to contact us about?' on the page
-    Then I choose 'Poor quality certificate'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page
@@ -768,7 +808,8 @@ Feature: Poor quality certificate
     Then I choose 'Marriage'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
-    Then I should see 'Reason for contact' and 'Poor quality certificate' on the page
+    Then I should see 'Type of Order' and 'Certificate order' on the page
+    Then I should see 'Reason for contact' and 'Poor quality order' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Party one on certificate requested' and 'Person Name One' on the page
     Then I should see 'Party two on certificate requested' and 'Person Name Two' on the page

@@ -19,6 +19,16 @@ describe('Query', () => {
       const URI = '/about';
       await initSession(URI, STEPS);
       const response = await passStep(URI, {
+        'order-type': 'pdf-order'
+      });
+
+      expect(response.text).to.contain('Found. Redirecting to /contact-reason');
+    });
+
+    it('goes to /contact-reason', async () => {
+      const URI = '/contact-reason';
+      await initSession(URI, STEPS);
+      const response = await passStep(URI, {
         'about-radio': 'wrong-certificate'
       });
 
@@ -135,6 +145,16 @@ describe('Query', () => {
   describe('Partnership certificate', () => {
     it('goes to /about', async () => {
       const URI = '/about';
+      await initSession(URI, STEPS);
+      const response = await passStep(URI, {
+        'order-type': 'pdf-order'
+      });
+
+      expect(response.text).to.contain('Found. Redirecting to /contact-reason');
+    });
+
+    it('goes to /contact-reason', async () => {
+      const URI = '/contact-reason';
       await initSession(URI, STEPS);
       const response = await passStep(URI, {
         'about-radio': 'refund'
