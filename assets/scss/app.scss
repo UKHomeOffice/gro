@@ -29,3 +29,21 @@ $path: "../img/";
 .twitter-typeahead {
   width: 100%;
 }
+
+ul {
+  @extend .text;
+  @extend .list;
+  @extend .list-bullet;
+}
+
+a {
+  @extend .govuk-link;
+}
+
+header {
+  margin-top: 0;
+}
+
+.govuk-header__logotype{
+  display: inline;
+}
