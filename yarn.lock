@@ -3017,9 +3017,9 @@ hmac-drbg@^1.0.1:
     minimalistic-crypto-utils "^1.0.1"
 
 hof@^20.1.21:
-  version "20.2.1"
-  resolved "https://registry.yarnpkg.com/hof/-/hof-20.2.1.tgz#0c90eb5976326af19ce5649d6c6d81296e941925"
-  integrity sha512-VLQTW4GZgBZrcLqrYwnXzoYH16rq0j9ibV9d6zHLSOqfRaom1XJmHZ7yQnKZ6lr36JtzHXVeYsg0/H2mDXtpKA==
+  version "20.1.21"
+  resolved "https://registry.yarnpkg.com/hof/-/hof-20.1.21.tgz#682eaf167fb4df022f64de3ede941727543c0d85"
+  integrity sha512-3jhssUN2eWfK9NOUFon4WiGu6SE49hoO1rSWOKVbezPQgyQHEvxGyjUQefCDXTs/MUN9F311MLvTVQUPvdg/7A==
   dependencies:
     aliasify "^2.1.0"
     bluebird "^3.7.2"
@@ -4004,7 +4004,6 @@ minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
 minimalistic-crypto-utils@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
-  integrity sha512-JIYlbt6g8i5jKfJ3xz7rF0LXmv2TkDxBLUkiBeZ7bAx4GnnNMr8xFpGnOxn6GhTEHx3SjRrZEoU+j04prX1ktg==
 
 "minimatch@2 || 3", minimatch@^3.0.4, minimatch@^3.0.7, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"
