@@ -1,4 +1,7 @@
 {
+  "order-type": {
+    "default": "Tell us which type of order you are contacting us about"
+  },
   "about-radio": {
     "default": "Tell us what you are contacting us about"
   },

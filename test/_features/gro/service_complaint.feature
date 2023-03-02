@@ -6,7 +6,10 @@ Feature: Service complaint
   and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your complaint'
@@ -49,6 +52,7 @@ Feature: Service complaint
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -74,6 +78,7 @@ Feature: Service complaint
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -99,6 +104,7 @@ Feature: Service complaint
     Then I choose 'Birth'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Birth' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -122,7 +128,10 @@ Feature: Service complaint
   online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your complaint'
@@ -166,6 +175,7 @@ Feature: Service complaint
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -192,6 +202,7 @@ Feature: Service complaint
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -218,6 +229,7 @@ Feature: Service complaint
     Then I choose 'Marriage'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -243,7 +255,10 @@ Feature: Service complaint
   online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your complaint'
@@ -286,6 +301,7 @@ Feature: Service complaint
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Death' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -311,6 +327,7 @@ Feature: Service complaint
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Death' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -336,6 +353,7 @@ Feature: Service complaint
     Then I choose 'Death'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Death' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -360,7 +378,10 @@ Feature: Service complaint
   online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your complaint'
@@ -403,6 +424,7 @@ Feature: Service complaint
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Adoption' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -428,6 +450,7 @@ Feature: Service complaint
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Adoption' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -453,6 +476,7 @@ Feature: Service complaint
     Then I choose 'Adoption'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Adoption' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -477,7 +501,10 @@ Feature: Service complaint
   certificate online and paid for the standard service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your complaint'
@@ -521,6 +548,7 @@ Feature: Service complaint
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
     Then I should see 'About an existing order?' and 'Yes' on the page
@@ -547,6 +575,7 @@ Feature: Service complaint
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
     Then I should see 'About an existing order?' and 'Yes' on the page
@@ -573,6 +602,7 @@ Feature: Service complaint
     Then I choose 'Civil partnership'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
     Then I should see 'About an existing order?' and 'Yes' on the page
@@ -598,7 +628,10 @@ Feature: Service complaint
   the telephone and paid for the priority service.
   On the confirm page I want to change the reason for contact and order placed method.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your complaint'
@@ -642,6 +675,7 @@ Feature: Service complaint
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
     Then I should see 'About an existing order?' and 'Yes' on the page
@@ -668,6 +702,7 @@ Feature: Service complaint
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
     Then I should see 'About an existing order?' and 'Yes' on the page
@@ -696,6 +731,7 @@ Feature: Service complaint
     Then I fill 'telephone-toggle-text-2' with '12345679'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
     Then I should see 'About an existing order?' and 'Yes' on the page
@@ -721,7 +757,10 @@ Feature: Service complaint
   by post and paid for the priority service.
   On the confirm page I want to change the reason for contact and type of certificate.
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your complaint'
@@ -764,6 +803,7 @@ Feature: Service complaint
     Then I fill 'postcodeOrZIPCode' with 'A12BCD'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -789,6 +829,7 @@ Feature: Service complaint
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page
@@ -814,6 +855,7 @@ Feature: Service complaint
     Then I check 'how-radio-post'
     Then I click the 'Continue' button
     Then I should be on the 'confirm' page showing 'Is the information you have given us correct?'
+    Then I should see 'Type of Order' and 'Certificate order' on the page
     Then I should see 'Reason for contact' and 'Service complaint' on the page
     Then I should see 'Type of certificate' and 'Marriage' on the page
     Then I should see 'Further description' and 'Complaint Details' on the page

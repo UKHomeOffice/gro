@@ -4,8 +4,11 @@ Feature: Certificate Types
 
   Scenario: Birth Type
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Certificate not received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Order not received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Birth'
@@ -22,8 +25,11 @@ Feature: Certificate Types
   @marriage_or_civil
   Scenario: Marriage Type - No Additional Names
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Certificate not received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Order not received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Marriage'
@@ -41,7 +47,10 @@ Feature: Certificate Types
   @marriage_or_civil
   Scenario: Marriage Type - Additional Details Already Filled In
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your complaint'
@@ -61,8 +70,11 @@ Feature: Certificate Types
   @marriage_or_civil @wrong_certificate
   Scenario: Marriage Type - Wrong Certificate Received - Additional Names
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Wrong certificate received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Marriage'
@@ -80,8 +92,11 @@ Feature: Certificate Types
 
   Scenario: Death Type
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Certificate not received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Order not received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Death'
@@ -97,8 +112,11 @@ Feature: Certificate Types
 
   Scenario: Adoption Type
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Certificate not received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Order not received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Adoption'
@@ -115,8 +133,11 @@ Feature: Certificate Types
   @marriage_or_civil
   Scenario: Civil Partnership Type - No Additional Names
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Certificate not received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Order not received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Civil partnership'
@@ -134,7 +155,10 @@ Feature: Certificate Types
   @marriage_or_civil
   Scenario: Civil Partnership Type - Additional Details Already Filled In
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your complaint'
@@ -154,8 +178,11 @@ Feature: Certificate Types
   @marriage_or_civil @wrong_certificate
   Scenario: Civil Partnership Type - Wrong Certificate Received - Additional Names
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Wrong certificate received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Civil partnership'

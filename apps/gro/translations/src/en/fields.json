@@ -1,16 +1,34 @@
 {
+  "order-type": {
+    "legend": "Which type of order are you contacting us about?",
+    "summary": "Type of Order",
+    "options": {
+      "certificate-order": {
+        "label": "Certificate order"
+      },
+      "pdf-order": {
+        "label": "PDF order"
+      },
+      "online-order": {
+        "label": "Online View Digital Image order"
+      },
+      "general-enquiry": {
+        "label": "General Enquiry"
+      }
+    }
+  },
   "about-radio": {
     "legend": "What would you like to contact us about?",
     "summary": "Reason for contact",
     "options": {
       "not-received": {
-        "label": "Certificate not received"
+        "label": "Order not received"
       },
       "wrong-certificate": {
-        "label": "Wrong certificate received"
+        "label": "Wrong order received"
       },
       "damaged": {
-        "label": "Poor quality certificate"
+        "label": "Poor quality order"
       },
       "refund": {
         "label": "Refund query"

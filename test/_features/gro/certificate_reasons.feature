@@ -4,16 +4,22 @@ Feature: Certificate Reasons
 
   Scenario: Certificate Not Received
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Certificate not received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Order not received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
 
   @wrong_certificate
   Scenario: Wrong Certificate Received - Not Marriage or Civil Partnership
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Wrong certificate received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Birth'
@@ -28,10 +34,13 @@ Feature: Certificate Reasons
     Then I should be on the 'how' page showing 'How did you place your order?'
 
   @marriage_or_civil @wrong_certificate
-  Scenario: Wrong Certificate Received - Marriage Type
+  Scenario: Wrong Order Received - Marriage Type
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Wrong certificate received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Marriage'
@@ -49,8 +58,11 @@ Feature: Certificate Reasons
   @marriage_or_civil @wrong_certificate
   Scenario: Wrong Certificate Received - Civil Partnership Type
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Wrong certificate received'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Wrong order received'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
     Then I choose 'Civil partnership'
@@ -67,14 +79,20 @@ Feature: Certificate Reasons
 
   Scenario: Poor Quality Certificate
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
-    Then I choose 'Poor quality certificate'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
+    Then I choose 'Poor quality order'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
 
   Scenario: Refund Query
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Refund query'
     Then I click the 'Continue' button
     Then I should be on the 'type' page showing 'What type of certificate did you order?'
@@ -82,7 +100,10 @@ Feature: Certificate Reasons
   @existing_enquiry
   Scenario: Service Complaint - Previously Enquired
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your complaint'
@@ -95,7 +116,10 @@ Feature: Certificate Reasons
   @new_enquiry
   Scenario: Service Complaint - Not Existing Enquiry
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your complaint'
@@ -108,7 +132,10 @@ Feature: Certificate Reasons
   @existing_enquiry
   Scenario: Other issues and feedback - Previously Enquired
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Other issues and feedback'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your enquiry'
@@ -121,7 +148,10 @@ Feature: Certificate Reasons
   @new_enquiry
   Scenario: Other issues and feedback - Not Existing Enquiry
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Other issues and feedback'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your enquiry'

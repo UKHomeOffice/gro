@@ -1,4 +1,4 @@
 
 module.exports = {
-  'about-radio': 'not-received'
+  'order-type': 'certificate-order'
 };

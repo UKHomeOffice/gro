@@ -5,7 +5,10 @@ Feature: New Enquiry
   @full_new_enquiry
   Scenario: A Full New Enquiry Submission
     Given I start the 'base' application journey
-    Then I should be on the 'about' page showing 'What would you like to contact us about?'
+    Then I should be on the 'about' page showing 'Which type of order are you contacting us about?'
+    Then I check 'order-type-certificate-order'
+    Then I click the 'Continue' button
+    Then I should be on the 'contact-reason' page showing 'What would you like to contact us about?'
     Then I choose 'Service complaint'
     Then I click the 'Continue' button
     Then I should be on the 'details' page showing 'Provide details of your complaint'
