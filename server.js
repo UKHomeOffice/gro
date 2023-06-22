@@ -9,7 +9,19 @@ let settings = require('./hof.settings');
 
 settings = Object.assign({}, settings, {
   behaviours: settings.behaviours.map(require),
-  routes: settings.routes.map(require)
+  routes: settings.routes.map(require),
+  csp: {
+    imgSrc: [
+      'www.google-analytics.com',
+      'ssl.gstatic.com',
+      'www.google.co.uk/ads/ga-audiences'
+    ],
+    connectSrc: [
+      'https://www.google-analytics.com',
+      'https://region1.google-analytics.com',
+      'https://region1.analytics.google.com'
+    ]
+  }
 });
 
 if (config.env === 'ci') {
