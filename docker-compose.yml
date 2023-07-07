@@ -8,6 +8,7 @@ services:
       - EMAIL_HOST=maildev
       - EMAIL_PORT=25
       - CASEWORKER_EMAIL=caseworker@gov.uk.test
+      - NOTIFY_KEY=hof_test-89548f6c-39cd-4acb-851c-1f4ffa2e479b-28426e56-443a-4ba4-98ed-fb576e717ed9
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - SESSION_SECRET=adsasdasd
@@ -23,7 +24,7 @@ services:
     image: redis
 
   nginx-proxy:
-    image: quay.io/ukhomeofficedigital/nginx-proxy:v1.2.3
+    image: quay.io/ukhomeofficedigital/nginx-proxy:latest
     environment:
       - PROXY_SERVICE_HOST=app
       - PROXY_SERVICE_PORT=8080
