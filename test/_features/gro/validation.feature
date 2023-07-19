@@ -72,6 +72,9 @@ Feature: Validations
     Then I should see the 'Tell us how you placed your order' error
     Then I check 'how-radio-online'
     Then I click the 'Continue' button
+    Then I should see the 'Enter your COL Number' error
+    Then I fill 'online-toggle-text' with 'COL123456/2020'
+    Then I click the 'Continue' button
     Then I click the 'Continue' button
     Then I should see the 'Tell us which service you paid for' error
     Then I check 'which-radio-priority'

@@ -161,8 +161,8 @@
   },
   "online-toggle-text": {
     "summary": "COL Number",
-    "label": "What is your COL number? (Optional)",
-    "hint": "Please enter one if you have received one. A COL number is a Certificate Online number that is sent in the confirmation email when certificates are ordered online. COL numbers typically look like this COL123456/2015."
+    "label": "What is your COL number?",
+    "hint": "A COL number is a Certificate Online number that is sent in the confirmation email when certificates are ordered online. COL numbers typically look like this COL123456/2015"
   },
   "telephone-toggle-text": {
     "summary": "Order Number",
