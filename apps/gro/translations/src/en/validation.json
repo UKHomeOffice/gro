@@ -17,7 +17,9 @@
     }
   },
   "online-toggle-text": {
-    "default": "Enter your COL Number"
+    "default": "Enter your COL Number",
+    "numeric": "COL number must follow this format: COL123456/2015",
+    "regex": "COL number must follow this format: COL123456/2015"
   },
   "telephone-toggle-text": {
     "default": "Enter your order number",
