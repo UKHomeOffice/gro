@@ -73,6 +73,9 @@ Feature: Validations
     Then I check 'how-radio-online'
     Then I click the 'Continue' button
     Then I should see the 'Enter your COL Number' error
+    Then I fill 'online-toggle-text' with 'COL123462020'
+    Then I click the 'Continue' button
+    Then I should see the 'COL number must follow this format: COL123456/2015' error
     Then I fill 'online-toggle-text' with 'COL123456/2020'
     Then I click the 'Continue' button
     Then I click the 'Continue' button
