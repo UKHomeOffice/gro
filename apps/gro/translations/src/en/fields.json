@@ -161,8 +161,8 @@
   },
   "online-toggle-text": {
     "summary": "COL Number",
-    "label": "What is your COL number? (Optional)",
-    "hint": "Please enter one if you have received one. A COL number is a Certificate Online number that is sent in the confirmation email when certificates are ordered online. COL numbers typically look like this COL123456/2015."
+    "label": "What is your COL number?",
+    "hint": "A COL number is a Certificate Online number that is sent in the confirmation email when certificates are ordered online. COL numbers typically look like this COL123456/2015"
   },
   "telephone-toggle-text": {
     "summary": "Order Number",
@@ -172,7 +172,7 @@
   "telephone-toggle-text-2": {
     "summary": "Account Number",
     "label": "What is the account number? (Optional)",
-    "hint": "The account number will have been given to you when you placed your order by post. Account numbers consist of between 1 and 8 digits, so look like 12345678, but without a dash and extra number on the end."
+    "hint": "The account number will have been given to you when you placed your order by telephone. Account numbers consist of between 1 and 8 digits, so look like 12345678, but without a dash and extra number on the end."
   },
   "which-radio": {
     "summary": "Service",
