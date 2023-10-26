@@ -11,6 +11,13 @@ settings = Object.assign({}, settings, {
   behaviours: settings.behaviours.map(require),
   routes: settings.routes.map(require),
   csp: {
+    fontSrc: [
+      'https://fonts.googleapis.com/'
+    ],
+    scriptSrc: [
+      'https://tagmanager.google.com/',
+      'https://www.googletagmanager.com/'
+    ],
     imgSrc: [
       'www.google-analytics.com',
       'ssl.gstatic.com',
