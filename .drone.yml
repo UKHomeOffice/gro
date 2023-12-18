@@ -242,17 +242,24 @@ steps:
           - feature/*
       event: pull_request
 
-  - name: anchore_scan
-    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/anchore-submission:latest
+  - name: scan-image
     pull: always
-    environment:
-      IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
-      LOCAL_IMAGE: true
-      TOLERATE: medium
-      WHITELIST_FILE: hof-services-config/General_Registrars_Office/anchore-cve-exceptions.txt
+    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/trivy/client:latest
+    resources: 
+      limits:
+        cpu: 1000
+        memory: 1024Mi
+    environment: 
+      IMAGE_NAME: quay.io/ukhomeofficedigital/gro-form:${DRONE_COMMIT_SHA}
+      IGNORE_UNFIXED: true
     when:
-      branch: master
-      event: pull_request
+      branch:
+      - master
+      event:
+      - push 
+      - pull_request
+    depends_on:
+    - image_to_quay
 
   # Deploy to Master UAT environment
   - name: deploy_to_uat
@@ -427,17 +434,17 @@ steps:
       cron: security_scans
       event: cron
 
-  - name: cron_anchore_scan
-    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/anchore-submission:latest
-    pull: always
-    environment:
-      IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
-      LOCAL_IMAGE: true
-      TOLERATE: medium
-      WHITELIST_FILE: hof-services-config/General_Registrars_Office/anchore-cve-exceptions.txt
-    when:
-      cron: security_scans
-      event: cron
+  # - name: cron_anchore_scan
+  #   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/anchore-submission:latest
+  #   pull: always
+  #   environment:
+  #     IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
+  #     LOCAL_IMAGE: true
+  #     TOLERATE: medium
+  #     WHITELIST_FILE: hof-services-config/General_Registrars_Office/anchore-cve-exceptions.txt
+  #   when:
+  #     cron: security_scans
+  #     event: cron
 
   # Slack notification upon a CRON job fail
   - name: cron_notify_slack_tear_down_pr_envs
@@ -479,11 +486,11 @@ services:
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
 
   # Anchore scanning needs background service to run
-  - name: anchore-submission-server
-    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/anchore-submission:latest
-    pull: always
-    commands:
-      - /run.sh server
+  # - name: anchore-submission-server
+  #   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/anchore-submission:latest
+    # pull: always
+    # commands:
+    #   - /run.sh server
 
   # Redis session setup in background so integration tests can run
   - name: session
