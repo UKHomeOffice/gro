@@ -73,7 +73,6 @@ steps:
         include:
         - master
         - feature/*
-        - GRO-*
       event: [push, pull_request]
 
   - name: setup_deploy
@@ -122,54 +121,31 @@ steps:
           - master
       event: push
 
-  # - name: build_image
-  #   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
-  #   commands:
-  #     - n=0; while [ "$n" -lt 60 ] && [ ! docker stats --no-stream ]; do n=$(( n + 1 )); sleep 1; done
-  #     - docker build --no-cache -t $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} .
-  #   volumes:
-  #     - name: dockersock
-  #       path: /var/run
-  #   when:
-  #     branch: master
-  #     event: [push, pull_request]
+  - name: build_image
+    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
+    commands:
+      - n=0; while [ "$n" -lt 60 ] && [ ! docker stats --no-stream ]; do n=$(( n + 1 )); sleep 1; done
+      - docker build --no-cache -t $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} .
+    volumes:
+      - name: dockersock
+        path: /var/run
+    when:
+      branch: master
+      event: [push, pull_request]
 
-  - name: build_and_push
+  - name: image_to_quay
     pull: if-not-exists
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
     environment:
       DOCKER_PASSWORD:
         from_secret: DOCKER_PASSWORD
     commands:
-    - echo "Checking for docker availability."
-    - n=0; while [ "$n" -lt 60 ] && ! docker stats --no-stream >/dev/null 2>&1; do n=$(( n + 1 )); sleep 1; done
-    - echo "echo docker now available."
     - docker login -u="ukhomeofficedigital+drone" -p=$${DOCKER_PASSWORD} quay.io
-    - docker build -t gro-form:$${DRONE_COMMIT_SHA} .
-    - docker tag gro-form:$${DRONE_COMMIT_SHA} quay.io/ukhomeofficedigital/gro-form:$${DRONE_COMMIT_SHA}
-    - docker push quay.io/ukhomeofficedigital/gro-form:$${DRONE_COMMIT_SHA}
+    - docker tag $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} $${IMAGE_URL}/$${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
+    - docker push $${IMAGE_URL}/$${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
     when:
-      branch:
-      - master
-      event:
-      - push 
-      - pull_request
-
-  - name: scan-image
-    pull: always
-    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/trivy/client:latest
-    resources: 
-      limits:
-        cpu: 1000
-        memory: 1024Mi
-    environment: 
-      IMAGE_NAME: quay.io/ukhomeofficedigital/gro-form:${DRONE_COMMIT_SHA}
-      IGNORE_UNFIXED: true
-    when:
-      event:
-      - push
-    depends_on:
-    - build_and_push
+      branch: master
+      event: [push, pull_request]
 
   # Deploy to pull request UAT environment
   - name: deploy_to_branch
@@ -184,12 +160,8 @@ steps:
     commands:
       - bin/deploy.sh $${BRANCH_ENV}
     when:
-      branch:
-      - master
-      event:
-      - pull_request
-      depends_on:
-      - clone_repos
+      branch: master
+      event: pull_request
 
   - name: setup_branch
     pull: if-not-exists
@@ -270,17 +242,17 @@ steps:
           - feature/*
       event: pull_request
 
-  # - name: anchore_scan
-  #   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/anchore-submission:latest
-  #   pull: always
-  #   environment:
-  #     IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
-  #     LOCAL_IMAGE: true
-  #     TOLERATE: medium
-  #     WHITELIST_FILE: hof-services-config/General_Registrars_Office/anchore-cve-exceptions.txt
-  #   when:
-  #     branch: master
-  #     event: pull_request
+  - name: anchore_scan
+    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/anchore-submission:latest
+    pull: always
+    environment:
+      IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
+      LOCAL_IMAGE: true
+      TOLERATE: medium
+      WHITELIST_FILE: hof-services-config/General_Registrars_Office/anchore-cve-exceptions.txt
+    when:
+      branch: master
+      event: pull_request
 
   # Deploy to Master UAT environment
   - name: deploy_to_uat
@@ -430,16 +402,16 @@ steps:
       cron: security_scans
       event: cron
 
-  # - name: cron_build_image
-  #   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
-  #   commands:
-  #     - docker build --no-cache -t $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} .
-  #   volumes:
-  #     - name: dockersock
-  #       path: /var/run
-  #   when:
-  #     cron: security_scans
-  #     event: cron
+  - name: cron_build_image
+    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
+    commands:
+      - docker build --no-cache -t $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} .
+    volumes:
+      - name: dockersock
+        path: /var/run
+    when:
+      cron: security_scans
+      event: cron
 
   - name: cron_snyk_scan
     pull: if-not-exists
@@ -455,17 +427,17 @@ steps:
       cron: security_scans
       event: cron
 
-  # - name: cron_anchore_scan
-  #   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/anchore-submission:latest
-  #   pull: always
-  #   environment:
-  #     IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
-  #     LOCAL_IMAGE: true
-  #     TOLERATE: medium
-  #     WHITELIST_FILE: hof-services-config/General_Registrars_Office/anchore-cve-exceptions.txt
-  #   when:
-  #     cron: security_scans
-  #     event: cron
+  - name: cron_anchore_scan
+    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/anchore-submission:latest
+    pull: always
+    environment:
+      IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
+      LOCAL_IMAGE: true
+      TOLERATE: medium
+      WHITELIST_FILE: hof-services-config/General_Registrars_Office/anchore-cve-exceptions.txt
+    when:
+      cron: security_scans
+      event: cron
 
   # Slack notification upon a CRON job fail
   - name: cron_notify_slack_tear_down_pr_envs
@@ -505,26 +477,13 @@ steps:
 services:
   - name: docker
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
-    resources:
-    limits:
-      cpu: 1000
-      memory: 1024Mi
-      commands:
-  # wait for docker service to be up before running docker build
-      - /usr/local/bin/wait
-      - docker pull acp-example-app:${DRONE_COMMIT_SHA}
-      when:
-       event:
-       - pull_request
-       - push
-       - tag
 
-  # # Anchore scanning needs background service to run
-  # - name: anchore-submission-server
-  #   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/anchore-submission:latest
-  #   pull: always
-  #   commands:
-  #     - /run.sh server
+  # Anchore scanning needs background service to run
+  - name: anchore-submission-server
+    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/anchore-submission:latest
+    pull: always
+    commands:
+      - /run.sh server
 
   # Redis session setup in background so integration tests can run
   - name: session
