@@ -144,8 +144,8 @@ steps:
     - n=0; while [ "$n" -lt 60 ] && ! docker stats --no-stream >/dev/null 2>&1; do n=$(( n + 1 )); sleep 1; done
     - echo "echo docker now available."
     - docker login -u="ukhomeofficedigital+drone" -p=$${DOCKER_PASSWORD} quay.io
-    - docker tag $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} $${IMAGE_URL}/$${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
-    - docker push $${IMAGE_URL}/$${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
+    - docker tag  quay.io/ukhomeofficedigital/gro-form:$${DRONE_COMMIT_SHA} quay.io/ukhomeofficedigital/gro-form:$${DRONE_COMMIT_SHA}
+    - docker push quay.io/ukhomeofficedigital/gro-form:$${DRONE_COMMIT_SHA}
     when:
       branch:
       - master
@@ -161,7 +161,7 @@ steps:
         cpu: 1000
         memory: 1024Mi
     environment: 
-      IMAGE_NAME: $${IMAGE_URL}/$${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
+      IMAGE_NAME: quay.io/ukhomeofficedigital/gro-form:${DRONE_COMMIT_SHA}
       IGNORE_UNFIXED: true
     when:
       event:
