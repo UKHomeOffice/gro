@@ -188,6 +188,8 @@ steps:
       - master
       event:
       - pull_request
+      depends_on:
+      - clone_repos
 
   - name: setup_branch
     pull: if-not-exists
