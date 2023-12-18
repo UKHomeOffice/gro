@@ -487,9 +487,19 @@ steps:
 services:
   - name: docker
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
-    pull: always
-    commands:
-      - /run.sh server
+    resources:
+    limits:
+      cpu: 1000
+      memory: 1024Mi
+      commands:
+  # wait for docker service to be up before running docker build
+      - /usr/local/bin/wait
+      - docker pull gro-form:${DRONE_COMMIT_SHA}
+      when:
+       event:
+       - pull_request
+       - push
+       - tag
 
   # Redis session setup in background so integration tests can run
   - name: session
