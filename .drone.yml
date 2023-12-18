@@ -81,7 +81,7 @@ steps:
     environment:
       NOTIFY_KEY: USE_MOCK
     commands:
-      - yarn install --frozen-lockfile
+      - yarn install
       - yarn run postinstall
     when:
       branch:
@@ -172,12 +172,13 @@ steps:
     environment:
       NOTIFY_KEY: USE_MOCK
     commands:
-      - yarn install --frozen-lockfile
+      - yarn install
       - yarn run postinstall
     when:
       branch:
         include:
           - master
+          - feature/*
       event: pull_request
 
   - name: linting_branch
