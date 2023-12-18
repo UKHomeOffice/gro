@@ -121,31 +121,37 @@ steps:
           - master
       event: push
 
-  - name: build_image
-    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
-    commands:
-      - n=0; while [ "$n" -lt 60 ] && [ ! docker stats --no-stream ]; do n=$(( n + 1 )); sleep 1; done
-      - docker build --no-cache -t $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} .
-    volumes:
-      - name: dockersock
-        path: /var/run
-    when:
-      branch: master
-      event: [push, pull_request]
+  # - name: build_image
+  #   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
+  #   commands:
+  #     - n=0; while [ "$n" -lt 60 ] && [ ! docker stats --no-stream ]; do n=$(( n + 1 )); sleep 1; done
+  #     - docker build --no-cache -t $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} .
+  #   volumes:
+  #     - name: dockersock
+  #       path: /var/run
+  #   when:
+  #     branch: master
+  #     event: [push, pull_request]
 
-  - name: image_to_quay
+  - name: build_and_push
     pull: if-not-exists
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
     environment:
       DOCKER_PASSWORD:
         from_secret: DOCKER_PASSWORD
     commands:
+    - echo "Checking for docker availability."
+    - n=0; while [ "$n" -lt 60 ] && ! docker stats --no-stream >/dev/null 2>&1; do n=$(( n + 1 )); sleep 1; done
+    - echo "echo docker now available."
     - docker login -u="ukhomeofficedigital+drone" -p=$${DOCKER_PASSWORD} quay.io
     - docker tag $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} $${IMAGE_URL}/$${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
     - docker push $${IMAGE_URL}/$${IMAGE_REPO}:$${DRONE_COMMIT_SHA}
     when:
-      branch: master
-      event: [push, pull_request]
+      branch:
+      - master
+      event:
+      - push 
+      - pull_request
 
   - name: scan-image
     pull: always
@@ -161,7 +167,7 @@ steps:
       event:
       - push
     depends_on:
-    - image_to_quay
+    - build_and_push
 
   # Deploy to pull request UAT environment
   - name: deploy_to_branch
@@ -418,16 +424,16 @@ steps:
       cron: security_scans
       event: cron
 
-  - name: cron_build_image
-    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
-    commands:
-      - docker build --no-cache -t $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} .
-    volumes:
-      - name: dockersock
-        path: /var/run
-    when:
-      cron: security_scans
-      event: cron
+  # - name: cron_build_image
+  #   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
+  #   commands:
+  #     - docker build --no-cache -t $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} .
+  #   volumes:
+  #     - name: dockersock
+  #       path: /var/run
+  #   when:
+  #     cron: security_scans
+  #     event: cron
 
   - name: cron_snyk_scan
     pull: if-not-exists
@@ -497,6 +503,15 @@ services:
     limits:
       cpu: 1000
       memory: 1024Mi
+      commands:
+  # wait for docker service to be up before running docker build
+      - /usr/local/bin/wait
+      - docker pull acp-example-app:${DRONE_COMMIT_SHA}
+      when:
+       event:
+       - pull_request
+       - push
+       - tag
 
   # # Anchore scanning needs background service to run
   # - name: anchore-submission-server
