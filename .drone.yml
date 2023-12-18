@@ -409,16 +409,16 @@ steps:
       cron: security_scans
       event: cron
 
-  - name: cron_build_image
-    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
-    commands:
-      - docker build --no-cache -t $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} .
-    volumes:
-      - name: dockersock
-        path: /var/run
-    when:
-      cron: security_scans
-      event: cron
+  # - name: cron_build_image
+  #   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
+  #   commands:
+  #     - docker build --no-cache -t $${IMAGE_REPO}:$${DRONE_COMMIT_SHA} .
+  #   volumes:
+  #     - name: dockersock
+  #       path: /var/run
+  #   when:
+  #     cron: security_scans
+  #     event: cron
 
   - name: cron_snyk_scan
     pull: if-not-exists
