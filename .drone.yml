@@ -73,6 +73,7 @@ steps:
         include:
         - master
         - feature/*
+        - GRO-*
       event: [push, pull_request]
 
   - name: setup_deploy
@@ -183,8 +184,10 @@ steps:
     commands:
       - bin/deploy.sh $${BRANCH_ENV}
     when:
-      branch: master
-      event: pull_request
+      branch:
+      - master
+      event:
+      - pull_request
 
   - name: setup_branch
     pull: if-not-exists
