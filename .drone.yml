@@ -178,7 +178,6 @@ steps:
       branch:
         include:
           - master
-          - feature/*
       event: pull_request
 
   - name: linting_branch
