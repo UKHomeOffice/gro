@@ -149,8 +149,6 @@ steps:
     when:
       branch: master
       event: [push, pull_request]
-    depends_on:
-    - build_image
 
   # Deploy to pull request UAT environment
   - name: deploy_to_branch
