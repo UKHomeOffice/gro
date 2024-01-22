@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - name: redis
-          # redis:v7.2
+          # redis:v6.2.7-1
           image: quay.io/ukhomeofficedigital/redis-rockylinux@sha256:483cc4238468ec0a2b15846de1977705bc9e7db981381ec2d897cfde0b456a70
           ports:
             - containerPort: 6379
