@@ -399,7 +399,7 @@ steps:
       cron: tear_down_pr_envs
       event: cron
 
-  # CRON job steps that runs security scans using Snyk & Anchore
+  # CRON job steps that runs security scans using Snyk & Trivy
   - name: cron_clone_repos
     image: alpine/git
     environment:
