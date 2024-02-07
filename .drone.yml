@@ -147,7 +147,6 @@ steps:
       branch: master
       event: [push, pull_request]
 
-
   # Trivy Security Scannner
   - name: scan-image
     pull: always
@@ -167,8 +166,6 @@ steps:
       - pull_request
       - push
       - tag
-
-
 
   # Deploy to pull request UAT environment
   - name: deploy_to_branch
