@@ -15,10 +15,21 @@ module.exports = {
   steps: {
     '/about':{
       fields:['contact-start'],
-      next: 'order-type',
-      locals: {
-        section: 'feedback-details'
+      forks: [{
+        target: '/order-type',
+        condition: {
+          field: 'contact-start',
+          value: 'order-type' 
+        }
       },
+      {
+        target: '/feedback-details',
+        condition: {
+        field: 'contact-start',
+        value: 'feedback'
+      }
+    }
+    ]
     },
 
     '/order-type': {

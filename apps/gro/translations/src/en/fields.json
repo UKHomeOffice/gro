@@ -12,9 +12,6 @@
       "general-enquiry" :{
         "label": "General Enquiry"
       }
-      // "online-order" :{
-      //   "label": "Online View Digital Image order"
-      // }
     }
   },
   
@@ -31,9 +28,6 @@
       "online-order": {
         "label": "Online View Digital Image order"
       }
-      // "general-enquiry": {
-      //   "label": "General Enquiry"
-      // }
     }
   },
   "about-radio": {

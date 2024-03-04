@@ -6,6 +6,17 @@ const dateComponent = hof.components.date;
 const after2010Validator = { type: 'after', arguments: ['2010'] };
 
 module.exports = {
+  'contact-start': {
+    isPageHeading: 'true',
+    mixin: 'radio-group',
+    validate: ['required'],
+    className: ['block', 'form-group'],
+    options: [
+      'order-type',
+      'feedback',
+      'general-enquiry'
+    ]
+  },
   'order-type': {
     isPageHeading: 'true',
     mixin: 'radio-group',
@@ -15,7 +26,6 @@ module.exports = {
       'certificate-order',
       'pdf-order',
       'online-order',
-      'general-enquiry'
     ]
   },
   'about-radio': {
