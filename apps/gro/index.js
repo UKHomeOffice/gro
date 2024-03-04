@@ -13,7 +13,26 @@ module.exports = {
   params: '/:action?',
   baseUrl: '/',
   steps: {
-    '/about': {
+    '/about':{
+      fields:['contact-start'],
+      forks: [{
+        target: '/order-type',
+        condition: {
+          field: 'contact-start',
+          value: 'order-type' 
+        }
+      },
+      {
+        target: '/feedback-details',
+        condition: {
+        field: 'contact-start',
+        value: 'feedback'
+      }
+    }
+    ]
+    },
+
+    '/order-type': {
       fields: ['order-type'],
       locals: {
         section: 'enquiry-details'
