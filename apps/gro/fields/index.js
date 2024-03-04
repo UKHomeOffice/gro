@@ -32,9 +32,9 @@ module.exports = {
   'feedback-details': {
     isPageHeading: 'true',
     mixin: 'textarea',
-    validate: ['required', 'notUrl']
+    validate: ['required', 'notUrl',{ type: 'maxlength', arguments: 2000 }],
   },
-  
+
   'about-radio': {
     isPageHeading: 'true',
     mixin: 'radio-group',
