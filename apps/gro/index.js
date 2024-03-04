@@ -13,7 +13,15 @@ module.exports = {
   params: '/:action?',
   baseUrl: '/',
   steps: {
-    '/about': {
+    '/about':{
+      fields:['contact-start'],
+      next: 'order-type',
+      locals: {
+        section: 'feedback-details'
+      },
+    },
+
+    '/order-type': {
       fields: ['order-type'],
       locals: {
         section: 'enquiry-details'
