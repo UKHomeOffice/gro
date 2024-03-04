@@ -28,6 +28,13 @@ module.exports = {
       'online-order',
     ]
   },
+
+  'feedback-details': {
+    isPageHeading: 'true',
+    mixin: 'textarea',
+    validate: ['required', 'notUrl']
+  },
+  
   'about-radio': {
     isPageHeading: 'true',
     mixin: 'radio-group',

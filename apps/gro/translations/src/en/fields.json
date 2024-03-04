@@ -30,6 +30,12 @@
       }
     }
   },
+
+  
+  "feedback-details": {
+    "label": "Your feedback"
+  },
+
   "about-radio": {
     "legend": "What would you like to contact us about?",
     "summary": "Reason for contact",

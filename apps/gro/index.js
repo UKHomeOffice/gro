@@ -39,6 +39,11 @@ module.exports = {
       },
       next: '/contact-reason'
     },
+
+    '/feedback-details': {  
+      fields: ['feedback-details'],
+      next: '/name',
+    },
     '/contact-reason': {
       fields: ['about-radio'],
       next: '/type',
