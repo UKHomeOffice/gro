@@ -25,7 +25,7 @@ module.exports = {
     options: [
       'certificate-order',
       'pdf-order',
-      'online-order',
+      'online-order'
     ]
   },
   'about-radio': {

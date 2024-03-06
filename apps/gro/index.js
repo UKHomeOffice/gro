@@ -13,23 +13,22 @@ module.exports = {
   params: '/:action?',
   baseUrl: '/',
   steps: {
-    '/about':{
-      fields:['contact-start'],
+    '/about': {
+      fields: ['contact-start'],
       forks: [{
         target: '/order-type',
         condition: {
           field: 'contact-start',
-          value: 'order-type' 
+          value: 'order-type'
         }
       },
       {
         target: '/feedback-details',
         condition: {
-        field: 'contact-start',
-        value: 'feedback'
-      }
-    }
-    ]
+          field: 'contact-start',
+          value: 'feedback'
+        }
+      }]
     },
 
     '/order-type': {
