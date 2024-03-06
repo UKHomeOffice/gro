@@ -1,7 +1,17 @@
 {
+  "contact-start": {
+    "default": "Tell us what you are contacting us about"
+  },
+  
   "order-type": {
     "default": "Tell us which type of order you are contacting us about"
   },
+
+  "feedback-details":{
+    "default": "Tell us about your feedback",
+    "notUrl": "Feedback details must not include URLs"
+  },
+
   "about-radio": {
     "default": "Tell us what you are contacting us about"
   },

@@ -14,11 +14,34 @@ module.exports = {
   baseUrl: '/',
   steps: {
     '/about': {
+      fields: ['contact-start'],
+      forks: [{
+        target: '/order-type',
+        condition: {
+          field: 'contact-start',
+          value: 'order-type'
+        }
+      },
+      {
+        target: '/feedback-details',
+        condition: {
+          field: 'contact-start',
+          value: 'feedback'
+        }
+      }]
+    },
+
+    '/order-type': {
       fields: ['order-type'],
       locals: {
         section: 'enquiry-details'
       },
       next: '/contact-reason'
+    },
+
+    '/feedback-details': {
+      fields: ['feedback-details'],
+      next: '/name'
     },
     '/contact-reason': {
       fields: ['about-radio'],

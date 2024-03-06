@@ -1,4 +1,20 @@
 {
+  "contact-start":{
+    "legend": "What are you contacting us about?",
+    "summary": "Type of Contact",
+    "options":{
+      "order-type" :{
+        "label": "Order enquiry"
+      },
+      "feedback" :{
+        "label": "Feedback"
+      },
+      "general-enquiry" :{
+        "label": "General Enquiry"
+      }
+    }
+  },
+  
   "order-type": {
     "legend": "Which type of order are you contacting us about?",
     "summary": "Type of Order",
@@ -11,12 +27,15 @@
       },
       "online-order": {
         "label": "Online View Digital Image order"
-      },
-      "general-enquiry": {
-        "label": "General Enquiry"
       }
     }
   },
+
+  
+  "feedback-details": {
+    "label": "Your feedback"
+  },
+
   "about-radio": {
     "legend": "What would you like to contact us about?",
     "summary": "Reason for contact",
