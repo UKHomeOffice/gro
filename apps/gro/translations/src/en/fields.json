@@ -199,6 +199,19 @@
     "summary": "Email address",
     "label": "What is your email address?"
   },
+
+    "confirm-email": {
+      "options": {
+        "yes": {
+          "label": "Yes"
+        },
+        "no": {
+          "label": "No"
+        }
+      }
+    },
+  
+
   "country-select": {
     "summary": "Country",
     "label": "Select a country",

@@ -20,6 +20,9 @@
   "email-address": {
     "header": "What is your email address?"
   },
+  "confirm-email": {
+    "header": "Is the email address you entered correct?"
+  },
   "country": {
     "header": "What country is your address located?"
   },
