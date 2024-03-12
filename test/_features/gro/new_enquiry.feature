@@ -22,6 +22,15 @@ Feature: New Enquiry
     Then I should be on the 'email-address' page showing 'What is your email address?'
     Then I fill 'email-text' with 'sas-hof-test@digital.homeoffice.gov.uk'
     Then I click the 'Continue' button
+    Then I should be on the 'check-email' page showing 'Is the email address you entered correct?'
+    Then I choose 'No'
+    Then I click the 'Continue' button
+    Then I should be on the 'email-address/edit' page showing 'What is your email address?'
+    Then I fill 'email-text' with 'sas-hof-test@digital.homeoffice.gov.uk'
+    Then I click the 'Continue' button
+    Then I should be on the 'check-email' page showing 'Is the email address you entered correct?'
+    Then I choose 'Yes'
+    Then I click the 'Continue' button
     Then I should be on the 'country' page showing 'What country is your address located?'
     Then I fill 'country-select' with 'United Kingdom'
     Then I click the 'Continue' button
