@@ -142,13 +142,29 @@ module.exports = {
         section: 'contact-details'
       }
     },
+
     '/email-address': {
       fields: ['email-text'],
-      next: '/country',
+      next: '/check-email',
       locals: {
         section: 'contact-details'
       }
     },
+
+    '/check-email': {
+      fields: ['confirm-email'],
+      forks: [{
+        target: '/email-address/',
+        condition: {
+          field: 'confirm-email',
+          value: 'no'
+        }
+      }],
+      continueOnEdit: true,
+      next: '/country'
+    },
+
+
     '/country': {
       behaviours: CountrySelect,
       fields: [

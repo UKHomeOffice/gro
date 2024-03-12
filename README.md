@@ -59,5 +59,3 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 This project is licensed under the GPLv2 License - see the [LICENSE.md](LICENSE.md) file for details
 
 The General Register Office uses BrowserStack for mobile and desktop testing https://www.browserstack.com/
-
-
