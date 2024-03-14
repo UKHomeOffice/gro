@@ -7,7 +7,7 @@ const CountrySelect = require('./behaviours/country-select');
 const Summary = hof.components.summary;
 const ApplicantEmailer = require('./behaviours/applicant_emailer')(config.email);
 const CaseworkerEmailer = require('./behaviours/caseworker_emailer')(config.email);
-const reverseFieldValue = require ('./behaviours/reverseFieldValue');
+const resendFieldValue = require('./behaviours/resendFieldValue');
 
 module.exports = {
   name: 'gro',
@@ -142,38 +142,30 @@ module.exports = {
     },
 
     '/email-address': {
+      behaviours: resendFieldValue,
       fields: ['email-text'],
-      next: '/confirm-email',
+      next: '/check-email',
       locals: {
         section: 'contact-details'
       }
     },
 
-    
-    '/confirm-email': {
+    '/check-email': {
       fields: ['confirm-email'],
-      next: '/country',
       forks: [{
-        
-        condition(req) {
-          return _.includes(['no'], req.form.values['email-text']);
-        },
+        target: '/country',
+        condition: {
+          field: 'confirm-email',
+          value: 'yes'
+        }
+      },
+      {
         target: '/email-address',
-        //   target: '/country',
-        //   condition: {
-        //     field: 'confirm-email',
-        //     value: 'yes'
-        //   }
-        // },
-        // {
-        //   target: '/email-address',
-        //   condition: {
-        //     field: 'confirm-email',
-        //     value: 'no',
-            
-        //     }
-          }
-      ],
+        condition: {
+          field: 'confirm-email',
+          value: 'no'
+        }
+      }]
     },
 
 

@@ -70,7 +70,7 @@
     "default": "Tell us your full name"
   },
  
-  "confirm-email": {
+  "check-email": {
     "default": "Tell us whether your email address is correct"
   },
 
