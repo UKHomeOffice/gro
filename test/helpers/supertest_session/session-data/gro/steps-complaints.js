@@ -13,6 +13,7 @@ module.exports = [
   '/when',
   '/name',
   '/email-address',
+  '/check-email',
   '/country',
   '/address',
   '/confirm',
