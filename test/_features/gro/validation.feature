@@ -95,6 +95,17 @@ Feature: Validations
     Then I fill 'email-text' with 'sas-hof-test@digital.homeoffice.gov.uk'
     Then I click the 'Continue' button
     Then I click the 'Continue' button
+    Then I should see the 'Tell us whether your email address is correct' error
+    Then I choose 'No'
+    Then I click the 'Continue' button
+    Then I click the 'Continue' button
+    Then I should see the 'Enter an email address' error
+    Then I fill 'email-text' with 'sas-hof-test@digital.homeoffice.gov.uk'
+    Then I click the 'Continue' button
+    Then I click the 'Continue' button
+    Then I choose 'Yes'
+    Then I click the 'Continue' button
+    Then I click the 'Continue' button
     Then I should see the 'Enter your country' error
     Then I fill 'country-select' with 'United Kingdom'
     Then I click the 'Continue' button

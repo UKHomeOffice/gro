@@ -90,10 +90,10 @@ module.exports = {
 
   'confirm-email': {
     mixin: 'radio-group',
+    validate: ['required'],
     legend: {
       className: 'visuallyhidden'
     },
-    validate: ['required'],
     className: ['inline', 'form-group'],
     options: [
       'yes',
