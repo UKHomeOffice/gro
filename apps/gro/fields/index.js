@@ -87,6 +87,19 @@ module.exports = {
     mixin: 'input-text',
     validate: ['required', 'email']
   },
+
+  'confirm-email': {
+    mixin: 'radio-group',
+    validate: ['required'],
+    legend: {
+      className: 'visuallyhidden'
+    },
+    className: ['inline', 'form-group'],
+    options: [
+      'yes',
+      'no'
+    ]
+  },
   'how-radio': {
     mixin: 'radio-group',
     validate: ['required'],

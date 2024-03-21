@@ -114,6 +114,16 @@ describe('Query', () => {
         'email-text': 'test@test.com'
       });
 
+      expect(response.text).to.contain('Found. Redirecting to /check-email');
+    });
+
+    it('goes to /check-email', async () => {
+      const URI = '/check-email';
+      await initSession(URI, STEPS);
+      const response = await passStep(URI, {
+        'confirm-email': 'yes'
+      });
+
       expect(response.text).to.contain('Found. Redirecting to /country');
     });
 
