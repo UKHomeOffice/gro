@@ -11,7 +11,7 @@ ignore:
         reason: No upgrade or patch available yet
         expires: '2024-06-23T11:31:50.203Z'
 
-    - browserify > glob> inflight:
+    - browserify@17.0.0 > glob@7.2.3 > inflight@1.0.6ght:
         reason: No upgrade or patch available yet
         expires: '2024-06-23T11:31:50.203Z'
 
