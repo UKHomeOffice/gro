@@ -36,6 +36,7 @@ module.exports = {
     'townOrCity',
     'countyOrState',
     'postcodeOrZIPCode',
-    'country-select'
+    'country-select',
+    'nonUkAddress'
   ]
 };

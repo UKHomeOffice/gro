@@ -220,5 +220,10 @@ module.exports = {
     className: ['govuk-input', 'govuk-input--width-10'],
     validate: ['required'],
     formatter: ['removespaces', 'uppercase']
+  },
+  nonUkAddress: {
+    mixin: 'textarea',
+    validate: ['required', 'notUrl', { type: 'maxlength', arguments: 300 }],
+    labelClassName: 'visuallyhidden'
   }
 };
