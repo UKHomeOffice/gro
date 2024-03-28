@@ -44,7 +44,8 @@ const parse = (model, translate) => {
     'townOrCity',
     'countyOrState',
     'postcodeOrZIPCode',
-    'country-select'
+    'country-select',
+    'nonUkAddress'
   ];
 
   return {

@@ -237,5 +237,9 @@
   "postcodeOrZIPCode": {
     "label": "Postcode or ZIP Code",
     "changeLinkDescription": "Your current postcode or ZIP Code"
+  },
+  "nonUkAddress": {
+    "label": "Your current address",
+    "changeLinkDescription": "Your current address"
   }
 }
