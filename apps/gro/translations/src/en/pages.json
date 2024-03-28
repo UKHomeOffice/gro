@@ -27,6 +27,10 @@
     "header": "What is your address?",
     "intro": "If you have no fixed address, enter an address where we can contact you."
   },
+  "address-nonuk": {
+    "header": "Enter your address in {{values.country-select}}",
+    "intro": "We'll use this to confirm your identity if you contact us over the phone"
+  },
   "confirm": {
     "header": "Is the information you have given us correct?",
     "subHeading": "If any information is incorrect, you can change it here.",
