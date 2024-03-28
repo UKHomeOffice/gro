@@ -151,7 +151,7 @@ module.exports = {
     '/check-email': {
       fields: ['confirm-email'],
       forks: [{
-        target: '/email-address/edit#{{email-text}}',
+        target: '/email-address/',
         condition: {
           field: 'confirm-email',
           value: 'no'
