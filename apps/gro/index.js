@@ -170,7 +170,7 @@ module.exports = {
       continueOnEdit: true
     },
     '/address-nonuk': {
-      fields : ['nonUkAddress'],
+      fields: ['nonUkAddress'],
       next: '/confirm',
       continueOnEdit: true
     },

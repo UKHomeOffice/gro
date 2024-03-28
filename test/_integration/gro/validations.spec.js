@@ -407,30 +407,24 @@ describe('Validation - queries', () => {
   });
 
   describe('AddressNonUk validations', () => {
-
     it('does not pass /address-nonuk if nonUkAddress is left empty', async () => {
       const URI = '/address-nonuk';
 
-      
       await initSession('/country', STEPS);
       await passStep('/country', {
         'country-select': 'France'
       });
       await passStep(URI, {
-        'nonUkAddress': '',
+        nonUkAddress: ''
       });
-      
-  
       const res = await getUrl(URI);
       const docu = await parseHtml(res);
       const validationSummary = docu.find('.govuk-error-summary');
-  
       expect(validationSummary.length === 1).to.be.true;
       expect(validationSummary.html())
         .to.match(/Enter your address/);
-    })
-
-  })
+    });
+  });
 
   describe('People validation', () => {
     it('does not pass /people if field is empty', async () => {

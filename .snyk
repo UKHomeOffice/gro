@@ -2,69 +2,69 @@
 version: v1.22.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
-  SNYK-JS-MINIMATCH-3050818:
-    - hof > i18n-future > glob > minimatch: 
-        reason: No valid upgrade path
-        expires: '2023-02-22T09:20:00.000Z'
-  SNYK-JS-UGLIFYJS-3113873:
-    - hof > uglify-js:
-        reason: No valid upgrade path
-        expires: '2023-02-22T09:20:00.000Z'
-  SNYK-JS-REQUEST-1314897:
-    - hof > request:
-        reason: Need to replace request in HOF
-        expires: '2022-09-18T14:58:46.388Z'
-  SNYK-JS-CACHEDPATHRELATIVE-2342653:
-    - browserify > cached-path-relative:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.786Z'
-    - browserify > module-deps > cached-path-relative:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
-    - hof > browserify > cached-path-relative:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
-    - hof > browserify > module-deps > cached-path-relative:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
-  SNYK-JS-MINIMIST-2429795:
-    - browserify > subarg > minimist:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
-    - browserify > deps-sort > subarg > minimist:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
-    - browserify > module-deps > subarg > minimist:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
-    - browserify > module-deps > detective > minimist:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
-    - hof > browserify > subarg > minimist:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
-    - hof > browserify > deps-sort > subarg > minimist:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
-    - hof > browserify > module-deps > subarg > minimist:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
-    - hof > browserify > module-deps > detective > minimist:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
-  SNYK-JS-SHELLQUOTE-1766506:
-    - browserify > shell-quote:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
-    - hof > browserify > shell-quote:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
-  SNYK-JS-JSONSCHEMA-1920922:
-    - hof > request > http-signature > jsprim > json-schema:
-        reason: No valid upgrade path
-        expires: '2022-08-25T09:23:58.787Z'
   SNYK-JS-QS-3153490:
     - '*':
         reason: No viable upgrade path yet
         expires: '2023-06-23T11:31:50.203Z'
+  SNYK-JS-INFLIGHT-6095116:
+    - hof@20.4.0 > glob@7.2.3 > inflight@1.0.6:
+        reason: No upgrade or patch available yet
+        expires: '2024-06-23T11:31:50.203Z'
+    - hof@20.4.0 > browserify@17.0.0 > glob@7.2.3 > inflight@1.0.6:
+        reason: No upgrade or patch available
+        expires: '2024-06-23T11:31:50.203Z'
+    - browserify@17.0.0 > glob@7.2.3 > inflight@1.0.6:
+        reason: No upgrade or patch available yet
+        expires: '2024-06-23T11:31:50.203Z'
+    - hof@20.4.0 > rimraf@3.0.2 > glob@7.2.3 > inflight@1.0.6:
+        reason: No upgrade or patch available yet
+        expires: '2024-06-23T11:31:50.203Z'
+    - hof@20.4.0 > i18n-future@2.0.1 > glob@5.0.15 > inflight@1.0.6:
+        reason: No upgrade or patch available yet
+        expires: '2024-06-23T11:31:50.203Z'
+  SNYK-JS-BROWSERIFYSIGN-6037026:
+    - hof@20.4.0 > browserify@17.0.0 > crypto-browserify@3.12.0 > browserify-sign@4.2.1:
+        reason: No upgrade or patch available yet
+        expires: '2024-06-23T11:31:50.203Z'
+  SNYK-JS-AXIOS-6032459:
+    - hof@20.4.0 > notifications-node-client@6.0.0 > axios@0.25.0:
+        reason: no upgrade available
+        expires: '2024-06-23T11:31:50.203Z'
+  SNYK-JS-AXIOS-6124857:
+    - hof@20.4.0 > notifications-node-client@6.0.0 > axios@0.25.0:
+        reason: no upgrade available
+        expires: '2024-06-23T11:31:50.203Z'
+  SNYK-JS-AXIOS-6144788:
+    - hof@20.4.0 > notifications-node-client@6.0.0 > axios@0.25.0:
+        reason: no upgrade available
+        expires: '2024-06-23T11:31:50.203Z'
+  SNYK-JS-FOLLOWREDIRECTS-6141137:
+    - hof@20.4.0 > notifications-node-client@6.0.0 > axios@0.25.0 > follow-redirects@1.15.2:
+        reason: no upgrade available
+        expires: '2024-06-23T11:31:50.203Z'
+  SNYK-JS-FOLLOWREDIRECTS-6444610:
+    - hof@20.4.0 > notifications-node-client@6.0.0 > axios@0.25.0 > follow-redirects@1.15.2:
+        reason: no upgrade available
+        expires: '2024-06-23T11:31:50.203Z'
+  SNYK-JS-NODEMAILER-6219989: 
+    - hof@20.4.0 > nodemailer@6.9.1:
+        reason: no upgrade available
+        expires: '2024-06-23T11:31:50.203Z'
+  SNYK-JS-REQUEST-3361831:
+    - hof@20.4.0 > request@2.88.2:
+        reason: no upgrade available
+        expires: '2024-06-23T11:31:50.203Z'
+  SNYK-JS-SEMVER-3247795:
+    - hof@20.4.0 > notifications-node-client@6.0.0 > jsonwebtoken@9.0.0 > semver@7.3.8:
+        reason: no upgrade available
+        expires: '2024-06-23T11:31:50.203Z'
+  SNYK-JS-TOUGHCOOKIE-5672873:
+    - hof@20.4.0 > request@2.88.2 > tough-cookie@2.5.0:
+        reason: no upgrade available
+        expires: '2024-06-23T11:31:50.203Z'
+  SNYK-JS-XML2JS-5414874:
+    - hof@20.4.0 > nodemailer-ses-transport@1.5.1 > aws-sdk@2.1319.0 > xml2js@0.4.19:
+        reason: no upgrade available
+        expires: '2024-06-23T11:31:50.203Z'
+
 patch: {}

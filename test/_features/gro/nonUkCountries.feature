@@ -1,4 +1,4 @@
-@feature @testing
+@feature @nonUkCountries
 
 Feature: testing
 
