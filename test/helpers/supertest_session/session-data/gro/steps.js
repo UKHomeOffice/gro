@@ -15,6 +15,7 @@ module.exports = [
   '/check-email',
   '/country',
   '/address',
+  '/address-nonuk',
   '/confirm',
   '/confirmation'
 ];
