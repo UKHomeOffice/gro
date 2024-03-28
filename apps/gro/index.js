@@ -152,7 +152,13 @@ module.exports = {
         'country-select'
       ],
       continueOnEdit: true,
-      next: '/address',
+      next: '/address-nonuk',
+      forks: [{
+        target: '/address',
+        condition(req) {
+          return _.includes(['United Kingdom'], req.form.values['country-select']);
+        }
+      }],
       locals: {
         section: 'contact-details',
         subsection: 'address'
@@ -160,6 +166,11 @@ module.exports = {
     },
     '/address': {
       fields: ['building', 'street', 'townOrCity', 'countyOrState', 'postcodeOrZIPCode'],
+      next: '/confirm',
+      continueOnEdit: true
+    },
+    '/address-nonuk': {
+      fields : ['nonUkAddress'],
       next: '/confirm',
       continueOnEdit: true
     },

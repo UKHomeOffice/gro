@@ -90,5 +90,8 @@
   },
   "postcodeOrZIPCode": {
     "default": "Enter your postcode or ZIP Code"
+  },
+  "nonUkAddress": {
+    "default": "Enter your address"
   }
 }
