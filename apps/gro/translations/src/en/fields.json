@@ -216,7 +216,7 @@
   "country-select": {
     "summary": "Country",
     "label": "Select a country",
-    "hint": "Start to type the country name and options will appear"
+    "hint": "Start to type and select from the list"
   },
   "building": {
     "label": "Building and street",
@@ -231,12 +231,12 @@
     "changeLinkDescription": "Your current town or city"
   },
   "countyOrState": {
-    "label": "County or state",
-    "changeLinkDescription": "Your current county or state"
+    "label": "County",
+    "changeLinkDescription": "Your current county"
   },
   "postcodeOrZIPCode": {
-    "label": "Postcode or ZIP Code",
-    "changeLinkDescription": "Your current postcode or ZIP Code"
+    "label": "Postcode",
+    "changeLinkDescription": "Your current postcode"
   },
   "nonUkAddress": {
     "label": "Your current address",

@@ -121,6 +121,9 @@
       },
       "postcodeOrZIPCode": {
         "label": "Postcode or ZIP Code"
+      },
+      "nonUkAddress":{
+        "label": "Your current address"
       }
     }
   },

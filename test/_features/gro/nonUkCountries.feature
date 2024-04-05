@@ -40,6 +40,9 @@ Feature: testing
     Then I should be on the 'email-address' page showing 'What is your email address?'
     Then I fill 'email-text' with 'test@test.com'
     Then I select 'Continue'
+    Then I should be on the 'check-email' page showing 'Is the email address you entered correct?'
+    Then I choose 'Yes'
+    Then I select 'Continue'
     Then I should be on the 'country' page showing 'What country is your address located?'
     Then I fill 'country-select' with 'France' option
     Then I select 'Continue'

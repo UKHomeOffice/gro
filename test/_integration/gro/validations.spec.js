@@ -364,7 +364,7 @@ describe('Validation - queries', () => {
 
       expect(validationSummary.length === 1).to.be.true;
       expect(validationSummary.html())
-        .to.match(/Enter a county or state/);
+        .to.match(/Enter a county/);
     });
 
     it('does not pass /address if countryOrState includes digits', async () => {
@@ -383,7 +383,7 @@ describe('Validation - queries', () => {
 
       expect(validationSummary.length === 1).to.be.true;
       expect(validationSummary.html())
-        .to.match(/Enter a county or state without including digits/);
+        .to.match(/Enter a county without including digits/);
     });
 
     it('does not pass /address if postcodeOrZIPcode is left empty', async () => {
@@ -402,7 +402,7 @@ describe('Validation - queries', () => {
 
       expect(validationSummary.length === 1).to.be.true;
       expect(validationSummary.html())
-        .to.match(/Enter your postcode or ZIP Code/);
+        .to.match(/Enter your postcode/);
     });
   });
 
