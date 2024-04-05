@@ -90,11 +90,11 @@
     "regex": "Enter a town or city without including digits"
   },
   "countyOrState": {
-    "default": "Enter a county or state",
-    "regex": "Enter a county or state without including digits"
+    "default": "Enter a county",
+    "regex": "Enter a county without including digits"
   },
   "postcodeOrZIPCode": {
-    "default": "Enter your postcode or ZIP Code"
+    "default": "Enter your postcode"
   },
   "nonUkAddress": {
     "default": "Enter your address"
