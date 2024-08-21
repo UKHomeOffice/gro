@@ -39,7 +39,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "^7.3.0",
     "@cucumber/pretty-formatter": "^1.0.0-alpha.1",
-    "axios": "^1.7.4",
+    "axios": "^1.6",
     "braces": "^3.0.3",
     "browserify-sign": "^4.2.3",
     "chai": "^4.3.6",
@@ -59,7 +59,7 @@
     "sinon-chai": "^3.7.0",
     "supertest": "^6.2.2",
     "supertest-session": "^4.1.0",
-    "tough-cookie": "^4.1.4",
+    "tough-cookie": "^4.1.3",
     "word-wrap": "^1.2.5",
     "ws": "^8.18.0",
     "xml2js": "^0.6.2"
