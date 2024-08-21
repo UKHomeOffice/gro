@@ -5,7 +5,7 @@
   "description": "The General Register Office DSP form",
   "license": "GPL-2.0",
   "engines": {
-    "node": ">=18.12.1"
+    "node": ">=20.16.0 <21.0.0"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,6 @@
     "test:cucumber": "cucumber-js -f @cucumber/pretty-formatter \"test/_features/**/*.feature\" --require test/_features/test.setup.js --require \"test/_features/step_definitions/**/*.js\" --tags $TAGS",
     "test:integration": "NODE_ENV=development _mocha \"test/_integration/**/*.spec.js\" -r dotenv/config --exit",
     "test:lint": "eslint . --config ./node_modules/eslint-config-hof/default.js",
-    "test:snyk": "snyk config set api=SNYK_TOKEN && snyk test",
     "build": "hof-build",
     "postinstall": "yarn run build"
   },
@@ -51,7 +50,6 @@
     "proxyquire": "^2.1.3",
     "sinon": "^9.2.0",
     "sinon-chai": "^3.7.0",
-    "snyk": "^1.675.0",
     "supertest": "^6.2.2",
     "supertest-session": "^4.1.0"
   },
