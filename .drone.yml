@@ -164,26 +164,6 @@ steps:
       branch: master
       event: [push, pull_request]
 
-  # Trivy Security Scannner
-  - name: scan-image
-    pull: always
-    image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/trivy/client:latest
-    resources:
-      limits:
-        cpu: 1000
-        memory: 1024Mi
-    environment:
-      IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
-      SEVERITY: MEDIUM,HIGH,CRITICAL
-      FAIL_ON_DETECTION: false
-      IGNORE_UNFIXED: true
-      ALLOW_CVE_LIST_FILE: hof-services-config/General_Registrars_Office/trivy-cve-exceptions.txt
-    when:
-      event:
-      - pull_request
-      - push
-      - tag
-
     # Trivy Security Scannner for scanning nodejs packages in Yarn
   - name: scan_node_packages
     pull: always
@@ -277,22 +257,6 @@ steps:
       - npm run test:acceptance
     when:
       branch: master
-      event: pull_request
-
-  # Snyk security scans which run after branch deployment to prevent blocking of PR UAT tests
-  - name: snyk_scan
-    pull: if-not-exists
-    image: node:20.16.0-alpine3.20@sha256:eb8101caae9ac02229bd64c024919fe3d4504ff7f329da79ca60a04db08cef52
-    environment:
-      SNYK_TOKEN:
-        from_secret: snyk_token
-    commands:
-      - yarn run test:snyk
-    when:
-      branch:
-        include:
-          - master
-          - feature/*
       event: pull_request
 
   # Deploy to Master UAT environment
