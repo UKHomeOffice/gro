@@ -74,7 +74,7 @@ steps:
         - master
         - feature/*
       event: [push, pull_request]
-  
+
     # Trivy Security Scannner for scanning OS related vulnerabilities in Base image of Dockerfile
   - name: scan_image_os
     pull: always
@@ -164,7 +164,7 @@ steps:
       branch: master
       event: [push, pull_request]
 
-    # Trivy Security Scannner for scanning nodejs packages in Yarn
+  # Trivy Security Scannner for scanning nodejs packages in Yarn
   - name: scan_node_packages
     pull: always
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/trivy/client:latest
@@ -393,7 +393,7 @@ steps:
     when:
       cron: tear_down_pr_envs
       event: cron
-  
+
   # CRON job steps that runs security scans using Trivy
   - name: cron_clone_repos
     image: alpine/git
@@ -436,11 +436,11 @@ steps:
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/trivy/client:latest
     pull: always
     environment:
-        IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
-        SEVERITY: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL --dependency-tree
-        FAIL_ON_DETECTION: true
-        IGNORE_UNFIXED: false
-        ALLOW_CVE_LIST_FILE: hof-services-config/infrastructure/trivy/.trivyignore.yaml
+      IMAGE_NAME: gro-form:${DRONE_COMMIT_SHA}
+      SEVERITY: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL --dependency-tree
+      FAIL_ON_DETECTION: true
+      IGNORE_UNFIXED: false
+      ALLOW_CVE_LIST_FILE: hof-services-config/infrastructure/trivy/.trivyignore.yaml
     when:
       cron: security_scans
       event: cron
@@ -465,7 +465,7 @@ steps:
       cron: tear_down_pr_envs
       event: cron
       status: [ failure ]
-  
+
   - name: cron_notify_slack_security_scans
     pull: if-not-exists
     image: plugins/slack:1.4.1
