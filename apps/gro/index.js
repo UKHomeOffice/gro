@@ -12,6 +12,9 @@ module.exports = {
   name: 'gro',
   params: '/:action?',
   baseUrl: '/',
+  pages: {
+    '/accessibility': 'accessibility'
+  },
   steps: {
     '/about': {
       fields: ['order-type'],
