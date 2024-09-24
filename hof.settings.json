@@ -10,5 +10,5 @@
   "session": {
     "name": "general-register-office.hof.sid"
   },
-  "getAccessibility": true
+  "getAccessibility": false
 }
