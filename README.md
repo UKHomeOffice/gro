@@ -10,7 +10,21 @@
 
 ### Up & Running
 
-Add a .env file, and add the following env variables FROM_ADDRESS, REPLY_TO, CASEWORKER_EMAIL, AWS_USER, AWS_PASSWORD and set to a non-empty string.
+Add a .env file, and add the following variables:
+
+``` 
+NOTIFY_KEY=
+CASEWORKER_EMAIL=
+NOTIFY_TEMPLATE=
+GTM_TAG=
+POSTCODE_HOST=
+FROM_ADDRESS=
+REPLY_TO=
+AWS_USER=
+AWS_PASSWORD=
+AWS_REGION
+```
+A copy of these secrets is stored in keybase, please make sure that any updates will be added there too.
 
 ```bash
 $ cd gro
@@ -23,11 +37,7 @@ Then visit: [http://localhost:8080/](http://localhost:8080/)
 ## Testing
 
 ### Acceptance Tests
-With the server running in development mode (`yarn run start:dev`), start the acceptance tests:
-
-```bash
-$ yarn run test:acceptance
-```
+Acceptance tests are run by the QAT team in a different environment. 
 
 ### Integration Tests
 ```bash
