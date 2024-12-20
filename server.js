@@ -35,7 +35,7 @@ const app = hof(settings);
 app.use((req, res, next) => {
   // Set HTML Language
   res.locals.htmlLang = 'en';
-  res.locals.feedbackUrl = config.survey.urls.root;
+  res.locals.feedbackUrl = config.feedbackUrl;
   next();
 });
 
