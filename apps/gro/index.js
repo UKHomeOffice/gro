@@ -207,6 +207,8 @@ module.exports = {
       locals: {
         section: 'confirmation'
       }
-    }
+    },
+    '/session-timeout': {},
+    '/exit': {}
   }
 };

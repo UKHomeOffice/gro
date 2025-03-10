@@ -39,6 +39,11 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use('/accessibility', (req, res, next) => {
+  res.locals = Object.assign({}, res.locals, req.translate('accessibility'));
+  next();
+});
+
 if (config.env === 'development' || config.env === 'test') {
   app.use('/test/bootstrap-session', (req, res) => {
     const appName = req.body.appName;
