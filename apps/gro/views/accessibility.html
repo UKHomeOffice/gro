@@ -1,7 +1,16 @@
-<title>Accessibility statement for this Home Office Forms Application – GOV.UK </title>
 {{<layout}}
+  {{$journeyHeader}}
+    {{#t}}journey.header{{/t}}
+  {{/journeyHeader}}
+
+  {{$propositionHeader}}
+    {{> partials-navigation}}
+  {{/propositionHeader}}
+
+  {{$header}}
+    {{header}}
+  {{/header}}
   {{$content}}
-  <h1 class="govuk-heading-l">Accessibility statement for this Home Office Forms Application</h1>
     <p class="govuk-body">This service is run by the Home Office. We want as many people as possible to be able to use this service. For example, that means you should be able to:</p>
     <ul class="govuk-list govuk-list--bullet" >
         <li>{{#t}}accessibility.intro-p2-li1{{/t}}</li>

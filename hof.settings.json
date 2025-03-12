@@ -2,7 +2,8 @@
   "appName": "General Register Office",
   "theme": "govUK",
   "behaviours": [
-    "hof/components/clear-session"
+    "hof/components/clear-session",
+    "hof/components/session-timeout-warning"
   ],
   "routes": [
     "./apps/gro"
