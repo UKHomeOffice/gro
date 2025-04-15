@@ -16,7 +16,7 @@
     "start": "node server.js",
     "start:dev": "NODE_ENV=development hof-build watch --env",
     "test": "npm run test:lint",
-   "test:integration": "NODE_ENV=development _mocha \"test/_integration/**/*.spec.js\" -r dotenv/config --exit",
+    "test:integration": "NODE_ENV=development _mocha \"test/_integration/**/*.spec.js\" -r dotenv/config --exit",
     "test:lint": "eslint . --config ./node_modules/eslint-config-hof/default.js",
     "build": "hof-build",
     "postinstall": "yarn run build"
