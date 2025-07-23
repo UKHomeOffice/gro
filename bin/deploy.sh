@@ -14,7 +14,7 @@ if [[ $1 == 'tear_down' ]]; then
 
   $kd --delete -f kube/configmaps/configmap.yml
   $kd --delete -f kube/redis -f kube/app
-  echo "Torn Down UAT Branch - $APP_NAME-$DRONE_SOURCE_BRANCH.internal.$BRANCH_ENV.homeoffice.gov.uk"
+  echo "Torn Down Branch - $APP_NAME-$DRONE_SOURCE_BRANCH.internal.$BRANCH_ENV.homeoffice.gov.uk"
   exit 0
 fi
 
@@ -39,6 +39,16 @@ fi
 
 sleep $READY_FOR_TEST_DELAY
 
+
 if [[ ${KUBE_NAMESPACE} == ${BRANCH_ENV} ]]; then
-  echo "UAT Branch - $APP_NAME-$DRONE_SOURCE_BRANCH.internal.$BRANCH_ENV.homeoffice.gov.uk"
+  echo "External Branch url - $APP_NAME-$DRONE_SOURCE_BRANCH.$BRANCH_ENV.homeoffice.gov.uk"
+  echo "Internal Branch url - $APP_NAME-$DRONE_SOURCE_BRANCH.internal.$BRANCH_ENV.homeoffice.gov.uk"
+elif [[ ${KUBE_NAMESPACE} == ${UAT_ENV} ]]; then
+  echo "External UAT url - $APP_NAME.uat.sas-notprod.homeoffice.gov.uk"
+  echo "Internal UAT url - $APP_NAME.internal.uat.sas-notprod.homeoffice.gov.uk"
+elif [[ ${KUBE_NAMESPACE} == ${STG_ENV} ]]; then
+  echo "External STG url - $APP_NAME.stg.sas.homeoffice.gov.uk"
+  echo "Internal STG url - stg.internal.$APP_NAME.sas.homeoffice.gov.uk"
+elif [[ ${KUBE_NAMESPACE} == ${PROD_ENV} ]]; then
+  echo "External PROD url - $PRODUCTION_URL"
 fi
