@@ -2,7 +2,7 @@ FROM node:20.16.0-alpine3.20@sha256:eb8101caae9ac02229bd64c024919fe3d4504ff7f329
 
 USER root
 
-# Update packages as a result of Anchore security vulnerability checks
+# Update packages as a result of security vulnerability checks
 RUN apk update && \
     apk add --upgrade gnutls binutils nodejs npm apk-tools libjpeg-turbo libcurl libx11 libxml2
 
