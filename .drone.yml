@@ -37,7 +37,8 @@ trivy-client-image: &trivy-client-image
 
 linting: &linting
   pull: if-not-exists
-  image: node:20.16.0-alpine3.20@sha256:eb8101caae9ac02229bd64c024919fe3d4504ff7f329da79ca60a04db08cef52
+  image: quay.io/ukhomeofficedigital/hof-nodejs:20.20.2-alpine3.23@sha256:bcd17b68a0f1910f1670b07f6a47d1e2c28291bafc219807c494dc62b57ea25e
+
   environment:
     NOTIFY_KEY: USE_MOCK
   commands:
@@ -45,7 +46,7 @@ linting: &linting
 
 unit_tests: &unit_tests
   pull: if-not-exists
-  image: node:20.16.0-alpine3.20@sha256:eb8101caae9ac02229bd64c024919fe3d4504ff7f329da79ca60a04db08cef52
+  image: quay.io/ukhomeofficedigital/hof-nodejs:20.20.2-alpine3.23@sha256:bcd17b68a0f1910f1670b07f6a47d1e2c28291bafc219807c494dc62b57ea25e
   environment:
     NOTIFY_KEY: USE_MOCK
   commands:
@@ -53,13 +54,13 @@ unit_tests: &unit_tests
 
 sonar_scanner: &sonar_scanner
   pull: if-not-exists
-  image: quay.io/ukhomeofficedigital/sonar-scanner-nodejs:latest
+  image: quay.io/ukhomeofficedigital/sonar-scanner:latest
   commands:
     - sonar-scanner -Dproject.settings=./sonar-project.properties
 
 integration_tests: &integration_tests
   pull: if-not-exists
-  image: node:20.16.0-alpine3.20@sha256:eb8101caae9ac02229bd64c024919fe3d4504ff7f329da79ca60a04db08cef52
+  image: quay.io/ukhomeofficedigital/hof-nodejs:20.20.2-alpine3.23@sha256:bcd17b68a0f1910f1670b07f6a47d1e2c28291bafc219807c494dc62b57ea25e
   environment:
     NOTIFY_KEY: USE_MOCK
 
@@ -91,7 +92,7 @@ steps:
         cpu: 1000
         memory: 1024Mi
     environment:
-      IMAGE_NAME: node:20.16.0-alpine3.20@sha256:eb8101caae9ac02229bd64c024919fe3d4504ff7f329da79ca60a04db08cef52
+      IMAGE_NAME: quay.io/ukhomeofficedigital/hof-nodejs:20.20.2-alpine3.23@sha256:bcd17b68a0f1910f1670b07f6a47d1e2c28291bafc219807c494dc62b57ea25e
       SERVICE_URL: https://acp-trivy-helm.acp-trivy.svc.cluster.local:443
       SEVERITY: MEDIUM,HIGH,CRITICAL --dependency-tree
       FAIL_ON_DETECTION: false
@@ -403,7 +404,7 @@ steps:
   - name: cron_trivy_scan_image_os
     <<: *trivy-client-image
     environment:
-      IMAGE_NAME: node:20.16.0-alpine3.20@sha256:eb8101caae9ac02229bd64c024919fe3d4504ff7f329da79ca60a04db08cef52
+      IMAGE_NAME: quay.io/ukhomeofficedigital/hof-nodejs:20.20.2-alpine3.23@sha256:bcd17b68a0f1910f1670b07f6a47d1e2c28291bafc219807c494dc62b57ea25e
       SEVERITY: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL --dependency-tree
       FAIL_ON_DETECTION: true
       IGNORE_UNFIXED: false
