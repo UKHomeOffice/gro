@@ -7,6 +7,11 @@ const moment = require('moment');
 const config = require('../../../config');
 const fields = require('../translations/src/en/fields.json');
 const _ = require('lodash');
+const fs = require('fs');
+const intro = fs.readFileSync(
+  path.resolve(__dirname, '../translations/src/en/applicant-intro.md'),
+  'utf8'
+);
 
 const parse = (model, translate) => {
   const format = label => label.includes('?') ? label : label + ':';
@@ -49,6 +54,7 @@ const parse = (model, translate) => {
   ];
 
   return {
+    intro,
     enquiryHeader: translate('pages.enquiry-details'),
     orderHeader: translate('pages.order-details'),
     contactHeader: translate('pages.contact-details'),
