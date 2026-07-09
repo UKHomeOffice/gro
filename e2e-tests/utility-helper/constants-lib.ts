@@ -1,0 +1,17 @@
+export const ConstantsLib = {
+  FULL_NAME: 'HOF TEST',
+  PARTY_ONE_NAME: 'PartyOne Name1',
+  PARTY_TWO_NAME: 'PartyTwo Name2',
+  ENQUIRY_DETAILS: 'Missed delivery date',
+  COMPLAINT_DETAILS: 'Received Item is damaged',
+  CONTACT_EMAIL_ADDRESS: 'sas-hof-test@digital.homeoffice.gov.uk',
+  ONLINE_ORDER_NO: 'COL123456/2018',
+  TELEPHONE_ORDER_NO: '12345-2',
+  ADDRESS: '49, Sydenham road, Croydon, Surrey, CR0 2EU',
+  ADDRESS_LINE_1: '49 Sydenham road',
+  ADDRESS_LINE_2: 'Croydon',
+  TOWN_OR_CITY: 'Surrey',
+  COUNTY: 'Surrey',
+  POSTCODE: 'CR0 2EU',
+  COUNTRY_UK: 'United Kingdom',
+} as const;
