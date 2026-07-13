@@ -1,10 +1,9 @@
-FROM quay.io/ukhomeofficedigital/hof-nodejs:20.20.2-alpine3.23@sha256:bcd17b68a0f1910f1670b07f6a47d1e2c28291bafc219807c494dc62b57ea25e
+FROM node:24.18.0-alpine3.24@sha256:4ba75f835bb8802193e4c114572113d4b26f95f6f094f4b5229d2a77773e0afc
 
 USER root
 
-# Update packages as a result of security vulnerability checks
-RUN apk update && \
-    apk add --upgrade gnutls binutils nodejs npm apk-tools libjpeg-turbo libcurl libx11 libxml2
+# Update Alpine packages with latest security and bug fixes
+RUN apk upgrade --no-cache
 
 
 # Setup nodejs group & nodejs user
@@ -18,7 +17,7 @@ WORKDIR /app
 
 COPY --chown=999:998 . /app
 
-RUN yarn install --frozen-lockfile --production --ignore-optional && \
+RUN yarn install --frozen-lockfile --production && \
     yarn run postinstall
 
 HEALTHCHECK --interval=5m --timeout=3s \

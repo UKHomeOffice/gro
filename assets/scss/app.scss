@@ -4,6 +4,7 @@ $path: "../img/";
 
 @import "./alert.scss";
 @import "./icons.scss";
+@import "./autocomplete.scss";
 
 //autocomplete styling
 .tt-menu {
@@ -31,7 +32,6 @@ $path: "../img/";
 }
 
 ul {
-  @extend .text;
   @extend .list;
   @extend .list-bullet;
 }
