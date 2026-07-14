@@ -69,8 +69,8 @@ spec:
             - name: SESSION_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: gro-session
-                  key: token
+                  name: session-secret
+                  key: session-secret
             {{ end }}
             - name: AWS_USER
               valueFrom:
