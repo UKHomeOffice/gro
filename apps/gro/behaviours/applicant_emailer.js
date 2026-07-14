@@ -2,11 +2,17 @@
 
 const hof = require('hof');
 const Notify = hof.components.notify;
+const fs = require('fs');
 const path = require('path');
 const moment = require('moment');
 const config = require('../../../config');
 const fields = require('../translations/src/en/fields.json');
 const _ = require('lodash');
+
+const userEmailIntro = fs.readFileSync(
+  path.resolve(__dirname, '../views/content/en/user-email-intro.md'),
+  'utf8'
+);
 
 const parse = (model, translate) => {
   const format = label => label.includes('?') ? label : label + ':';
@@ -49,6 +55,7 @@ const parse = (model, translate) => {
   ];
 
   return {
+    userEmailIntro,
     enquiryHeader: translate('pages.enquiry-details'),
     orderHeader: translate('pages.order-details'),
     contactHeader: translate('pages.contact-details'),
