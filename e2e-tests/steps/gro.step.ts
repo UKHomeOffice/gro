@@ -178,7 +178,7 @@ When('I enter full name and click continue', async ({ pages }) => {
   await pages.groContactNamePage.complete(c.FULL_NAME);
 });
 
-When('I complete the enquiry compliant page details and click continue', async ({ pages }) => {
+When('I complete the enquiry complaint page details and click continue', async ({ pages }) => {
   await pages.groDetailsPage.completeValidationComplaintPath(c.COMPLAINT_DETAILS);
 });
 

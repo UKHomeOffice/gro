@@ -100,7 +100,7 @@ Feature: GRO - General Register Office - Page Validations
     And I see "Tell us about your complaint" error link message displayed for GRO
     And I see "Tell us if your complaint is about an existing order" error link message displayed for GRO
     And I see "Tell us if you have already complained about this issue" error link message displayed for GRO
-    When I complete the enquiry compliant page details and click continue
+    When I complete the enquiry complaint page details and click continue
     And I select continue
     Then I see "There is a problem" error header message displayed for GRO
     And I see "Tell us the type of certificate that was ordered" error message displayed for GRO

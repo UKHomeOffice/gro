@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
 import dotenv from 'dotenv';
 
@@ -32,7 +32,7 @@ export default defineConfig({
         screenshot: 'only-on-failure',
         video: 'retain-on-failure',
         trace: 'on-first-retry',
-        headless: false,
+        headless: !!process.env.CI,
     },
 
     /* Configure projects for major browsers */
@@ -45,8 +45,8 @@ export default defineConfig({
                 launchOptions: {
                     args: ['--start-maximized'],
                 },
-                video: 'on', //Options => 'on', 'off', 'retain-on-failure' or 'on-first-retry'
-                screenshot: 'on',
+                video: 'on-first-retry', //Options => 'on', 'off', 'retain-on-failure' or 'on-first-retry'
+                screenshot: 'only-on-failure', //Options => 'on', 'off', 'only-on-failure' or 'on-first-retry'
             },
         },
     ],
