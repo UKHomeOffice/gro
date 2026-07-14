@@ -2,7 +2,7 @@
 
 const hof = require('hof');
 const Notify = hof.components.notify;
-const fs = require('fs');
+const fs = require('node:fs');
 const path = require('path');
 const moment = require('moment');
 const config = require('../../../config');

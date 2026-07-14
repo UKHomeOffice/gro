@@ -6,31 +6,6 @@ $path: "../img/";
 @import "./icons.scss";
 @import "./autocomplete.scss";
 
-//autocomplete styling
-.tt-menu {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  width: 65%;
-}
-
-.tt-suggestion {
-  padding: 0.5em;
-
-  &:hover,
-  &.tt-cursor {
-    color: #fff;
-    background-color: #0097cf;
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.twitter-typeahead {
-  width: 100%;
-}
-
 ul {
   @extend .list;
   @extend .list-bullet;
@@ -44,6 +19,6 @@ header {
   margin-top: 0;
 }
 
-.govuk-header__logotype{
+.govuk-header__logotype {
   display: inline;
 }
