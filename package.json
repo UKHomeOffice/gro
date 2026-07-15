@@ -45,5 +45,8 @@
     "require": "test/setup.js",
     "recursive": "true",
     "timeout": "6000"
+  },
+  "resolutions": {
+    "serialize-javascript": "^7.0.7"
   }
 }
