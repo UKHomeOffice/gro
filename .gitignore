@@ -22,8 +22,8 @@ dump.rdb
 
 # Playwright
 /test-results/
-playwright-report/
+playwright-report
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
-.features-gen/
+.features-gen
