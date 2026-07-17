@@ -435,6 +435,17 @@ steps:
       target: PROD
       event: promote
 
+  - name: generate_github_app_token_for_clone_prod
+    <<: *github_app_token_step
+    environment:
+      <<: *github_app_token_secrets_hof
+      OUTPUT_TOKEN_FILE: /root/.dockersock/github_app_token_for_clone_prod.txt
+    when:
+      target: PROD
+      event: promote
+    depends_on:
+      - sanity_check_build_prod
+
   - name: clone_repos_prod
     <<: *clone_repos_step
     environment:
@@ -451,17 +462,6 @@ steps:
       event: promote
     depends_on:
       - generate_github_app_token_for_clone_prod
-
-  - name: generate_github_app_token_for_clone_prod
-    <<: *github_app_token_step
-    environment:
-      <<: *github_app_token_secrets_hof
-      OUTPUT_TOKEN_FILE: /root/.dockersock/github_app_token_for_clone_prod.txt
-    when:
-      target: PROD
-      event: promote
-    depends_on:
-      - sanity_check_build_prod
 
     # Deploy to Production environment
   - name: deploy_to_prod
@@ -496,6 +496,15 @@ steps:
       event: cron
 
   # CRON job steps that runs security scans using Trivy
+  - name: generate_github_app_token_for_clone_cron
+    <<: *github_app_token_step
+    environment:
+      <<: *github_app_token_secrets_hof
+      OUTPUT_TOKEN_FILE: /root/.dockersock/github_app_token_for_clone_cron.txt
+    when:
+      cron: security_scans
+      event: cron
+
   - name: cron_clone_repos
     <<: *clone_repos_step
     environment:
@@ -512,15 +521,6 @@ steps:
       event: cron
     depends_on:
       - generate_github_app_token_for_clone_cron
-
-  - name: generate_github_app_token_for_clone_cron
-    <<: *github_app_token_step
-    environment:
-      <<: *github_app_token_secrets_hof
-      OUTPUT_TOKEN_FILE: /root/.dockersock/github_app_token_for_clone_cron.txt
-    when:
-      cron: security_scans
-      event: cron
 
   - name: cron_build_image
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
