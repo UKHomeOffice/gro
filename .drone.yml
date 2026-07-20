@@ -165,7 +165,7 @@ steps:
       - yarn run postinstall
     when:
       branch:
-        <<: *include_default_branch
+        <<: *include_default_and_feature_branches
       event: [push, pull_request]
     depends_on:
       - clone_repos
