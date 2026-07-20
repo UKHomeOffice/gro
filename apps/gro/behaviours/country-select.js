@@ -6,6 +6,6 @@ module.exports = superclass => class extends superclass {
       const labelString = country !== '' ? country : 'Please select a country';
       return { label: labelString, value: country };
     });
-    next();
+    return super.configure(req, res, next);
   }
 };
