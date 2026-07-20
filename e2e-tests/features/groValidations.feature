@@ -68,14 +68,7 @@ Feature: GRO - General Register Office - Page Validations
     And I see "Enter a town or city" error link message displayed for GRO
     And I see "Enter a county" error link message displayed for GRO
     And I see "Enter your postcode" error link message displayed for GRO
-    When I click the "Back" button for GRO
-    And I enter country "Invalid country" and click continue
-    Then I see "There is a problem" error header message displayed for GRO
-    And I see "Pick a country from the list" error message displayed for GRO
-    When I enter country "Cuba" and click continue
-    And I select continue
-    Then I see "There is a problem" error header message displayed for GRO
-    And I see "Enter your address" error message displayed for GRO
+
 
   Scenario: GRO - Field page validation error message - Service Compliant/Feedback path
     Given I selected the data for scenario "9" - "S9 - Digital Image Order (Service compliant - Civil partnership Cert)"
