@@ -38,7 +38,6 @@ trivy-client-image: &trivy-client-image
 linting: &linting
   pull: if-not-exists
   image: node:24.18.0-alpine3.24@sha256:4ba75f835bb8802193e4c114572113d4b26f95f6f094f4b5229d2a77773e0afc
-
   environment:
     NOTIFY_KEY: USE_MOCK
   commands:
@@ -63,7 +62,6 @@ integration_tests: &integration_tests
   image: node:24.18.0-alpine3.24@sha256:4ba75f835bb8802193e4c114572113d4b26f95f6f094f4b5229d2a77773e0afc
   environment:
     NOTIFY_KEY: USE_MOCK
-
   commands:
     - yarn run test:integration
 
