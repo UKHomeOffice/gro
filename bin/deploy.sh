@@ -43,6 +43,10 @@ sleep $READY_FOR_TEST_DELAY
 if [[ ${KUBE_NAMESPACE} == ${BRANCH_ENV} ]]; then
   echo "External Branch url - $APP_NAME-$DRONE_SOURCE_BRANCH.$BRANCH_ENV.homeoffice.gov.uk"
   echo "Internal Branch url - $APP_NAME-$DRONE_SOURCE_BRANCH.internal.$BRANCH_ENV.homeoffice.gov.uk"
+  if [[ -d /root/.dockersock ]]; then
+    # Publish internal branch host artifact for downstream PR e2e execution.
+    printf '%s\n' "$APP_NAME-$DRONE_SOURCE_BRANCH.internal.$BRANCH_ENV.homeoffice.gov.uk" > /root/.dockersock/branch_url.txt
+  fi
 elif [[ ${KUBE_NAMESPACE} == ${UAT_ENV} ]]; then
   echo "External UAT url - $APP_NAME.uat.sas-notprod.homeoffice.gov.uk"
   echo "Internal UAT url - $APP_NAME.internal.uat.sas-notprod.homeoffice.gov.uk"
