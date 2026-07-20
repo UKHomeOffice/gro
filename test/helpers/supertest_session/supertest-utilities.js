@@ -2,8 +2,22 @@
 const supertestSession = require('supertest-session');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
-const jquery = require('jquery');
-let $;
+
+function wrapNodes(nodes) {
+  return {
+    length: nodes.length,
+    find(selector) {
+      const matches = nodes.flatMap(node => Array.from(node.querySelectorAll(selector)));
+      return wrapNodes(matches);
+    },
+    html() {
+      return nodes.map(node => node.innerHTML).join('');
+    },
+    val() {
+      return nodes[0] ? nodes[0].value : undefined;
+    }
+  };
+}
 
 function getUrl(app, url, expectedStatus) {
   return new Promise((resolve, reject) => {
@@ -28,8 +42,7 @@ function postUrl(app, url, data, expectedStatus, token) {
 
 function parseHtml(response) {
   const dom = new JSDOM(response.text);
-  $ = jquery(dom.window);
-  return Promise.resolve($(dom.window.document));
+  return Promise.resolve(wrapNodes([dom.window.document]));
 }
 
 

@@ -1,14 +1,17 @@
 'use strict';
 
-const router = require('express').Router();
+module.exports = (req, res, next) => {
+  if (req.path !== '/api/postcode-test') {
+    return next();
+  }
 
-module.exports = router.use('/api/postcode-test', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   res.status(200);
+
   if (req.query.postcode === 'CR0 2EU') {
     // eslint-disable-next-line camelcase
-    res.send(JSON.stringify([{formatted_address: '49 Sydenham Road\nCroydon\nCR0 2EU', postcode: 'CR0 2EU'}]));
-  } else {
-    res.send(JSON.stringify([]));
+    return res.send(JSON.stringify([{formatted_address: '49 Sydenham Road\nCroydon\nCR0 2EU', postcode: 'CR0 2EU'}]));
   }
-});
+
+  return res.send(JSON.stringify([]));
+};
