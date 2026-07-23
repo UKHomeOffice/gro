@@ -269,7 +269,8 @@ steps:
         from_secret: kube_server_dev
       KUBE_TOKEN:
         from_secret: kube_token_dev
-      REDIS_PERSISTENCE_ENABLED: "false"
+      REDIS_PERSISTENCE_ENABLED: "true"
+      REDIS_PERSISTENCE_SIZE: 1Gi
     volumes:
       - name: dockersock
         path: /root/.dockersock
@@ -422,7 +423,6 @@ steps:
     depends_on:
       - clone_repos
       - image_to_quay
-      - deploy_to_branch
 
   # Checks a build being promoted has passed, is on master which effectively means a healthy build on Staging
   - name: sanity_check_build_prod

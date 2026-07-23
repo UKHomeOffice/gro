@@ -40,6 +40,9 @@ configure_redis_persistence() {
   elif [[ ${KUBE_NAMESPACE} == ${STG_ENV} ]]; then
     export REDIS_PERSISTENCE_ENABLED=true
     export REDIS_PERSISTENCE_SIZE=1Gi
+  elif [[ ${KUBE_NAMESPACE} == ${BRANCH_ENV} ]]; then
+    export REDIS_PERSISTENCE_ENABLED=true
+    export REDIS_PERSISTENCE_SIZE=1Gi
   else
     export REDIS_PERSISTENCE_ENABLED=false
   fi
