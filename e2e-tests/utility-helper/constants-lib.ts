@@ -4,7 +4,7 @@ export const ConstantsLib = {
   PARTY_TWO_NAME: 'PartyTwo Name2',
   ENQUIRY_DETAILS: 'Missed delivery date',
   COMPLAINT_DETAILS: 'Received Item is damaged',
-  CONTACT_EMAIL_ADDRESS: 'sas-hof-test@digital.homeoffice.gov.uk',
+  CONTACT_EMAIL_ADDRESS: process.env.SAS_HOF_EMAIL,
   ONLINE_ORDER_NO: 'COL123456/2018',
   TELEPHONE_ORDER_NO: '12345-2',
   ADDRESS: '49, Sydenham road, Croydon, Surrey, CR0 2EU',
