@@ -35,17 +35,21 @@ trivy-client-image: &trivy-client-image
   pull: if-not-exists
   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/trivy/client:latest
 
-linting: &linting
+node_image_name: &node_image_name quay.io/ukhomeofficedigital/hof-nodejs:24.19.0-alpine3.24@sha256:a70b2f29d55a9aebcf89690e7f64f4889725dab87a3b22663d102ca17c5f888e
+
+node_image: &node_image
   pull: if-not-exists
-  image: quay.io/ukhomeofficedigital/hof-nodejs:24.19.0-alpine3.24@sha256:a70b2f29d55a9aebcf89690e7f64f4889725dab87a3b22663d102ca17c5f888e
+  image: *node_image_name
+
+linting: &linting
+  <<: *node_image
   environment:
     NOTIFY_KEY: USE_MOCK
   commands:
     - yarn run test:lint
 
 unit_tests: &unit_tests
-  pull: if-not-exists
-  image: quay.io/ukhomeofficedigital/hof-nodejs:24.19.0-alpine3.24@sha256:a70b2f29d55a9aebcf89690e7f64f4889725dab87a3b22663d102ca17c5f888e
+  <<: *node_image
   environment:
     NOTIFY_KEY: USE_MOCK
   commands:
@@ -58,8 +62,7 @@ sonar_scanner: &sonar_scanner
     - sonar-scanner -Dproject.settings=./sonar-project.properties
 
 integration_tests: &integration_tests
-  pull: if-not-exists
-  image: quay.io/ukhomeofficedigital/hof-nodejs:24.19.0-alpine3.24@sha256:a70b2f29d55a9aebcf89690e7f64f4889725dab87a3b22663d102ca17c5f888e
+  <<: *node_image
   environment:
     NOTIFY_KEY: USE_MOCK
   commands:
@@ -141,7 +144,7 @@ steps:
         cpu: 1000
         memory: 1024Mi
     environment:
-      IMAGE_NAME: quay.io/ukhomeofficedigital/hof-nodejs:24.19.0-alpine3.24@sha256:a70b2f29d55a9aebcf89690e7f64f4889725dab87a3b22663d102ca17c5f888e
+      IMAGE_NAME: *node_image_name
       SERVICE_URL: https://acp-trivy-helm.acp-trivy.svc.cluster.local:443
       SEVERITY: MEDIUM,HIGH,CRITICAL --dependency-tree
       FAIL_ON_DETECTION: false
@@ -156,8 +159,7 @@ steps:
       - clone_repos
 
   - name: setup
-    pull: if-not-exists
-    image: quay.io/ukhomeofficedigital/hof-nodejs:24.19.0-alpine3.24@sha256:a70b2f29d55a9aebcf89690e7f64f4889725dab87a3b22663d102ca17c5f888e
+    <<: *node_image
     environment:
       NOTIFY_KEY: USE_MOCK
     commands:
@@ -552,7 +554,7 @@ steps:
   - name: cron_trivy_scan_image_os
     <<: *trivy-client-image
     environment:
-      IMAGE_NAME: quay.io/ukhomeofficedigital/hof-nodejs:24.19.0-alpine3.24@sha256:a70b2f29d55a9aebcf89690e7f64f4889725dab87a3b22663d102ca17c5f888e
+      IMAGE_NAME: *node_image_name
       SEVERITY: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL --dependency-tree
       FAIL_ON_DETECTION: true
       IGNORE_UNFIXED: false

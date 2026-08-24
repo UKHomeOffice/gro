@@ -29,7 +29,6 @@
   "author": "HomeOffice",
   "dependencies": {
     "accessible-autocomplete": "^3.0.1",
-    "@cucumber/cucumber": "^13.2.1",
     "hof": "~24.5.0",
     "homeoffice-countries": "^0.2.0",
     "lodash": "^4.18.1",
