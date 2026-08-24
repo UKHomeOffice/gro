@@ -50,7 +50,7 @@ Feature: GRO - General Register Office - Page Validations
     And I select continue
     Then I see "There is a problem" error header message displayed for GRO
     And I see "Enter an email address" error message displayed for GRO
-    When I enter email address "sas-hof-test@" and click continue
+    When I enter email address "test@" and click continue
     Then I see "There is a problem" error header message displayed for GRO
     And I see "The email address isn't valid, enter a valid email address" error message displayed for GRO
     When I enter email address "test@example.com" and click continue
