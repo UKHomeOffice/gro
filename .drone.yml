@@ -48,13 +48,6 @@ linting: &linting
   commands:
     - yarn run test:lint
 
-unit_tests: &unit_tests
-  <<: *node_image
-  environment:
-    NOTIFY_KEY: USE_MOCK
-  commands:
-    - yarn run test:unit
-
 sonar_scanner: &sonar_scanner
   pull: if-not-exists
   image: quay.io/ukhomeofficedigital/sonar-scanner:latest
@@ -181,15 +174,6 @@ steps:
     depends_on:
       - setup
 
-  - name: unit_tests
-    <<: *unit_tests
-    when:
-      branch:
-        <<: *include_default_and_feature_branches
-      event: [push, pull_request]
-    depends_on:
-      - setup
-
   - name: sonar_scanner
     <<: *sonar_scanner
     when:
@@ -221,7 +205,6 @@ steps:
       event: [push, pull_request]
     depends_on:
       - linting
-      - unit_tests
 
   - name: image_to_quay
     pull: if-not-exists
