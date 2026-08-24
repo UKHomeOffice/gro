@@ -181,14 +181,14 @@ steps:
     depends_on:
       - setup
 
-#  - name: unit_tests
-#    <<: *unit_tests
-#    when:
-#      branch:
-#        <<: *include_default_and_feature_branches
-#      event: [push, pull_request]
-#    depends_on:
-#      - setup
+  - name: unit_tests
+    <<: *unit_tests
+    when:
+      branch:
+        <<: *include_default_and_feature_branches
+      event: [push, pull_request]
+    depends_on:
+      - setup
 
   - name: sonar_scanner
     <<: *sonar_scanner
@@ -221,6 +221,7 @@ steps:
       event: [push, pull_request]
     depends_on:
       - linting
+      - unit_tests
 
   - name: image_to_quay
     pull: if-not-exists
