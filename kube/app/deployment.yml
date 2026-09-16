@@ -70,16 +70,6 @@ spec:
                 secretKeyRef:
                   name: session-secret
                   key: session-secret
-            - name: AWS_USER
-              valueFrom:
-                secretKeyRef:
-                  name: aws
-                  key: user
-            - name: AWS_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: aws
-                  key: password
             - name: POSTCODE_AUTH
               valueFrom:
                 secretKeyRef:
