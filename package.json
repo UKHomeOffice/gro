@@ -5,7 +5,7 @@
   "description": "The General Register Office DSP form",
   "license": "GPL-2.0",
   "engines": {
-    "node": ">=24.19.0 <25.0.0"
+    "node": ">=24.21.0 <25.0.0"
   },
   "repository": {
     "type": "git",
