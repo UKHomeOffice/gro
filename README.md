@@ -20,8 +20,6 @@ GTM_TAG=
 POSTCODE_HOST=
 FROM_ADDRESS=
 REPLY_TO=
-AWS_USER=
-AWS_PASSWORD=
 AWS_REGION
 ```
 A copy of these secrets is stored in keybase, please make sure that any updates will be added there too.
