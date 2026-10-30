@@ -37,7 +37,7 @@ trivy-client-image: &trivy-client-image
   pull: if-not-exists
   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/trivy/client:latest
 
-node_image_name: &node_image_name quay.io/ukhomeofficedigital/hof-nodejs:24.21.0-alpine3.24-v9@sha256:baf6fee695730fcede4a6dd89390b1756ce5b26ce45b39cca3c7cdc63e91a443
+node_image_name: &node_image_name quay.io/ukhomeofficedigital/hof-nodejs:24.22.1_1-alpine@sha256:033927ee2316f3b3c7d22f3560c2e4201c4c751b7cb4664d0d9b9c28783d9473
 
 node_image: &node_image
   pull: if-not-exists
@@ -285,7 +285,7 @@ steps:
         path: /root/.dockersock
     commands:
       - npm install -g n
-      - n 24.21.0
+      - n 24.22.1
       - hash -r
       - node --version
       - yarn install --frozen-lockfile
@@ -628,7 +628,7 @@ steps:
         path: /root/.dockersock
     commands:
       - npm install -g n
-      - n 24.21.0
+      - n 24.22.1
       - hash -r
       - node --version
       - yarn install --frozen-lockfile
