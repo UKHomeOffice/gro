@@ -49,7 +49,12 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 ## GRO Business Logic
 
 ### Online Orders
-The order number given online from the GRO website is always in the format COLXXXXXX/YYYY. This regex has been set to follow this format for the 'online-toggle-text' field, i.e. /^COL[0-9]{6}\/[0-9]{4}$/
+The reference number for an online order can be found in the order confirmation email. It will usually be called either:
+
+- An order reference number, which is 12 letters and numbers, for example `HX721ABD2F5Q`.
+- A GRO reference number (or 'GRO reference no'), which usually follows the format `COLXXXXXX/YYYY`, for example `COL123456/2015`.
+
+The 'online-toggle-text' field accepts letters, numbers and forward slashes using `/^[A-Za-z0-9/]+$/`. References are converted to uppercase and must be between 12 and 14 characters long.
 
 ### Telephone Orders
 Telephone orders, the order number is also incremental so will eventually go from 5 to 6 digits, it is followed by a hyphen and line number to indicate which row dependant on the number of items ordered – most orders this is just a single digit but can be up to 3 digits for big orders with 100+ order lines.
