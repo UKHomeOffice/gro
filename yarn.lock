@@ -24,9 +24,9 @@
     lru-cache "^11.5.3"
 
 "@aws-sdk/client-sesv2@^3.1160.0":
-  version "3.1177.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/client-sesv2/-/client-sesv2-3.1177.0.tgz#38a56f08224bf26557904c0a37af3b15e59478ca"
-  integrity sha512-+vSD4V5f+f/TWruh3b4seYTwxE8Ne/7jKnH2GkViTewkDaBfQFT3sVA5YlxVHEWP8QidFxQyEBXgu3+ndnLkJA==
+  version "3.1178.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/client-sesv2/-/client-sesv2-3.1178.0.tgz#02e17ad37f120db001ab76574ca2ac19cf5f7cc8"
+  integrity sha512-gkQfd/n4QUgunUfGVfgbXIJIbOFOG7nRYw9ET1OW8jxtIISHWMDkAQpbJ6xSXB/pqmqhDhXy5w7FUuSpMmNG0g==
   dependencies:
     "@aws-sdk/core" "^3.981.2"
     "@aws-sdk/credential-provider-node" "^3.972.99"
@@ -366,9 +366,9 @@
     "@babel/helper-validator-identifier" "^7.29.7"
 
 "@bramus/specificity@^2.4.2":
-  version "2.4.4"
-  resolved "https://registry.yarnpkg.com/@bramus/specificity/-/specificity-2.4.4.tgz#2b8331a4d27fc03032893a93b0740082e2dc4c19"
-  integrity sha512-TRvTbeibL1ORTXe5NbH+9XUZdbjns55AmFfg8BroI1Ge13CqNF58Txg3Zd/+gjUCSh0ROHqJ1qJfnoX2MAxUZg==
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/@bramus/specificity/-/specificity-2.4.5.tgz#214c09c99d6fbca5d60c56338f1f90bfc083a17e"
+  integrity sha512-TWjoxMCb5z1j19ZAVlGIkRkoq22F9F1+s+sTcJcw3GN+sEj/ZhWD+PPyol0feaRGZyajOA22FTCv95Ow26i6iA==
   dependencies:
     css-tree "^3.2.1"
 
@@ -1173,9 +1173,9 @@
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
 "@types/node@^26.2.0":
-  version "26.6.10"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-26.6.10.tgz#fddc9af08f561789c54e49bc6785177cf516c6a2"
-  integrity sha512-WJuPHoGB8WNQuTksNF7SOQpnH02PXeDYz4iueWbBT6/hTWnShY5F3T/hoJA3fY9+uYReDZ7pyTKKx83jQa7aGg==
+  version "26.6.11"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-26.6.11.tgz#17799a1ddc1edfc99222a906a0952b3c9be8794a"
+  integrity sha512-uUyQ2XLEz+EXh34lmS3GhKrkqn/8FU7KUiKRpk347At2bmnMVWss45yz8b4FG/tUtmV1tV/+TVkITItPROyeeQ==
   dependencies:
     undici-types "~8.9.0"
 
@@ -1891,7 +1891,7 @@ cookie@0.7.2, cookie@~0.7.1, cookie@~0.7.2:
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.7.2.tgz#556369c472a2ba910f2979891b526b3436237ed7"
   integrity sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==
 
-cookiejar@^2.1.2, cookiejar@^2.1.4:
+cookiejar@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/cookiejar/-/cookiejar-2.1.4.tgz#ee669c1fea2cf42dc31585469d193fef0d65771b"
   integrity sha512-LDx6oHrK+PhzLKJU9j5S7/Y3jM/mUHvD/DeI1WQmJn652iPC5Y4TBzC9l+5OMOXlyTTA+SmVUPm0HQUwpD5Jqw==
@@ -4144,9 +4144,9 @@ node-exports-info@^1.6.0:
     semver "^6.3.1"
 
 node-releases@^2.0.64:
-  version "2.0.65"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.65.tgz#8937f0f215e572b35c1dc83f8c6ec61cafccb9f8"
-  integrity sha512-PfvofsGQ+MiOQIPkX9fU8ELUWmy5zL74CdQaph/ismKszfFkfwXaw0cGiwbwym2hT9k5+mdyl8O5WQ1MD8EHmA==
+  version "2.0.66"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.66.tgz#33d4146658040a2b03da853f7243492569eda69b"
+  integrity sha512-uSMWN9/XtWzxaE0d9ZNHe00Hda6028AXH3WRjTsK71neiPCSeL5nGSD9MXTQX/6Qx0k7Op1AyyinmIUw9fBzrg==
 
 nopt@1.0.10:
   version "1.0.10"
@@ -4167,11 +4167,6 @@ notifications-node-client@^8.5.0:
   dependencies:
     axios "^1.7.2"
     jsonwebtoken "^9.0.2"
-
-object-assign@^4.0.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
-  integrity sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==
 
 object-inspect@^1.13.3, object-inspect@^1.13.4:
   version "1.14.0"
@@ -5128,15 +5123,6 @@ superagent@^10.4.1:
     mime "2.6.0"
     qs "^6.17.1"
 
-supertest-session@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/supertest-session/-/supertest-session-5.0.1.tgz#046beefab6b5cc5c1f38e7ff9a532a341a2925e1"
-  integrity sha512-RpR8tGQZGreQsOCiW3YMSPKMwPlAB8lA0Jyat+8VUSJaYvLHTMqhMW6gooJ2htzjr3w/kgqJTQDnmuFenzA9JA==
-  dependencies:
-    cookiejar "^2.1.2"
-    methods "^1.1.2"
-    object-assign "^4.0.1"
-
 supertest@^7.2.2:
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/supertest/-/supertest-7.3.2.tgz#1071971780af339019f5e6a03dc5ff265d02b88b"
@@ -5200,17 +5186,17 @@ tinyglobby@0.2.17, tinyglobby@^0.2.15:
     fdir "^6.5.0"
     picomatch "^4.0.4"
 
-tldts-core@^7.5.6:
-  version "7.5.6"
-  resolved "https://registry.yarnpkg.com/tldts-core/-/tldts-core-7.5.6.tgz#2d47de6a7c2d95a45a589cc9d286f237851197aa"
-  integrity sha512-ZKR8J39MaMREBzOCN6nKWxr0V3sAOhNxRth96uAwWLrliTYBKb+JhaUwkZl3naRSyd9HuJr6KPzS66oTCmYafw==
+tldts-core@^7.6.1:
+  version "7.6.1"
+  resolved "https://registry.yarnpkg.com/tldts-core/-/tldts-core-7.6.1.tgz#ce78ad28d12230d126b262e2fab4726bc872848d"
+  integrity sha512-FzTCzmZVba1BJVZQJTGVfaRUV5dxPNV4nQZZuFrSitnsXS3k81XyDBhOUzB9/41cyVKdt2TW3YfIv9KKCBMMXg==
 
 tldts@^7.0.5:
-  version "7.5.6"
-  resolved "https://registry.yarnpkg.com/tldts/-/tldts-7.5.6.tgz#c93b9c9c350f65c329202916ca213ca67470a7ef"
-  integrity sha512-78a/2zOOpMAgcd+GhQMx8tQSGYojszqzAKhXzd5/t7lgyglt1INshF2tiVfWBw9NNYaMuMVCz1RAcggt383LTg==
+  version "7.6.1"
+  resolved "https://registry.yarnpkg.com/tldts/-/tldts-7.6.1.tgz#ce72de4de55b997149b79249348d4a2d56baa5a8"
+  integrity sha512-+q5zzJwjNwBPQV30jnqIaQMeZ/nQfc790uMq1vDj3kCGKNfokh+HYfwtd1d80OdSPNVS+mHV8vMd+yDtlK/+mQ==
   dependencies:
-    tldts-core "^7.5.6"
+    tldts-core "^7.6.1"
 
 to-regex-range@^5.0.1:
   version "5.0.1"

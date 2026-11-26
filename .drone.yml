@@ -185,6 +185,16 @@ steps:
         <<: *include_default_and_feature_branches
       event: [push, pull_request]
 
+  - name: integration_tests
+    <<: *integration_tests
+    when:
+      branch:
+        <<: *include_default_and_feature_branches
+      event: [push, pull_request]
+    depends_on:
+      - setup
+      - linting
+
   - name: build_image
     image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
     commands:
@@ -262,15 +272,6 @@ steps:
     depends_on:
       - clone_repos
       - image_to_quay
-
-  - name: integration_tests
-    <<: *integration_tests
-    when:
-      branch:
-        <<: *include_default_and_feature_branches
-      event: [push, pull_request]
-    depends_on:
-      - deploy_to_branch
 
   # Run Playwright e2e against the deployed PR branch environment
   - name: e2e_tests
