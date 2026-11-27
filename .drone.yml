@@ -906,7 +906,7 @@ steps:
         - success
         - failure
     depends_on:
-      - cron_nightly_e2e_tests
+      - cron_publish_nightly_allure_report
 
 services:
   - name: docker
