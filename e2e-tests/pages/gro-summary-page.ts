@@ -1,7 +1,9 @@
 import { expect, Locator } from '@playwright/test';
 import { basePage } from './base-page';
 import { GroScenarioData } from '../utility-helper/gro-scenario-data';
-import { ConstantsLib as c } from '../utility-helper/constants-lib';
+import { ConstantsLib } from '../utility-helper/constants-lib';
+
+const c = new ConstantsLib();
 
 export class groSummaryPage extends basePage {
   readonly confirmSubmissionButton: Locator;
@@ -37,7 +39,7 @@ export class groSummaryPage extends basePage {
     if (hasOrderDetailsSection) {
       await expect(this.summaryValue('How was the order placed?')).toHaveText(data.howPlaced);
       if (data.howPlaced === 'Online') {
-        await expect(this.summaryValue('COL Number')).toHaveText(c.ONLINE_ORDER_NO);
+        await expect(this.summaryValue('Reference Number')).toHaveText(c.ONLINE_ORDER_NO);
       }
       if (data.howPlaced === 'Telephone') {
         await expect(this.summaryValue('Order Number')).toHaveText(c.TELEPHONE_ORDER_NO);

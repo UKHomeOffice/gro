@@ -1,20 +1,21 @@
 import { expect } from '@playwright/test';
 import { createBdd } from 'playwright-bdd';
 import { test } from '../fixture/fixtures';
-import { ConstantsLib as c } from '../utility-helper/constants-lib';
+import { ConstantsLib } from '../utility-helper/constants-lib';
 import { getGroScenarioData, GroScenarioData } from '../utility-helper/gro-scenario-data';
 
 export const { Given, When, Then } = createBdd(test);
 
+const c = new ConstantsLib();
 let scenarioData: GroScenarioData;
 
-Given('Test data has been created for {string} scenarios', async ({}, product: string) => {
+Given('Test data has been created for {string} scenarios', async ({ }, product: string) => {
   if (product !== 'GRO') {
     throw new Error(`Unsupported product data setup: ${product}`);
   }
 });
 
-Given('I selected the data for scenario {string} - {string}', async ({}, scenarioId: string, _description: string) => {
+Given('I selected the data for scenario {string} - {string}', async ({ }, scenarioId: string, _description: string) => {
   scenarioData = getGroScenarioData(scenarioId);
 });
 
@@ -161,6 +162,25 @@ When('I enter full name on certificate and click continue', async ({ pages }) =>
 When('I enter additional information, select {string} and click continue', async ({ pages }, previousContact: string) => {
   await pages.groAdditionalPage.complete(c.FULL_NAME, c.ENQUIRY_DETAILS, previousContact as 'Yes' | 'No');
 });
+
+
+
+When('I select {string} option and click continue', async ({ pages }, option: string) => {
+  await pages.groHowPage.selectRadio(option);
+  await pages.basePage.clickContinueButton();
+});
+
+When('I enter GRO reference number less than {int} characters {string} and click continue', async ({ pages }, arg: number, onlineOrderNo: string) => {
+  await pages.groHowPage.fillInput(pages.groHowPage.onlineText, onlineOrderNo);
+  await pages.basePage.clickContinueButton();
+});
+
+When('I enter GRO reference number more than {int} characters {string} and click continue', async ({ pages }, arg: number, onlineOrderNo: string) => {
+  await pages.groHowPage.fillInput(pages.groHowPage.onlineText, onlineOrderNo);
+  await pages.basePage.clickContinueButton();
+});
+
+
 
 When('I select how you placed order and click continue', async ({ pages }) => {
   await pages.groHowPage.complete('Post', c.ONLINE_ORDER_NO, c.TELEPHONE_ORDER_NO);

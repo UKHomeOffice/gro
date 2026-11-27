@@ -34,6 +34,11 @@ export class basePage {
         await this.page.getByRole('radio', { name: optionText, exact: true }).check();
     }
 
+    async fillInput(loctor: Locator, value: string) {
+        await loctor.fill(value);
+        await this.page.keyboard.press('Tab');
+    }
+
     async fillInputByLabel(label: string, value: string) {
         await this.page.getByLabel(label, { exact: true }).fill(value);
     }

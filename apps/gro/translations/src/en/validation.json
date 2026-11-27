@@ -17,8 +17,10 @@
     }
   },
   "online-toggle-text": {
-    "default": "Enter your COL Number",
-    "regex": "COL number must follow this format: COL123456/2015"
+    "default": "Enter a GRO reference number or order reference number that is 12 or 14 characters long",
+    "minlength": "Enter a GRO reference number or order reference number that is 12 or 14 characters long",
+    "maxlength": "Enter a GRO reference number or order reference number that is 12 or 14 characters long",
+    "regex": "Enter a GRO reference number or order reference number that is 12 or 14 characters long"
   },
   "telephone-toggle-text": {
     "default": "Enter your order number",

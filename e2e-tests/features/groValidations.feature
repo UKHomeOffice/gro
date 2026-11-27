@@ -31,6 +31,15 @@ Feature: GRO - General Register Office - Page Validations
     And I select continue
     Then I see "There is a problem" error header message displayed for GRO
     And I see "Tell us how you placed your order" error message displayed for GRO
+    When I select 'Online' option and click continue
+    Then I see "There is a problem" error header message displayed for GRO
+    And I see "Enter a GRO reference number or order reference number that is 12 or 14 characters long" error message displayed for GRO
+    When I enter GRO reference number less than 12 characters '1234567890' and click continue
+    Then I see "There is a problem" error header message displayed for GRO
+    And I see "Enter a GRO reference number or order reference number that is 12 or 14 characters long" error message displayed for GRO
+    When I enter GRO reference number more than 14 characters '123456789012345' and click continue
+    Then I see "There is a problem" error header message displayed for GRO
+    And I see "Enter a GRO reference number or order reference number that is 12 or 14 characters long" error message displayed for GRO
     When I select how you placed order and click continue
     And I select continue
     Then I see "There is a problem" error header message displayed for GRO

@@ -107,7 +107,7 @@ module.exports = {
     options: [{
       value: 'online',
       toggle: 'online-toggle-text',
-      child: 'input-text'
+      child: 'partials/how-online-details'
     }, {
       value: 'telephone',
       toggle: 'telephone-toggle-text',
@@ -118,7 +118,13 @@ module.exports = {
   },
   'online-toggle-text': {
     formatter: ['uppercase'],
-    validate: ['required', 'notUrl', { type: 'regex', arguments: /^COL[0-9]{6}\/[0-9]{4}$/ }],
+    validate: [
+      'required',
+      'notUrl',
+      { type: 'minlength', arguments: [12] },
+      { type: 'maxlength', arguments: [14] },
+      { type: 'regex', arguments: /^[A-Za-z0-9/]+$/ }
+    ],
     dependent: {
       field: 'how-radio',
       value: 'online'

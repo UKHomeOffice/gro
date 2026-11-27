@@ -1,5 +1,5 @@
 
-const supertestSession = require('supertest-session');
+const supertest = require('supertest');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
@@ -84,6 +84,7 @@ function postSessionBootstrapData(app, data) {
     app
       .post('/test/bootstrap-session')
       .send(data)
+      .expect(200)
       .end((err, response) => err ? reject(err) : resolve(response));
   });
 }
@@ -132,7 +133,7 @@ function getSupertestApp(subAppName, subAppPath, pages) {
     newSubAppPath = `/${newSubAppPath}`;
   }
 
-  const testApp = supertestSession(app.server);
+  const testApp = supertest.agent(app.server);
 
   return {
     passStep: (uri, data) => passStep(testApp, `${newSubAppPath}${uri}`, data),
