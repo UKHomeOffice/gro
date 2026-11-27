@@ -130,6 +130,7 @@ steps:
         - feature/*
         - deps-*
         - deps/*
+        - GRO-*
       event: [push, pull_request]
     depends_on:
       - generate_github_app_token_for_clone
